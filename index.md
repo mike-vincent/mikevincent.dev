@@ -11,4 +11,4 @@ Los Angeles, California
 ---
 
 ### [Anthology Radio](https://anthologyradio.com)  
-Streaming site for public domain radio shows. Modern player built with Supabase, Tailwind, and Vercel. Plays series like *X Minus One* and *
+Streaming site for public domain radio shows. Modern player built with Supabase, Tailwind, and Vercel. Plays series like *X Minus One* and CBS Radio Mystery Theatre.
