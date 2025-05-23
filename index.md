@@ -9,11 +9,11 @@ Every week, I write about how to build good software, how to lead well, and how 
 
 ---
 
-## What has Mike built?
+## Apps Mike builds and ship
 ### Anthology Radio
-
+[Anthology Radio](https://anthologyradio.com) in May 2025. 
 **Business Summary:**  
-Anthology Radio curates, streams, and monetizes vintage public domain radio recordings through a web-based platform. The service provides continuous access to historical audio dramas and classic radio programming.
+Anthology Radio curates, streams, and monetizes vintage public domain radio recordings through a web-based platform. Anthology Radio provides continuous access to historical audio dramas and classic radio programming. Anthology Radio is established May 2025.
 
 ## Classification
 
