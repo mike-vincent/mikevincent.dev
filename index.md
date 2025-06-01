@@ -25,7 +25,11 @@ I help companies design, build and operate high-traffic software products for po
 See what's inside my resume now.
 
 - [linkedin.com/in/michael-thomas-vincent](linkedin.com/in/michael-thomas-vincent)
+
+
 ---
+
+
 ## Products Built and Run by Mike Vincent
 ### Anthology Radio
 #### Business Summary of Anthology Radio
