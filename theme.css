@@ -42,9 +42,10 @@ h2 {
   width: 180px;
   height: 180px;
   object-fit: cover;
-  border-radius: 50px;
+  object-position: center 20%;
+  border-radius: 90px;
   display: block;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   overflow: hidden;
 }
 
