@@ -2,10 +2,14 @@
 
 body {
   font-family: 'Libre Baskerville', serif;
+  color: #282828;
+  font-size: 1.25rem;  /* 20px if 1rem = 16px */
+  font-weight: 400;    /* Regular */
+  line-height: 1.5;
+  letter-spacing: -0.05em;
   max-width: 675px;
   margin: 0 auto;
   padding: 20px; /* Optional: adds some space around the content */
-  /* You can add other base body styles here, e.g., color, line-height */
 }
 
 h1, h2, h3, h4, h5, h6 {
