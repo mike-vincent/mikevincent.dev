@@ -33,6 +33,7 @@ See what's in my resume.
 
 - [linkedin.com/in/michael-thomas-vincent](linkedin.com/in/michael-thomas-vincent)
 
+---
 
 ## _My Stats_
 My website stats are publicly available at the following URL:
