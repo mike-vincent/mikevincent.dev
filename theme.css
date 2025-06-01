@@ -9,6 +9,8 @@ body {
   letter-spacing: -0.05em;
   width: 500px;
   margin: 0 auto;
+  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
   padding:5px;
 }
 
