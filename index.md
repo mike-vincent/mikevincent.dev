@@ -14,15 +14,15 @@ Every week, you can read something new from me about building and shipping code.
 
 Discover something new today.
 
-- [dev.to/mike-vincent](dev.to/mike-vincent)
-- [medium.com/@mike-vincent](medium.com/@mike-vincent)
+- [dev.to/mike-vincent](https://dev.to/mike-vincent)
+- [medium.com/@mike-vincent](https://medium.com/@mike-vincent)
 
 ---
 
 ## _My Apps_
 I build and ship Anthology Radio, a place to listen to public-domain radio shows.
 
-- [anthologyradio.com](anthologyradio.com)
+- [anthologyradio.com](https://anthologyradio.com)
 
 ---
 
