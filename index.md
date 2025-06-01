@@ -2,18 +2,30 @@
 layout: default
 title: Home
 ---
+# Mike Vincent | Software Engineer
+Hi, I'm **Mike Vincent**, an American software engineer and writer based in Los Angeles, California.
 
-Hi, I'm Mike Vincent, an American software engineer and writer based in Los Angeles, California.
+## What's New?
+Every week, you can read something new from me about building and shipping code.
+
+Discover something new today.
+
+- [dev.to/mike-vincent](dev.to/mike-vincent)
+- [medium.com/@mike-vincent](medium.com/@mike-vincent)
+
+## My Apps
+I build and ship Anthology Radio, a place to listen to public-domain radio shows.
+
+- [anthologyradio.com](anthologyradio.com)
 
 
-Every week, I write about how to build good software, how to lead well, and how to get better at programming.
+## Engineering Resume
+I help companies design, build and operate high-traffic software products for popular brands like Capital One, Canadian Tire, Lockheed Martin, Fannie Mae, NYC Metro, L.A. Metro, and many more.
 
+See what's inside my resume now.
 
-[linkedin.com/in/michael-thomas-vincent](https://linkedin.com/in/michael-thomas-vincent)  
-[mike-vincent.carrd.co](https://mike-vincent.carrd.co)
-
+- [linkedin.com/in/michael-thomas-vincent](linkedin.com/in/michael-thomas-vincent)
 ---
-
 ## Products Built and Run by Mike Vincent
 ### Anthology Radio
 #### Business Summary of Anthology Radio
