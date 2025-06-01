@@ -1,3 +1,8 @@
+---
+layout: default
+title: About
+---
+
 Hi, I'm Mike Vincent, an American software engineer and writer based in Los Angeles, California.
 
 Every week, I write about how to build good software, how to lead well, and how to get better at programming.
