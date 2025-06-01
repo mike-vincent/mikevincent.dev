@@ -16,29 +16,26 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Libre Franklin', sans-serif;
 }
 
-/* Specific styles for h1 based on user image */
 h1 {
   font-family: 'Libre Franklin', sans-serif;
   color: #282828;
-  font-size: 3.625rem; /* 58px if 1rem = 16px */
-  font-weight: 900;    /* Heavy */
+  font-size: 3.625rem;
+  font-weight: 900;
   line-height: 0.875;
   letter-spacing: -0.05em;
-  margin-bottom: 1rem; /* Paragraph spacing */
+  margin-bottom: 1rem;
 }
 
-/* Specific styles for h2 based on user image */
 h2 {
   font-family: 'Libre Franklin', sans-serif;
   color: #282828;
-  font-size: 2.25rem;  /* 36px if 1rem = 16px */
-  font-weight: 900;    /* Heavy */
+  font-size: 2.25rem;
+  font-weight: 900;
   line-height: 1;
   letter-spacing: -0.05;
-  text-indent: 0;      /* Indent Off */
+  text-indent: 0;
 }
 
-/* Styles for the headshot image */
 .headshot-image {
   width: 180px;
   height: 180px;
