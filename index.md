@@ -34,4 +34,11 @@ See what's in my resume.
 - [linkedin.com/in/michael-thomas-vincent](https://linkedin.com/in/michael-thomas-vincent)
 
 ---
+
+## _GitHub Pages_
+Here's my GitHub Pages site.
+
+- [github.com/mike-vincent/mikevincent-dev](https://github.com/mike-vincent/mikevincent-dev)
+
+---
 [◼️](https://cloud.umami.is/share/fmQv1u9c2nmastyG/mikevincent.dev) Copyright © 2025 Mike Vincent. All Rights Reserved. 
