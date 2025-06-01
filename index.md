@@ -12,7 +12,7 @@ Hi, I'm **Mike Vincent**, an American software engineer and writer in Los Angele
 ---
 
 ## _What do you do?_
-I lead software teams and build high-traffic systems. I also run a profitable film technology company and ship indie apps. I know how to plan, build, and deliver software projects under real constraints.
+I'm a senior engineer. I lead software teams and build high-traffic systems. I ship things that work, run a profitable film technology business, publish original work, and build indie apps.
 
 
 ---
