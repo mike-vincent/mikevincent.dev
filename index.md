@@ -38,7 +38,7 @@ I design, build and operate high-traffic software for well-known businesses.
 
 - [linkedin.com/in/michael-thomas-vincent](https://linkedin.com/in/michael-thomas-vincent)
 
-Fannie Mae • Capital One • Lockheed Martin • NY Fashion Week • U.S. Courts • Canadian Tire • NYC Metro • L.A. Metro • U.S.C.C.B. • Poison.org
+Fannie Mae • Capital One • Lockheed Martin • NY Fashion Week • U.S. Courts • Canadian Tire • NYC Metro • L.A. Metro • U.S.C.C.B. • Poison.org • And many more
 
 
 
