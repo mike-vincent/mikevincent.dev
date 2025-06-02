@@ -34,16 +34,6 @@ I design, build and operate high-traffic software for well-known businesses.
 
 Fannie Mae • Capital One • Lockheed Martin • NY Fashion Week • U.S. Courts • Canadian Tire • NYC Metro • L.A. Metro • U.S.C.C.B. • Poison.org • And many more
 
-
-
----
-
-## _Movie Technology_
-I founded and run Io Pictures Corporation, a profitable California C-Corp that buys and licenses film rights to streaming platforms. I manage vendor contracts, tax filings, and digital delivery systems.
-
-- [iopictures.com](iopictures.com)
-- [The Control Group 🎞️](https://tubitv.com/movies/100013165/the-control-group)
-
 ---
 
 ## _Portfolio_
