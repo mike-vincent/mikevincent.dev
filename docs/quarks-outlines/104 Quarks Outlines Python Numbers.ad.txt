@@ -1,1 +1,1 @@
-Was sind die verschiedenen Zahlentypen in Python? Entdecken Sie, wie Sie mit Zahlen in Python arbeiten. Lesen Sie diese Woche Quark's Outlines: Python Numbers.
+What kinds of "numbers" can you use in Python? Learn how numbers work in this week’s Quark’s Outlines: Python Numbers.
