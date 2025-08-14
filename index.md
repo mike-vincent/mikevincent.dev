@@ -10,13 +10,6 @@ title: Home
 Hi, I'm **Mike Vincent**, an American software engineer and writer in Los Angeles, California.
 
 ---
-## _What's New?_
-## _Indie Apps_
-I’m building Anthology Radio, a place to hear public-domain radio shows. Started in May 2025. Supabase, Vercel, Next.js.
-
-- [anthologyradio.com](https://anthologyradio.com)
-
----
 
 ## _Writing_
 Every week, I write about coding and programming. Read what's in my Python series.
@@ -28,11 +21,19 @@ Every week, I write about coding and programming. Read what's in my Python serie
 ---
 
 ## _Engineering Leadership Resume_
-I design, build and operate high-traffic software for well-known businesses.
+I work at PwC, and I design, build and operate high-traffic software for major brands.
 
 - [linkedin.com/in/michael-thomas-vincent](https://linkedin.com/in/michael-thomas-vincent)
 
 Fannie Mae • Capital One • Lockheed Martin • NY Fashion Week • U.S. Courts • Canadian Tire • NYC Metro • L.A. Metro • U.S.C.C.B. • Poison.org • And many more
+
+---
+
+## _What's New?_
+## _Indie Apps_
+I’m building Anthology, a place to hear public-domain radio shows. Started in June 2025. Supabase, Vercel, Next.js.
+
+- [anthologyradio.com](https://anthologyradio.com)
 
 ---
 
