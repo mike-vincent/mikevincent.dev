@@ -31,7 +31,7 @@ Fannie Mae • Capital One • Lockheed Martin • NY Fashion Week • U.S. Cour
 
 ## _What's New?_
 ## _Indie Apps_
-I’m building Anthology, a place to hear public-domain radio shows. Started in June 2025. Supabase, Vercel, Next.js.
+I’m building Anthology, a place to hear public-domain radio shows. Prototype web app started in June 2025. Supabase, Vercel, Next.js. Launching iOS app Christmas 2025.
 
 - [anthologyradio.com](https://anthologyradio.com)
 
@@ -46,7 +46,7 @@ Here's my GitHub Pages site.
 ---
 
 The End
-👋 Hey you! Thanks for reading! Send me a DM [@mikevincentdev](https://x.com/mikevincentdev).
+👋 Hey you! Thanks for reading!
 
 ---
 [◼️](https://cloud.umami.is/share/fmQv1u9c2nmastyG/mikevincent.dev) Copyright © 2025 Mike Vincent. All Rights Reserved. 
