@@ -51,6 +51,13 @@ MS Industrial Engineering, UT Tyler. BS Linguistics + BA Journalism, Penn State.
 
 ## Resume
 
+# Michael Vincent
+**Software Engineer, Full Stack, Payments & Infrastructure**
+
+U.S. Citizen | Los Angeles, California, United States | +1 (813) 482-7666 | michael.thomas.vincent@gmail.com | https://www.mikevincent.dev
+
+---
+
 ### Education
 **The University of Texas at Tyler**, Master of Science, Industrial Engineering, December 2015
 
@@ -68,6 +75,12 @@ Founding engineer for "Capital One Databolt," a vaultless tokenization platform 
 - Wrote Go APIs for licensing, authentication, and partner onboarding.
 - Deployed with Docker and Helm to AWS EKS and Azure AKS.
 - Added OpenTelemetry tracing; Zelle signed as first customer.
+
+**Relocation**
+Relocation
+May 2024 to August 2024
+
+Relocated to Los Angeles, California, United States.
 
 **Software Engineering Manager, Infrastructure**
 Cubic Transportation Systems, San Diego, California
