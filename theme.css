@@ -83,6 +83,7 @@ li {
   border-radius: 12px;
   padding: 1.5rem;
   margin-top: 1rem;
+  line-height: 1.15;
 }
 
 .resume-card h1,
@@ -93,10 +94,26 @@ li {
   color: #000;
 }
 
+.resume-card h2 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.resume-card p {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
 .resume-card ul {
   list-style-type: disc;
   margin-left: 1.5em;
   padding-left: 0;
+  margin-top: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.resume-card li {
+  margin-bottom: 0;
 }
 
 .resume-card a {
