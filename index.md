@@ -29,7 +29,6 @@ Fannie Mae • Capital One • Lockheed Martin • NY Fashion Week • U.S. Cour
 
 ---
 
-## What's New?
 ## Indie Apps
 I'm building Anthology, a place to hear public-domain radio shows. Prototype web app started in June 2025. Supabase, Vercel, Next.js. Launching iOS app Christmas 2025.
 
