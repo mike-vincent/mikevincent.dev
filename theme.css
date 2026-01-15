@@ -50,6 +50,9 @@ h2 {
   .intro-section {
     flex-direction: column;
   }
+  .intro-text {
+    width: 100%;
+  }
 }
 
 .intro-text {
@@ -75,6 +78,7 @@ h2 {
   .headshot-image {
     width: 100%;
     height: auto;
+    aspect-ratio: auto;
     order: -1;
   }
 }
