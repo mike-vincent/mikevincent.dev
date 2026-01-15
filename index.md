@@ -40,15 +40,6 @@ Go, Python, TypeScript. Kubernetes, Terraform, AWS, Azure. PostgreSQL, Redis, Ka
 
 ---
 
-## Education
-MS Industrial Engineering, UT Tyler. BS Linguistics + BA Journalism, Penn State.
-
----
-
-[◼️](https://cloud.umami.is/share/fmQv1u9c2nmastyG/mikevincent.dev) Copyright © 2025 Mike Vincent. All Rights Reserved.
-
----
-
 ## Resume
 
 <div class="resume-card">
@@ -165,3 +156,7 @@ September 2024 to Present</p>
 <p><strong>Observability:</strong> Prometheus, Grafana, OpenTelemetry, Datadog, PagerDuty</p>
 <p><strong>Security:</strong> Vault, OAuth2, JWT, PCI-DSS, SOC2, Zero Trust</p>
 </div>
+
+---
+
+[◼️](https://cloud.umami.is/share/fmQv1u9c2nmastyG/mikevincent.dev) Copyright © 2026 Mike Vincent. All Rights Reserved.
