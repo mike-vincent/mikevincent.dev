@@ -4,14 +4,12 @@ title: Home
 ---
 # Mike Vincent
 
-<div class="intro-section">
-<div class="intro-text">
+<div class="intro-section" style="display: flex; flex-direction: row; gap: 1.5rem; align-items: flex-start;">
+<div class="intro-text" style="flex: 1;">
 <h2>Who is Mike Vincent?</h2>
-<p>Software engineer in Los Angeles. I build payment systems, cloud infrastructure, and mobile apps.</p>
-<p>Currently at <strong>PwC</strong> as founding engineer on Capital One Databolt, a vaultless tokenization platform. Zelle is our first customer.</p>
-<p>Previously at <strong>Cubic Transportation Systems</strong>, where I led infrastructure for fare systems serving DC Metro, NYC MTA, LA Metro, BART, and Boston MBTA.</p>
+<p>Full-stack engineer in LA. Go, Python, Kubernetes. Payments at <strong>PwC</strong>. Previously <strong>Cubic</strong> fare systems for 10M+ daily riders.</p>
 </div>
-<img src="assets/images/headshot.png" alt="Mike Vincent headshot" class="headshot-image">
+<img src="assets/images/headshot.png" alt="Mike Vincent headshot" class="headshot-image" style="width: 180px; height: 180px; flex-shrink: 0;">
 </div>
 
 ---
