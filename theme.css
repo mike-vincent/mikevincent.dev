@@ -86,22 +86,34 @@ li {
   line-height: 1.15;
 }
 
-.resume-card h1,
-.resume-card h2,
-.resume-card h3,
-.resume-card p,
-.resume-card li {
+.resume-card h1 {
   color: #000;
+  font-weight: 600;
 }
 
 .resume-card h2 {
+  color: #000;
+  font-weight: 600;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
+}
+
+.resume-card h3 {
+  color: #000;
 }
 
 .resume-card p {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
+}
+
+.resume-card p strong {
+  color: #000;
+  font-weight: 600;
+}
+
+.resume-card p:not(:has(strong)) {
+  color: #8c8c8c;
 }
 
 .resume-card ul {
@@ -113,7 +125,16 @@ li {
 }
 
 .resume-card li {
+  color: #8c8c8c;
   margin-bottom: 0;
+}
+
+.resume-card .secondary {
+  color: #404040;
+}
+
+.resume-card .tertiary {
+  color: #8c8c8c;
 }
 
 .resume-card a {
