@@ -89,13 +89,15 @@ li {
 .resume-card h1 {
   color: #000;
   font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0.25rem;
 }
 
 .resume-card h2 {
   color: #000;
   font-weight: 600;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.25rem;
 }
 
 .resume-card h3 {
@@ -103,8 +105,8 @@ li {
 }
 
 .resume-card p {
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
 }
 
 .resume-card p strong {
@@ -116,7 +118,7 @@ li {
   list-style-type: disc;
   margin-left: 1.5em;
   padding-left: 0;
-  margin-top: 0.25rem;
+  margin-top: 0;
   margin-bottom: 0.75rem;
 }
 
