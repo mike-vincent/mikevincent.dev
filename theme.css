@@ -47,17 +47,14 @@ h2 {
 }
 
 .name-block {
-  display: flex;
+  display: inline-flex;
   gap: 0.75rem;
   margin-bottom: 1rem;
 }
 
-.photo-wrap {
-  display: flex;
-}
-
 .name-photo {
-  height: 100%;
+  align-self: stretch;
+  width: auto;
   aspect-ratio: 1;
   object-fit: cover;
   border-radius: 6px;
