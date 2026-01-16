@@ -53,11 +53,11 @@ h2 {
 }
 
 .name-photo {
-  align-self: stretch;
-  width: auto;
-  aspect-ratio: 1;
+  height: 48px;
+  width: 48px;
   object-fit: cover;
   border-radius: 6px;
+  flex-shrink: 0;
 }
 
 .name {
