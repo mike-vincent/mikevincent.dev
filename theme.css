@@ -24,23 +24,6 @@ body {
   box-sizing: border-box;
 }
 
-.site-nav {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  margin-bottom: 1rem;
-}
-
-.site-nav a {
-  color: var(--muted-foreground);
-  text-decoration: none;
-  font-size: 0.875rem;
-}
-
-.site-nav a:hover {
-  color: var(--foreground);
-}
-
 h1 {
   color: var(--foreground);
   font-size: clamp(1.25rem, 4vw, 1.5rem);
