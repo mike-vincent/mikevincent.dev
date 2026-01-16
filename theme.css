@@ -172,12 +172,9 @@ li {
   color: #000;
   border-radius: 12px;
   padding: 1.5rem;
-  margin-top: 1rem;
+  margin: 1rem;
   line-height: 1.15;
-  width: calc(100vw - 2rem);
   max-width: 800px;
-  margin-left: 50%;
-  transform: translateX(-50%);
 }
 
 .resume-header {
