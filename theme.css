@@ -178,13 +178,19 @@ li {
   max-width: 800px;
   margin-left: 50%;
   transform: translateX(-50%);
-  position: relative;
+}
+
+.resume-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.resume-header h1 {
+  margin: 0;
 }
 
 .copy-markdown {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
   background: #f0f0f0;
   border: 1px solid #ddd;
   border-radius: 6px;
@@ -192,6 +198,7 @@ li {
   font-size: 0.75rem;
   color: #666;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .copy-markdown:hover {
