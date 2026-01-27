@@ -33,18 +33,22 @@
             align-items: center;
             justify-content: space-between;
             padding: 0 24px;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+        .site-header-wrapper {
             position: sticky;
             top: 0;
             z-index: 100;
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
         }
-        .theme-dark .site-header {
+        .theme-dark .site-header-wrapper {
             background: rgba(0, 0, 0, 0.6);
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
         }
-        .theme-light .site-header {
+        .theme-light .site-header-wrapper {
             background: rgba(255, 255, 255, 0.6);
             border-bottom: 1px solid rgba(0, 0, 0, 0.06);
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -82,9 +86,62 @@
         .theme-toggle:hover {
             text-decoration: underline;
         }
+        .search-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+        .search-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+        .theme-dark .search-btn svg path { stroke: rgba(255, 255, 255, 0.8); }
+        .theme-light .search-btn svg path { stroke: rgba(0, 0, 0, 0.8); }
+        .search-container {
+            position: relative;
+        }
+        .search-field {
+            display: none;
+            align-items: center;
+            background: rgba(128, 128, 128, 0.2);
+            border-radius: 8px;
+            padding: 6px 12px;
+            gap: 8px;
+        }
+        .search-field.active {
+            display: flex;
+        }
+        .search-field svg {
+            width: 14px;
+            height: 14px;
+            flex-shrink: 0;
+        }
+        .theme-dark .search-field svg path { stroke: rgba(255, 255, 255, 0.5); }
+        .theme-light .search-field svg path { stroke: rgba(0, 0, 0, 0.5); }
+        .search-field input {
+            background: none;
+            border: none;
+            outline: none;
+            font-size: 14px;
+            width: 180px;
+        }
+        .theme-dark .search-field input { color: #fff; }
+        .theme-light .search-field input { color: #000; }
+        .theme-dark .search-field input::placeholder { color: rgba(255, 255, 255, 0.5); }
+        .theme-light .search-field input::placeholder { color: rgba(0, 0, 0, 0.5); }
+        .search-btn.hidden { display: none; }
+        .footer .footer-content {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
         @media (max-width: 500px) {
             .site-header { padding: 0 16px; }
             .site-header-right { gap: 16px; }
+            .search-field input { width: 120px; }
         }
     </style>
 </head>
@@ -111,19 +168,41 @@
         });
         document.addEventListener('DOMContentLoaded', setTheme);
         setTheme();
+
+        function openSearch() {
+            document.querySelector('.search-btn').classList.add('hidden');
+            document.querySelector('.search-field').classList.add('active');
+            document.querySelector('.search-field input').focus();
+        }
+        function closeSearch() {
+            setTimeout(() => {
+                document.querySelector('.search-field').classList.remove('active');
+                document.querySelector('.search-btn').classList.remove('hidden');
+            }, 100);
+        }
     </script>
 
-    <header class="site-header">
-        <div class="site-header-left">
-            <a href="/">Mike Vincent</a>
-        </div>
-        <nav class="site-header-right">
-            <a href="/posts">Posts</a>
-            <a href="/about">About</a>
-            <a href="/search">Search</a>
-            <button class="theme-toggle" onclick="toggleTheme()">Light</button>
-        </nav>
-    </header>
+    <div class="site-header-wrapper">
+        <header class="site-header">
+            <div class="site-header-left">
+                <a href="/">Mike Vincent</a>
+            </div>
+            <nav class="site-header-right">
+                <a href="/posts">Posts</a>
+                <a href="/about">About</a>
+                <div class="search-container">
+                    <button class="search-btn" onclick="openSearch()">
+                        <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke-linecap="round" stroke-linejoin="round"></path><path d="M3 11C3 15.4183 6.58172 19 11 19C13.213 19 15.2161 18.1015 16.6644 16.6493C18.1077 15.2022 19 13.2053 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11Z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </button>
+                    <div class="search-field">
+                        <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17L21 21" stroke-linecap="round" stroke-linejoin="round"></path><path d="M3 11C3 15.4183 6.58172 19 11 19C13.213 19 15.2161 18.1015 16.6644 16.6493C18.1077 15.2022 19 13.2053 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11Z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                        <input type="text" placeholder="Search for something" onblur="closeSearch()">
+                    </div>
+                </div>
+                <button class="theme-toggle" onclick="toggleTheme()">Light</button>
+            </nav>
+        </header>
+    </div>
 
     <main id="main" class="main" role="main">
     </main>
