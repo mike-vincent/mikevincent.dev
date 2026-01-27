@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="/icon.png" />
+    <link rel="icon" href="/icon.png" />
+    <link rel="stylesheet" href="https://www.apple.com/wss/fonts?families=SF+Pro,v1|SF+Pro+Icons,v1" type="text/css" media="all">
+    <link rel="stylesheet" type="text/css" href="https://testflight.apple.com/styles/interstitial-main.css" />
+    <title>Consectetur Adipiscing - Mike Vincent</title>
+    <meta name="description" content="Understanding the origins of dummy text" />
+    <meta property="og:title" content="Consectetur Adipiscing" />
+    <meta property="og:description" content="Understanding the origins of dummy text" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://mikevincent.dev/read/Lp3vTn8sY4a.html" />
+    <meta property="article:published_time" content="2026-01-20" />
+    <meta property="article:author" content="Mike Vincent" />
+    <link rel="canonical" href="https://mikevincent.dev/read/Lp3vTn8sY4a.html" />
+    <style>
+        .site-header {
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .site-header-left a {
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .theme-dark .site-header-left a { color: #fff; }
+        .theme-light .site-header-left a { color: #000; }
+        .site-header-right {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+        .site-header-right a {
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+        }
+        .theme-dark .site-header-right a { color: rgba(255, 255, 255, 0.8); }
+        .theme-light .site-header-right a { color: rgba(0, 0, 0, 0.8); }
+        .site-header-right a:hover { text-decoration: underline; }
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 0;
+        }
+        .theme-dark .theme-toggle { color: rgba(255, 255, 255, 0.8); }
+        .theme-light .theme-toggle { color: rgba(0, 0, 0, 0.8); }
+        .theme-toggle:hover { text-decoration: underline; }
+        .site-footer {
+            padding: 24px 0;
+            font-size: 12px;
+            border-top: 1px solid rgba(128, 128, 128, 0.2);
+        }
+        .theme-dark .site-footer { color: rgba(255, 255, 255, 0.5); }
+        .theme-light .site-footer { color: rgba(0, 0, 0, 0.5); }
+        .post-content {
+            padding: 48px 0;
+            max-width: 500px;
+            margin-left: 0;
+            margin-right: auto;
+        }
+        .post-content h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0 0 8px;
+        }
+        .theme-dark .post-content h1 { color: #fff; }
+        .theme-light .post-content h1 { color: #000; }
+        .post-content .subtitle {
+            font-size: 16px;
+            margin: 0 0 16px;
+        }
+        .theme-dark .post-content .subtitle { color: rgba(255, 255, 255, 0.6); }
+        .theme-light .post-content .subtitle { color: rgba(0, 0, 0, 0.6); }
+        .post-content .dateline {
+            font-size: 12px;
+            margin: 0 0 24px;
+        }
+        .theme-dark .post-content .dateline { color: rgba(255, 255, 255, 0.4); }
+        .theme-light .post-content .dateline { color: rgba(0, 0, 0, 0.4); }
+        .post-content .body {
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        .theme-dark .post-content .body { color: rgba(255, 255, 255, 0.8); }
+        .theme-light .post-content .body { color: rgba(0, 0, 0, 0.8); }
+        .post-content .body p { margin: 0 0 16px; }
+        @media (max-width: 500px) {
+            .post-content { padding: 24px 0; }
+            .site-header { padding: 0 16px; }
+            .site-header-right { gap: 16px; }
+        }
+    </style>
+</head>
+<body id="overview">
+    <script>
+        let manualTheme = localStorage.getItem('theme');
+        function setTheme() {
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const isDark = manualTheme ? manualTheme === 'dark' : prefersDark;
+            document.body.classList.toggle('theme-dark', isDark);
+            document.body.classList.toggle('theme-light', !isDark);
+            const btn = document.querySelector('.theme-toggle');
+            if (btn) btn.textContent = isDark ? 'Light' : 'Dark';
+        }
+        function toggleTheme() {
+            const isDark = document.body.classList.contains('theme-dark');
+            manualTheme = isDark ? 'light' : 'dark';
+            localStorage.setItem('theme', manualTheme);
+            setTheme();
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+            if (!manualTheme) setTheme();
+        });
+        document.addEventListener('DOMContentLoaded', setTheme);
+        setTheme();
+    </script>
+
+    <div class="site-header-wrapper">
+        <div class="section-content">
+            <div class="row">
+                <div class="column large-centered large-10 small-12">
+                    <header class="site-header">
+                        <div class="site-header-left">
+                            <a href="/">Mike Vincent</a>
+                        </div>
+                        <nav class="site-header-right">
+                            <a href="/">Posts</a>
+                            <a href="/about">Bio</a>
+                            <button class="theme-toggle" onclick="toggleTheme()">Light</button>
+                        </nav>
+                    </header>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main id="main" class="main" role="main">
+        <article class="section">
+            <div class="section-content">
+                <div class="row">
+                    <div class="column large-centered large-10 small-12">
+                        <div class="post-content">
+                            <h1>Consectetur Adipiscing</h1>
+                            <p class="subtitle">Understanding the origins of dummy text</p>
+                            <time class="dateline" datetime="2026-01-20">January 20, 2026</time>
+                            <div class="body">
+                                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <div class="site-footer-wrapper">
+        <div class="section-content">
+            <div class="row">
+                <div class="column large-centered large-10 small-12">
+                    <footer class="site-footer">
+                        Copyright &copy; 2026 Mike Vincent. All rights reserved.
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
