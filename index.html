@@ -30,7 +30,15 @@
     </style>
 </head>
 
-<body id="overview" class="theme-dark">
+<body id="overview">
+    <script>
+        function setTheme() {
+            document.body.classList.toggle('theme-dark', window.matchMedia('(prefers-color-scheme: dark)').matches);
+            document.body.classList.toggle('theme-light', !window.matchMedia('(prefers-color-scheme: dark)').matches);
+        }
+        setTheme();
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setTheme);
+    </script>
 
     <main id="main" class="main" role="main">
         <article>
