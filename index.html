@@ -354,6 +354,13 @@
                 document.querySelectorAll('.post-menu.active').forEach(m => m.classList.remove('active'));
             }
         });
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.post-card').forEach(card => {
+                const slug = card.dataset.slug;
+                const urlEl = card.querySelector('.post-author-url');
+                if (urlEl) urlEl.textContent = `mikevincent.dev/read?p=${slug}`;
+            });
+        });
     </script>
 
     <div class="site-header-wrapper">
@@ -398,7 +405,7 @@
                         <div class="post-author-info">
                             <span class="post-author-name">Mike Vincent</span>
                             <span class="post-author-url-row">
-                                <span class="post-author-url">mikevincent.dev</span>
+                                <span class="post-author-url"></span>
                                 <div class="post-menu-container">
                                     <button class="post-menu-btn" onclick="togglePostMenu(this)">
                                         <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="3" r="1.5"/><circle cx="8" cy="8" r="1.5"/><circle cx="8" cy="13" r="1.5"/></svg>
@@ -425,7 +432,7 @@
                         <div class="post-author-info">
                             <span class="post-author-name">Mike Vincent</span>
                             <span class="post-author-url-row">
-                                <span class="post-author-url">mikevincent.dev</span>
+                                <span class="post-author-url"></span>
                                 <div class="post-menu-container">
                                     <button class="post-menu-btn" onclick="togglePostMenu(this)">
                                         <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="3" r="1.5"/><circle cx="8" cy="8" r="1.5"/><circle cx="8" cy="13" r="1.5"/></svg>
@@ -452,7 +459,7 @@
                         <div class="post-author-info">
                             <span class="post-author-name">Mike Vincent</span>
                             <span class="post-author-url-row">
-                                <span class="post-author-url">mikevincent.dev</span>
+                                <span class="post-author-url"></span>
                                 <div class="post-menu-container">
                                     <button class="post-menu-btn" onclick="togglePostMenu(this)">
                                         <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="3" r="1.5"/><circle cx="8" cy="8" r="1.5"/><circle cx="8" cy="13" r="1.5"/></svg>
