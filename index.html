@@ -133,15 +133,13 @@
         .theme-dark .search-field input::placeholder { color: rgba(255, 255, 255, 0.5); }
         .theme-light .search-field input::placeholder { color: rgba(0, 0, 0, 0.5); }
         .search-btn.hidden { display: none; }
-        .site-footer-wrapper {
-            border-top: 1px solid rgba(128, 128, 128, 0.2);
-        }
         .site-footer {
             max-width: 1440px;
             margin: 0 auto;
             padding: 24px;
             text-align: center;
             font-size: 12px;
+            border-top: 1px solid rgba(128, 128, 128, 0.2);
         }
         .theme-dark .site-footer { color: rgba(255, 255, 255, 0.5); }
         .theme-light .site-footer { color: rgba(0, 0, 0, 0.5); }
@@ -149,9 +147,7 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 24px;
-            max-width: 1440px;
-            margin: 0 auto;
-            padding: 48px 24px;
+            padding: 48px 0;
         }
         .post-card {
             display: flex;
@@ -261,7 +257,11 @@
     </div>
 
     <main id="main" class="main" role="main">
-        <div class="posts-grid">
+        <section class="section">
+            <div class="section-content">
+                <div class="row">
+                    <div class="column large-centered large-10 small-12">
+                        <div class="posts-grid">
             <article class="post-card">
                 <img src="https://i.imgur.com/ZVnaSxU.jpeg" alt="Post image">
                 <h2>Lorem Ipsum Dolor Sit</h2>
@@ -283,7 +283,11 @@
                 <p class="body">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                 <time class="datetime">January 15, 2026</time>
             </article>
-        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <div class="site-footer-wrapper">
