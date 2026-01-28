@@ -59,7 +59,7 @@ const sortedPosts = [...mappedLocalPosts, ...mappedDevtoPosts].sort((a, b) => b.
             const monthsAgo = Math.floor(daysAgo / 30);
             const yearsAgo = Math.floor(daysAgo / 365);
             const relativeTime = daysAgo === 0 ? 'Today' : daysAgo === 1 ? '1 day ago' : `${daysAgo} days ago`;
-            const compactTime = yearsAgo >= 1 ? `${yearsAgo}y` : monthsAgo >= 1 ? `${monthsAgo}m` : weeksAgo >= 1 ? `${weeksAgo}w` : daysAgo >= 1 ? `${daysAgo}d` : hoursAgo >= 1 ? `${hoursAgo}h` : `${minsAgo}m`;
+            const compactTime = yearsAgo >= 1 ? `${yearsAgo}y` : monthsAgo >= 1 ? `${monthsAgo}mo` : weeksAgo >= 1 ? `${weeksAgo}w` : daysAgo >= 1 ? `${daysAgo}d` : hoursAgo >= 1 ? `${hoursAgo}h` : `${minsAgo}m`;
             const linkProps = post.isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {};
             return (
               <div class="post-card" data-index={index} style={index >= 10 ? 'display:none' : ''}>
