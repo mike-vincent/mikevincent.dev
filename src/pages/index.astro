@@ -37,7 +37,7 @@ const mappedDevtoPosts = devtoPosts.map(article => ({
   date: new Date(article.published_at),
   tags: article.tag_list || [],
   image: article.cover_image,
-  body: article.description,
+  body: '',
   isExternal: true,
   url: article.url,
 }));
@@ -83,7 +83,7 @@ const sortedPosts = [...mappedLocalPosts, ...mappedDevtoPosts].sort((a, b) => b.
                     </div>
                   </div>
                   <div class="body">
-                    <p>{post.body?.slice(0, 250)}<span class="show-more">...&nbsp;Show&nbsp;more</span></p>
+                    <p>{post.body}</p>
                   </div>
                   {post.image && (
                     <div class="post-card-thumb">

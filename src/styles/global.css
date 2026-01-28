@@ -416,11 +416,6 @@ a:hover { text-decoration: underline; }
 .theme-dark .subtitle { color: rgba(255, 255, 255, 0.6); }
 .theme-light .subtitle { color: rgba(0, 0, 0, 0.6); }
 
-.show-more {
-  color: #007AFF;
-  vertical-align: middle;
-}
-
 .body {
   font-size: 16px;
   font-weight: 400;
@@ -429,6 +424,12 @@ a:hover { text-decoration: underline; }
 .theme-dark .body { color: rgba(255, 255, 255, 0.8); }
 .theme-light .body { color: rgba(0, 0, 0, 0.8); }
 .body p { margin: 0 0 16px; }
+.post-card .body p {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 
 .post-image {
   max-width: 100%;
