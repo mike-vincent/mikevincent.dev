@@ -69,27 +69,25 @@
         .theme-dark .site-footer { color: rgba(255, 255, 255, 0.5); }
         .theme-light .site-footer { color: rgba(0, 0, 0, 0.5); }
         .resume-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 8px 0 16px;
+            padding: 16px 0 24px;
             border-bottom: 1px solid rgba(128, 128, 128, 0.2);
             margin-bottom: 24px;
         }
         .resume-header h1 {
-            font-size: 20px;
-            font-weight: 600;
+            font-size: 16px;
+            font-weight: 400;
+            font-style: italic;
+            margin: 0 0 8px;
+        }
+        .theme-dark .resume-header h1 { color: rgba(255, 255, 255, 0.8); }
+        .theme-light .resume-header h1 { color: rgba(0, 0, 0, 0.8); }
+        .resume-contact {
+            font-size: 14px;
             margin: 0 0 4px;
         }
-        .theme-dark .resume-header h1 { color: #fff; }
-        .theme-light .resume-header h1 { color: #000; }
-        .resume-tagline {
-            font-size: 14px;
-            margin: 0;
-        }
-        .theme-dark .resume-tagline { color: rgba(255, 255, 255, 0.6); }
-        .theme-light .resume-tagline { color: rgba(0, 0, 0, 0.6); }
-        .resume-tagline a { color: inherit; }
+        .theme-dark .resume-contact { color: rgba(255, 255, 255, 0.7); }
+        .theme-light .resume-contact { color: rgba(0, 0, 0, 0.7); }
+        .resume-contact a { color: inherit; }
         .resume-actions {
             display: flex;
             gap: 12px;
@@ -351,7 +349,8 @@ Founded 501(c)(3) tax-exempt nonprofit preserving American radio drama. Develope
                     <div class="column large-centered large-10 small-12">
                         <div class="resume-header">
                             <h1>Software Engineer, Full Stack, Payments & Infrastructure</h1>
-                            <p class="resume-tagline">Los Angeles, CA | U.S. Citizen | <a href="https://mikevincent.dev">https://mikevincent.dev</a></p>
+                            <p class="resume-contact">Los Angeles, CA | U.S. Citizen</p>
+                            <p class="resume-contact"><a href="https://mikevincent.dev">https://mikevincent.dev</a></p>
                             <!-- <div class="resume-actions">
                                 <button id="copy-btn" onclick="copyMarkdown()">Copy Markdown</button>
                                 <a href="/assets/resume.pdf" download>Download PDF</a>
