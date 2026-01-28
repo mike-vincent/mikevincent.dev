@@ -85,7 +85,7 @@ const sortedPosts = [...mappedLocalPosts, ...mappedDevtoPosts].sort((a, b) => b.
                   {post.body && (
                     <div class="body">
                       <p>{post.body}</p>
-                      <a href={post.url} class="show-more" {...linkProps}>Show&nbsp;more</a>
+                      <a href={post.url} class="show-more" {...linkProps}>...&nbsp;Show&nbsp;more</a>
                     </div>
                   )}
                   {post.image && (

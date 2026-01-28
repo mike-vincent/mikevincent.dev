@@ -1,28 +1,29 @@
 ---
-title: "Building mikevincent.dev with Claude Code"
-subtitle: "A personal site built in one afternoon session"
+title: "Building mikevincent.dev"
+subtitle: "Architecture and design decisions"
 date: 2026-01-27
-tags: ["astro", "claude", "webdev"]
+tags: ["astro", "design", "webdev"]
 image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop"
 ---
 
-I rebuilt my personal site today using Claude Code. Started from scratch with Astro and ended up with something I'm happy with.
+I rebuilt my personal site from scratch. Here's how it's put together.
 
-The setup is simple: Astro for static site generation, markdown files for blog posts, and CSS for styling. No frameworks, no build complexity.
+**Stack**: Astro for static site generation. Markdown files with YAML frontmatter for blog posts. Plain CSS for styling. Deploys to GitHub Pages.
 
-Key features that came together:
+**Layout**: Mobile-first responsive design with two breakpoints at 500px and 1000px. The grid uses flexbox with a centered column that maxes out at 980px.
 
-- Sticky header that hides on scroll, reappears when you scroll up
-- View transitions for smooth page navigation
-- Dev.to integration that pulls in my Python articles
-- Lazy loading with "Show more" for the post list
-- Dark/light theme toggle
-- Responsive layout with two breakpoints (500px, 1000px)
+**Header**: Sticky positioning with a hide-on-scroll-down, show-on-scroll-up behavior. Glass effect using backdrop-filter blur. The scroll detection includes a 30px threshold to prevent flickering at page bottom.
 
-The dev.to integration was interesting. The list API gives titles and descriptions but not full article bodies. So external posts link directly to dev.to while local posts render here.
+**Typography**: SF Pro Text system font stack. Body text at 16px with 1.4 line-height. Titles at 20px. Muted secondary text using rgba for theme-aware opacity.
 
-Everything lives in a single CSS file. No Tailwind, no CSS-in-JS. Just classes and media queries.
+**Theming**: Dark and light modes with CSS custom properties. Theme state persists to localStorage. The toggle sits in the header with a sun/moon icon.
 
-The whole thing took one afternoon. Claude Code handled the iteration loop: I'd describe what I wanted, see the result, adjust. Repeat until it looked right.
+**Post cards**: Avatar aligned to title top using flex-start. Thumbnail images on mobile show full-width with text overlay. On tablet and up, thumbnails shift to a square format on the right side.
 
-Source code is on GitHub. The site deploys to GitHub Pages.
+**View Transitions**: Astro's built-in view transitions API for smooth page navigation. Title elements have transition names for morphing effects between list and detail views.
+
+**Dev.to Integration**: Posts are fetched from the dev.to API at build time. The list endpoint provides titles and descriptions but not full bodies, so those posts link externally.
+
+**Performance**: Lazy loading for the post list shows 10 items initially with a "Show more" button. Next 5 posts are prefetched. Images use native lazy loading.
+
+Source code is on GitHub.
