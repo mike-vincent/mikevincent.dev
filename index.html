@@ -73,7 +73,7 @@
         }
         .theme-dark .site-header-right a { color: rgba(255, 255, 255, 0.8); }
         .theme-light .site-header-right a { color: rgba(0, 0, 0, 0.8); }
-        .site-header-right a:hover {
+        .site-header-right a:hover .nav-text {
             text-decoration: underline;
         }
         .site-header-right a {
@@ -365,8 +365,8 @@
             document.body.classList.toggle('theme-light', !isDark);
             const btn = document.querySelector('.theme-toggle');
             if (btn) btn.innerHTML = isDark
-                ? '<span class="material-symbols-outlined">light_mode</span><span class="theme-text">Light</span><span class="chevrons"><span class="material-symbols-outlined">expand_less</span><span class="material-symbols-outlined">expand_more</span></span>'
-                : '<span class="material-symbols-outlined">dark_mode</span><span class="theme-text">Dark</span><span class="chevrons"><span class="material-symbols-outlined">expand_less</span><span class="material-symbols-outlined">expand_more</span></span>';
+                ? '<span class="material-symbols-outlined">dark_mode</span><span class="theme-text">Dark</span><span class="chevrons"><span class="material-symbols-outlined">expand_less</span><span class="material-symbols-outlined">expand_more</span></span>'
+                : '<span class="material-symbols-outlined">light_mode</span><span class="theme-text">Light</span><span class="chevrons"><span class="material-symbols-outlined">expand_less</span><span class="material-symbols-outlined">expand_more</span></span>';
         }
         function toggleTheme() {
             const isDark = document.body.classList.contains('theme-dark');
@@ -470,9 +470,9 @@
                             <a href="/">Mike Vincent</a>
                         </div>
                         <nav class="site-header-right">
-                            <a href="/"><span class="material-symbols-outlined">dynamic_feed</span> Posts</a>
-                            <a href="/about"><span class="material-symbols-outlined">person</span> Bio</a>
-                            <a href="/resume"><span class="material-symbols-outlined">article</span> Resume</a>
+                            <a href="/"><span class="material-symbols-outlined">dynamic_feed</span><span class="nav-text">Posts</span></a>
+                            <a href="/about"><span class="material-symbols-outlined">person</span><span class="nav-text">Bio</span></a>
+                            <a href="/resume"><span class="material-symbols-outlined">article</span><span class="nav-text">Resume</span></a>
                             <button class="theme-toggle" onclick="toggleTheme()">Light</button>
                         </nav>
                     </header>
@@ -493,7 +493,7 @@
                         <img src="/assets/images/headshot.jpg" alt="Mike Vincent" class="post-avatar">
                         <div class="post-header-text">
                             <div class="title-row">
-                                <h2><a href="/blog/Xk9mNp2qR7w">Lorem Ipsum Dolor Sit</a></h2>
+                                <h2><a href="/blog/2026/01/27/lorem-ipsum-dolor-sit">Lorem Ipsum Dolor Sit</a></h2>
                                 <div class="post-menu-container">
                                     <button class="post-menu-btn" onclick="togglePostMenu(this)">
                                         <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="3" r="1.5"/><circle cx="8" cy="8" r="1.5"/><circle cx="8" cy="13" r="1.5"/></svg>
@@ -521,7 +521,7 @@
                         <img src="/assets/images/headshot.jpg" alt="Mike Vincent" class="post-avatar">
                         <div class="post-header-text">
                             <div class="title-row">
-                                <h2><a href="/blog/Lp3vTn8sY4a">Consectetur Adipiscing</a></h2>
+                                <h2><a href="/blog/2026/01/20/consectetur-adipiscing">Consectetur Adipiscing</a></h2>
                                 <div class="post-menu-container">
                                     <button class="post-menu-btn" onclick="togglePostMenu(this)">
                                         <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="3" r="1.5"/><circle cx="8" cy="8" r="1.5"/><circle cx="8" cy="13" r="1.5"/></svg>
@@ -549,7 +549,7 @@
                         <img src="/assets/images/headshot.jpg" alt="Mike Vincent" class="post-avatar">
                         <div class="post-header-text">
                             <div class="title-row">
-                                <h2><a href="/blog/Bsd7maXz2xY">Sed Do Eiusmod Tempor</a></h2>
+                                <h2><a href="/blog/2026/01/15/sed-do-eiusmod-tempor">Sed Do Eiusmod Tempor</a></h2>
                                 <div class="post-menu-container">
                                     <button class="post-menu-btn" onclick="togglePostMenu(this)">
                                         <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="3" r="1.5"/><circle cx="8" cy="8" r="1.5"/><circle cx="8" cy="13" r="1.5"/></svg>

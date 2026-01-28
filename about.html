@@ -56,7 +56,7 @@
         }
         .theme-dark .site-header-right a { color: rgba(255, 255, 255, 0.8); }
         .theme-light .site-header-right a { color: rgba(0, 0, 0, 0.8); }
-        .site-header-right a:hover {
+        .site-header-right a:hover .nav-text {
             text-decoration: underline;
         }
         .site-header-right a {
@@ -187,14 +187,20 @@
         }
         .theme-dark .bio-content h2 { color: #fff; }
         .theme-light .bio-content h2 { color: #000; }
+        .bio-section-header {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 32px 0 12px;
+        }
+        .theme-dark .bio-section-header { color: #fff; }
+        .theme-light .bio-section-header { color: #000; }
         .bio-section {
             border-radius: 12px;
             padding: 16px;
-            margin: 16px 0;
+            margin: 0 0 16px;
         }
         .theme-dark .bio-section { border: 1px solid rgba(255, 255, 255, 0.2); }
         .theme-light .bio-section { border: 1px solid rgba(0, 0, 0, 0.15); }
-        .bio-section h2 { margin-top: 0; }
         .bio-content p {
             font-size: 16px;
             line-height: 1.6;
@@ -232,8 +238,8 @@
             document.body.classList.toggle('theme-light', !isDark);
             const btn = document.querySelector('.theme-toggle');
             if (btn) btn.innerHTML = isDark
-                ? '<span class="material-symbols-outlined">light_mode</span><span class="theme-text">Light</span><span class="chevrons"><span class="material-symbols-outlined">expand_less</span><span class="material-symbols-outlined">expand_more</span></span>'
-                : '<span class="material-symbols-outlined">dark_mode</span><span class="theme-text">Dark</span><span class="chevrons"><span class="material-symbols-outlined">expand_less</span><span class="material-symbols-outlined">expand_more</span></span>';
+                ? '<span class="material-symbols-outlined">dark_mode</span><span class="theme-text">Dark</span><span class="chevrons"><span class="material-symbols-outlined">expand_less</span><span class="material-symbols-outlined">expand_more</span></span>'
+                : '<span class="material-symbols-outlined">light_mode</span><span class="theme-text">Light</span><span class="chevrons"><span class="material-symbols-outlined">expand_less</span><span class="material-symbols-outlined">expand_more</span></span>';
         }
         function toggleTheme() {
             const isDark = document.body.classList.contains('theme-dark');
@@ -257,9 +263,9 @@
                             <a href="/">Mike Vincent</a>
                         </div>
                         <nav class="site-header-right">
-                            <a href="/"><span class="material-symbols-outlined">dynamic_feed</span> Posts</a>
-                            <a href="/about"><span class="material-symbols-outlined">person</span> Bio</a>
-                            <a href="/resume"><span class="material-symbols-outlined">article</span> Resume</a>
+                            <a href="/"><span class="material-symbols-outlined">dynamic_feed</span><span class="nav-text">Posts</span></a>
+                            <a href="/about"><span class="material-symbols-outlined">person</span><span class="nav-text">Bio</span></a>
+                            <a href="/resume"><span class="material-symbols-outlined">article</span><span class="nav-text">Resume</span></a>
                             <button class="theme-toggle" onclick="toggleTheme()">Light</button>
                         </nav>
                     </header>
@@ -289,8 +295,8 @@
                                         .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
                                         .replace(/^- (.+)$/gm, '<li>$1</li>');
                                     html = html.replace(/(<li>[\s\S]*?<\/li>\n?)+/g, '<ul>$&</ul>');
-                                    // Wrap each h2 and its content in a bio-section div
-                                    html = html.replace(/<h2>(.+?)<\/h2>([\s\S]*?)(?=<h2>|$)/g, '<div class="bio-section"><h2>$1</h2>$2</div>');
+                                    // Put h2 outside the box, content inside
+                                    html = html.replace(/<h2>(.+?)<\/h2>([\s\S]*?)(?=<h2>|$)/g, '<h2 class="bio-section-header">$1</h2><div class="bio-section">$2</div>');
                                     document.getElementById('bio-content').innerHTML = html;
                                 });
                         </script>

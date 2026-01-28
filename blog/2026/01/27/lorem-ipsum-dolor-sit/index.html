@@ -7,15 +7,15 @@
     <link rel="icon" href="/icon.png" />
     <link rel="stylesheet" href="https://www.apple.com/wss/fonts?families=SF+Pro,v1|SF+Pro+Icons,v1" type="text/css" media="all">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-        <title>Sed Do Eiusmod Tempor - Mike Vincent</title>
-    <meta name="description" content="The art of filling space meaningfully" />
-    <meta property="og:title" content="Sed Do Eiusmod Tempor" />
-    <meta property="og:description" content="The art of filling space meaningfully" />
+        <title>Lorem Ipsum Dolor Sit - Mike Vincent</title>
+    <meta name="description" content="A brief exploration of placeholder text" />
+    <meta property="og:title" content="Lorem Ipsum Dolor Sit" />
+    <meta property="og:description" content="A brief exploration of placeholder text" />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://mikevincent.dev/blog/Bsd7maXz2xY" />
-    <meta property="article:published_time" content="2026-01-15" />
+    <meta property="og:url" content="https://mikevincent.dev/blog/2026/01/27/lorem-ipsum-dolor-sit" />
+    <meta property="article:published_time" content="2026-01-27" />
     <meta property="article:author" content="Mike Vincent" />
-    <link rel="canonical" href="https://mikevincent.dev/blog/Bsd7maXz2xY" />
+    <link rel="canonical" href="https://mikevincent.dev/blog/2026/01/27/lorem-ipsum-dolor-sit" />
     <style>
         * { box-sizing: border-box; }
         html, body { margin: 0; padding: 0; font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, sans-serif; font-size: 14px; }
@@ -55,7 +55,7 @@
         }
         .theme-dark .site-header-right a { color: rgba(255, 255, 255, 0.8); }
         .theme-light .site-header-right a { color: rgba(0, 0, 0, 0.8); }
-        .site-header-right a:hover { text-decoration: underline; }
+        .site-header-right a:hover .nav-text { text-decoration: underline; }
         .site-header-right a { display: inline-flex; align-items: center; gap: 4px; }
         .site-header-right a .material-symbols-outlined { font-size: 18px; }
         .theme-toggle {
@@ -169,63 +169,70 @@
         .post-tags a:hover { text-decoration: underline; }
         .share-section {
             padding: 24px 0;
-            border-top: 1px solid rgba(128, 128, 128, 0.2);
+            text-align: center;
         }
-        .share-section h3 {
+        .share-label {
             font-size: 14px;
-            font-weight: 500;
-            margin: 0 0 12px;
+            font-style: italic;
+            display: block;
+            margin-bottom: 12px;
         }
-        .theme-dark .share-section h3 { color: rgba(255, 255, 255, 0.5); }
-        .theme-light .share-section h3 { color: rgba(0, 0, 0, 0.5); }
+        .theme-dark .share-label { color: rgba(255, 255, 255, 0.6); }
+        .theme-light .share-label { color: rgba(0, 0, 0, 0.6); }
         .share-links {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            justify-content: center;
+            gap: 4px;
         }
         .share-links a {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            font-size: 14px;
-            text-decoration: none;
-            padding: 6px 12px;
+            justify-content: center;
+            padding: 8px;
             border-radius: 6px;
+            transition: transform 0.15s;
         }
-        .theme-dark .share-links a { color: #fff; background: rgba(255, 255, 255, 0.1); }
-        .theme-light .share-links a { color: #000; background: rgba(0, 0, 0, 0.05); }
-        .share-links a:hover { opacity: 0.8; }
-        .share-links svg { width: 16px; height: 16px; }
-        .theme-dark .share-links svg { fill: #fff; }
-        .theme-light .share-links svg { fill: #000; }
+        .share-links a:hover { transform: rotate(6deg); }
+        .share-links svg { width: 24px; height: 24px; }
+        .share-links svg.icon-fill { fill: currentColor; }
+        .share-links svg.icon-stroke { fill: none; stroke: currentColor; stroke-width: 2; }
+        .share-links svg.icon-x { fill: currentColor; }
+        .theme-dark .share-links { color: rgba(255, 255, 255, 0.7); }
+        .theme-light .share-links { color: rgba(0, 0, 0, 0.6); }
         .post-nav {
             display: flex;
             justify-content: space-between;
+            gap: 24px;
             padding: 24px 0;
-            border-top: 1px solid rgba(128, 128, 128, 0.2);
+            border-top: 1px dashed rgba(128, 128, 128, 0.3);
         }
         .post-nav-item {
-        }
-        .post-nav-item.next {
-            text-align: right;
-            margin-left: auto;
-        }
-        .post-nav-item h3 {
-            font-size: 14px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin: 0 0 8px;
-        }
-        .theme-dark .post-nav-item h3 { color: rgba(255, 255, 255, 0.4); }
-        .theme-light .post-nav-item h3 { color: rgba(0, 0, 0, 0.4); }
-        .post-nav-item a {
-            font-size: 18px;
-            font-weight: 600;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
             text-decoration: none;
+        }
+        .post-nav-item:hover { opacity: 0.75; }
+        .post-nav-item.next {
+            margin-left: auto;
+            text-align: right;
+            flex-direction: row-reverse;
+        }
+        .nav-chevron { width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px; }
+        .theme-dark .nav-chevron { stroke: rgba(255, 255, 255, 0.5); }
+        .theme-light .nav-chevron { stroke: rgba(0, 0, 0, 0.5); }
+        .nav-label {
+            display: block;
+            font-size: 14px;
+        }
+        .theme-dark .nav-label { color: rgba(255, 255, 255, 0.5); }
+        .theme-light .nav-label { color: rgba(0, 0, 0, 0.5); }
+        .nav-title {
+            display: block;
+            font-size: 16px;
             color: #007AFF;
         }
-        .post-nav-item a:hover { text-decoration: underline; }
         @media (max-width: 500px) {
             .post-content { padding: 16px 0 24px; }
             .site-header { padding: 0 16px; }
@@ -268,9 +275,9 @@
                             <a href="/">Mike Vincent</a>
                         </div>
                         <nav class="site-header-right">
-                            <a href="/"><span class="material-symbols-outlined">dynamic_feed</span> Posts</a>
-                            <a href="/about"><span class="material-symbols-outlined">person</span> Bio</a>
-                            <a href="/resume"><span class="material-symbols-outlined">article</span> Resume</a>
+                            <a href="/"><span class="material-symbols-outlined">dynamic_feed</span><span class="nav-text">Posts</span></a>
+                            <a href="/about"><span class="material-symbols-outlined">person</span><span class="nav-text">Bio</span></a>
+                            <a href="/resume"><span class="material-symbols-outlined">article</span><span class="nav-text">Resume</span></a>
                             <button class="theme-toggle" onclick="toggleTheme()">Light</button>
                         </nav>
                     </header>
@@ -289,43 +296,59 @@
                                 <img src="/assets/images/headshot.jpg" alt="Mike Vincent" class="post-avatar">
                                 <div class="post-header-text">
                                     <div class="title-row">
-                                        <h1>Sed Do Eiusmod Tempor</h1>
+                                        <h1>Lorem Ipsum Dolor Sit</h1>
                                         <button class="post-menu" aria-label="More options">&#8942;</button>
                                     </div>
-                                    <p class="subtitle">The art of filling space meaningfully</p>
+                                    <p class="subtitle">A brief exploration of placeholder text</p>
                                 </div>
                             </div>
-                            <img src="https://picsum.photos/seed/post3/800/400" alt="" class="post-image">
+                            <img src="https://picsum.photos/seed/post1/800/400" alt="" class="post-image">
                             <div class="body">
-                                <p><time class="dateline" datetime="2026-01-15">Jan 15, 2026</time> — Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                <p><time class="dateline" datetime="2026-01-27">Jan 27, 2026</time> — Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                             </div>
                             <ul class="post-tags">
-                                <li><a href="/tags/design">#design</a></li>
-                                <li><a href="/tags/content">#content</a></li>
+                                <li><a href="/tags/lorem">#lorem</a></li>
+                                <li><a href="/tags/ipsum">#ipsum</a></li>
+                                <li><a href="/tags/placeholder">#placeholder</a></li>
                             </ul>
                         </div>
                         <div class="share-section">
-                            <h3>Share this post on</h3>
+                            <span class="share-label">Share this post on:</span>
                             <div class="share-links">
-                                <a href="https://twitter.com/intent/tweet?url=https://mikevincent.dev/blog/Bsd7maXz2xY&text=Sed%20Do%20Eiusmod%20Tempor" target="_blank" rel="noopener">
-                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                                    X
+                                <a href="https://twitter.com/intent/tweet?url=https://mikevincent.dev/blog/2026/01/27/lorem-ipsum-dolor-sit&text=Lorem%20Ipsum%20Dolor%20Sit" target="_blank" rel="noopener" title="Share on X">
+                                    <svg viewBox="0 0 24 24" class="icon-x"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                                 </a>
-                                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://mikevincent.dev/blog/Bsd7maXz2xY" target="_blank" rel="noopener">
-                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                                    LinkedIn
+                                <a href="https://bsky.app/intent/compose?text=Lorem%20Ipsum%20Dolor%20Sit%20https://mikevincent.dev/blog/2026/01/27/lorem-ipsum-dolor-sit" target="_blank" rel="noopener" title="Share on Bluesky">
+                                    <svg viewBox="0 0 600 530" class="icon-fill"><path d="m135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z"/></svg>
                                 </a>
-                                <a href="mailto:?subject=Sed%20Do%20Eiusmod%20Tempor&body=https://mikevincent.dev/blog/Bsd7maXz2xY">
-                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                                    Email
+                                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://mikevincent.dev/blog/2026/01/27/lorem-ipsum-dolor-sit" target="_blank" rel="noopener" title="Share on LinkedIn">
+                                    <svg viewBox="0 0 24 24" class="icon-fill"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                </a>
+                                <a href="https://wa.me/?text=Lorem%20Ipsum%20Dolor%20Sit%20https://mikevincent.dev/blog/2026/01/27/lorem-ipsum-dolor-sit" target="_blank" rel="noopener" title="Share on WhatsApp">
+                                    <svg viewBox="0 0 24 24" class="icon-fill"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                                </a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://mikevincent.dev/blog/2026/01/27/lorem-ipsum-dolor-sit" target="_blank" rel="noopener" title="Share on Facebook">
+                                    <svg viewBox="0 0 24 24" class="icon-fill"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                                </a>
+                                <a href="https://t.me/share/url?url=https://mikevincent.dev/blog/2026/01/27/lorem-ipsum-dolor-sit&text=Lorem%20Ipsum%20Dolor%20Sit" target="_blank" rel="noopener" title="Share on Telegram">
+                                    <svg viewBox="0 0 24 24" class="icon-fill"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                                </a>
+                                <a href="https://pinterest.com/pin/create/button/?url=https://mikevincent.dev/blog/2026/01/27/lorem-ipsum-dolor-sit&description=Lorem%20Ipsum%20Dolor%20Sit" target="_blank" rel="noopener" title="Share on Pinterest">
+                                    <svg viewBox="0 0 24 24" class="icon-fill"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/></svg>
+                                </a>
+                                <a href="mailto:?subject=Lorem%20Ipsum%20Dolor%20Sit&body=https://mikevincent.dev/blog/2026/01/27/lorem-ipsum-dolor-sit" title="Share via Email">
+                                    <svg viewBox="0 0 24 24" class="icon-stroke"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
                                 </a>
                             </div>
                         </div>
                         <div class="post-nav">
-                            <div class="post-nav-item next">
-                                <h3>Next Post</h3>
-                                <a href="/blog/Lp3vTn8sY4a">Consectetur Adipiscing</a>
-                            </div>
+                            <a href="/blog/2026/01/20/consectetur-adipiscing" class="post-nav-item prev">
+                                <svg class="nav-chevron" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                <div class="nav-text">
+                                    <span class="nav-label">Previous Post</span>
+                                    <span class="nav-title">Consectetur Adipiscing</span>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
