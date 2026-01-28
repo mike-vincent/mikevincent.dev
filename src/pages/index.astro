@@ -30,6 +30,11 @@ const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.val
                 <div class="body">
                   <p><time class="dateline" datetime={isoDate}>{dateStr}</time> — {post.body?.slice(0, 150)}...</p>
                 </div>
+                <ul class="post-tags">
+                  {post.data.tags.map(tag => (
+                    <li><a href={`/tags/#${tag}`}>#{tag}</a></li>
+                  ))}
+                </ul>
               </div>
             );
           })}
