@@ -407,9 +407,7 @@ a:hover { text-decoration: underline; }
 .theme-light .body { color: rgba(0, 0, 0, 0.8); }
 .body p { margin: 0 0 16px; }
 .post-card .body p {
-  display: -webkit-box;
-  -webkit-line-clamp: 5;
-  -webkit-box-orient: vertical;
+  max-height: 7em;
   overflow: hidden;
   line-height: 1.4;
 }
