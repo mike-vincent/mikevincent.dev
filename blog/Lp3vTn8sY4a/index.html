@@ -90,18 +90,38 @@
         .section { padding-top: 0 !important; padding-bottom: 0 !important; }
         .post-content {
         }
+        .post-header {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .post-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .post-header-text {
+            flex: 1;
+        }
         .title-row {
             display: flex;
             align-items: center;
             gap: 10px;
         }
         .post-content h1 {
-            font-size: 28px;
-            font-weight: 700;
-            margin: 0 0 8px;
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0 0 4px;
         }
-        .theme-dark .post-content h1 { color: #fff; }
-        .theme-light .post-content h1 { color: #000; }
+        .post-content h1 a, .post-content h1 { color: #007AFF; text-decoration: none; }
+        .post-content h1 a:hover { text-decoration: underline; }
+        .post-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
         .post-menu {
             background: none;
             border: none;
@@ -265,11 +285,17 @@
                 <div class="row">
                     <div class="column large-centered large-10 small-12">
                         <div class="post-content">
-                            <div class="title-row">
-                                <h1>Consectetur Adipiscing</h1>
-                                <button class="post-menu" aria-label="More options">&#8942;</button>
+                            <div class="post-header">
+                                <img src="/assets/images/headshot.jpg" alt="Mike Vincent" class="post-avatar">
+                                <div class="post-header-text">
+                                    <div class="title-row">
+                                        <h1>Consectetur Adipiscing</h1>
+                                        <button class="post-menu" aria-label="More options">&#8942;</button>
+                                    </div>
+                                    <p class="subtitle">Understanding the origins of dummy text</p>
+                                </div>
                             </div>
-                            <p class="subtitle">Understanding the origins of dummy text</p>
+                            <img src="https://i.imgur.com/QXuZ1ab.jpeg" alt="" class="post-image">
                             <div class="body">
                                 <p><time class="dateline" datetime="2026-01-20">Jan 20, 2026</time> — Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                             </div>
