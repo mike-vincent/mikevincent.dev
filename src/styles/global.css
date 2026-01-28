@@ -99,7 +99,6 @@ main { flex: 1; }
   font-weight: 700;
 }
 .site-header-right a .material-symbols-outlined { font-size: 18px; }
-.site-header-right a .nav-emoji { font-size: 16px; }
 
 /* Theme Toggle */
 .theme-toggle {
