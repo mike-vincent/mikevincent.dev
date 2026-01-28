@@ -34,7 +34,7 @@
             justify-content: space-between;
         }
         .site-header-left a {
-            font-size: 24px;
+            font-size: 28px;
             font-weight: 700;
             text-decoration: none;
         }
@@ -77,10 +77,13 @@
         .theme-toggle .chevrons {
             display: flex;
             flex-direction: column;
+            align-items: center;
+            justify-content: center;
             line-height: 0;
-            margin-top: -2px;
         }
-        .theme-toggle .chevrons .material-symbols-outlined { font-size: 12px; margin: -3px 0; }
+        .theme-toggle .chevrons .material-symbols-outlined { font-size: 10px; margin: -2px 0; transition: margin 0.15s; }
+        .theme-toggle:hover .chevrons .material-symbols-outlined:first-child { margin-top: -4px; }
+        .theme-toggle:hover .chevrons .material-symbols-outlined:last-child { margin-bottom: -4px; }
         .search-btn {
             background: none;
             border: none;
@@ -131,13 +134,46 @@
         .site-footer {
             padding: 24px 0;
             font-size: 12px;
-            border-top: 1px solid rgba(128, 128, 128, 0.2);
         }
         .theme-dark .site-footer { color: rgba(255, 255, 255, 0.5); }
         .theme-light .site-footer { color: rgba(0, 0, 0, 0.5); }
         .section { padding-top: 0 !important; padding-bottom: 0 !important; }
         .bio-content {
         }
+        .bio-location {
+            font-size: 14px;
+            margin: 0 0 8px;
+        }
+        .theme-dark .bio-location { color: rgba(255, 255, 255, 0.6); }
+        .theme-light .bio-location { color: rgba(0, 0, 0, 0.6); }
+        .bio-tagline {
+            font-size: 18px;
+            font-weight: 500;
+            margin: 0 0 24px;
+        }
+        .theme-dark .bio-tagline { color: #fff; }
+        .theme-light .bio-tagline { color: #000; }
+        .bio-content h2 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 24px 0 12px;
+        }
+        .theme-dark .bio-content h2 { color: #fff; }
+        .theme-light .bio-content h2 { color: #000; }
+        .bio-list {
+            margin: 0 0 16px;
+            padding-left: 0;
+            list-style: none;
+        }
+        .bio-list li {
+            font-size: 15px;
+            line-height: 1.8;
+        }
+        .bio-content a {
+            color: #007AFF;
+            text-decoration: none;
+        }
+        .bio-content a:hover { text-decoration: underline; }
         .bio-content h1 {
             font-size: 32px;
             font-weight: 700;
@@ -230,13 +266,25 @@
             <div class="section-content">
                 <div class="row">
                     <div class="column large-centered large-10 small-12">
-                        <div class="bio-content">
-                            <p>I'm a software engineer in Los Angeles working on platform engineering at PwC. I build infrastructure for payment systems, tokenization platforms, and cloud-native applications using Go, Python, TypeScript, Kubernetes, and Terraform. Before PwC, I spent seven years at Cubic Transportation Systems shipping fare collection systems for DC Metro, NYC MTA, BART, and LA Metro.</p>
-
-                            <p>Outside of work, I founded The Archive of American Radio, a 501(c)(3) nonprofit preserving American radio drama. We built Anthology, a mobile app for listening to public-domain audio from the golden age of radio. I also built Timer Fantasy, a macOS menu bar app with beautiful analog timers and iCloud sync, and Io Pictures Corporation, a film distribution company that has sold rights to Tubi, Amazon, Apple, and Google.</p>
-
-                            <p>I write about Python on Dev.to and share open-source tools on GitHub. I studied linguistics and journalism at Penn State, then got a master's in industrial engineering from UT Tyler. I'm a U.S. citizen based in Los Angeles.</p>
+                        <div class="bio-content" id="bio-content">
+                            <p>Loading...</p>
                         </div>
+                        <script>
+                            fetch('https://raw.githubusercontent.com/mike-vincent/mike-vincent/main/README.md')
+                                .then(r => r.text())
+                                .then(md => {
+                                    let html = md
+                                        .replace(/^# Hi, I'm Mike\n+/, '')
+                                        .replace(/📍 \*\*(.+?)\*\* \| 📻 \*\*(.+?)\*\* \| ⚙️ \*\*(.+?)\*\*/g, '<p class="bio-location">$1 · $2 · $3</p>')
+                                        .replace(/^> (.+)$/gm, '<p class="bio-tagline">$1</p>')
+                                        .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+                                        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
+                                        .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+                                        .replace(/^- (.+)$/gm, '<li>$1</li>');
+                                    html = html.replace(/(<li>[\s\S]*?<\/li>\n?)+/g, '<ul class="bio-list">$&</ul>');
+                                    document.getElementById('bio-content').innerHTML = html;
+                                });
+                        </script>
                     </div>
                 </div>
             </div>

@@ -30,7 +30,7 @@
             justify-content: space-between;
         }
         .site-header-left a {
-            font-size: 24px;
+            font-size: 28px;
             font-weight: 700;
             text-decoration: none;
         }
@@ -71,17 +71,45 @@
         .theme-toggle .chevrons {
             display: flex;
             flex-direction: column;
+            align-items: center;
+            justify-content: center;
             line-height: 0;
-            margin-top: -2px;
         }
-        .theme-toggle .chevrons .material-symbols-outlined { font-size: 12px; margin: -3px 0; }
+        .theme-toggle .chevrons .material-symbols-outlined { font-size: 10px; margin: -2px 0; transition: margin 0.15s; }
+        .theme-toggle:hover .chevrons .material-symbols-outlined:first-child { margin-top: -4px; }
+        .theme-toggle:hover .chevrons .material-symbols-outlined:last-child { margin-bottom: -4px; }
         .site-footer {
             padding: 24px 0;
             font-size: 12px;
-            border-top: 1px solid rgba(128, 128, 128, 0.2);
         }
         .theme-dark .site-footer { color: rgba(255, 255, 255, 0.5); }
         .theme-light .site-footer { color: rgba(0, 0, 0, 0.5); }
+        .resume-wrapper {
+            position: relative;
+        }
+        .resume-actions {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .resume-actions a, .resume-actions button {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            background: rgba(128, 128, 128, 0.15);
+        }
+        .theme-dark .resume-actions a, .theme-dark .resume-actions button { color: rgba(255, 255, 255, 0.8); }
+        .theme-light .resume-actions a, .theme-light .resume-actions button { color: rgba(0, 0, 0, 0.8); }
+        .resume-actions a:hover, .resume-actions button:hover { background: rgba(128, 128, 128, 0.25); }
         .resume-header {
             margin-bottom: 24px;
         }
@@ -360,15 +388,16 @@ Founded 501(c)(3) tax-exempt nonprofit preserving American radio drama. Develope
             <div class="section-content">
                 <div class="row">
                     <div class="column large-centered large-10 small-12">
-                        <div class="resume-header">
-                            <h1>Software Engineer, Full Stack, Payments & Infrastructure</h1>
-                            <p class="resume-contact">Los Angeles, CA | U.S. Citizen</p>
-                            <p class="resume-contact"><a href="https://mikevincent.dev">https://mikevincent.dev</a></p>
-                            <!-- <div class="resume-actions">
-                                <button id="copy-btn" onclick="copyMarkdown()">Copy Markdown</button>
+                        <div class="resume-wrapper">
+                            <div class="resume-actions">
+                                <button onclick="copyMarkdown()">Copy Markdown</button>
                                 <a href="/assets/resume.pdf" download>Download PDF</a>
-                            </div> -->
-                        </div>
+                            </div>
+                            <div class="resume-header">
+                                <h1>Software Engineer, Full Stack, Payments & Infrastructure</h1>
+                                <p class="resume-contact">Los Angeles, CA | U.S. Citizen</p>
+                                <p class="resume-contact"><a href="https://mikevincent.dev">https://mikevincent.dev</a></p>
+                            </div>
                         <div class="resume-content">
                             <h2>Education</h2>
 
@@ -481,6 +510,7 @@ Founded 501(c)(3) tax-exempt nonprofit preserving American radio drama. Develope
                                 <li><strong>Observability:</strong> Prometheus, Grafana, OpenTelemetry, Datadog, PagerDuty</li>
                                 <li><strong>Security:</strong> Vault, OAuth2, JWT, PCI-DSS, SOC2, Zero Trust</li>
                             </ul>
+                        </div>
                         </div>
                     </div>
                 </div>
