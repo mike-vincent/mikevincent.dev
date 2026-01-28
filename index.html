@@ -27,6 +27,14 @@
             width: 90px;
             height: 90px;
         }
+        .site-header-wrapper {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .theme-dark .site-header-wrapper { background: #000; }
+        .theme-light .site-header-wrapper { background: #fff; }
+        .site-header-wrapper .section-content { padding: 0; }
         .site-header {
             height: 55px;
             display: flex;
@@ -163,8 +171,8 @@
             font-weight: 600;
             margin: 16px 0 4px;
         }
-        .post-card h2 { color: #007AFF; }
-        .post-card h2:hover { text-decoration: underline; cursor: pointer; }
+        .post-card h2 a { color: #007AFF; text-decoration: none; }
+        .post-card h2 a:hover { text-decoration: underline; }
         .post-meta {
             display: flex;
             align-items: center;
@@ -257,15 +265,14 @@
         .post-card .body {
             font-size: 14px;
             line-height: 1.5;
-            margin: 0 0 12px;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
         .theme-dark .post-card .body { color: rgba(255, 255, 255, 0.8); }
         .theme-light .post-card .body { color: rgba(0, 0, 0, 0.8); }
-        .post-card .datetime {
-            font-size: 12px;
-        }
-        .theme-dark .post-card .datetime { color: rgba(255, 255, 255, 0.4); }
-        .theme-light .post-card .datetime { color: rgba(0, 0, 0, 0.4); }
         .section { padding-top: 0 !important; padding-bottom: 0 !important; }
         @media (max-width: 500px) {
             .posts-grid { padding: 24px 0; }
@@ -334,7 +341,7 @@
             const title = card.querySelector('h2').textContent;
             const subtitle = card.querySelector('.subtitle').textContent;
             const body = card.querySelector('.body').textContent;
-            const date = card.querySelector('.datetime').textContent;
+            const date = card.querySelector('time').textContent;
             const slug = card.dataset.slug;
             const md = `# ${title}\n\n*${subtitle}*\n\n${body}\n\n---\n${date} · https://mikevincent.dev/read?p=${slug}`;
             navigator.clipboard.writeText(md);
@@ -433,7 +440,7 @@
                             </div>
                         </div>
                     </div>
-                    <h2>Lorem Ipsum Dolor Sit</h2>
+                    <h2><a href="/read?p=Xk9mNp2qR7w">Lorem Ipsum Dolor Sit</a></h2>
                     <p class="subtitle"><time datetime="2026-01-27">Jan 27, 2026</time> — A brief exploration of placeholder text</p>
                     <p class="body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
@@ -464,7 +471,7 @@
                             </div>
                         </div>
                     </div>
-                    <h2>Consectetur Adipiscing</h2>
+                    <h2><a href="/read?p=Lp3vTn8sY4a">Consectetur Adipiscing</a></h2>
                     <p class="subtitle"><time datetime="2026-01-20">Jan 20, 2026</time> — Understanding the origins of dummy text</p>
                     <p class="body">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 </div>
@@ -495,7 +502,7 @@
                             </div>
                         </div>
                     </div>
-                    <h2>Sed Do Eiusmod Tempor</h2>
+                    <h2><a href="/read?p=Bsd7maXz2xY">Sed Do Eiusmod Tempor</a></h2>
                     <p class="subtitle"><time datetime="2026-01-15">Jan 15, 2026</time> — The art of filling space meaningfully</p>
                     <p class="body">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                 </div>
