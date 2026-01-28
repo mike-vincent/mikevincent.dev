@@ -21,6 +21,7 @@ const prevPost = currentIndex < sortedPosts.length - 1 ? sortedPosts[currentInde
 const nextPost = currentIndex > 0 ? sortedPosts[currentIndex - 1] : null;
 
 const url = `https://mikevincent.dev/blog/${slug}/`;
+const dateStr = date.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' });
 ---
 
 <Base title={`${title} - Mike Vincent`} description={subtitle} image={image}>
@@ -35,6 +36,7 @@ const url = `https://mikevincent.dev/blog/${slug}/`;
                   <button class="post-menu" aria-label="More options"><span class="material-symbols-outlined">more_vert</span></button>
                 </div>
                 <p class="subtitle">{subtitle}</p>
+                <p class="post-date">{dateStr}</p>
               </div>
             </div>
 
@@ -91,6 +93,14 @@ const url = `https://mikevincent.dev/blog/${slug}/`;
   }
   :global(.theme-dark) .post-content h1 { color: #fff; }
   :global(.theme-light) .post-content h1 { color: #000; }
+
+  .post-date {
+    font-size: 14px;
+    margin: 8px 0 0;
+  }
+  :global(.theme-dark) .post-date { color: rgba(255, 255, 255, 0.6); }
+  :global(.theme-light) .post-date { color: rgba(0, 0, 0, 0.6); }
+
   .post-content .body > :first-child {
     display: inline;
   }
