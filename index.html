@@ -89,14 +89,15 @@
         }
         .theme-dark .theme-toggle { color: rgba(255, 255, 255, 0.8); }
         .theme-light .theme-toggle { color: rgba(0, 0, 0, 0.8); }
-        .theme-toggle:hover { text-decoration: underline; }
+        .theme-toggle:hover .theme-text { text-decoration: underline; }
         .theme-toggle .material-symbols-outlined { font-size: 18px; }
         .theme-toggle .chevrons {
             display: flex;
             flex-direction: column;
             line-height: 0;
+            margin-top: -2px;
         }
-        .theme-toggle .chevrons .material-symbols-outlined { font-size: 12px; }
+        .theme-toggle .chevrons .material-symbols-outlined { font-size: 12px; margin: -3px 0; }
         .search-btn {
             background: none;
             border: none;
@@ -327,8 +328,8 @@
             document.body.classList.toggle('theme-light', !isDark);
             const btn = document.querySelector('.theme-toggle');
             if (btn) btn.innerHTML = isDark
-                ? '<span class="material-symbols-outlined">light_mode</span>Light<span class="chevrons"><span class="material-symbols-outlined">expand_less</span><span class="material-symbols-outlined">expand_more</span></span>'
-                : '<span class="material-symbols-outlined">dark_mode</span>Dark<span class="chevrons"><span class="material-symbols-outlined">expand_less</span><span class="material-symbols-outlined">expand_more</span></span>';
+                ? '<span class="material-symbols-outlined">light_mode</span><span class="theme-text">Light</span><span class="chevrons"><span class="material-symbols-outlined">expand_less</span><span class="material-symbols-outlined">expand_more</span></span>'
+                : '<span class="material-symbols-outlined">dark_mode</span><span class="theme-text">Dark</span><span class="chevrons"><span class="material-symbols-outlined">expand_less</span><span class="material-symbols-outlined">expand_more</span></span>';
         }
         function toggleTheme() {
             const isDark = document.body.classList.contains('theme-dark');
@@ -411,11 +412,8 @@
         });
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.post-card').forEach(card => {
-                const slug = card.dataset.slug;
                 const dateStr = card.dataset.date;
-                const urlEl = card.querySelector('.post-author-url');
                 const dateEl = card.querySelector('.post-author-date');
-                if (urlEl) urlEl.textContent = `mikevincent.dev/blog/${slug}`;
                 if (dateEl && dateStr) {
                     const d = new Date(dateStr + 'T12:00:00');
                     const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -459,7 +457,6 @@
                             <img src="/assets/images/headshot.jpg" alt="Mike Vincent">
                             <div class="post-author-info">
                                 <span class="post-author-name">Mike Vincent</span>
-                                <span class="post-author-url"></span>
                                 <span class="post-author-date"></span>
                                 <span class="post-author-url-row">
                                     <div class="post-menu-container">
@@ -492,7 +489,6 @@
                             <img src="/assets/images/headshot.jpg" alt="Mike Vincent">
                             <div class="post-author-info">
                                 <span class="post-author-name">Mike Vincent</span>
-                                <span class="post-author-url"></span>
                                 <span class="post-author-date"></span>
                                 <span class="post-author-url-row">
                                     <div class="post-menu-container">
@@ -525,7 +521,6 @@
                             <img src="/assets/images/headshot.jpg" alt="Mike Vincent">
                             <div class="post-author-info">
                                 <span class="post-author-name">Mike Vincent</span>
-                                <span class="post-author-url"></span>
                                 <span class="post-author-date"></span>
                                 <span class="post-author-url-row">
                                     <div class="post-menu-container">
