@@ -1,0 +1,87 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Mike Vincent - Software Engineer" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/icon.png" />
+  <link rel="stylesheet" href="https://www.apple.com/wss/fonts?families=SF+Pro,v1|SF+Pro+Icons,v1" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+</head>
+<body>
+  <script is:inline>
+    let manualTheme = localStorage.getItem('theme');
+    function setTheme() {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const isDark = manualTheme ? manualTheme === 'dark' : prefersDark;
+      document.body.classList.toggle('theme-dark', isDark);
+      document.body.classList.toggle('theme-light', !isDark);
+      const btn = document.querySelector('.theme-toggle');
+      if (btn) btn.innerHTML = isDark
+        ? '<span class="material-symbols-outlined">dark_mode</span><span class="theme-text">Dark</span><span class="chevrons"><span class="material-symbols-outlined">expand_less</span><span class="material-symbols-outlined">expand_more</span></span>'
+        : '<span class="material-symbols-outlined">light_mode</span><span class="theme-text">Light</span><span class="chevrons"><span class="material-symbols-outlined">expand_less</span><span class="material-symbols-outlined">expand_more</span></span>';
+    }
+    function toggleTheme() {
+      const isDark = document.body.classList.contains('theme-dark');
+      manualTheme = isDark ? 'light' : 'dark';
+      localStorage.setItem('theme', manualTheme);
+      setTheme();
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+      if (!manualTheme) setTheme();
+    });
+    document.addEventListener('DOMContentLoaded', setTheme);
+    setTheme();
+  </script>
+
+  <div class="site-header-wrapper">
+    <div class="section-content">
+      <div class="row">
+        <div class="column large-centered large-10 small-12">
+          <header class="site-header">
+            <div class="site-header-left">
+              <a href="/">Mike Vincent</a>
+            </div>
+            <nav class="site-header-right">
+              <a href="/"><span class="material-symbols-outlined">dynamic_feed</span><span class="nav-text">Posts</span></a>
+              <a href="/about"><span class="material-symbols-outlined">person</span><span class="nav-text">Bio</span></a>
+              <a href="/resume"><span class="material-symbols-outlined">article</span><span class="nav-text">Resume</span></a>
+              <button class="theme-toggle" onclick="toggleTheme()">Light</button>
+            </nav>
+          </header>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <slot />
+  </main>
+
+  <div class="site-footer-wrapper">
+    <div class="section-content">
+      <div class="row">
+        <div class="column large-centered large-10 small-12">
+          <footer class="site-footer">
+            Copyright &copy; {new Date().getFullYear()} Mike Vincent. All rights reserved.
+          </footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>

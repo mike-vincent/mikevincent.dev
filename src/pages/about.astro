@@ -1,0 +1,76 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="About - Mike Vincent" description="About Mike Vincent - Software Engineer">
+  <section class="section">
+    <div class="section-content">
+      <div class="row">
+        <div class="column large-centered large-10 small-12">
+          <div class="bio-content" id="bio-content">
+            <p>Loading...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<script is:inline>
+  fetch('https://raw.githubusercontent.com/mike-vincent/mike-vincent/main/README.md')
+    .then(r => r.text())
+    .then(md => {
+      let html = md
+        .replace(/^# Hi, I'm Mike\n+/, '')
+        .replace(/📍 \*\*(.+?)\*\* \| 📻 \*\*(.+?)\*\* \| ⚙️ \*\*(.+?)\*\*/g, '<p class="bio-location">$1 · $2 · $3</p>')
+        .replace(/^> (.+)$/gm, '<p class="bio-tagline">$1</p>')
+        .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
+        .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+        .replace(/^- (.+)$/gm, '<li>$1</li>');
+      html = html.replace(/(<li>[\s\S]*?<\/li>\n?)+/g, '<ul>$&</ul>');
+      html = html.replace(/<h2>(.+?)<\/h2>([\s\S]*?)(?=<h2>|$)/g, '<h2 class="bio-section-header">$1</h2><div class="bio-section">$2</div>');
+      document.getElementById('bio-content').innerHTML = html;
+    });
+</script>
+
+<style>
+  .bio-location {
+    font-size: 14px;
+    margin: 0 0 8px;
+  }
+  :global(.theme-dark) .bio-location { color: rgba(255, 255, 255, 0.6); }
+  :global(.theme-light) .bio-location { color: rgba(0, 0, 0, 0.6); }
+
+  .bio-tagline {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 0 24px;
+  }
+
+  .bio-content :global(a) {
+    color: #007AFF;
+    text-decoration: none;
+  }
+  .bio-content :global(a:hover) { text-decoration: underline; }
+
+  .bio-content :global(p) {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0 0 16px;
+  }
+  :global(.theme-dark) .bio-content :global(p) { color: rgba(255, 255, 255, 0.8); }
+  :global(.theme-light) .bio-content :global(p) { color: rgba(0, 0, 0, 0.8); }
+
+  .bio-content :global(ul) {
+    margin: 0 0 16px;
+    padding-left: 24px;
+  }
+  .bio-content :global(li) {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+  :global(.theme-dark) .bio-content :global(li) { color: rgba(255, 255, 255, 0.8); }
+  :global(.theme-light) .bio-content :global(li) { color: rgba(0, 0, 0, 0.8); }
+</style>
