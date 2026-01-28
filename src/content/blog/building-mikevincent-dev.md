@@ -1,6 +1,6 @@
 ---
-title: "Building mikevincent.dev"
-subtitle: "A personal site built with Claude Code in one session"
+title: "Building mikevincent.dev with Claude Code"
+subtitle: "A personal site built in one afternoon session"
 date: 2026-01-27
 tags: ["astro", "claude", "webdev"]
 image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop"
