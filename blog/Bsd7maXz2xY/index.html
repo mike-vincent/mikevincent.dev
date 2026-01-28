@@ -80,13 +80,18 @@
         .theme-toggle .chevrons .material-symbols-outlined { font-size: 12px; margin: -3px 0; }
         .site-footer {
             padding: 24px 0;
-            font-size: 12px;
+            font-size: 14px;
             border-top: 1px solid rgba(128, 128, 128, 0.2);
         }
         .theme-dark .site-footer { color: rgba(255, 255, 255, 0.5); }
         .theme-light .site-footer { color: rgba(0, 0, 0, 0.5); }
         .section { padding-top: 0 !important; padding-bottom: 0 !important; }
         .post-content {
+        }
+        .title-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         .post-content h1 {
             font-size: 28px;
@@ -95,6 +100,18 @@
         }
         .theme-dark .post-content h1 { color: #fff; }
         .theme-light .post-content h1 { color: #000; }
+        .post-menu {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 0;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        .theme-dark .post-menu { color: rgba(255, 255, 255, 0.5); }
+        .theme-light .post-menu { color: rgba(0, 0, 0, 0.5); }
+        .post-menu:hover { opacity: 0.7; }
         .post-content .subtitle {
             font-size: 16px;
             margin: 0 0 16px;
@@ -102,9 +119,7 @@
         .theme-dark .post-content .subtitle { color: rgba(255, 255, 255, 0.6); }
         .theme-light .post-content .subtitle { color: rgba(0, 0, 0, 0.6); }
         .post-content .dateline {
-            font-size: 12px;
-            margin: 0 0 24px;
-            display: block;
+            font-size: 16px;
         }
         .theme-dark .post-content .dateline { color: rgba(255, 255, 255, 0.4); }
         .theme-light .post-content .dateline { color: rgba(0, 0, 0, 0.4); }
@@ -124,22 +139,18 @@
             list-style: none;
         }
         .post-tags a {
-            display: inline-flex;
-            align-items: center;
-            font-size: 13px;
+            font-size: 14px;
             text-decoration: none;
-            padding: 4px 10px;
-            border-radius: 4px;
         }
-        .theme-dark .post-tags a { color: rgba(255, 255, 255, 0.7); background: rgba(255, 255, 255, 0.1); }
-        .theme-light .post-tags a { color: rgba(0, 0, 0, 0.7); background: rgba(0, 0, 0, 0.05); }
+        .theme-dark .post-tags a { color: rgba(255, 255, 255, 0.5); }
+        .theme-light .post-tags a { color: rgba(0, 0, 0, 0.5); }
         .post-tags a:hover { text-decoration: underline; }
         .share-section {
             padding: 24px 0;
             border-top: 1px solid rgba(128, 128, 128, 0.2);
         }
         .share-section h3 {
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 500;
             margin: 0 0 12px;
         }
@@ -154,7 +165,7 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            font-size: 13px;
+            font-size: 14px;
             text-decoration: none;
             padding: 6px 12px;
             border-radius: 6px;
@@ -178,7 +189,7 @@
             margin-left: auto;
         }
         .post-nav-item h3 {
-            font-size: 12px;
+            font-size: 14px;
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -210,8 +221,8 @@
             document.body.classList.toggle('theme-light', !isDark);
             const btn = document.querySelector('.theme-toggle');
             if (btn) btn.innerHTML = isDark
-                ? '<span class="material-symbols-outlined">light_mode</span><span class="theme-text">Light</span><span class="chevrons"><span class="material-symbols-outlined">expand_less</span><span class="material-symbols-outlined">expand_more</span></span>'
-                : '<span class="material-symbols-outlined">dark_mode</span><span class="theme-text">Dark</span><span class="chevrons"><span class="material-symbols-outlined">expand_less</span><span class="material-symbols-outlined">expand_more</span></span>';
+                ? '<span class="material-symbols-outlined">dark_mode</span><span class="theme-text">Dark</span><span class="chevrons"><span class="material-symbols-outlined">expand_less</span><span class="material-symbols-outlined">expand_more</span></span>'
+                : '<span class="material-symbols-outlined">light_mode</span><span class="theme-text">Light</span><span class="chevrons"><span class="material-symbols-outlined">expand_less</span><span class="material-symbols-outlined">expand_more</span></span>';
         }
         function toggleTheme() {
             const isDark = document.body.classList.contains('theme-dark');
@@ -235,9 +246,9 @@
                             <a href="/">Mike Vincent</a>
                         </div>
                         <nav class="site-header-right">
-                            <a href="/">Posts</a>
-                            <a href="/about">Bio</a>
-                            <a href="/resume">Resume</a>
+                            <a href="/"><span class="material-symbols-outlined">dynamic_feed</span> Posts</a>
+                            <a href="/about"><span class="material-symbols-outlined">person</span> Bio</a>
+                            <a href="/resume"><span class="material-symbols-outlined">article</span> Resume</a>
                             <button class="theme-toggle" onclick="toggleTheme()">Light</button>
                         </nav>
                     </header>
@@ -252,11 +263,13 @@
                 <div class="row">
                     <div class="column large-centered large-10 small-12">
                         <div class="post-content">
-                            <h1>Sed Do Eiusmod Tempor</h1>
+                            <div class="title-row">
+                                <h1>Sed Do Eiusmod Tempor</h1>
+                                <button class="post-menu" aria-label="More options">&#8942;</button>
+                            </div>
                             <p class="subtitle">The art of filling space meaningfully</p>
-                            <time class="dateline" datetime="2026-01-15">Jan 15, 2026</time>
                             <div class="body">
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                <p><time class="dateline" datetime="2026-01-15">Jan 15, 2026</time> — Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                             </div>
                             <ul class="post-tags">
                                 <li><a href="/tags/design">#design</a></li>
