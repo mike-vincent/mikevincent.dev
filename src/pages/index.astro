@@ -4,6 +4,16 @@ import { getCollection } from 'astro:content';
 
 const localPosts = await getCollection('blog', ({ data }) => !data.draft);
 
+// Strip markdown formatting for plain text preview
+const stripMarkdown = (md: string) => md
+  .replace(/\*\*([^*]+)\*\*/g, '$1')  // bold
+  .replace(/\*([^*]+)\*/g, '$1')       // italic
+  .replace(/`([^`]+)`/g, '$1')         // code
+  .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')  // links
+  .replace(/^#+\s+/gm, '')             // headers
+  .replace(/^[-*]\s+/gm, '')           // list items
+  .trim();
+
 const sortedPosts = localPosts
   .map(post => ({
     id: post.id,
@@ -12,7 +22,7 @@ const sortedPosts = localPosts
     date: post.data.date,
     tags: post.data.tags,
     image: post.data.image,
-    body: post.body,
+    body: stripMarkdown(post.body || ''),
     url: `/blog/${post.id}/`,
   }))
   .sort((a, b) => b.date.valueOf() - a.date.valueOf());
@@ -55,7 +65,7 @@ const sortedPosts = localPosts
                   {post.body && (
                     <div class="body">
                       <p>{post.body}</p>
-                      <a href={post.url} class="show-more">...&nbsp;Show&nbsp;more</a>
+                      <a href={post.url} class="show-more">Show&nbsp;more</a>
                     </div>
                   )}
                   {post.image && (
