@@ -193,7 +193,7 @@ a:hover { text-decoration: underline; }
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 2px;
-  max-width: 16ch;
+  max-width: 25ch;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -204,7 +204,7 @@ a:hover { text-decoration: underline; }
   line-height: 1.2;
   opacity: 0.9;
   margin-bottom: 2px;
-  max-width: 16ch;
+  max-width: 25ch;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
