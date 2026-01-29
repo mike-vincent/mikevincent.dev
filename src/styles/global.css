@@ -63,8 +63,8 @@ main { flex: 1; }
 }
 
 .site-header-left a {
-  font-size: 32px;
-  font-weight: 800;
+  font-size: 24px;
+  font-weight: 700;
   text-decoration: none;
 }
 .theme-dark .site-header-left a { color: #fff; }
@@ -74,7 +74,7 @@ main { flex: 1; }
 .site-header-right {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 16px;
 }
 
 .site-header-right a {
