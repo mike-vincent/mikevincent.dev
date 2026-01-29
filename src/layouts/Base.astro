@@ -43,6 +43,10 @@ const canonicalURL = new URL(Astro.url.pathname, "https://mikevincent.dev");
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={ogImage} />
 
+  <!-- Safari browser chrome color -->
+  <meta name="theme-color" content="#fff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#000" media="(prefers-color-scheme: dark)" />
+
   <ViewTransitions />
 </head>
 <body>
@@ -53,6 +57,9 @@ const canonicalURL = new URL(Astro.url.pathname, "https://mikevincent.dev");
       const isDark = themeMode === 'system' ? prefersDark : themeMode === 'dark';
       document.body.classList.toggle('theme-dark', isDark);
       document.body.classList.toggle('theme-light', !isDark);
+      // Update Safari browser chrome color
+      const themeColor = isDark ? '#000' : '#fff';
+      document.querySelectorAll('meta[name="theme-color"]').forEach(m => m.content = themeColor);
       const btn = document.querySelector('.theme-toggle');
       if (btn) {
         const icon = themeMode === 'system' ? 'contrast' : (themeMode === 'dark' ? 'dark_mode' : 'light_mode');
