@@ -399,7 +399,8 @@ a:hover { text-decoration: underline; }
 .theme-light .subtitle { color: rgba(0, 0, 0, 0.6); }
 
 .body {
-  font-size: 16px;
+  font-family: "SF Mono", Menlo, Monaco, "Courier New", monospace;
+  font-size: 15px;
   font-weight: 400;
   line-height: 1.618;
 }
