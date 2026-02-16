@@ -3,21 +3,31 @@ import Base from '../layouts/Base.astro';
 
 const sections = [
   {
-    header: "Banking Technology",
+    header: "Banking",
     items: [
-      { name: "Capital One Databolt", url: "https://www.capitalone.com", description: "Vaultless tokenization platform" },
-      { name: "Zelle", url: "https://www.zellepay.com", description: "Peer-to-peer payments" },
+      { name: "Capital One Databolt", url: "https://www.capitalone.com/software/products/databolt/", description: "Vaultless tokenization platform" },
     ],
   },
   {
-    header: "Mortgage Lending",
+    header: "Content Licensing & Distribution",
     items: [
-      { name: "Fannie Mae Collateral Underwriter", url: "https://singlefamily.fanniemae.com/applications-technology/collateral-underwriter", description: "Mortgage appraisal tool" },
-      { name: "HUD Capital Needs Assessment eTool", url: "https://www.hud.gov", description: "Public housing inspection platform" },
+      { name: "Io Pictures Corporation", url: "https://iopictures.com", description: "Motion picture distribution" },
     ],
   },
   {
-    header: "Fare Payments Infrastructure",
+    header: "Defense",
+    items: [
+      { name: "Lockheed Martin", url: "https://www.lockheedmartin.com", description: "Intranet on headless Drupal" },
+    ],
+  },
+  {
+    header: "E-Commerce",
+    items: [
+      { name: "Canadian Tire", url: "https://www.canadiantire.ca", description: "E-commerce store" },
+    ],
+  },
+  {
+    header: "Fare Payments",
     items: [
       { name: "DC Metro", url: "https://www.wmata.com", description: "Fare systems infrastructure" },
       { name: "NYC MTA", url: "https://new.mta.info", description: "Fare systems infrastructure" },
@@ -30,28 +40,6 @@ const sections = [
     ],
   },
   {
-    header: "Film & Entertainment",
-    items: [
-      { name: "Tubi", url: "https://tubitv.com", description: "Film distribution" },
-      { name: "Amazon", url: "https://www.amazon.com", description: "Film distribution" },
-      { name: "Apple", url: "https://tv.apple.com", description: "Film distribution" },
-      { name: "Google", url: "https://play.google.com/store/movies", description: "Film distribution" },
-      { name: "NY Fashion Week", url: "https://nyfw.com", description: "2015 mobile app" },
-    ],
-  },
-  {
-    header: "E-Commerce",
-    items: [
-      { name: "Canadian Tire", url: "https://www.canadiantire.ca", description: "E-commerce store" },
-    ],
-  },
-  {
-    header: "Defense",
-    items: [
-      { name: "Lockheed Martin", url: "https://www.lockheedmartin.com", description: "Intranet on headless Drupal" },
-    ],
-  },
-  {
     header: "Healthcare & Civic",
     items: [
       { name: "Poison Control", url: "https://www.poison.org", description: "Mobile app" },
@@ -59,15 +47,34 @@ const sections = [
     ],
   },
   {
+    header: "Mobile Apps",
+    items: [
+      { name: "NY Fashion Week", url: "https://nyfw.com", description: "2015 mobile app" },
+    ],
+  },
+  {
+    header: "Mortgage Lending",
+    items: [
+      { name: "Fannie Mae Collateral Underwriter", url: "https://singlefamily.fanniemae.com/applications-technology/collateral-underwriter", description: "Mortgage appraisal tool" },
+      { name: "HUD Capital Needs Assessment eTool", url: "https://www.hud.gov/hud-partners/multifamily-cna", description: "Public housing inspection platform" },
+    ],
+  },
+  {
     header: "Nonprofit",
     items: [
-      { name: "The Archive of American Radio", url: "https://archiveofamericanradio.org", description: "501(c)(3) preserving radio drama" },
+      { name: "The Archive of American Radio, Inc.", url: "https://archiveofamericanradio.org", description: "501(c)(3) preserving radio drama" },
+    ],
+  },
+  {
+    header: "Payments",
+    items: [
+      { name: "Zelle", url: "https://www.zellepay.com", description: "Peer-to-peer payments" },
     ],
   },
   {
     header: "Writing",
     items: [
-      { name: "Quark's Outlines", url: "https://dev.to/mike-vincent", description: "Blog on dev.to" },
+      { name: "Python Tutorials by Mike Vincent", url: "https://dev.to/mike-vincent", description: "Blog on dev.to" },
     ],
   },
 ];
@@ -99,8 +106,20 @@ const sections = [
 </Base>
 
 <style>
+  :global(.page-content):has(.project-section) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
   .project-section {
-    margin-bottom: 24px;
+    margin-bottom: 0;
+    border-top: 1px solid rgba(128, 128, 128, 0.2);
+    margin-left: -11px;
+    margin-right: -11px;
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+  .project-section:first-child {
+    border-top: none;
   }
   .project-section-header {
     font-size: 14px;

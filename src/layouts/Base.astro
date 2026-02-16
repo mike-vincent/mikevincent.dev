@@ -126,14 +126,14 @@ const canonicalURL = new URL(Astro.url.pathname, "https://mikevincent.dev");
     <div class="section-content">
       <header class="site-header">
         <a href="/" class="site-header-link"><div class="avatar-wrap"><span class="avatar">MV</span></div>Mike Vincent</a>
+        <button class="theme-toggle" onclick="toggleTheme()">Light</button>
         {isResume && (
           <button class="header-action" id="copy-md-btn" title="Copy Markdown"><span class="material-symbols-outlined">content_copy</span></button>
           <a class="header-action" href="/resume.pdf" download title="Download PDF"><span class="material-symbols-outlined">download</span></a>
           <button class="header-action" onclick="window.print()" title="Print"><span class="material-symbols-outlined">print</span></button>
           <button class="header-action" id="copy-url-btn" title="Copy Link"><span class="material-symbols-outlined">link</span></button>
         )}
-        <button class="header-action" id="share-btn" title="Share"><span class="material-symbols-outlined">share</span></button>
-        <button class="theme-toggle" onclick="toggleTheme()">Light</button>
+        <button class="header-action" id="share-btn" title="Share"><span class="material-symbols-outlined">ios_share</span></button>
       </header>
       <nav class="site-nav-row">
         <a href="/home" class={isHome ? 'active' : ''}>
