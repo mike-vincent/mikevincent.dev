@@ -112,8 +112,6 @@ const canonicalURL = new URL(Astro.url.pathname, "https://mikevincent.dev");
           navigator.share({ title: document.title, url: window.location.href });
         } else {
           navigator.clipboard.writeText(window.location.href);
-          btn.querySelector('.material-symbols-outlined').textContent = 'check';
-          setTimeout(() => btn.querySelector('.material-symbols-outlined').textContent = 'share', 1500);
         }
       };
     }

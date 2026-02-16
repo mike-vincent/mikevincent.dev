@@ -241,19 +241,10 @@ Founded 501(c)(3) tax-exempt nonprofit preserving American radio drama. Develope
 <script is:inline define:vars={{ resumeMarkdown }}>
   document.getElementById('copy-md-btn').addEventListener('click', function() {
     navigator.clipboard.writeText(resumeMarkdown);
-    this.querySelector('span:last-child') || this.appendChild(document.createTextNode(''));
-    const text = this.childNodes[this.childNodes.length - 1];
-    const original = text.textContent;
-    text.textContent = 'copied!';
-    setTimeout(() => text.textContent = original, 1500);
   });
 
   document.getElementById('copy-url-btn').addEventListener('click', function() {
     navigator.clipboard.writeText('https://mikevincent.dev/resume');
-    const text = this.childNodes[this.childNodes.length - 1];
-    const original = text.textContent;
-    text.textContent = 'copied!';
-    setTimeout(() => text.textContent = original, 1500);
   });
 </script>
 
