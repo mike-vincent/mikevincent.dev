@@ -1,0 +1,165 @@
+---
+import Base from '../layouts/Base.astro';
+
+const sections = [
+  {
+    header: "Banking Technology",
+    items: [
+      { name: "Capital One Databolt", url: "https://www.capitalone.com", description: "Vaultless tokenization platform" },
+      { name: "Zelle", url: "https://www.zellepay.com", description: "Peer-to-peer payments" },
+    ],
+  },
+  {
+    header: "Mortgage Lending",
+    items: [
+      { name: "Fannie Mae Collateral Underwriter", url: "https://singlefamily.fanniemae.com/applications-technology/collateral-underwriter", description: "Mortgage appraisal tool" },
+      { name: "HUD Capital Needs Assessment eTool", url: "https://www.hud.gov", description: "Public housing inspection platform" },
+    ],
+  },
+  {
+    header: "Fare Payments Infrastructure",
+    items: [
+      { name: "DC Metro", url: "https://www.wmata.com", description: "Fare systems infrastructure" },
+      { name: "NYC MTA", url: "https://new.mta.info", description: "Fare systems infrastructure" },
+      { name: "BART", url: "https://www.bart.gov", description: "Fare systems infrastructure" },
+      { name: "LA Metro", url: "https://www.metro.net", description: "Fare systems infrastructure" },
+      { name: "Boston MBTA", url: "https://www.mbta.com", description: "Fare systems infrastructure" },
+      { name: "SF Muni", url: "https://www.sfmta.com", description: "Fare systems infrastructure" },
+      { name: "San Diego MTS", url: "https://www.sdmts.com", description: "Fare systems infrastructure" },
+      { name: "PATCO", url: "https://www.rfrsa.com", description: "Fare systems infrastructure" },
+    ],
+  },
+  {
+    header: "Film & Entertainment",
+    items: [
+      { name: "Tubi", url: "https://tubitv.com", description: "Film distribution" },
+      { name: "Amazon", url: "https://www.amazon.com", description: "Film distribution" },
+      { name: "Apple", url: "https://tv.apple.com", description: "Film distribution" },
+      { name: "Google", url: "https://play.google.com/store/movies", description: "Film distribution" },
+      { name: "NY Fashion Week", url: "https://nyfw.com", description: "2015 mobile app" },
+    ],
+  },
+  {
+    header: "E-Commerce",
+    items: [
+      { name: "Canadian Tire", url: "https://www.canadiantire.ca", description: "E-commerce store" },
+    ],
+  },
+  {
+    header: "Defense",
+    items: [
+      { name: "Lockheed Martin", url: "https://www.lockheedmartin.com", description: "Intranet on headless Drupal" },
+    ],
+  },
+  {
+    header: "Healthcare & Civic",
+    items: [
+      { name: "Poison Control", url: "https://www.poison.org", description: "Mobile app" },
+      { name: "U.S. Conference of Catholic Bishops", url: "https://www.usccb.org", description: "Mobile app" },
+    ],
+  },
+  {
+    header: "Nonprofit",
+    items: [
+      { name: "The Archive of American Radio", url: "https://archiveofamericanradio.org", description: "501(c)(3) preserving radio drama" },
+    ],
+  },
+  {
+    header: "Writing",
+    items: [
+      { name: "Quark's Outlines", url: "https://dev.to/mike-vincent", description: "Blog on dev.to" },
+    ],
+  },
+];
+---
+
+<Base title="Projects - Mike Vincent" description="Projects by Mike Vincent">
+  {sections.map(section => (
+    <section class="project-section">
+      <h2 class="project-section-header">{section.header}</h2>
+      <ul class="projects-list">
+        {section.items.map(p => (
+          <li>
+            {p.url ? (
+              <a href={p.url} target="_blank" rel="noopener noreferrer">
+                <span class="project-name">{p.name}</span>
+                <span class="project-desc">{p.description}</span>
+              </a>
+            ) : (
+              <span class="project-link-none">
+                <span class="project-name">{p.name}</span>
+                <span class="project-desc">{p.description}</span>
+              </span>
+            )}
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+</Base>
+
+<style>
+  .project-section {
+    margin-bottom: 24px;
+  }
+  .project-section-header {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0;
+    padding: 16px 8px 8px;
+  }
+  :global(.theme-dark) .project-section-header { color: rgba(255, 255, 255, 0.5); }
+  :global(.theme-light) .project-section-header { color: rgba(0, 0, 0, 0.5); }
+  .projects-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .projects-list li {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+  }
+  .projects-list li:last-child {
+    border-bottom: none;
+  }
+  .projects-list a,
+  .projects-list .project-link-none {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding: 14px 8px;
+    text-decoration: none;
+    min-height: 44px;
+  }
+  .projects-list a:hover {
+    text-decoration: none;
+  }
+  :global(.theme-dark) .projects-list a:hover { background: rgba(255, 255, 255, 0.04); }
+  :global(.theme-light) .projects-list a:hover { background: rgba(0, 0, 0, 0.02); }
+  .project-name {
+    font-size: 16px;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+  :global(.theme-dark) .project-name { color: #fff; }
+  :global(.theme-light) .project-name { color: #000; }
+  .project-desc {
+    font-size: 14px;
+    text-align: right;
+  }
+  :global(.theme-dark) .project-desc { color: rgba(255, 255, 255, 0.4); }
+  :global(.theme-light) .project-desc { color: rgba(0, 0, 0, 0.4); }
+
+  @media (max-width: 499px) {
+    .projects-list a,
+    .projects-list .project-link-none {
+      flex-direction: column;
+      gap: 2px;
+    }
+    .project-desc {
+      text-align: left;
+    }
+  }
+</style>

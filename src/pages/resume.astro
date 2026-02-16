@@ -123,28 +123,6 @@ Founded 501(c)(3) tax-exempt nonprofit preserving American radio drama. Develope
 ---
 
 <Base title="Resume - Mike Vincent" description="Resume of Mike Vincent - Software Engineer">
-  <div class="section-content">
-    <div class="row">
-      <div class="column large-centered large-10 small-12">
-        <div class="resume-wrapper">
-          <div class="resume-actions">
-            <button class="resume-btn" id="copy-md-btn">
-              <span class="material-symbols-outlined">content_copy</span>
-              Markdown
-            </button>
-            <a href="/resume.pdf" class="resume-btn" download>
-              <span class="material-symbols-outlined">download</span>
-              PDF
-            </a>
-            <button class="resume-btn" onclick="window.print()">
-              <span class="material-symbols-outlined">print</span>
-              Print
-            </button>
-            <button class="resume-btn" id="copy-url-btn">
-              <span class="material-symbols-outlined">link</span>
-              Link
-            </button>
-          </div>
           <div class="resume-header">
             <h1>Software Engineer, Full Stack, Payments & Infrastructure</h1>
             <p class="resume-contact">Los Angeles, CA | U.S. Citizen</p>
@@ -258,10 +236,6 @@ Founded 501(c)(3) tax-exempt nonprofit preserving American radio drama. Develope
               <li><strong>Security:</strong> Vault, OAuth2, JWT, PCI-DSS, SOC2, Zero Trust</li>
             </ul>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </Base>
 
 <script is:inline define:vars={{ resumeMarkdown }}>
@@ -284,40 +258,6 @@ Founded 501(c)(3) tax-exempt nonprofit preserving American radio drama. Develope
 </script>
 
 <style>
-  .resume-wrapper { position: relative; }
-
-  .resume-actions {
-    position: fixed;
-    top: 54px;
-    right: max(22px, calc((100vw - 816px) / 2));
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 0;
-    z-index: 101;
-    transition: top 0.3s ease;
-  }
-
-  .resume-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 6px;
-    padding: 0 8px;
-    min-height: 44px;
-    font-size: 16px;
-    font-weight: 700;
-    text-decoration: none;
-    cursor: pointer;
-    border: none;
-    background: none;
-    white-space: nowrap;
-  }
-  .resume-btn:hover { text-decoration: none; }
-  :global(.theme-dark) .resume-btn { color: rgba(255, 255, 255, 0.8); }
-  :global(.theme-light) .resume-btn { color: rgba(0, 0, 0, 0.8); }
-  .resume-btn .material-symbols-outlined { font-size: 18px; }
-
   .resume-header { margin-bottom: 24px; }
   .resume-header h1 {
     font-size: 16px;

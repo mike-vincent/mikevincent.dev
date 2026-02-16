@@ -9,12 +9,12 @@ interface Props {
 
 const { title, description = "Mike Vincent - Software Engineer", image } = Astro.props;
 const pathname = Astro.url.pathname;
-const knownPages = ['/', '/about', '/about/', '/resume', '/resume/', '/tags', '/tags/'];
-const isPost = !knownPages.includes(pathname) && pathname !== '/';
-const isHome = pathname === '/';
+const isHome = pathname === '/home' || pathname === '/home/';
 const isBio = pathname === '/about' || pathname === '/about/';
 const isResume = pathname === '/resume' || pathname === '/resume/';
-const ogImage = image || "https://mikevincent.dev/assets/images/og-default.jpg";
+const isProjects = pathname === '/projects' || pathname === '/projects/';
+const isDetail = isBio || isResume || isProjects;
+const ogImage = image || "https://mikevincent.dev/og.png";
 const canonicalURL = new URL(Astro.url.pathname, "https://mikevincent.dev");
 ---
 
@@ -63,8 +63,7 @@ const canonicalURL = new URL(Astro.url.pathname, "https://mikevincent.dev");
       const btn = document.querySelector('.theme-toggle');
       if (btn) {
         const icon = themeMode === 'system' ? 'contrast' : (themeMode === 'dark' ? 'dark_mode' : 'light_mode');
-        const label = themeMode === 'system' ? 'System' : (themeMode === 'dark' ? 'Dark' : 'Light');
-        btn.innerHTML = `<span class="material-symbols-outlined">${icon}</span><span class="theme-text">${label}</span><span class="chevrons"><span class="material-symbols-outlined">expand_less</span><span class="material-symbols-outlined">expand_more</span></span>`;
+        btn.innerHTML = `<span class="material-symbols-outlined">${icon}</span>`;
       }
     }
     function toggleTheme() {
@@ -104,59 +103,72 @@ const canonicalURL = new URL(Astro.url.pathname, "https://mikevincent.dev");
     }
     document.addEventListener('DOMContentLoaded', initScrollHeader);
     document.addEventListener('astro:after-swap', initScrollHeader);
+
+    function initShare() {
+      const btn = document.getElementById('share-btn');
+      if (!btn) return;
+      btn.onclick = () => {
+        if (navigator.share) {
+          navigator.share({ title: document.title, url: window.location.href });
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          btn.querySelector('.material-symbols-outlined').textContent = 'check';
+          setTimeout(() => btn.querySelector('.material-symbols-outlined').textContent = 'share', 1500);
+        }
+      };
+    }
+    document.addEventListener('DOMContentLoaded', initShare);
+    document.addEventListener('astro:after-swap', initShare);
   </script>
 
+  <div class="page-rails"></div>
   <div class="site-header-wrapper">
     <div class="section-content">
-      <div class="row">
-        <div class="column large-centered large-10 small-12">
-          <header class="site-header">
-            <div class="site-header-top">
-              <div class="site-header-left">
-                <a href="/">Mike Vincent</a>
-              </div>
-              <button class="theme-toggle" onclick="toggleTheme()">Light</button>
-            </div>
-            <nav class="site-header-right">
-              {(isBio || isResume || isPost) ? (
-                <a href="/" class="nav-back">
-                  <span class="material-symbols-outlined" transition:animate="fade">west</span>
-                  {isBio ? (
-                    <span class="nav-text" data-text="Bio" transition:name="nav-bio">Bio</span>
-                  ) : isResume ? (
-                    <span class="nav-text" data-text="Resume" transition:name="nav-resume">Resume</span>
-                  ) : (
-                    <span class="nav-text" data-text="Post">Post</span>
-                  )}
-                </a>
-              ) : (
-                <>
-                  <a href="/about"><span class="material-symbols-outlined" transition:animate="fade">person</span><span class="nav-text" data-text="Bio" transition:name="nav-bio">Bio</span></a>
-                  <a href="/resume"><span class="material-symbols-outlined" transition:animate="fade">article</span><span class="nav-text" data-text="Resume" transition:name="nav-resume">Resume</span></a>
-                  <a href="https://dev.to/mike-vincent" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined" transition:animate="fade">public</span><span class="nav-text">Quark's Outlines</span></a>
-                </>
-              )}
-            </nav>
-          </header>
-        </div>
-      </div>
+      <header class="site-header">
+        <a href="/" class="site-header-link"><div class="avatar-wrap"><span class="avatar">MV</span></div>Mike Vincent</a>
+        {isResume && (
+          <button class="header-action" id="copy-md-btn" title="Copy Markdown"><span class="material-symbols-outlined">content_copy</span></button>
+          <a class="header-action" href="/resume.pdf" download title="Download PDF"><span class="material-symbols-outlined">download</span></a>
+          <button class="header-action" onclick="window.print()" title="Print"><span class="material-symbols-outlined">print</span></button>
+          <button class="header-action" id="copy-url-btn" title="Copy Link"><span class="material-symbols-outlined">link</span></button>
+        )}
+        <button class="header-action" id="share-btn" title="Share"><span class="material-symbols-outlined">share</span></button>
+        <button class="theme-toggle" onclick="toggleTheme()">Light</button>
+      </header>
+      <nav class="site-nav-row">
+        <a href="/home" class={isHome ? 'active' : ''}>
+          <span class="nav-tab-inner">
+            <span class="icon-square"><span class={`material-symbols-outlined${isHome ? ' filled' : ''}`}>home</span></span>
+            <span>Home</span>
+          </span>
+        </a>
+        <a href="/resume" class={isResume ? 'active' : ''}>
+          <span class="nav-tab-inner">
+            <span class="icon-square"><span class={`material-symbols-outlined${isResume ? ' filled' : ''}`}>article</span></span>
+            <span>Resume</span>
+          </span>
+        </a>
+        <a href="/projects" class={isProjects ? 'active' : ''}>
+          <span class="nav-tab-inner">
+            <span class="icon-square"><span class={`material-symbols-outlined${isProjects ? ' filled' : ''}`}>work</span></span>
+            <span>Projects</span>
+          </span>
+        </a>
+      </nav>
     </div>
   </div>
 
   <main>
-    <slot />
+    <div class="section-content page-content">
+      <slot />
+    </div>
   </main>
 
-  <div class="site-footer-wrapper">
-    <div class="section-content">
-      <div class="row">
-        <div class="column large-centered large-10 small-12">
-          <footer class="site-footer">
-            Copyright &copy; {new Date().getFullYear()} Mike Vincent. All rights reserved.
-          </footer>
-        </div>
-      </div>
-    </div>
+  <div class="site-footer-border"></div>
+  <div class="section-content">
+    <footer class="site-footer">
+      Copyright &copy; {new Date().getFullYear()} Mike Vincent. All rights reserved.
+    </footer>
   </div>
 </body>
 </html>
