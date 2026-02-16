@@ -1,55 +1,50 @@
 ---
 import Base from '../layouts/Base.astro';
+
+const res = await fetch('https://raw.githubusercontent.com/mike-vincent/mike-vincent/main/README.md');
+const md = await res.text();
+
+// Parse markdown to HTML
+let html = md
+  .replace(/^# .+\n+/, '')
+  .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
+  .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+  .replace(/\n\n+/g, '\n\n')
+  .split('\n\n')
+  .map(block => {
+    block = block.trim();
+    if (!block) return '';
+    return '<p>' + block + '</p>';
+  })
+  .join('\n');
 ---
 
 <Base title="Mike Vincent" description="Mike Vincent - Software Engineer">
-  <div class="home">
-    <div class="hero">
-      <p class="tagline">Software engineer. Payments, banking, and infrastructure.</p>
-      <p class="sub">Los Angeles. Currently at <strong>PwC</strong>.</p>
-    </div>
-    <div class="links">
-      <a href="/resume">Resume</a>
-      <a href="/projects">Projects</a>
-      <a href="https://www.linkedin.com/in/michael-thomas-vincent/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a href="https://github.com/mike-vincent" target="_blank" rel="noopener noreferrer">GitHub</a>
-    </div>
-  </div>
+  <div class="home" set:html={html} />
 </Base>
 
 <style>
   .home {
     padding: 16px 0;
   }
-  .hero {
-    margin-bottom: 16px;
-  }
-  .tagline {
-    font-size: 22px;
-    font-weight: 600;
-    line-height: 1.4;
-    margin: 0 0 12px;
-    letter-spacing: -0.01em;
-  }
-  :global(.theme-dark) .tagline { color: #fff; }
-  :global(.theme-light) .tagline { color: #000; }
-  .sub {
-    font-size: 15px;
+  .home :global(p) {
+    font-size: 16px;
     line-height: 1.5;
-    margin: 0;
+    margin: 0 0 12px;
   }
-  .sub strong { font-weight: 600; }
-  :global(.theme-dark) .sub { color: rgba(255, 255, 255, 0.5); }
-  :global(.theme-light) .sub { color: rgba(0, 0, 0, 0.45); }
-  .links {
-    display: flex;
-    gap: 24px;
+  .home :global(p:last-child) {
+    margin-bottom: 0;
   }
-  .links a {
-    font-size: 15px;
-    font-weight: 500;
+  :global(.theme-dark) .home :global(p) { color: rgba(255, 255, 255, 0.6); }
+  :global(.theme-light) .home :global(p) { color: rgba(0, 0, 0, 0.5); }
+  .home :global(strong) {
+    font-weight: 600;
+  }
+  :global(.theme-dark) .home :global(strong) { color: #fff; }
+  :global(.theme-light) .home :global(strong) { color: #000; }
+  .home :global(a) {
+    color: #007AFF;
     text-decoration: none;
   }
-  .links a { color: #007AFF; }
-  .links a:hover { text-decoration: underline; }
+  .home :global(a:hover) { text-decoration: underline; }
 </style>
