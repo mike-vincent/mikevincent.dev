@@ -9,7 +9,7 @@ interface Props {
 
 const { title, description = "Mike Vincent - Software Engineer", image } = Astro.props;
 const pathname = Astro.url.pathname;
-const isHome = pathname === '/home' || pathname === '/home/';
+const isHome = pathname === '/' || pathname === '';
 const isBio = pathname === '/about' || pathname === '/about/';
 const isResume = pathname === '/resume' || pathname === '/resume/';
 const isProjects = pathname === '/projects' || pathname === '/projects/';
@@ -131,10 +131,10 @@ const canonicalURL = new URL(Astro.url.pathname, "https://mikevincent.dev");
           <button class="header-action" onclick="window.print()" title="Print"><span class="material-symbols-outlined">print</span></button>
           <button class="header-action" id="copy-url-btn" title="Copy Link"><span class="material-symbols-outlined">link</span></button>
         )}
-        <button class="header-action" id="share-btn" title="Share"><span class="material-symbols-outlined">ios_share</span></button>
+        <button class="header-action share-btn" id="share-btn" title="Share Resume"><span class="material-symbols-outlined">ios_share</span><span class="share-label">Share Resume</span></button>
       </header>
       <nav class="site-nav-row">
-        <a href="/home" class={isHome ? 'active' : ''}>
+        <a href="/" class={isHome ? 'active' : ''}>
           <span class="nav-tab-inner">
             <span class="icon-square"><span class={`material-symbols-outlined${isHome ? ' filled' : ''}`}>home</span></span>
             <span>Home</span>

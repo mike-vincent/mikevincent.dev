@@ -195,6 +195,8 @@ main { flex: 1; }
   text-decoration: none;
 }
 .header-action .material-symbols-outlined { font-size: 18px; }
+.share-btn .material-symbols-outlined { padding: 11px; }
+.share-label { font-size: 13px; font-weight: 500; padding-right: 11px; }
 .theme-dark .header-action { color: rgba(255, 255, 255, 0.8); }
 .theme-light .header-action { color: rgba(0, 0, 0, 0.8); }
 .theme-dark .header-action:hover { background: rgba(255, 255, 255, 0.06); }
