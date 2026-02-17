@@ -42,6 +42,15 @@ for (const block of blocks) {
     grid-template-columns: 1fr 1fr;
     gap: 16px;
   }
+  .tile {
+    padding: 12px;
+    border-radius: 8px;
+    transition: background 0.15s;
+  }
+  :global(.theme-dark) .tile { border: 1px solid rgba(255,255,255,0.12); }
+  :global(.theme-light) .tile { border: 1px solid rgba(0,0,0,0.1); }
+  :global(.theme-dark) .tile:hover { background: rgba(255,255,255,0.04); }
+  :global(.theme-light) .tile:hover { background: rgba(0,0,0,0.03); }
   .tile-heading {
     font-size: 14px;
     font-weight: 600;
