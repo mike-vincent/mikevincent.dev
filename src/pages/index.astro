@@ -4,60 +4,62 @@ import Base from '../layouts/Base.astro';
 const res = await fetch('https://raw.githubusercontent.com/mike-vincent/mike-vincent/main/README.md');
 const md = await res.text();
 
-// Parse markdown to HTML
-let html = md
+// Parse markdown into sections (h2 + body pairs)
+const sections: { heading: string; body: string }[] = [];
+const blocks = md
   .replace(/^# .+\n+/, '')
   .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
   .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
   .replace(/\n\n+/g, '\n\n')
   .split('\n\n')
-  .map(block => {
-    block = block.trim();
-    if (!block) return '';
-    if (block.startsWith('## ')) return '<h2>' + block.slice(3) + '</h2>';
-    return '<p>' + block + '</p>';
-  })
-  .join('\n');
+  .map(b => b.trim())
+  .filter(Boolean);
+
+for (const block of blocks) {
+  if (block.startsWith('## ')) {
+    sections.push({ heading: block.slice(3), body: '' });
+  } else if (sections.length > 0) {
+    sections[sections.length - 1].body = block;
+  }
+}
 ---
 
 <Base title="Mike Vincent" description="Mike Vincent - Software Engineer">
-  <div class="home" set:html={html} />
+  <div class="home">
+    {sections.map(s => (
+      <div class="tile">
+        <div class="tile-heading">{s.heading}</div>
+        <div class="tile-body" set:html={s.body} />
+      </div>
+    ))}
+  </div>
 </Base>
 
 <style>
   .home {
     padding: 16px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
   }
-  .home :global(h2) {
-    font-size: 20px;
+  .tile-heading {
+    font-size: 14px;
     font-weight: 600;
-    margin: 0 0 8px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid rgba(128,128,128,0.2);
+    margin-bottom: 4px;
   }
-  :global(.theme-dark) .home :global(h2) { color: #fff; }
-  :global(.theme-light) .home :global(h2) { color: #000; }
-  .home :global(h2:not(:first-child)) {
-    margin-top: 20px;
-  }
-  .home :global(p) {
-    font-size: 16px;
+  .tile-body {
+    font-size: 14px;
+    font-weight: 400;
     line-height: 1.5;
-    margin: 0 0 12px;
   }
-  .home :global(p:last-child) {
-    margin-bottom: 0;
-  }
-  :global(.theme-dark) .home :global(p) { color: #fff; }
-  :global(.theme-light) .home :global(p) { color: #000; }
-  .home :global(strong) {
-    font-weight: 600;
-  }
-  :global(.theme-dark) .home :global(strong) { color: #fff; }
-  :global(.theme-light) .home :global(strong) { color: #000; }
-  .home :global(a) {
+  :global(.theme-dark) .tile-heading { color: #fff; }
+  :global(.theme-light) .tile-heading { color: #000; }
+  :global(.theme-dark) .tile-body { color: #fff; }
+  :global(.theme-light) .tile-body { color: #000; }
+  .tile-body :global(strong) { font-weight: 600; }
+  .tile-body :global(a) {
     color: #007AFF;
     text-decoration: none;
   }
-  .home :global(a:hover) { text-decoration: underline; }
+  .tile-body :global(a:hover) { text-decoration: underline; }
 </style>
