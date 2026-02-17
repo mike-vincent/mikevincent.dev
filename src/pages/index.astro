@@ -14,6 +14,7 @@ let html = md
   .map(block => {
     block = block.trim();
     if (!block) return '';
+    if (block.startsWith('## ')) return '<h2>' + block.slice(3) + '</h2>';
     return '<p>' + block + '</p>';
   })
   .join('\n');
@@ -26,6 +27,17 @@ let html = md
 <style>
   .home {
     padding: 16px 0;
+  }
+  .home :global(h2) {
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 0 0 4px;
+  }
+  :global(.theme-dark) .home :global(h2) { color: rgba(255,255,255,0.5); }
+  :global(.theme-light) .home :global(h2) { color: rgba(0,0,0,0.5); }
+  .home :global(h2:not(:first-child)) {
+    margin-top: 16px;
   }
   .home :global(p) {
     font-size: 16px;
