@@ -8,8 +8,8 @@ const md = await res.text();
 const sections: { heading: string; body: string }[] = [];
 const blocks = md
   .replace(/^# .+\n+/, '')
-  .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
-  .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+  .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1')
+  .replace(/\*\*([^*]+)\*\*/g, '$1')
   .replace(/\n\n+/g, '\n\n')
   .split('\n\n')
   .map(b => b.trim())
@@ -22,15 +22,22 @@ for (const block of blocks) {
     sections[sections.length - 1].body = block;
   }
 }
+
+const links: Record<string, string> = {
+  'About Me': '/resume',
+  'Radio Index': 'https://radioindex.org',
+  'Writing': 'https://quarksoutlines.com',
+  'Portfolio': 'https://mikevincent.dev',
+};
 ---
 
 <Base title="Mike Vincent" description="Mike Vincent - Software Engineer">
   <div class="home">
     {sections.map(s => (
-      <div class="tile">
+      <a class="tile" href={links[s.heading] || '#'}>
         <div class="tile-heading">{s.heading}</div>
-        <div class="tile-body" set:html={s.body} />
-      </div>
+        <div class="tile-body">{s.body}</div>
+      </a>
     ))}
   </div>
 </Base>
@@ -48,6 +55,8 @@ for (const block of blocks) {
     justify-content: center;
     padding: 0 12px;
     transition: background 0.15s;
+    text-decoration: none;
+    cursor: pointer;
   }
   .tile + .tile {
     border-top: 1px solid rgba(128,128,128,0.2);
@@ -66,12 +75,6 @@ for (const block of blocks) {
   }
   :global(.theme-dark) .tile-heading { color: #fff; }
   :global(.theme-light) .tile-heading { color: #000; }
-  :global(.theme-dark) .tile-body { color: #fff; }
-  :global(.theme-light) .tile-body { color: #000; }
-  .tile-body :global(strong) { font-weight: 600; }
-  .tile-body :global(a) {
-    color: #007AFF;
-    text-decoration: none;
-  }
-  .tile-body :global(a:hover) { text-decoration: underline; }
+  :global(.theme-dark) .tile-body { color: rgba(255,255,255,0.6); }
+  :global(.theme-light) .tile-body { color: rgba(0,0,0,0.5); }
 </style>
