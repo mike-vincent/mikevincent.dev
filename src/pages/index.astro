@@ -34,7 +34,7 @@ const links: Record<string, string> = {
 
 <Base title="Mike Vincent" description="Mike Vincent - Software Engineer">
   <div class="home">
-    {sections.map(s => (
+    {sections.filter(s => s.heading !== 'Portfolio').map(s => (
       <a class="tile" href={links[s.heading] || '#'}>
         <div class="tile-heading">{s.heading}</div>
         <div class="tile-body">{s.body}</div>
