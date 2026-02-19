@@ -1,7 +1,9 @@
 ---
 import Base from '../layouts/Base.astro';
 
-const res = await fetch('https://raw.githubusercontent.com/mike-vincent/mike-vincent/main/README.md');
+const res = await fetch('https://api.github.com/repos/mike-vincent/mike-vincent/readme', {
+  headers: { 'Accept': 'application/vnd.github.raw+json' },
+});
 const md = await res.text();
 
 // Parse markdown into sections (h2 + body pairs)
@@ -29,7 +31,9 @@ const links: Record<string, string> = {
   'Python Articles': 'https://dev.to/mike-vincent/series/31181',
   'Timer Fantasy': 'https://timerfantasy.com',
   'Portfolio': 'https://mikevincent.dev',
-  'GitHub Profile': 'https://github.com/mike-vincent',
+  'GitHub': 'https://github.com/mike-vincent',
+  'LinkedIn': 'https://www.linkedin.com/in/michael-thomas-vincent/',
+  'Io Pictures': 'https://iopictures.com',
 };
 ---
 
