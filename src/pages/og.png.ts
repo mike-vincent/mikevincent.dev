@@ -5,8 +5,8 @@ import type { APIRoute } from 'astro';
 const companies = [
   'Capital One', 'Zelle', 'Fannie Mae', 'HUD', 'DC Metro',
   'NYC MTA', 'BART', 'LA Metro', 'Boston MBTA', 'SF Muni',
-  'PATCO', 'Lockheed Martin', 'Canadian Tire', 'Tubi',
-  'Amazon', 'Apple', 'Google',
+  'PATCO', 'Lockheed Martin', 'Canadian Tire',
+  'U.S. Courts', 'NY Fashion Week',
 ];
 
 function square() {
