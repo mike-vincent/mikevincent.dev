@@ -12,8 +12,12 @@ const pathname = Astro.url.pathname;
 const isHome = pathname === '/' || pathname === '';
 const isBio = pathname === '/about' || pathname === '/about/';
 const isResume = pathname === '/resume' || pathname === '/resume/';
-const isProjects = pathname === '/projects' || pathname === '/projects/';
-const isDetail = isBio || isResume || isProjects;
+const isBrands =
+  pathname === '/projects' ||
+  pathname === '/projects/' ||
+  pathname === '/brands' ||
+  pathname === '/brands/';
+const isDetail = isBio || isResume || isBrands;
 const ogImage = image || "https://mikevincent.dev/og.png";
 const canonicalURL = new URL(Astro.url.pathname, "https://mikevincent.dev");
 ---
@@ -144,10 +148,10 @@ const canonicalURL = new URL(Astro.url.pathname, "https://mikevincent.dev");
             <span>Resume</span>
           </span>
         </a>
-        <a href="/projects" class={isProjects ? 'active' : ''}>
+        <a href="/brands" class={isBrands ? 'active' : ''}>
           <span class="nav-tab-inner">
-            <span class="icon-square"><span class={`material-symbols-outlined${isProjects ? ' filled' : ''}`}>work</span></span>
-            <span>Projects</span>
+            <span class="icon-square"><span class={`material-symbols-outlined${isBrands ? ' filled' : ''}`}>work</span></span>
+            <span>Brands</span>
           </span>
         </a>
       </nav>
