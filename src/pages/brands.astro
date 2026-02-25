@@ -1,5 +1,208 @@
 ---
-import ProjectsPage from './projects.astro';
+import Base from '../layouts/Base.astro';
+
+const brandSections = [
+  {
+    header: "Banking",
+    items: [
+      { name: "Capital One Databolt", url: "https://www.capitalone.com/software/products/databolt/", description: "Vaultless tokenization platform" },
+    ],
+  },
+  {
+    header: "Content Licensing & Distribution",
+    items: [
+      { name: "Io Pictures Corporation", url: "https://iopictures.com", description: "Motion picture distribution" },
+    ],
+  },
+  {
+    header: "Desktop Apps",
+    items: [
+      { name: "Timer Fantasy", url: "https://timerfantasy.com", description: "macOS timer with cloud sync" },
+    ],
+  },
+  {
+    header: "Defense",
+    items: [
+      { name: "Lockheed Martin", url: "https://www.lockheedmartin.com", description: "Intranet on headless Drupal" },
+    ],
+  },
+  {
+    header: "E-Commerce",
+    items: [
+      { name: "Canadian Tire", url: "https://www.canadiantire.ca", description: "E-commerce store" },
+    ],
+  },
+  {
+    header: "Fare Payments",
+    items: [
+      { name: "DC Metro", url: "https://www.wmata.com", description: "Fare systems infrastructure" },
+      { name: "NYC MTA", url: "https://new.mta.info", description: "Fare systems infrastructure" },
+      { name: "BART", url: "https://www.bart.gov", description: "Fare systems infrastructure" },
+      { name: "LA Metro", url: "https://www.metro.net", description: "Fare systems infrastructure" },
+      { name: "Boston MBTA", url: "https://www.mbta.com", description: "Fare systems infrastructure" },
+      { name: "SF Muni", url: "https://www.sfmta.com", description: "Fare systems infrastructure" },
+      { name: "San Diego MTS", url: "https://www.sdmts.com", description: "Fare systems infrastructure" },
+      { name: "PATCO", url: "https://www.ridepatco.org", description: "Fare systems infrastructure" },
+    ],
+  },
+  {
+    header: "Healthcare & Civic",
+    items: [
+      { name: "Poison Control", url: "https://www.poison.org", description: "Mobile app" },
+      { name: "U.S. Conference of Catholic Bishops", url: "https://www.usccb.org", description: "Mobile app" },
+    ],
+  },
+  {
+    header: "Mobile Apps",
+    items: [
+      { name: "NY Fashion Week", url: "https://nyfw.com", description: "2015 mobile app" },
+    ],
+  },
+  {
+    header: "Mortgage Lending",
+    items: [
+      { name: "Fannie Mae Collateral Underwriter", url: "https://singlefamily.fanniemae.com/applications-technology/collateral-underwriter", description: "Mortgage appraisal tool" },
+      { name: "HUD Capital Needs Assessment eTool", url: "https://www.hud.gov/hud-partners/multifamily-cna", description: "Public housing inspection platform" },
+    ],
+  },
+  {
+    header: "Networking",
+    items: [
+      { name: "LinkedIn", url: "https://www.linkedin.com/in/michael-thomas-vincent/", description: "Professional profile" },
+    ],
+  },
+  {
+    header: "Nonprofit",
+    items: [
+      { name: "The Archive of American Radio, Inc.", url: "https://archiveofamericanradio.org", description: "501(c)(3) preserving radio drama" },
+    ],
+  },
+  {
+    header: "Open Source",
+    items: [
+      { name: "InstaCart Order History Download", url: "https://github.com/mike-vincent/instacart-order-history-download", description: "Open-source CLI tool" },
+    ],
+  },
+  {
+    header: "Payments",
+    items: [
+      { name: "Zelle", url: "https://www.zellepay.com", description: "Peer-to-peer payments" },
+    ],
+  },
+  {
+    header: "Pre-2000 Websites",
+    items: [
+      { name: "wgshs.itgo.com", url: "http://wgshs.itgo.com", description: "Site of mine from the '90s" },
+    ],
+  },
+  {
+    header: "Writing",
+    items: [
+      { name: "Python Tutorials by Mike Vincent", url: "https://dev.to/mike-vincent", description: "Blog on dev.to" },
+    ],
+  },
+];
 ---
 
-<ProjectsPage />
+<Base title="Brands - Mike Vincent" description="Brands by Mike Vincent">
+  {brandSections.map(section => (
+    <section class="brand-section">
+      <h2 class="brand-section-header">{section.header}</h2>
+      <ul class="brands-list">
+        {section.items.map(brand => (
+          <li>
+            {brand.url ? (
+              <a href={brand.url} target="_blank" rel="noopener noreferrer">
+                <span class="brand-name">{brand.name}</span>
+                <span class="brand-desc">{brand.description}</span>
+              </a>
+            ) : (
+              <span class="brand-link-none">
+                <span class="brand-name">{brand.name}</span>
+                <span class="brand-desc">{brand.description}</span>
+              </span>
+            )}
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+</Base>
+
+<style>
+  :global(.page-content):has(.brand-section) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .brand-section {
+    margin-bottom: 0;
+    border-top: 1px solid rgba(128, 128, 128, 0.2);
+    margin-left: -11px;
+    margin-right: -11px;
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+  .brand-section:first-child {
+    border-top: none;
+  }
+  .brand-section-header {
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0;
+    padding: 16px 8px 8px;
+  }
+  :global(.theme-dark) .brand-section-header { color: rgba(255, 255, 255, 0.5); }
+  :global(.theme-light) .brand-section-header { color: rgba(0, 0, 0, 0.5); }
+  .brands-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .brands-list li {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+  }
+  .brands-list li:last-child {
+    border-bottom: none;
+  }
+  .brands-list a,
+  .brands-list .brand-link-none {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding: 14px 8px;
+    text-decoration: none;
+    min-height: 44px;
+  }
+  .brands-list a:hover {
+    text-decoration: none;
+  }
+  :global(.theme-dark) .brands-list a:hover { background: rgba(255, 255, 255, 0.04); }
+  :global(.theme-light) .brands-list a:hover { background: rgba(0, 0, 0, 0.02); }
+  .brand-name {
+    font-size: 16px;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+  :global(.theme-dark) .brand-name { color: #fff; }
+  :global(.theme-light) .brand-name { color: #000; }
+  .brand-desc {
+    font-size: 14px;
+    text-align: right;
+  }
+  :global(.theme-dark) .brand-desc { color: rgba(255, 255, 255, 0.4); }
+  :global(.theme-light) .brand-desc { color: rgba(0, 0, 0, 0.4); }
+
+  @media (max-width: 499px) {
+    .brands-list a,
+    .brands-list .brand-link-none {
+      flex-direction: column;
+      gap: 2px;
+    }
+    .brand-desc {
+      text-align: left;
+    }
+  }
+</style>

@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "open:styled": "bash ./scripts/open_styled_local.sh"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.0",
