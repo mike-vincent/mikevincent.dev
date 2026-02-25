@@ -13,6 +13,22 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://mikevincent.dev/case-studies/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mikevincent.dev/case-studies/tokenization-platform/</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mikevincent.dev/case-studies/multicloud-k8s-platform/</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mikevincent.dev/case-studies/audit-ready-observability/</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://mikevincent.dev/resume/</loc>
     <priority>0.9</priority>
   </url>

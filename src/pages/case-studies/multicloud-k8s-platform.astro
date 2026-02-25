@@ -1,0 +1,11 @@
+---
+import Base from '../../layouts/Base.astro';
+import CaseStudyPage from '../../components/CaseStudyPage.astro';
+import { caseStudyBySlug } from '../../content/case-studies';
+
+const study = caseStudyBySlug['multicloud-k8s-platform'];
+---
+
+<Base title={`${study.title} - Mike Vincent`} description={study.summary}>
+  <CaseStudyPage study={study} />
+</Base>

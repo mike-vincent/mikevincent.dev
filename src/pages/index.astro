@@ -1,84 +1,274 @@
 ---
 import Base from '../layouts/Base.astro';
-
-const res = await fetch('https://api.github.com/repos/mike-vincent/mike-vincent/readme', {
-  headers: { 'Accept': 'application/vnd.github.raw+json' },
-});
-const md = await res.text();
-
-// Parse markdown into sections (h2 + body pairs)
-const sections: { heading: string; body: string }[] = [];
-const blocks = md
-  .replace(/^# .+\n+/, '')
-  .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1')
-  .replace(/\*\*([^*]+)\*\*/g, '$1')
-  .replace(/\n\n+/g, '\n\n')
-  .split('\n\n')
-  .map(b => b.trim())
-  .filter(Boolean);
-
-for (const block of blocks) {
-  if (block.startsWith('## ')) {
-    sections.push({ heading: block.slice(3), body: '' });
-  } else if (sections.length > 0) {
-    sections[sections.length - 1].body = block;
-  }
-}
-
-const links: Record<string, string> = {
-  'About Mike': '/resume',
-  'Radio Index': 'https://radioindex.org',
-  'Python Articles': 'https://dev.to/mike-vincent/series/31181',
-  'Timer Fantasy': 'https://timerfantasy.com',
-  'Portfolio': 'https://mikevincent.dev',
-  'GitHub': 'https://github.com/mike-vincent',
-  'LinkedIn': 'https://www.linkedin.com/in/michael-thomas-vincent/',
-  'Io Pictures': 'https://iopictures.com',
-};
+import { homeContent } from '../content/home';
 ---
 
-<Base title="Mike Vincent" description="Mike Vincent - Software Engineer">
-  <div class="home">
-    {sections.filter(s => s.heading !== 'Portfolio').map(s => (
-      <a class="tile" href={links[s.heading] || '#'}>
-        <div class="tile-heading">{s.heading}</div>
-        <div class="tile-body">{s.body}</div>
-      </a>
-    ))}
-  </div>
+<Base title="Mike Vincent" description="Mike Vincent - Payments, platform, and reliability engineering">
+  <section class="home-section">
+    <div class="brand-showcase">
+      {homeContent.americanPrograms.map((brand) => (
+        brand.href ? (
+          <a class="brand-chip" href={brand.href} target="_blank" rel="noopener noreferrer">{brand.name}</a>
+        ) : (
+          <span class="brand-chip">{brand.name}</span>
+        )
+      ))}
+    </div>
+  </section>
+
+  <section class="home-section hero-section">
+    <h1>{homeContent.hero.headline}</h1>
+    <p class="hero-subheadline">{homeContent.hero.subheadline}</p>
+    <div class="hero-ctas">
+      <a class="hero-cta primary" href={homeContent.hero.primaryCta.href}>{homeContent.hero.primaryCta.label}</a>
+      <a class="hero-cta secondary" href={homeContent.hero.secondaryCta.href}>{homeContent.hero.secondaryCta.label}</a>
+    </div>
+  </section>
+
+  <section class="home-section">
+    <div class="venture-grid">
+      {homeContent.ventureCards.map((card) => (
+        <article class="venture-card">
+          <a class="venture-main-link" href={card.href} target="_blank" rel="noopener noreferrer">
+            <p class="venture-subtitle">{card.subtitle}</p>
+            <h3>{card.title}</h3>
+            <p>{card.summary}</p>
+          </a>
+          {card.inset && (
+            <a class="venture-inset" href={card.inset.href} target="_blank" rel="noopener noreferrer">
+              <p class="venture-inset-subtitle">{card.inset.subtitle}</p>
+              <h4>{card.inset.title}</h4>
+              <p>{card.inset.summary}</p>
+            </a>
+          )}
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="home-section contact-section">
+    <h2>{homeContent.contact.title}</h2>
+    <article class="contact-card">
+      <p>{homeContent.contact.body}</p>
+      <p class="contact-guidance">{homeContent.contact.guidance}</p>
+      <div class="contact-links">
+        <a class="contact-link primary" href={homeContent.contact.primaryHref} target="_blank" rel="noopener noreferrer">
+          {homeContent.contact.primaryLabel}
+        </a>
+        <a class="contact-link secondary" href={homeContent.contact.secondaryHref}>
+          {homeContent.contact.secondaryLabel}
+        </a>
+      </div>
+    </article>
+  </section>
 </Base>
 
 <style>
-  .home {
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    margin: 0 -11px;
+  .home-section {
+    margin-left: -11px;
+    margin-right: -11px;
+    padding: 20px 11px;
+    border-top: 1px solid rgba(128, 128, 128, 0.2);
   }
-  .tile {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 11px;
-    transition: background 0.15s, border-color 0.15s;
-    text-decoration: none;
-    cursor: pointer;
-    border-bottom: 1px solid rgba(128,128,128,0.2);
+  .home-section:first-child {
+    border-top: none;
+    padding-top: 12px;
   }
-  :global(.theme-dark) .tile:hover { background: rgba(255,255,255,0.04); border-bottom-color: #007AFF; }
-  :global(.theme-light) .tile:hover { background: rgba(0,0,0,0.03); border-bottom-color: #007AFF; }
-  .tile-heading {
+  .home-section h2 {
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 12px;
+  }
+  :global(.theme-dark) .home-section h2 { color: rgba(255, 255, 255, 0.5); }
+  :global(.theme-light) .home-section h2 { color: rgba(0, 0, 0, 0.5); }
+
+  .hero-section h1 {
+    font-size: 24px;
+    line-height: 1.2;
+    margin: 0 0 10px;
+    font-weight: 700;
+  }
+  :global(.theme-dark) .hero-section h1 { color: #fff; }
+  :global(.theme-light) .hero-section h1 { color: #000; }
+  .hero-subheadline {
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0 0 16px;
+  }
+  :global(.theme-dark) .hero-subheadline { color: rgba(255, 255, 255, 0.75); }
+  :global(.theme-light) .hero-subheadline { color: rgba(0, 0, 0, 0.72); }
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .hero-cta {
     font-size: 14px;
     font-weight: 600;
-    margin-bottom: 4px;
+    min-height: 38px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 14px;
+    border-radius: 999px;
+    text-decoration: none;
   }
-  .tile-body {
+  .hero-cta:hover {
+    text-decoration: none;
+  }
+  .hero-cta.primary {
+    background: #007aff;
+    color: #fff;
+  }
+  .hero-cta.secondary {
+    border: 1px solid rgba(128, 128, 128, 0.35);
+  }
+  :global(.theme-dark) .hero-cta.secondary { color: #fff; }
+  :global(.theme-light) .hero-cta.secondary { color: #000; }
+
+  .brand-showcase {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .brand-chip {
+    display: inline-flex;
+    align-items: center;
+    min-height: 30px;
+    padding: 0 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    font-size: 13px;
+    text-decoration: none;
+  }
+  .brand-chip:hover {
+    text-decoration: none;
+  }
+  :global(.theme-dark) .brand-chip { color: rgba(255, 255, 255, 0.86); }
+  :global(.theme-light) .brand-chip { color: rgba(0, 0, 0, 0.86); }
+  :global(.theme-dark) .brand-chip:hover { background: rgba(255, 255, 255, 0.05); }
+  :global(.theme-light) .brand-chip:hover { background: rgba(0, 0, 0, 0.03); }
+
+  .venture-card h3 {
+    margin: 0 0 6px;
+    font-size: 17px;
+    line-height: 1.3;
+    font-weight: 600;
+  }
+  :global(.theme-dark) .venture-card h3 { color: #fff; }
+  :global(.theme-light) .venture-card h3 { color: #000; }
+  .venture-card p,
+  .contact-section p {
+    margin: 0;
     font-size: 14px;
-    font-weight: 400;
     line-height: 1.5;
   }
-  :global(.theme-dark) .tile-heading { color: #fff; }
-  :global(.theme-light) .tile-heading { color: #000; }
-  :global(.theme-dark) .tile-body { color: rgba(255,255,255,0.6); }
-  :global(.theme-light) .tile-body { color: rgba(0,0,0,0.5); }
+  :global(.theme-dark) .venture-card p,
+  :global(.theme-dark) .contact-section p { color: rgba(255, 255, 255, 0.75); }
+  :global(.theme-light) .venture-card p,
+  :global(.theme-light) .contact-section p { color: rgba(0, 0, 0, 0.72); }
+
+  .venture-grid {
+    display: grid;
+    gap: 8px;
+  }
+  .venture-card {
+    border: 1px solid rgba(128, 128, 128, 0.25);
+    border-radius: 10px;
+    padding: 10px;
+  }
+  .venture-main-link {
+    display: block;
+    border-radius: 8px;
+    padding: 4px;
+    text-decoration: none;
+  }
+  .venture-main-link:hover {
+    text-decoration: none;
+  }
+  :global(.theme-dark) .venture-main-link:hover { background: rgba(255, 255, 255, 0.04); }
+  :global(.theme-light) .venture-main-link:hover { background: rgba(0, 0, 0, 0.02); }
+  .venture-subtitle {
+    font-size: 12px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+  :global(.theme-dark) .venture-subtitle { color: rgba(255, 255, 255, 0.45); }
+  :global(.theme-light) .venture-subtitle { color: rgba(0, 0, 0, 0.45); }
+  :global(.theme-dark) .venture-card p { color: rgba(255, 255, 255, 0.75); }
+  :global(.theme-light) .venture-card p { color: rgba(0, 0, 0, 0.72); }
+  .venture-inset {
+    display: block;
+    margin-top: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    border-radius: 8px;
+    padding: 10px;
+    text-decoration: none;
+  }
+  .venture-inset:hover {
+    text-decoration: none;
+  }
+  :global(.theme-dark) .venture-inset:hover { background: rgba(255, 255, 255, 0.04); }
+  :global(.theme-light) .venture-inset:hover { background: rgba(0, 0, 0, 0.02); }
+  .venture-inset-subtitle {
+    font-size: 11px;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.35px;
+  }
+  :global(.theme-dark) .venture-inset-subtitle { color: rgba(255, 255, 255, 0.45); }
+  :global(.theme-light) .venture-inset-subtitle { color: rgba(0, 0, 0, 0.45); }
+  .venture-inset h4 {
+    margin: 0 0 4px;
+    font-size: 15px;
+    line-height: 1.3;
+    font-weight: 600;
+  }
+  :global(.theme-dark) .venture-inset h4 { color: #fff; }
+  :global(.theme-light) .venture-inset h4 { color: #000; }
+
+  .contact-section {
+    padding-bottom: 24px;
+  }
+  .contact-card {
+    border: 1px solid rgba(128, 128, 128, 0.25);
+    border-radius: 10px;
+    padding: 14px;
+  }
+  .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+  }
+  .contact-link {
+    font-size: 14px;
+    font-weight: 600;
+    min-height: 38px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 14px;
+    border-radius: 999px;
+    text-decoration: none;
+  }
+  .contact-link:hover {
+    text-decoration: none;
+  }
+  .contact-link.primary {
+    background: #007aff;
+    color: #fff;
+  }
+  .contact-link.secondary {
+    border: 1px solid rgba(128, 128, 128, 0.35);
+  }
+  :global(.theme-dark) .contact-link.secondary { color: #fff; }
+  :global(.theme-light) .contact-link.secondary { color: #000; }
+  .contact-guidance {
+    margin-top: 10px;
+    font-size: 13px;
+  }
+  :global(.theme-dark) .contact-guidance { color: rgba(255, 255, 255, 0.5); }
+  :global(.theme-light) .contact-guidance { color: rgba(0, 0, 0, 0.55); }
 </style>

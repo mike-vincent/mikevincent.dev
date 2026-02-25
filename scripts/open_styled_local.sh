@@ -3,28 +3,32 @@ set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT_DIR"
+HOST="localhost"
+PORT="8085"
+BASE_URL="http://${HOST}:${PORT}"
 
 echo "Building site..."
 npm run build
 
-if ! lsof -iTCP:4321 -sTCP:LISTEN >/dev/null 2>&1; then
-  echo "Starting preview server at http://127.0.0.1:4321"
-  nohup npm run preview -- --host 127.0.0.1 --port 4321 >/tmp/mikevincent-preview.log 2>&1 < /dev/null &
+if ! lsof -iTCP:"${PORT}" -sTCP:LISTEN >/dev/null 2>&1; then
+  echo "Starting preview server at ${BASE_URL}"
+  nohup npm run preview -- --host "${HOST}" --port "${PORT}" >/tmp/mikevincent-preview.log 2>&1 < /dev/null &
 else
-  echo "Preview server already running on port 4321"
+  echo "Preview server already running on port ${PORT}"
 fi
 
-echo "Waiting for http://127.0.0.1:4321/brands..."
-for _ in $(seq 1 30); do
-  status="$(curl -s -o /dev/null -w "%{http_code}" "http://127.0.0.1:4321/brands" || true)"
+echo "Waiting for ${BASE_URL}/..."
+for _ in $(seq 1 45); do
+  status="$(/usr/bin/curl -s -o /dev/null -w "%{http_code}" "${BASE_URL}/" || true)"
   if [[ "$status" == "200" ]]; then
-    open -a Safari "http://127.0.0.1:4321/brands?refresh=styled"
-    open -a Safari "http://127.0.0.1:4321/resume?refresh=styled"
-    echo "Opened styled Brands and Resume pages in Safari."
+    open -a Safari "${BASE_URL}/?refresh=styled"
+    open -a Safari "${BASE_URL}/brands?refresh=styled"
+    open -a Safari "${BASE_URL}/resume?refresh=styled"
+    echo "Opened styled Home, Brands, and Resume pages in Safari."
     exit 0
   fi
   sleep 1
 done
 
-echo "Preview server did not become ready on /brands" >&2
+echo "Preview server did not become ready on /" >&2
 exit 1

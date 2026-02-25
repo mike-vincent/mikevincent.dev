@@ -1,0 +1,109 @@
+---
+import Base from '../../layouts/Base.astro';
+import { caseStudies } from '../../content/case-studies';
+---
+
+<Base title="Case Studies - Mike Vincent" description="Public engineering case studies by Mike Vincent">
+  <section class="case-studies-intro">
+    <h1>Case Studies</h1>
+    <p>
+      Public engineering briefs covering platform, payments, and reliability delivery in regulated environments.
+    </p>
+  </section>
+
+  <section class="case-studies-list">
+    {caseStudies.map((study) => (
+      <a class="case-study-tile" href={`/case-studies/${study.slug}/`}>
+        <p class="tile-kicker">{study.subtitle}</p>
+        <h2>{study.title}</h2>
+        <p>{study.summary}</p>
+        {study.brands.length > 0 && (
+          <p class="tile-brands">
+            {study.brands.map((brand) => brand.name).slice(0, 5).join(' • ')}
+          </p>
+        )}
+        <span class="tile-link">Read engineering brief</span>
+      </a>
+    ))}
+  </section>
+</Base>
+
+<style>
+  .case-studies-intro,
+  .case-studies-list {
+    margin-left: -11px;
+    margin-right: -11px;
+    border-top: 1px solid rgba(128, 128, 128, 0.2);
+    padding: 16px 11px;
+  }
+  .case-studies-intro {
+    border-top: none;
+    padding-top: 10px;
+  }
+  .case-studies-intro h1 {
+    margin: 0 0 10px;
+    font-size: 24px;
+    line-height: 1.2;
+  }
+  :global(.theme-dark) .case-studies-intro h1 { color: #fff; }
+  :global(.theme-light) .case-studies-intro h1 { color: #000; }
+  .case-studies-intro p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  :global(.theme-dark) .case-studies-intro p { color: rgba(255, 255, 255, 0.76); }
+  :global(.theme-light) .case-studies-intro p { color: rgba(0, 0, 0, 0.74); }
+
+  .case-studies-list {
+    display: grid;
+    gap: 8px;
+    padding-bottom: 20px;
+  }
+  .case-study-tile {
+    border: 1px solid rgba(128, 128, 128, 0.25);
+    border-radius: 10px;
+    padding: 14px;
+    text-decoration: none;
+  }
+  .case-study-tile:hover {
+    text-decoration: none;
+  }
+  :global(.theme-dark) .case-study-tile:hover { background: rgba(255, 255, 255, 0.04); }
+  :global(.theme-light) .case-study-tile:hover { background: rgba(0, 0, 0, 0.02); }
+  .tile-kicker {
+    margin: 0 0 6px;
+    font-size: 12px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+  }
+  :global(.theme-dark) .tile-kicker { color: rgba(255, 255, 255, 0.45); }
+  :global(.theme-light) .tile-kicker { color: rgba(0, 0, 0, 0.45); }
+  .case-study-tile h2 {
+    margin: 0 0 6px;
+    font-size: 18px;
+    line-height: 1.3;
+  }
+  :global(.theme-dark) .case-study-tile h2 { color: #fff; }
+  :global(.theme-light) .case-study-tile h2 { color: #000; }
+  .case-study-tile p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  :global(.theme-dark) .case-study-tile p { color: rgba(255, 255, 255, 0.76); }
+  :global(.theme-light) .case-study-tile p { color: rgba(0, 0, 0, 0.74); }
+  .tile-brands {
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  :global(.theme-dark) .tile-brands { color: rgba(255, 255, 255, 0.55); }
+  :global(.theme-light) .tile-brands { color: rgba(0, 0, 0, 0.55); }
+  .tile-link {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+</style>

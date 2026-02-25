@@ -1,0 +1,211 @@
+---
+import type { CaseStudy } from '../content/case-studies';
+
+interface Props {
+  study: CaseStudy;
+}
+
+const { study } = Astro.props;
+---
+
+<article class="case-study-page">
+  <header class="case-study-header">
+    <p class="case-study-kicker">{study.subtitle}</p>
+    <h1>{study.title}</h1>
+    <p class="case-study-summary">{study.summary}</p>
+    {study.brands.length > 0 && (
+      <div class="case-study-brands">
+        <p class="brands-label">BRANDS</p>
+        <div class="brands-wrap">
+          {study.brands.map((brand) => (
+            brand.href ? (
+              <a class="brand-chip" href={brand.href} target="_blank" rel="noopener noreferrer">{brand.name}</a>
+            ) : (
+              <span class="brand-chip">{brand.name}</span>
+            )
+          ))}
+        </div>
+      </div>
+    )}
+    <p class="public-safe-note">
+      <strong>Public-safe summary:</strong> {study.publicSafeNote}
+    </p>
+  </header>
+
+  <section class="case-study-section">
+    <h2>Context</h2>
+    <p>{study.context}</p>
+  </section>
+
+  <section class="case-study-section">
+    <h2>Constraints</h2>
+    <ul>
+      {study.constraints.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="case-study-section">
+    <h2>Ownership</h2>
+    <ul>
+      {study.ownership.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="case-study-section">
+    <h2>Architecture Notes</h2>
+    <ul>
+      {study.architectureNotes.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="case-study-section">
+    <h2>Outcome</h2>
+    <ul>
+      {study.outcome.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="case-study-section">
+    <h2>Risk Controls</h2>
+    <ul>
+      {study.riskControls.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  </section>
+
+  <nav class="case-study-nav">
+    <a href="/case-studies/">Back to Case Studies</a>
+    <a href="/">Back to Home</a>
+  </nav>
+</article>
+
+<style>
+  .case-study-page {
+    margin-left: -11px;
+    margin-right: -11px;
+  }
+  .case-study-header,
+  .case-study-section,
+  .case-study-nav {
+    border-top: 1px solid rgba(128, 128, 128, 0.2);
+    padding: 16px 11px;
+  }
+  .case-study-header {
+    border-top: none;
+    padding-top: 10px;
+  }
+  .case-study-kicker {
+    margin: 0 0 8px;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.4px;
+  }
+  :global(.theme-dark) .case-study-kicker { color: rgba(255, 255, 255, 0.45); }
+  :global(.theme-light) .case-study-kicker { color: rgba(0, 0, 0, 0.45); }
+  .case-study-header h1 {
+    margin: 0;
+    font-size: 24px;
+    line-height: 1.2;
+  }
+  :global(.theme-dark) .case-study-header h1 { color: #fff; }
+  :global(.theme-light) .case-study-header h1 { color: #000; }
+  .case-study-summary {
+    margin: 10px 0 0;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  :global(.theme-dark) .case-study-summary { color: rgba(255, 255, 255, 0.8); }
+  :global(.theme-light) .case-study-summary { color: rgba(0, 0, 0, 0.8); }
+  .public-safe-note {
+    margin: 12px 0 0;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  :global(.theme-dark) .public-safe-note { color: rgba(255, 255, 255, 0.55); }
+  :global(.theme-light) .public-safe-note { color: rgba(0, 0, 0, 0.58); }
+  .case-study-brands {
+    margin-top: 12px;
+    border: 1px solid rgba(128, 128, 128, 0.25);
+    border-radius: 10px;
+    padding: 10px;
+  }
+  .brands-label {
+    margin: 0 0 8px;
+    font-size: 11px;
+    letter-spacing: 0.35px;
+    text-transform: uppercase;
+  }
+  :global(.theme-dark) .brands-label { color: rgba(255, 255, 255, 0.45); }
+  :global(.theme-light) .brands-label { color: rgba(0, 0, 0, 0.45); }
+  .brands-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+  .brand-chip {
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    padding: 0 9px;
+    border-radius: 999px;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    font-size: 12px;
+    text-decoration: none;
+  }
+  .brand-chip:hover {
+    text-decoration: none;
+  }
+  :global(.theme-dark) .brand-chip { color: rgba(255, 255, 255, 0.86); }
+  :global(.theme-light) .brand-chip { color: rgba(0, 0, 0, 0.86); }
+  :global(.theme-dark) .brand-chip:hover { background: rgba(255, 255, 255, 0.05); }
+  :global(.theme-light) .brand-chip:hover { background: rgba(0, 0, 0, 0.03); }
+
+  .case-study-section h2 {
+    margin: 0 0 10px;
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  :global(.theme-dark) .case-study-section h2 { color: rgba(255, 255, 255, 0.5); }
+  :global(.theme-light) .case-study-section h2 { color: rgba(0, 0, 0, 0.5); }
+  .case-study-section p,
+  .case-study-section li {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  :global(.theme-dark) .case-study-section p,
+  :global(.theme-dark) .case-study-section li { color: rgba(255, 255, 255, 0.78); }
+  :global(.theme-light) .case-study-section p,
+  :global(.theme-light) .case-study-section li { color: rgba(0, 0, 0, 0.78); }
+  .case-study-section p {
+    margin: 0;
+  }
+  .case-study-section ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+  .case-study-section li {
+    margin-bottom: 6px;
+  }
+
+  .case-study-nav {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    padding-bottom: 22px;
+  }
+  .case-study-nav a {
+    font-size: 14px;
+    font-weight: 500;
+  }
+</style>

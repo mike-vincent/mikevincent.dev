@@ -15,7 +15,11 @@ const isResume = pathname === '/resume' || pathname === '/resume/';
 const isBrands =
   pathname === '/brands' ||
   pathname === '/brands/';
-const isDetail = isBio || isResume || isBrands;
+const isCaseStudies =
+  pathname === '/case-studies' ||
+  pathname === '/case-studies/' ||
+  pathname.startsWith('/case-studies/');
+const isDetail = isBio || isResume || isBrands || isCaseStudies;
 const ogImage = image || "https://mikevincent.dev/og.png";
 const canonicalURL = new URL(Astro.url.pathname, "https://mikevincent.dev");
 ---
@@ -150,6 +154,12 @@ const canonicalURL = new URL(Astro.url.pathname, "https://mikevincent.dev");
           <span class="nav-tab-inner">
             <span class="icon-square"><span class={`material-symbols-outlined${isBrands ? ' filled' : ''}`}>work</span></span>
             <span>Brands</span>
+          </span>
+        </a>
+        <a href="/case-studies" class={isCaseStudies ? 'active' : ''}>
+          <span class="nav-tab-inner">
+            <span class="icon-square"><span class={`material-symbols-outlined${isCaseStudies ? ' filled' : ''}`}>menu_book</span></span>
+            <span>Case Studies</span>
           </span>
         </a>
       </nav>
