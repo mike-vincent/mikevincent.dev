@@ -1,16 +1,5 @@
-export interface HomeTextPart {
-  text: string;
-  href?: string;
-}
-
-export interface HomeHeroHighlight {
-  parts: HomeTextPart[];
-}
-
 export interface HomeHero {
   headline: string;
-  subheadline: string;
-  highlights: HomeHeroHighlight[];
   primaryCta: {
     label: string;
     href: string;
@@ -57,33 +46,6 @@ export interface HomeContent {
 export const homeContent: HomeContent = {
   hero: {
     headline: 'Full Stack, Frontend, Backend, Mobile, Payments and Infrastructure',
-    subheadline:
-      'Platform engineer with a track record in search, payments, and banking.',
-    highlights: [
-      {
-        parts: [
-          { text: 'Delivered tokenization and partner APIs for ' },
-          { text: 'Capital One Databolt', href: 'https://www.capitalone.com/software/products/databolt/' },
-          { text: ' and ' },
-          { text: 'Zelle', href: 'https://www.zellepay.com/' },
-          { text: '.' },
-        ],
-      },
-      {
-        parts: [
-          { text: 'Built ' },
-          { text: 'NextBus', href: 'https://en.wikipedia.org/wiki/NextBus' },
-          { text: ' ML platform infrastructure for NYC MTA, SF Muni, CTA, and MBTA.' },
-        ],
-      },
-      {
-        parts: [
-          { text: 'Building ' },
-          { text: 'Radio Index', href: 'https://radioindex.org' },
-          { text: ', the complete archive of American radio drama.' },
-        ],
-      },
-    ],
     primaryCta: {
       label: 'Projects',
       href: '/works/',
