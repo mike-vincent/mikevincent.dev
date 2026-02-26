@@ -121,67 +121,71 @@ import Base from '../layouts/Base.astro';
 <style>
   .resume-header { margin-bottom: 24px; }
   .resume-header h1 {
-    font-size: 16px;
-    font-weight: 400;
+    font-size: var(--mv-size-large);
+    font-weight: var(--mv-weight-strong);
     font-style: italic;
     margin: 0 0 8px;
   }
-  :global(.theme-dark) .resume-header h1 { color: rgba(255, 255, 255, 0.8); }
-  :global(.theme-light) .resume-header h1 { color: rgba(0, 0, 0, 0.8); }
+  :global(.theme-dark) .resume-header h1 { color: var(--mv-text-dark-primary); }
+  :global(.theme-light) .resume-header h1 { color: var(--mv-text-light-primary); }
 
   .resume-contact {
-    font-size: 14px;
+    font-size: var(--mv-size-regular);
+    font-weight: var(--mv-weight-regular);
     margin: 0 0 4px;
   }
-  :global(.theme-dark) .resume-contact { color: rgba(255, 255, 255, 0.7); }
-  :global(.theme-light) .resume-contact { color: rgba(0, 0, 0, 0.7); }
+  :global(.theme-dark) .resume-contact { color: var(--mv-text-dark-secondary); }
+  :global(.theme-light) .resume-contact { color: var(--mv-text-light-secondary); }
   .resume-contact a { color: inherit; }
 
   .resume-content h2 {
-    font-size: 14px;
-    font-weight: 700;
+    font-size: var(--mv-size-regular);
+    font-weight: var(--mv-weight-strong);
     text-transform: uppercase;
     letter-spacing: 0.5px;
     margin: 32px 0 16px;
     padding-bottom: 8px;
     border-bottom: 1px solid rgba(128, 128, 128, 0.3);
   }
-  :global(.theme-dark) .resume-content h2 { color: #fff; }
-  :global(.theme-light) .resume-content h2 { color: #000; }
+  :global(.theme-dark) .resume-content h2 { color: var(--mv-text-dark-primary); }
+  :global(.theme-light) .resume-content h2 { color: var(--mv-text-light-primary); }
 
   .resume-content h3 {
-    font-size: 16px;
-    font-weight: 600;
+    font-size: var(--mv-size-regular);
+    font-weight: var(--mv-weight-strong);
     margin: 20px 0 4px;
   }
-  :global(.theme-dark) .resume-content h3 { color: #fff; }
-  :global(.theme-light) .resume-content h3 { color: #000; }
+  :global(.theme-dark) .resume-content h3 { color: var(--mv-text-dark-primary); }
+  :global(.theme-light) .resume-content h3 { color: var(--mv-text-light-primary); }
 
   .resume-content p {
-    font-size: 14px;
+    font-size: var(--mv-size-regular);
+    font-weight: var(--mv-weight-regular);
     line-height: 1.6;
     margin: 0 0 8px;
   }
-  :global(.theme-dark) .resume-content p { color: rgba(255, 255, 255, 0.8); }
-  :global(.theme-light) .resume-content p { color: rgba(0, 0, 0, 0.8); }
+  :global(.theme-dark) .resume-content p { color: var(--mv-text-dark-secondary); }
+  :global(.theme-light) .resume-content p { color: var(--mv-text-light-secondary); }
 
   .resume-content .meta {
-    font-size: 13px;
+    font-size: var(--mv-size-regular);
+    font-weight: var(--mv-weight-regular);
   }
-  :global(.theme-dark) .resume-content .meta { color: rgba(255, 255, 255, 0.5); }
-  :global(.theme-light) .resume-content .meta { color: rgba(0, 0, 0, 0.5); }
+  :global(.theme-dark) .resume-content .meta { color: var(--mv-text-dark-secondary); }
+  :global(.theme-light) .resume-content .meta { color: var(--mv-text-light-secondary); }
 
   .resume-content ul {
     margin: 8px 0 16px;
     padding-left: 20px;
   }
   .resume-content li {
-    font-size: 14px;
+    font-size: var(--mv-size-regular);
+    font-weight: var(--mv-weight-regular);
     line-height: 1.6;
     margin-bottom: 4px;
   }
-  :global(.theme-dark) .resume-content li { color: rgba(255, 255, 255, 0.8); }
-  :global(.theme-light) .resume-content li { color: rgba(0, 0, 0, 0.8); }
+  :global(.theme-dark) .resume-content li { color: var(--mv-text-dark-secondary); }
+  :global(.theme-light) .resume-content li { color: var(--mv-text-light-secondary); }
 
   .resume-content .skills-list {
     list-style: none;

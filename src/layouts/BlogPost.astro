@@ -87,19 +87,20 @@ const dateStr = date.toLocaleDateString('en-US', { weekday: 'short', month: 'sho
 
 <style>
   .post-content h1 {
-    font-size: 18px;
-    font-weight: 600;
+    font-size: var(--mv-size-large);
+    font-weight: var(--mv-weight-strong);
     margin: 0 0 4px;
   }
-  :global(.theme-dark) .post-content h1 { color: #fff; }
-  :global(.theme-light) .post-content h1 { color: #000; }
+  :global(.theme-dark) .post-content h1 { color: var(--mv-text-dark-primary); }
+  :global(.theme-light) .post-content h1 { color: var(--mv-text-light-primary); }
 
   .post-date {
-    font-size: 14px;
+    font-size: var(--mv-size-regular);
+    font-weight: var(--mv-weight-regular);
     margin: 8px 0 0;
   }
-  :global(.theme-dark) .post-date { color: rgba(255, 255, 255, 0.6); }
-  :global(.theme-light) .post-date { color: rgba(0, 0, 0, 0.6); }
+  :global(.theme-dark) .post-date { color: var(--mv-text-dark-secondary); }
+  :global(.theme-light) .post-date { color: var(--mv-text-light-secondary); }
 
   .post-content .body > :first-child {
     display: inline;

@@ -1,6 +1,16 @@
+export interface HomeTextPart {
+  text: string;
+  href?: string;
+}
+
+export interface HomeHeroHighlight {
+  parts: HomeTextPart[];
+}
+
 export interface HomeHero {
   headline: string;
   subheadline: string;
+  highlights: HomeHeroHighlight[];
   primaryCta: {
     label: string;
     href: string;
@@ -11,17 +21,18 @@ export interface HomeHero {
   };
 }
 
+export interface HomeVentureThumb {
+  src: string;
+  alt: string;
+  kind?: 'icon';
+}
+
 export interface HomeVentureCard {
   title: string;
   subtitle: string;
   summary: string;
   href: string;
-  inset?: {
-    title: string;
-    subtitle: string;
-    summary: string;
-    href: string;
-  };
+  thumb?: HomeVentureThumb;
 }
 
 export interface HomeBrandShowcaseItem {
@@ -30,13 +41,10 @@ export interface HomeBrandShowcaseItem {
 }
 
 export interface HomeContact {
-  title: string;
-  body: string;
   primaryHref: string;
   primaryLabel: string;
   secondaryHref: string;
   secondaryLabel: string;
-  guidance: string;
 }
 
 export interface HomeContent {
@@ -48,9 +56,34 @@ export interface HomeContent {
 
 export const homeContent: HomeContent = {
   hero: {
-    headline: 'Founding Engineer and Staff Platform Engineer.',
+    headline: 'Full Stack, Frontend, Backend, Mobile, Payments and Infrastructure',
     subheadline:
-      'I build and run full-stack systems across infrastructure, mobile, and APIs for payments and regulated platforms.',
+      'Platform engineer with a track record in search, payments, and banking.',
+    highlights: [
+      {
+        parts: [
+          { text: 'Delivered tokenization and partner APIs for ' },
+          { text: 'Capital One Databolt', href: 'https://www.capitalone.com/software/products/databolt/' },
+          { text: ' and ' },
+          { text: 'Zelle', href: 'https://www.zellepay.com/' },
+          { text: '.' },
+        ],
+      },
+      {
+        parts: [
+          { text: 'Built ' },
+          { text: 'NextBus', href: 'https://en.wikipedia.org/wiki/NextBus' },
+          { text: ' ML platform infrastructure for NYC MTA, SF Muni, CTA, and MBTA.' },
+        ],
+      },
+      {
+        parts: [
+          { text: 'Building ' },
+          { text: 'Radio Index', href: 'https://radioindex.org' },
+          { text: ', the complete archive of American radio drama.' },
+        ],
+      },
+    ],
     primaryCta: {
       label: 'Read Case Studies',
       href: '/case-studies/',
@@ -66,6 +99,7 @@ export const homeContent: HomeContent = {
     { name: 'Fannie Mae CU2', href: 'https://singlefamily.fanniemae.com/applications-technology/collateral-underwriter' },
     { name: 'Freddie Mac', href: 'https://www.freddiemac.com/' },
     { name: 'WMATA', href: 'https://www.wmata.com/' },
+    { name: 'NextBus', href: 'https://en.wikipedia.org/wiki/NextBus' },
     { name: 'NYC MTA', href: 'https://new.mta.info/' },
     { name: 'BART', href: 'https://www.bart.gov/' },
     { name: 'LA Metro TAP', href: 'https://www.metro.net/' },
@@ -80,45 +114,65 @@ export const homeContent: HomeContent = {
   ],
   ventureCards: [
     {
-      title: 'The Archive of American Radio, Inc.',
-      subtitle: 'Nonprofit',
-      summary: 'Nonprofit preservation and platform work focused on American radio history.',
-      href: 'https://archiveofamericanradio.org',
-      inset: {
-        title: 'Radio Index',
-        subtitle: 'Product',
-        summary: 'Listening and discovery app built as part of the Archive initiative.',
-        href: 'https://radioindex.org',
+      title: 'Radio Index',
+      subtitle: 'The complete archive of American radio drama.',
+      summary: 'Search app for radio drama with transcript and speaker-aware results.',
+      href: 'https://radioindex.org',
+      thumb: {
+        src: '/assets/brands/radioindex-icon.svg',
+        alt: 'Radio Index symbol',
+        kind: 'icon',
+      },
+    },
+    {
+      title: 'Timer Fantasy',
+      subtitle: 'Big beautiful timers for the macOS desktop.',
+      summary: 'macOS timer app with cloud sync.',
+      href: 'https://timerfantasy.com',
+      thumb: {
+        src: '/assets/brands/timerfantasy-icon.png',
+        alt: 'Timer Fantasy symbol',
+        kind: 'icon',
       },
     },
     {
       title: "Quark's Outlines",
-      subtitle: 'Writing',
-      summary: 'Multi-year Python writing series focused on practical engineering patterns.',
+      subtitle: "A beginner's guide to Python. New articles on Monday.",
+      summary: 'Python writing series about real engineering patterns.',
       href: 'https://dev.to/mike-vincent/series/31181',
+      thumb: {
+        src: '/assets/brands/quark-icon.svg',
+        alt: "Quark's Outlines symbol",
+        kind: 'icon',
+      },
+    },
+    {
+      title: 'The Archive of American Radio, Inc.',
+      subtitle: 'A 501(c)(3) nonprofit.',
+      summary: 'Keeping American radio drama alive with systems built for long-term public use.',
+      href: 'https://archiveofamericanradio.org',
+      thumb: {
+        src: '/assets/brands/archive-icon.svg',
+        alt: 'Archive of American Radio icon',
+        kind: 'icon',
+      },
     },
     {
       title: 'Io Pictures Corporation',
-      subtitle: 'Company',
-      summary: 'Motion picture rights, licensing, and distribution operations.',
+      subtitle: 'Film licensing, sales, and distribution.',
+      summary: 'Media venture focused on film rights and distribution operations.',
       href: 'https://iopictures.com',
-    },
-    {
-      title: 'Timer Fantasy',
-      subtitle: 'App',
-      summary: 'macOS timer app with cloud-sync workflow.',
-      href: 'https://timerfantasy.com',
+      thumb: {
+        src: '/assets/brands/iopictures-io-icon-v2.png',
+        alt: 'Io Pictures IO symbol',
+        kind: 'icon',
+      },
     },
   ],
   contact: {
-    title: 'Work With Mike',
-    body:
-      'If you are hiring for platform, payments, or reliability engineering, send the role details and I will respond with fit and next steps.',
     primaryHref: 'https://www.linkedin.com/in/michael-thomas-vincent/',
     primaryLabel: 'Message on LinkedIn',
     secondaryHref: '/resume',
     secondaryLabel: 'View Resume',
-    guidance:
-      'Best outreach format: role scope, stack, remote policy, compensation band, and timeline.',
   },
 };

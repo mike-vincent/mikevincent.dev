@@ -7,5 +7,13 @@ export default defineConfig({
   integrations: [sitemap()],
   build: {
     assets: 'assets'
+  },
+  vite: {
+    server: {
+      watch: {
+        usePolling: true,
+        interval: 150
+      }
+    }
   }
 });

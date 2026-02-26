@@ -29,13 +29,13 @@ export const caseStudies: CaseStudy[] = [
     title: 'Case Study: Tokenization and Payment Controls',
     subtitle: 'Payments Infrastructure',
     summary:
-      'A public-safe engineering brief on shaping secure partner onboarding and payment control services in a regulated environment.',
+      'Engineering brief on secure partner onboarding and payment controls in a regulated environment.',
     brands: [
       { name: 'Capital One Databolt', href: 'https://www.capitalone.com/software/products/databolt/' },
       { name: 'Zelle', href: 'https://www.zellepay.com/' },
     ],
     publicSafeNote:
-      'This case study omits proprietary design details and keeps the focus on delivery approach and operating patterns.',
+      'Proprietary design details are omitted; focus stays on delivery approach and operating patterns.',
     context:
       'A payment platform program needed partner onboarding APIs and payment controls that could support regulated operations without slowing delivery teams.',
     constraints: [
@@ -72,7 +72,7 @@ export const caseStudies: CaseStudy[] = [
     title: 'Case Study: Multi-Cloud Kubernetes Platform Automation',
     subtitle: 'Platform Engineering',
     summary:
-      'A public-safe engineering brief on creating repeatable deployment paths across AWS and Azure Kubernetes environments.',
+      'Engineering brief on repeatable deployment across AWS and Azure Kubernetes environments.',
     brands: [
       { name: 'WMATA', href: 'https://www.wmata.com/' },
       { name: 'NYC MTA', href: 'https://new.mta.info/' },
@@ -81,7 +81,7 @@ export const caseStudies: CaseStudy[] = [
       { name: 'MBTA', href: 'https://www.mbta.com/' },
     ],
     publicSafeNote:
-      'This case study is sanitized and does not include internal topology, capacity details, or vendor contract information.',
+      'Internal topology, capacity details, and vendor contract information are omitted.',
     context:
       'Platform delivery spanned managed Kubernetes environments across cloud providers, and teams needed one stable way to package, deploy, and operate services.',
     constraints: [
@@ -118,7 +118,7 @@ export const caseStudies: CaseStudy[] = [
     title: 'Case Study: Audit-Ready Observability and Incident Discipline',
     subtitle: 'Reliability and Compliance',
     summary:
-      'A public-safe engineering brief on aligning observability, incident response, and compliance evidence in production delivery.',
+      'Engineering brief on aligning observability, incident response, and compliance evidence.',
     brands: [
       { name: 'Fannie Mae CU2', href: 'https://singlefamily.fanniemae.com/applications-technology/collateral-underwriter' },
       { name: 'Freddie Mac', href: 'https://www.freddiemac.com/' },
@@ -128,7 +128,7 @@ export const caseStudies: CaseStudy[] = [
       { name: 'Poison.org', href: 'https://www.poison.org/' },
     ],
     publicSafeNote:
-      'This case study focuses on operating model and implementation patterns and excludes internal event details.',
+      'Internal event details are omitted; focus stays on operating model and implementation patterns.',
     context:
       'Production services required traceable behavior, reliable incident handling, and operational evidence that could be used in regulated review cycles.',
     constraints: [

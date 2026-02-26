@@ -35,6 +35,7 @@ const brandSections = [
   {
     header: "Fare Payments",
     items: [
+      { name: "NextBus", url: "https://en.wikipedia.org/wiki/NextBus", description: "Migrated a legacy index system to a modern AWS ML pipeline as platform engineer" },
       { name: "DC Metro", url: "https://www.wmata.com", description: "Fare systems infrastructure" },
       { name: "NYC MTA", url: "https://new.mta.info", description: "Fare systems infrastructure" },
       { name: "BART", url: "https://www.bart.gov", description: "Fare systems infrastructure" },
@@ -146,15 +147,15 @@ const brandSections = [
     border-top: none;
   }
   .brand-section-header {
-    font-size: 12px;
-    font-weight: 400;
+    font-size: var(--mv-size-regular);
+    font-weight: var(--mv-weight-regular);
     text-transform: uppercase;
     letter-spacing: 0.5px;
     margin: 0;
     padding: 16px 8px 8px;
   }
-  :global(.theme-dark) .brand-section-header { color: rgba(255, 255, 255, 0.5); }
-  :global(.theme-light) .brand-section-header { color: rgba(0, 0, 0, 0.5); }
+  :global(.theme-dark) .brand-section-header { color: var(--mv-text-dark-secondary); }
+  :global(.theme-light) .brand-section-header { color: var(--mv-text-light-secondary); }
   .brands-list {
     list-style: none;
     margin: 0;
@@ -182,18 +183,19 @@ const brandSections = [
   :global(.theme-dark) .brands-list a:hover { background: rgba(255, 255, 255, 0.04); }
   :global(.theme-light) .brands-list a:hover { background: rgba(0, 0, 0, 0.02); }
   .brand-name {
-    font-size: 16px;
-    font-weight: 600;
+    font-size: var(--mv-size-regular);
+    font-weight: var(--mv-weight-strong);
     flex-shrink: 0;
   }
-  :global(.theme-dark) .brand-name { color: #fff; }
-  :global(.theme-light) .brand-name { color: #000; }
+  :global(.theme-dark) .brand-name { color: var(--mv-text-dark-primary); }
+  :global(.theme-light) .brand-name { color: var(--mv-text-light-primary); }
   .brand-desc {
-    font-size: 14px;
+    font-size: var(--mv-size-regular);
+    font-weight: var(--mv-weight-regular);
     text-align: right;
   }
-  :global(.theme-dark) .brand-desc { color: rgba(255, 255, 255, 0.4); }
-  :global(.theme-light) .brand-desc { color: rgba(0, 0, 0, 0.4); }
+  :global(.theme-dark) .brand-desc { color: var(--mv-text-dark-secondary); }
+  :global(.theme-light) .brand-desc { color: var(--mv-text-light-secondary); }
 
   @media (max-width: 499px) {
     .brands-list a,
