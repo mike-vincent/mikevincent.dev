@@ -180,12 +180,13 @@ const getInitials = (text: string): string => {
   :global(.theme-light) .hero-highlights li { color: var(--mv-text-light-secondary); }
   .hero-highlight-link {
     font-weight: var(--mv-weight-strong);
-    text-decoration: underline;
+    text-decoration: none;
     text-underline-offset: 2px;
   }
   :global(.theme-dark) .hero-highlight-link { color: var(--mv-text-dark-primary); }
   :global(.theme-light) .hero-highlight-link { color: var(--mv-text-light-primary); }
   .hero-highlight-link:hover {
+    text-decoration: underline;
     text-decoration-thickness: 2px;
   }
 
