@@ -1,6 +1,17 @@
 ---
 import Base from '../layouts/Base.astro';
 import { homeContent } from '../content/home';
+
+const getInitials = (text: string): string => {
+  const words = text
+    .replace(/[^A-Za-z0-9 ]+/g, ' ')
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean);
+  if (words.length === 0) return '?';
+  if (words.length === 1) return words[0].slice(0, 2).toUpperCase();
+  return `${words[0][0]}${words[1][0]}`.toUpperCase();
+};
 ---
 
 <Base title="Mike Vincent" description="Founding and Staff platform engineer building production search, data, and model systems.">
@@ -41,27 +52,32 @@ import { homeContent } from '../content/home';
   <section class="home-section">
     <h2>Current Projects</h2>
     <ul class="venture-list">
-      {homeContent.ventureCards.map((card) => (
-        <li class="venture-row">
-          <a class="venture-main-link" href={card.href} target="_blank" rel="noopener noreferrer">
-            {card.thumb && (
-              <div class="venture-thumb venture-thumb--icon">
-                <img
-                  class="venture-thumb-image venture-thumb-image--icon"
-                  src={card.thumb.src}
-                  alt={card.thumb.alt}
-                  loading="lazy"
-                  decoding="async"
-                />
+      {homeContent.ventureCards.map((card) => {
+        const initials = getInitials(card.title);
+        return (
+          <li class="venture-row">
+            <a class="venture-main-link" href={card.href} target="_blank" rel="noopener noreferrer">
+              <div class={`venture-thumb ${card.thumb ? 'venture-thumb--icon venture-thumb--image' : 'venture-thumb--fallback-shell'}`}>
+                {card.thumb ? (
+                  <img
+                    class="venture-thumb-image venture-thumb-image--icon"
+                    src={card.thumb.src}
+                    alt={card.thumb.alt}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ) : (
+                  <span class="venture-thumb-fallback">{initials}</span>
+                )}
               </div>
-            )}
-            <div class="venture-lines">
-              <h3>{card.title}</h3>
-              <p class="venture-subtitle">{card.subtitle}</p>
-            </div>
-          </a>
-        </li>
-      ))}
+              <div class="venture-lines">
+                <h3>{card.title}</h3>
+                <p class="venture-subtitle">{card.subtitle}</p>
+              </div>
+            </a>
+          </li>
+        );
+      })}
     </ul>
   </section>
 
@@ -256,11 +272,57 @@ import { homeContent } from '../content/home';
     height: 36px;
     border-radius: 999px;
   }
-  .venture-thumb-image--icon {
-    width: 36px !important;
-    height: 36px !important;
-    max-width: 36px !important;
+  .venture-thumb--image {
+    padding: 4px;
+    border: 1px solid rgba(128, 128, 128, 0.25);
+  }
+  :global(.theme-dark) .venture-thumb--image {
+    background: rgba(255, 255, 255, 0.92);
+  }
+  :global(.theme-light) .venture-thumb--image {
+    background: rgba(0, 0, 0, 0.04);
+  }
+  .venture-thumb--fallback-shell {
+    width: 36px;
+    height: 36px;
     border-radius: 999px;
+    padding: 0;
+    border: none;
+  }
+  :global(.theme-dark) .venture-thumb--fallback-shell {
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--mv-text-dark-primary);
+  }
+  :global(.theme-light) .venture-thumb--fallback-shell {
+    background: rgba(0, 0, 0, 0.1);
+    color: var(--mv-text-light-primary);
+  }
+  :global(.theme-dark) .venture-main-link:hover .venture-thumb--fallback-shell {
+    background: rgba(255, 255, 255, 0.25);
+  }
+  :global(.theme-light) .venture-main-link:hover .venture-thumb--fallback-shell {
+    background: rgba(0, 0, 0, 0.16);
+  }
+  .venture-thumb-image--icon {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    object-fit: contain;
+    border-radius: 0;
+  }
+  .venture-thumb-fallback {
+    width: 100%;
+    height: 100%;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--mv-size-regular);
+    font-weight: var(--mv-weight-strong);
+    line-height: 1;
+    letter-spacing: 0.2px;
+    background: transparent;
+    color: inherit;
   }
 
   .venture-lines {

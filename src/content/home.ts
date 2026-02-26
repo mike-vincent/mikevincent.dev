@@ -85,8 +85,8 @@ export const homeContent: HomeContent = {
       },
     ],
     primaryCta: {
-      label: 'Read Case Studies',
-      href: '/case-studies/',
+      label: 'Projects',
+      href: '/brands/',
     },
     secondaryCta: {
       label: 'View Resume',
@@ -114,6 +114,17 @@ export const homeContent: HomeContent = {
   ],
   ventureCards: [
     {
+      title: 'PricewaterhouseCoopers',
+      subtitle: 'Senior Associate Software Engineer',
+      summary: 'Senior Associate Software Engineer',
+      href: 'https://www.pwc.com',
+      thumb: {
+        src: '/assets/brands/pwc-logo.svg',
+        alt: 'PwC logo',
+        kind: 'icon',
+      },
+    },
+    {
       title: 'Radio Index',
       subtitle: 'The complete archive of American radio drama.',
       summary: 'Search app for radio drama with transcript and speaker-aware results.',
@@ -137,7 +148,7 @@ export const homeContent: HomeContent = {
     },
     {
       title: "Quark's Outlines",
-      subtitle: "A beginner's guide to Python. New articles on Monday.",
+      subtitle: "A beginner's guide to Python. New articles on Mondays.",
       summary: 'Python writing series about real engineering patterns.',
       href: 'https://dev.to/mike-vincent/series/31181',
       thumb: {

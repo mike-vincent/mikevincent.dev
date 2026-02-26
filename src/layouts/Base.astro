@@ -14,12 +14,14 @@ const isBio = pathname === '/about' || pathname === '/about/';
 const isResume = pathname === '/resume' || pathname === '/resume/';
 const isBrands =
   pathname === '/brands' ||
-  pathname === '/brands/';
-const isCaseStudies =
+  pathname === '/brands/' ||
+  pathname === '/past-projects' ||
+  pathname === '/past-projects/' ||
+  pathname.startsWith('/past-projects/') ||
   pathname === '/case-studies' ||
   pathname === '/case-studies/' ||
   pathname.startsWith('/case-studies/');
-const isDetail = isBio || isResume || isBrands || isCaseStudies;
+const isDetail = isBio || isResume || isBrands;
 const ogImage = image || "https://mikevincent.dev/og.png";
 const canonicalURL = new URL(Astro.url.pathname, "https://mikevincent.dev");
 ---
@@ -33,6 +35,7 @@ const canonicalURL = new URL(Astro.url.pathname, "https://mikevincent.dev");
   <link rel="canonical" href={canonicalURL} />
   <link rel="stylesheet" href="https://www.apple.com/wss/fonts?families=SF+Pro,v1|SF+Pro+Icons,v1" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>{title}</title>
   <meta name="description" content={description} />
 
@@ -144,22 +147,16 @@ const canonicalURL = new URL(Astro.url.pathname, "https://mikevincent.dev");
             <span>Home</span>
           </span>
         </a>
+        <a href="/brands" class={isBrands ? 'active' : ''}>
+          <span class="nav-tab-inner">
+            <span class="icon-square"><span class={`material-symbols-outlined${isBrands ? ' filled' : ''}`}>auto_awesome</span></span>
+            <span>Projects</span>
+          </span>
+        </a>
         <a href="/resume" class={isResume ? 'active' : ''}>
           <span class="nav-tab-inner">
             <span class="icon-square"><span class={`material-symbols-outlined${isResume ? ' filled' : ''}`}>article</span></span>
             <span>Resume</span>
-          </span>
-        </a>
-        <a href="/brands" class={isBrands ? 'active' : ''}>
-          <span class="nav-tab-inner">
-            <span class="icon-square"><span class={`material-symbols-outlined${isBrands ? ' filled' : ''}`}>work</span></span>
-            <span>Brands</span>
-          </span>
-        </a>
-        <a href="/case-studies" class={isCaseStudies ? 'active' : ''}>
-          <span class="nav-tab-inner">
-            <span class="icon-square"><span class={`material-symbols-outlined${isCaseStudies ? ' filled' : ''}`}>menu_book</span></span>
-            <span>Case Studies</span>
           </span>
         </a>
       </nav>

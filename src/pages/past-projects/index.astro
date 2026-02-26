@@ -10,11 +10,6 @@ const studyIcons: Record<string, string> = {
 ---
 
 <Base title="Past Projects - Mike Vincent" description="Past projects across platform, payments, and reliability work.">
-  <section class="case-studies-intro">
-    <h1>Past Projects</h1>
-    <p>Short snapshots of delivery across platform, payments, and reliability.</p>
-  </section>
-
   <section class="case-studies-list">
     <ul class="venture-list">
       {caseStudies.map((study) => (
@@ -38,34 +33,11 @@ const studyIcons: Record<string, string> = {
 </Base>
 
 <style>
-  .case-studies-intro,
   .case-studies-list {
     margin-left: -11px;
     margin-right: -11px;
-    padding: 16px 11px;
+    padding: 0 11px 8px;
   }
-
-  .case-studies-intro {
-    padding-top: 10px;
-  }
-
-  .case-studies-intro h1 {
-    margin: 0;
-    font-size: var(--mv-size-large);
-    font-weight: var(--mv-weight-strong);
-    line-height: 1.2;
-  }
-  :global(.theme-dark) .case-studies-intro h1 { color: var(--mv-text-dark-primary); }
-  :global(.theme-light) .case-studies-intro h1 { color: var(--mv-text-light-primary); }
-
-  .case-studies-intro p {
-    margin: 10px 0 0;
-    font-size: var(--mv-size-regular);
-    font-weight: var(--mv-weight-regular);
-    line-height: 1.5;
-  }
-  :global(.theme-dark) .case-studies-intro p { color: var(--mv-text-dark-secondary); }
-  :global(.theme-light) .case-studies-intro p { color: var(--mv-text-light-secondary); }
 
   .venture-list {
     list-style: none;
@@ -91,6 +63,10 @@ const studyIcons: Record<string, string> = {
     padding: 8px 0;
     text-decoration: none;
   }
+  .venture-main-link,
+  .venture-main-link:visited {
+    color: inherit;
+  }
   .venture-main-link:hover {
     text-decoration: none;
   }
@@ -108,12 +84,18 @@ const studyIcons: Record<string, string> = {
     height: 36px;
     border-radius: 999px;
   }
+  :global(.theme-dark) .venture-thumb--icon {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  :global(.theme-light) .venture-thumb--icon {
+    background: rgba(0, 0, 0, 0.12);
+  }
   .venture-thumb--icon i {
     font-size: 15px;
     line-height: 1;
   }
-  :global(.theme-dark) .venture-thumb--icon i { color: var(--mv-text-dark-secondary); }
-  :global(.theme-light) .venture-thumb--icon i { color: var(--mv-text-light-secondary); }
+  :global(.theme-dark) .venture-thumb--icon i { color: var(--mv-text-dark-primary); }
+  :global(.theme-light) .venture-thumb--icon i { color: var(--mv-text-light-primary); }
 
   .venture-lines {
     min-width: 0;

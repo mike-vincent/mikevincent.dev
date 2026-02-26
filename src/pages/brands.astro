@@ -99,112 +99,225 @@ const brandSections = [
   {
     header: "Writing",
     items: [
-      { name: "Python Tutorials by Mike Vincent", url: "https://dev.to/mike-vincent", description: "Blog on dev.to" },
+      { name: "Quark's Outlines", url: "https://dev.to/mike-vincent", description: "Python Deep Dives by Mike Vincent" },
     ],
   },
 ];
+
+const brandAvatars: Record<string, string> = {
+  'Timer Fantasy': '/assets/brands/timerfantasy-icon.png',
+  'Io Pictures Corporation': '/assets/brands/iopictures-io-icon-v2.png',
+  'The Archive of American Radio, Inc.': '/assets/brands/archive-icon.svg',
+};
+
+const brandInitialOverrides: Record<string, string> = {
+  NextBus: 'NB',
+  'NYC MTA': 'NY',
+  'Boston MBTA': 'MB',
+  'LA Metro': 'LA',
+  'SF Muni': 'SF',
+  'wgshs.itgo.com': 'WG',
+  "Quark's Outlines": 'Q',
+};
+
+const getBrandInitials = (name: string): string => {
+  const override = brandInitialOverrides[name];
+  if (override) return override;
+  const words = name
+    .replace(/[^A-Za-z0-9 ]+/g, ' ')
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean);
+  if (words.length === 0) return '?';
+  if (words.length === 1) return words[0].slice(0, 2).toUpperCase();
+  return `${words[0][0]}${words[1][0]}`.toUpperCase();
+};
+
+const truncateSubhead = (text: string): string => {
+  const clean = text.trim();
+  if (clean.length <= 16) return clean;
+  return `${clean.slice(0, 15).trimEnd()}…`;
+};
+
+const brands = brandSections
+  .flatMap((section) => section.items)
+  .slice()
+  .sort((a, b) => a.name.localeCompare(b.name, 'en', { sensitivity: 'base' }));
 ---
 
-<Base title="Brands - Mike Vincent" description="Brands by Mike Vincent">
-  {brandSections.map(section => (
-    <section class="brand-section">
-      <h2 class="brand-section-header">{section.header}</h2>
-      <ul class="brands-list">
-        {section.items.map(brand => (
+<Base title="Projects - Mike Vincent" description="Projects by Mike Vincent">
+  <section class="brands-list-wrap">
+    <ul class="brands-list">
+      {brands.map((brand) => {
+        const avatarSrc = brandAvatars[brand.name];
+        const initials = getBrandInitials(brand.name);
+        return (
           <li>
             {brand.url ? (
-              <a href={brand.url} target="_blank" rel="noopener noreferrer">
-                <span class="brand-name">{brand.name}</span>
-                <span class="brand-desc">{brand.description}</span>
+              <a class="venture-main-link" href={brand.url} target="_blank" rel="noopener noreferrer">
+                <span class={`venture-thumb ${avatarSrc ? 'venture-thumb--image' : 'venture-thumb--fallback-shell'}`} aria-hidden="true">
+                  {avatarSrc ? (
+                    <img class="venture-thumb-image" src={avatarSrc} alt="" loading="lazy" decoding="async" />
+                  ) : (
+                    <span class="venture-thumb-fallback">{initials}</span>
+                  )}
+                </span>
+                <span class="venture-lines">
+                  <span class="brand-name">{brand.name}</span>
+                  <span class="venture-subtitle">{truncateSubhead(brand.description)}</span>
+                </span>
               </a>
             ) : (
-              <span class="brand-link-none">
-                <span class="brand-name">{brand.name}</span>
-                <span class="brand-desc">{brand.description}</span>
+              <span class="venture-main-link brand-link-none">
+                <span class={`venture-thumb ${avatarSrc ? 'venture-thumb--image' : 'venture-thumb--fallback-shell'}`} aria-hidden="true">
+                  {avatarSrc ? (
+                    <img class="venture-thumb-image" src={avatarSrc} alt="" loading="lazy" decoding="async" />
+                  ) : (
+                    <span class="venture-thumb-fallback">{initials}</span>
+                  )}
+                </span>
+                <span class="venture-lines">
+                  <span class="brand-name">{brand.name}</span>
+                  <span class="venture-subtitle">{truncateSubhead(brand.description)}</span>
+                </span>
               </span>
             )}
           </li>
-        ))}
-      </ul>
-    </section>
-  ))}
+        );
+      })}
+    </ul>
+  </section>
 </Base>
 
 <style>
-  :global(.page-content):has(.brand-section) {
+  :global(.page-content):has(.brands-list-wrap) {
     padding-top: 0;
     padding-bottom: 0;
   }
-  .brand-section {
-    margin-bottom: 0;
-    border-top: 1px solid rgba(128, 128, 128, 0.2);
+  .brands-list-wrap {
     margin-left: -11px;
     margin-right: -11px;
-    padding-left: 11px;
-    padding-right: 11px;
+    padding: 0 11px 8px;
   }
-  .brand-section:first-child {
-    border-top: none;
-  }
-  .brand-section-header {
-    font-size: var(--mv-size-regular);
-    font-weight: var(--mv-weight-regular);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin: 0;
-    padding: 16px 8px 8px;
-  }
-  :global(.theme-dark) .brand-section-header { color: var(--mv-text-dark-secondary); }
-  :global(.theme-light) .brand-section-header { color: var(--mv-text-light-secondary); }
   .brands-list {
     list-style: none;
     margin: 0;
     padding: 0;
   }
   .brands-list li {
-    border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+    border-top: 1px solid rgba(128, 128, 128, 0.2);
   }
-  .brands-list li:last-child {
-    border-bottom: none;
+  .brands-list li:first-child {
+    border-top: none;
   }
-  .brands-list a,
-  .brands-list .brand-link-none {
+
+  .venture-main-link {
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 12px;
-    padding: 14px 8px;
-    text-decoration: none;
-    min-height: 44px;
-  }
-  .brands-list a:hover {
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
     text-decoration: none;
   }
-  :global(.theme-dark) .brands-list a:hover { background: rgba(255, 255, 255, 0.04); }
-  :global(.theme-light) .brands-list a:hover { background: rgba(0, 0, 0, 0.02); }
-  .brand-name {
+  .venture-main-link,
+  .venture-main-link:visited {
+    color: inherit;
+  }
+  .venture-main-link:hover {
+    text-decoration: none;
+  }
+  .brand-link-none {
+    cursor: default;
+  }
+
+  .venture-thumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    overflow: hidden;
+    flex: 0 0 auto;
+  }
+  .venture-thumb {
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+  }
+  .venture-thumb--image {
+    padding: 4px;
+    border: 1px solid rgba(128, 128, 128, 0.25);
+  }
+  :global(.theme-dark) .venture-thumb--image {
+    background: rgba(255, 255, 255, 0.92);
+  }
+  :global(.theme-light) .venture-thumb--image {
+    background: rgba(0, 0, 0, 0.04);
+  }
+  .venture-thumb--fallback-shell {
+    padding: 0;
+    border: none;
+  }
+  :global(.theme-dark) .venture-thumb--fallback-shell {
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--mv-text-dark-primary);
+  }
+  :global(.theme-light) .venture-thumb--fallback-shell {
+    background: rgba(0, 0, 0, 0.1);
+    color: var(--mv-text-light-primary);
+  }
+  :global(.theme-dark) .venture-main-link:hover .venture-thumb--fallback-shell {
+    background: rgba(255, 255, 255, 0.25);
+  }
+  :global(.theme-light) .venture-main-link:hover .venture-thumb--fallback-shell {
+    background: rgba(0, 0, 0, 0.16);
+  }
+  .venture-thumb-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+  .venture-thumb-fallback {
+    width: 100%;
+    height: 100%;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-size: var(--mv-size-regular);
     font-weight: var(--mv-weight-strong);
-    flex-shrink: 0;
+    line-height: 1;
+    letter-spacing: 0.2px;
+    background: transparent;
+    color: inherit;
+  }
+
+  .venture-lines {
+    min-width: 0;
+    display: grid;
+    gap: 1px;
+  }
+
+  .brands-list a:hover .brand-name,
+  .brands-list a:hover .venture-subtitle {
+    text-decoration: none;
+  }
+
+  .brand-name {
+    font-size: var(--mv-size-regular);
+    font-weight: var(--mv-weight-regular);
+    line-height: 1.2;
   }
   :global(.theme-dark) .brand-name { color: var(--mv-text-dark-primary); }
   :global(.theme-light) .brand-name { color: var(--mv-text-light-primary); }
-  .brand-desc {
+  .venture-subtitle {
     font-size: var(--mv-size-regular);
     font-weight: var(--mv-weight-regular);
-    text-align: right;
+    line-height: 1.2;
+    opacity: var(--mv-opacity-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
-  :global(.theme-dark) .brand-desc { color: var(--mv-text-dark-secondary); }
-  :global(.theme-light) .brand-desc { color: var(--mv-text-light-secondary); }
-
-  @media (max-width: 499px) {
-    .brands-list a,
-    .brands-list .brand-link-none {
-      flex-direction: column;
-      gap: 2px;
-    }
-    .brand-desc {
-      text-align: left;
-    }
-  }
+  :global(.theme-dark) .venture-subtitle { color: var(--mv-text-dark-secondary); }
+  :global(.theme-light) .venture-subtitle { color: var(--mv-text-light-secondary); }
 </style>
