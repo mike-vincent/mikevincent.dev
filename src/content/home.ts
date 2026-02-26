@@ -86,7 +86,7 @@ export const homeContent: HomeContent = {
     ],
     primaryCta: {
       label: 'Projects',
-      href: '/brands/',
+      href: '/works/',
     },
     secondaryCta: {
       label: 'View Resume',

@@ -13,6 +13,8 @@ const isHome = pathname === '/' || pathname === '';
 const isBio = pathname === '/about' || pathname === '/about/';
 const isResume = pathname === '/resume' || pathname === '/resume/';
 const isBrands =
+  pathname === '/works' ||
+  pathname === '/works/' ||
   pathname === '/brands' ||
   pathname === '/brands/' ||
   pathname === '/past-projects' ||
@@ -147,10 +149,10 @@ const canonicalURL = new URL(Astro.url.pathname, "https://mikevincent.dev");
             <span>Home</span>
           </span>
         </a>
-        <a href="/brands" class={isBrands ? 'active' : ''}>
+        <a href="/works" class={isBrands ? 'active' : ''}>
           <span class="nav-tab-inner">
             <span class="icon-square"><span class={`material-symbols-outlined${isBrands ? ' filled' : ''}`}>auto_awesome</span></span>
-            <span>Projects</span>
+            <span>Works</span>
           </span>
         </a>
         <a href="/resume" class={isResume ? 'active' : ''}>
