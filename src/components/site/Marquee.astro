@@ -1,0 +1,25 @@
+---
+import { homeContent } from '../../content/home';
+const marquee = [...homeContent.americanPrograms, ...homeContent.americanPrograms];
+---
+<section class="relative left-1/2 w-screen -translate-x-1/2 border-y bg-muted/30 py-4" aria-label="Past programs and platforms">
+  <div class="group relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
+    <div class="flex w-max animate-[marquee_150s_linear_infinite] gap-2 group-hover:[animation-play-state:paused]">
+      {marquee.map((brand, i) => (
+        <a
+          href={brand.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-hidden={i >= marquee.length / 2 ? 'true' : undefined}
+          tabindex={i >= marquee.length / 2 ? -1 : undefined}
+          class="inline-flex shrink-0 items-center gap-2 rounded-md border bg-background px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+        >
+          {brand.domain && (
+            <img src={`https://www.google.com/s2/favicons?domain=${brand.domain}&sz=32`} alt="" width="16" height="16" loading="lazy" class="size-4 rounded-sm" />
+          )}
+          {brand.name}
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

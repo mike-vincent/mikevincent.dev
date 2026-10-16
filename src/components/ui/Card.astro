@@ -1,0 +1,11 @@
+---
+import { cn } from '../../lib/cn';
+const { class: className, href, ...rest } = Astro.props;
+const cls = cn(
+  'bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm',
+  href && 'transition-colors hover:bg-accent/40 hover:border-ring/40',
+  className
+);
+const Tag = href ? 'a' : 'div';
+---
+<Tag class={cls} href={href} {...rest}><slot /></Tag>

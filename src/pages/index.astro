@@ -1,0 +1,59 @@
+---
+import Base from '../layouts/Base.astro';
+import Marquee from '../components/site/Marquee.astro';
+import Expertise from '../components/site/Expertise.astro';
+import PortfolioList from '../components/site/PortfolioList.astro';
+import ResumeSection from '../components/site/ResumeSection.astro';
+---
+<Base
+  title="Mike Vincent"
+  description="Mike Vincent builds fraud and risk models for the Discover Global Network, search for Discover.com and CapitalOne.com, and fare-payment platforms for five US transit agencies."
+>
+  <header class="py-14 sm:py-20">
+      <div class="flex flex-col gap-5 sm:flex-row sm:items-start sm:gap-8">
+        <div class="min-w-0">
+          <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">Mike Vincent</h1>
+          <p class="mt-1.5 text-lg font-medium text-foreground">Staff Software Engineer</p>
+          <p class="mt-4 text-base font-medium text-foreground">Los Angeles, California. U.S. Citizen.</p>
+          <p class="mt-1.5 text-base text-muted-foreground">Banking, Payments, Infrastructure, AI/ML.</p>
+        </div>
+        <img src="/assets/images/headshot.jpg" alt="Mike Vincent" width="150" height="150"
+          class="order-first size-36 shrink-0 rounded-full object-cover ring-1 ring-border sm:order-none sm:size-42" />
+      </div>
+      <div class="mt-6 flex flex-wrap gap-1.5">
+        {['Generalist Builder', 'Software Engineer', 'Machine Learning Engineer', 'Data Engineer', 'AI Engineer', 'Security Engineer', 'Platform Engineer', 'Infrastructure Engineer'].map((p) => (
+          <span class="inline-flex items-center rounded-md bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground">{p}</span>
+        ))}
+      </div>
+      <nav aria-label="Primary" class="mt-6 flex flex-wrap gap-3">
+            <a href="#resume" class="inline-flex h-10 items-center rounded-md bg-primary px-6 text-sm font-medium text-primary-foreground shadow-xs transition-colors hover:bg-primary/90">View Resume</a>
+            <a href="#portfolio" class="inline-flex h-10 items-center rounded-md border bg-background px-6 text-sm font-medium shadow-xs transition-colors hover:bg-accent hover:text-accent-foreground">See Portfolio</a>
+            <a href="https://github.com/mike-vincent" target="_blank" rel="noopener noreferrer"
+              class="inline-flex h-10 items-center rounded-md border bg-background px-6 text-sm font-medium shadow-xs transition-colors hover:bg-accent hover:text-accent-foreground">GitHub</a>
+            <a href="https://www.linkedin.com/in/michael-thomas-vincent/" target="_blank" rel="noopener noreferrer"
+              class="inline-flex h-10 items-center rounded-md border bg-background px-6 text-sm font-medium shadow-xs transition-colors hover:bg-accent hover:text-accent-foreground">LinkedIn</a>
+          </nav>
+        </div>
+      </div>
+  </header>
+
+  <Marquee />
+
+  <section aria-labelledby="overview-heading" class="py-14">
+      <h2 id="overview-heading" class="text-2xl font-semibold tracking-tight">About</h2>
+      <p class="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground">
+        Mike Vincent is an American software engineer and founder from Los Angeles who builds and
+        runs payments and AI model platforms for well-known brands. He has worked as an engineering
+        manager and staff engineer at companies including PwC, Capital One, Discover, and Fannie
+        Mae, and writes about Python, programming, and technology leadership in the
+        &ldquo;<a href="https://dev.to/mike-vincent" target="_blank" rel="noopener noreferrer"
+        class="font-medium text-foreground underline underline-offset-4">Quark&rsquo;s Outlines</a>&rdquo; series.
+      </p>
+
+  </section>
+
+  <PortfolioList heading="Portfolio">
+    <Expertise />
+  </PortfolioList>
+  <ResumeSection />
+</Base>

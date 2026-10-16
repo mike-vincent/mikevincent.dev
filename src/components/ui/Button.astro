@@ -1,0 +1,29 @@
+---
+import { cn } from '../../lib/cn';
+interface Props {
+  variant?: 'default' | 'secondary' | 'outline' | 'ghost' | 'link';
+  size?: 'sm' | 'default' | 'lg' | 'icon';
+  href?: string;
+  class?: string;
+  [key: string]: any;
+}
+const { variant = 'default', size = 'default', href, class: className, ...rest } = Astro.props;
+const base =
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:border-ring shrink-0 cursor-pointer";
+const variants = {
+  default: 'bg-primary text-primary-foreground shadow-xs hover:bg-primary/90',
+  secondary: 'bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80',
+  outline: 'border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground',
+  ghost: 'hover:bg-accent hover:text-accent-foreground',
+  link: 'text-foreground underline-offset-4 hover:underline',
+};
+const sizes = {
+  sm: 'h-8 rounded-md gap-1.5 px-3',
+  default: 'h-9 px-4 py-2',
+  lg: 'h-10 rounded-md px-6',
+  icon: 'size-9 rounded-md',
+};
+const cls = cn(base, variants[variant], sizes[size], className);
+const Tag = href ? 'a' : 'button';
+---
+<Tag class={cls} href={href} {...rest}><slot /></Tag>
