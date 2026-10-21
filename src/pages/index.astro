@@ -12,6 +12,7 @@ const jsonLd = {
       '@type': 'Person',
       '@id': 'https://mikevincent.dev/#person',
       name: 'Mike Vincent',
+      alternateName: ['Michael Vincent', 'Michael T. Vincent'],
       url: 'https://mikevincent.dev/',
       image: 'https://mikevincent.dev/assets/images/headshot.jpg',
       jobTitle: 'Staff Software Engineer',
@@ -34,8 +35,8 @@ const jsonLd = {
 };
 ---
 <Base
-  title="Mike Vincent · Staff Software Engineer, Los Angeles"
-  description="Mike Vincent builds fraud and risk models for the Discover Global Network, search for Discover.com and CapitalOne.com, and fare-payment platforms for five US transit agencies."
+  title="Mike (Michael) Vincent · Staff Software Engineer, Los Angeles"
+  description="Michael Vincent, known as Mike, is a Staff Software Engineer in Los Angeles. He builds fraud and risk models for the Discover Global Network, search for Discover.com and CapitalOne.com, and fare-payment platforms for five US transit agencies."
 >
   <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
   <header class="py-14 sm:py-20">
