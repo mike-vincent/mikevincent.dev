@@ -1,6 +1,6 @@
 # Mike Vincent
 
-> Mike Vincent is a Staff Software Engineer in Los Angeles, California (U.S. Citizen) working in banking, payments, infrastructure, and AI/ML. He builds fraud and risk models for the Discover Global Network, search for Discover.com and CapitalOne.com, and fare-payment platforms for five US transit agencies.
+> Mike Vincent (Michael Vincent) is a Staff Software Engineer in Los Angeles, California (U.S. Citizen) working in banking, payments, infrastructure, and AI/ML. He builds fraud and risk models for the Discover Global Network, search for Discover.com and CapitalOne.com, and fare-payment platforms for five US transit agencies.
 
 He has worked as an engineering manager and staff engineer at companies including PwC, Capital One, Discover, and Fannie Mae, and writes about Python, programming, and technology leadership in the "Quark's Outlines" series.
 
