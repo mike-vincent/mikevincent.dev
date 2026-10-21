@@ -2,4 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://mikevincent.dev/sitemap.xml
-Sitemap: https://mikevincent.dev/sitemap-index.xml
