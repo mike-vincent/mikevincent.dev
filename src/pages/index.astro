@@ -4,11 +4,40 @@ import Marquee from '../components/site/Marquee.astro';
 import Expertise from '../components/site/Expertise.astro';
 import PortfolioList from '../components/site/PortfolioList.astro';
 import ResumeSection from '../components/site/ResumeSection.astro';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': 'https://mikevincent.dev/#person',
+      name: 'Mike Vincent',
+      url: 'https://mikevincent.dev/',
+      image: 'https://mikevincent.dev/assets/images/headshot.jpg',
+      jobTitle: 'Staff Software Engineer',
+      address: { '@type': 'PostalAddress', addressLocality: 'Los Angeles', addressRegion: 'CA', addressCountry: 'US' },
+      sameAs: [
+        'https://github.com/mike-vincent',
+        'https://www.linkedin.com/in/michael-thomas-vincent/',
+        'https://dev.to/mike-vincent',
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://mikevincent.dev/#website',
+      name: 'Mike Vincent',
+      url: 'https://mikevincent.dev/',
+      inLanguage: 'en-US',
+      publisher: { '@id': 'https://mikevincent.dev/#person' },
+    },
+  ],
+};
 ---
 <Base
-  title="Mike Vincent"
+  title="Mike Vincent · Staff Software Engineer, Los Angeles"
   description="Mike Vincent builds fraud and risk models for the Discover Global Network, search for Discover.com and CapitalOne.com, and fare-payment platforms for five US transit agencies."
 >
+  <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
   <header class="py-14 sm:py-20">
       <div class="flex flex-col gap-5 sm:flex-row sm:items-start sm:gap-8">
         <div class="min-w-0">
