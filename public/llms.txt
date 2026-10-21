@@ -1,0 +1,24 @@
+# Mike Vincent
+
+> Mike Vincent is a Staff Software Engineer in Los Angeles, California (U.S. Citizen) working in banking, payments, infrastructure, and AI/ML. He builds fraud and risk models for the Discover Global Network, search for Discover.com and CapitalOne.com, and fare-payment platforms for five US transit agencies.
+
+He has worked as an engineering manager and staff engineer at companies including PwC, Capital One, Discover, and Fannie Mae, and writes about Python, programming, and technology leadership in the "Quark's Outlines" series.
+
+## Site
+
+- [Home](https://mikevincent.dev/): About, portfolio, and resume on one page
+- [Resume (PDF)](https://mikevincent.dev/resume.pdf)
+
+## Projects
+
+- [Radio Index](https://radioindex.org): AI-powered search for American radio drama
+- [Timer Fantasy](https://timerfantasy.com): Big beautiful timers for the macOS desktop
+- [Quark's Outlines](https://dev.to/mike-vincent/series/31181): A beginner's guide to Python
+- [The Archive of American Radio, Inc.](https://archiveofamericanradio.org): A 501(c)(3) nonprofit
+- [Io Pictures Corporation](https://iopictures.com): Film licensing, sales, and distribution
+
+## Profiles
+
+- [GitHub](https://github.com/mike-vincent)
+- [LinkedIn](https://www.linkedin.com/in/michael-thomas-vincent/)
+- [DEV Community](https://dev.to/mike-vincent)
