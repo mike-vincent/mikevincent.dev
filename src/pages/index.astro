@@ -1,6 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
-import PortfolioList from '../components/site/PortfolioList.astro';
+import Section from '../components/site/Section.astro';
+import Row from '../components/site/Row.astro';
+import { portfolio, projects, favicon } from '../content/portfolio';
 import ResumeSection from '../components/site/ResumeSection.astro';
 
 const jsonLd = {
@@ -80,6 +82,17 @@ const jsonLd = {
 
   </section>
 
-  <PortfolioList heading="Portfolio" />
+  <Section id="portfolio" label="Portfolio">
+    <ul class="grid gap-x-6 gap-y-5 sm:grid-cols-2">
+      {portfolio.map((p) => <li><Row name={p.name} href={p.url} icon={p.icon ?? favicon(p.url)} description={p.description} /></li>)}
+    </ul>
+  </Section>
+
+  <Section id="projects" label="Projects">
+    <ul class="grid gap-x-6 gap-y-5 sm:grid-cols-2">
+      {projects.map((p) => <li><Row name={p.name} href={p.url} icon={p.icon} description={p.description} /></li>)}
+    </ul>
+  </Section>
+
   <ResumeSection />
 </Base>
