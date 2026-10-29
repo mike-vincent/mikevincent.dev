@@ -1,0 +1,12 @@
+---
+// A page section: hairline above, small-caps grey label, then its rows.
+interface Props { id: string; label: string; }
+const { id, label } = Astro.props;
+---
+<section id={id} aria-labelledby={`${id}-heading`} class="border-t py-10">
+  <div class="mb-5 flex items-center gap-2">
+    <h2 id={`${id}-heading`} class="text-sm font-semibold uppercase tracking-widest text-muted-foreground">{label}</h2>
+    <slot name="actions" />
+  </div>
+  <slot />
+</section>
