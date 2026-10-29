@@ -3,7 +3,9 @@ import Base from '../layouts/Base.astro';
 import Section from '../components/site/Section.astro';
 import Row from '../components/site/Row.astro';
 import { portfolio, projects, favicon } from '../content/portfolio';
-import ResumeSection from '../components/site/ResumeSection.astro';
+import { roles, education, skills } from '../content/resume';
+
+const button = 'inline-flex h-10 items-center rounded-md border bg-background px-6 text-sm font-medium shadow-xs transition-colors hover:bg-accent hover:text-accent-foreground';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -58,29 +60,48 @@ const jsonLd = {
         ))}
       </div>
       <nav aria-label="Primary" class="mt-6 flex flex-wrap gap-3">
-            <a href="#resume" class="inline-flex h-10 items-center rounded-md bg-primary px-6 text-sm font-medium text-primary-foreground shadow-xs transition-colors hover:bg-primary/90">View Resume</a>
-            <a href="#portfolio" class="inline-flex h-10 items-center rounded-md border bg-background px-6 text-sm font-medium shadow-xs transition-colors hover:bg-accent hover:text-accent-foreground">See Portfolio</a>
-            <a href="https://github.com/mike-vincent" target="_blank" rel="noopener noreferrer"
-              class="inline-flex h-10 items-center rounded-md border bg-background px-6 text-sm font-medium shadow-xs transition-colors hover:bg-accent hover:text-accent-foreground">GitHub</a>
-            <a href="https://www.linkedin.com/in/michael-thomas-vincent/" target="_blank" rel="noopener noreferrer"
-              class="inline-flex h-10 items-center rounded-md border bg-background px-6 text-sm font-medium shadow-xs transition-colors hover:bg-accent hover:text-accent-foreground">LinkedIn</a>
-          </nav>
-        </div>
-      </div>
+        <a href="#resume" class="inline-flex h-10 items-center rounded-md bg-primary px-6 text-sm font-medium text-primary-foreground shadow-xs transition-colors hover:bg-primary/90">View Resume</a>
+        <a href="#portfolio" class={button}>See Portfolio</a>
+        <a href="https://github.com/mike-vincent" target="_blank" rel="noopener noreferrer" class={button}>GitHub</a>
+        <a href="https://www.linkedin.com/in/michael-thomas-vincent/" target="_blank" rel="noopener noreferrer" class={button}>LinkedIn</a>
+      </nav>
   </header>
 
-  <section aria-labelledby="overview-heading" class="py-14">
-      <h2 id="overview-heading" class="text-2xl font-semibold tracking-tight">About</h2>
-      <p class="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground">
-        Mike Vincent is an American software engineer and founder from Los Angeles who builds and
-        runs payments and AI model platforms for well-known brands. He has worked as an engineering
-        manager and staff engineer at companies including PwC, Capital One, Discover, and Fannie
-        Mae, and writes about Python, programming, and technology leadership in the
-        &ldquo;<a href="https://dev.to/mike-vincent" target="_blank" rel="noopener noreferrer"
-        class="font-medium text-foreground underline underline-offset-4">Quark&rsquo;s Outlines</a>&rdquo; series.
-      </p>
+  <Section id="about" label="About">
+    <p class="max-w-3xl text-base leading-relaxed text-muted-foreground">
+      Mike Vincent is an American software engineer and founder from Los Angeles who builds and
+      runs payments and AI model platforms for well-known brands. He has worked as an engineering
+      manager and staff engineer at companies including PwC, Capital One, Discover, and Fannie Mae.
+    </p>
+    <p class="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground">
+      Read Mike’s articles on Python in the “<a href="https://dev.to/mike-vincent" target="_blank" rel="noopener noreferrer" class="underline-offset-4 hover:text-foreground hover:underline">Quark’s Outlines</a>” series.
+      Listen to an old radio show at <a href="https://www.radioindex.org" target="_blank" rel="noopener noreferrer" class="underline-offset-4 hover:text-foreground hover:underline">radioindex.org</a>, which Mike builds and runs for The Archive of American Radio, Inc.
+    </p>
+  </Section>
 
-  </section>
+  <Section id="resume" label="Experience">
+    <a slot="actions" href="/resume.pdf" download="mikevincentresume.pdf" title="Download PDF" aria-label="Download resume PDF"
+      class="inline-flex h-8 items-center gap-1.5 rounded-md px-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground">
+      <span class="material-symbols-outlined text-[20px]" aria-hidden="true">download</span>
+      <span>Download resume</span>
+    </a>
+    <ul class="space-y-8">
+      {roles.map((r) => (
+        <li>
+          <Row name={`${r.title}, ${r.org}`} icon={favicon(r.url)} meta={r.period} description={r.blurb}>
+            <ul class="mt-2 space-y-1.5">
+              {r.bullets.map((b) => (
+                <li class="flex gap-2.5 text-sm text-muted-foreground">
+                  <span class="mt-2 size-1 shrink-0 rounded-full bg-muted-foreground/50"></span>
+                  <span><span class="font-medium text-foreground">{b.lead}</span>. {/^[a-z]{2}/.test(b.text) ? b.text[0].toUpperCase() + b.text.slice(1) : b.text}</span>
+                </li>
+              ))}
+            </ul>
+          </Row>
+        </li>
+      ))}
+    </ul>
+  </Section>
 
   <Section id="portfolio" label="Portfolio">
     <ul class="grid gap-x-6 gap-y-5 sm:grid-cols-2">
@@ -94,5 +115,15 @@ const jsonLd = {
     </ul>
   </Section>
 
-  <ResumeSection />
+  <Section id="skills" label="Skills">
+    <ul class="grid gap-x-6 gap-y-5 sm:grid-cols-2">
+      {skills.map((s) => <li><Row name={s.group} description={s.items} /></li>)}
+    </ul>
+  </Section>
+
+  <Section id="education" label="Education">
+    <ul class="grid gap-x-6 gap-y-5 sm:grid-cols-2">
+      {education.map((e) => <li><Row name={e.school} href={e.url} icon={favicon(e.url)} description={e.detail} /></li>)}
+    </ul>
+  </Section>
 </Base>
