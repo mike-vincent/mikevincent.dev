@@ -1,6 +1,5 @@
 ---
 import Base from '../layouts/Base.astro';
-import Expertise from '../components/site/Expertise.astro';
 import PortfolioList from '../components/site/PortfolioList.astro';
 import ResumeSection from '../components/site/ResumeSection.astro';
 
@@ -81,8 +80,6 @@ const jsonLd = {
 
   </section>
 
-  <PortfolioList heading="Portfolio">
-    <Expertise />
-  </PortfolioList>
+  <PortfolioList heading="Portfolio" />
   <ResumeSection />
 </Base>
