@@ -3,7 +3,8 @@ export const roles = [
   {
     "title": "Lead Software Engineer",
     "org": "PwC",
-    "period": "2024 to Present",
+    "url": "https://www.pwc.com",
+    "period": "2024 to present",
     "location": "Los Angeles, CA",
     "blurb": "Founding engineer building AI search and payments infrastructure for Capital One and Discover.",
     "bullets": [
@@ -36,6 +37,7 @@ export const roles = [
   {
     "title": "Software Engineering Manager, Infrastructure",
     "org": "Cubic Transportation Systems",
+    "url": "https://www.cubic.com",
     "period": "2021 to 2024",
     "location": "San Diego, CA",
     "blurb": "Software engineering manager for transit-payment SaaS across five agencies. WMATA, NYC MTA, BART, LA Metro, and MBTA.",
@@ -65,6 +67,7 @@ export const roles = [
   {
     "title": "Lead Senior Software Engineer",
     "org": "Cubic Transportation Systems",
+    "url": "https://www.cubic.com",
     "period": "2019 to 2021",
     "location": "San Diego, CA",
     "blurb": "Lead engineer building rider-facing chatbots, prediction, and the cloud platform behind transit fare services.",
@@ -86,6 +89,7 @@ export const roles = [
   {
     "title": "Senior Software Engineer",
     "org": "Cubic Transportation Systems",
+    "url": "https://www.cubic.com",
     "period": "2017 to 2019",
     "location": "Washington, DC",
     "blurb": "First DevOps engineer on Cubic's fare platforms, moving embedded and legacy systems to containers and cloud.",
@@ -107,6 +111,7 @@ export const roles = [
   {
     "title": "Senior Software Engineer",
     "org": "EPAM Systems",
+    "url": "https://www.epam.com",
     "period": "2016 to 2017",
     "location": "Washington, DC",
     "blurb": "Senior backend engineer at a digital agency, shipping search, payments, and mobile apps for enterprise clients.",
@@ -128,6 +133,7 @@ export const roles = [
   {
     "title": "Software Engineer",
     "org": "EPAM Systems",
+    "url": "https://www.epam.com",
     "period": "2015 to 2016",
     "location": "Washington, DC",
     "blurb": "Backend engineer on a full-stack team building mobile apps and e-commerce for national brands.",
@@ -155,33 +161,33 @@ export const roles = [
 export const education = [
   {
     "school": "University of Texas at Tyler",
+    "url": "https://www.uttyler.edu",
     "detail": "Master of Science, Industrial Engineering, 2015"
   },
   {
     "school": "The Pennsylvania State University",
+    "url": "https://www.psu.edu",
     "detail": "Bachelor of Science, Linguistics, 2011"
-  }
-];
-
-export const projects = [
-  {
-    "name": "Io Pictures Corporation - Founding Engineer",
-    "text": "Architecture for rights, metadata, payments, storage, and digital distribution systems from zero to production."
   },
   {
-    "name": "The Archive of American Radio, Inc. - Founding Engineer",
-    "text": "Architecture for search, RAG retrieval, metadata extraction, AI agent workflows, content processing, and API systems from zero to production."
+    "school": "The Pennsylvania State University",
+    "url": "https://www.psu.edu",
+    "detail": "Bachelor of Arts, Journalism, 2011"
   }
 ];
 
 export const skills = [
   {
+    "group": "Cloud",
+    "items": "AWS, Azure, GCP, Kubernetes, Docker, Terraform, Ansible, CloudFormation, Packer, Helm, Istio, KEDA, Smallstep, GitHub Actions, Jenkins, TeamCity, Nexus, Vault, ECS, Lambda, RDS, ElastiCache, Linux, Prometheus, Grafana, PagerDuty"
+  },
+  {
     "group": "Core",
     "items": "Software architecture, platform architecture, distributed systems, system design, site reliability engineering, SRE, incident response, on-call, backend services, APIs"
   },
   {
-    "group": "Cloud",
-    "items": "AWS, Azure, GCP, Kubernetes, Docker, Terraform, Ansible, CloudFormation, Packer, Helm, Istio, KEDA, Smallstep, GitHub Actions, Jenkins, TeamCity, Nexus, Vault, ECS, Lambda, RDS, ElastiCache, Linux"
+    "group": "Security",
+    "items": "mTLS, CrowdStrike, Nessus, Trend Micro, Cisco ASA, PCI, SOC 2, ISO, SOX"
   },
   {
     "group": "Languages",
@@ -190,10 +196,6 @@ export const skills = [
   {
     "group": "AI/ML",
     "items": "LLM, AI agents, RAG, machine learning, MLOps, vector search, hybrid search, BM25, ANN/KNN, entity extraction, intent classification, Kubeflow, TensorFlow, PySpark, SageMaker, Azure Cognitive Services"
-  },
-  {
-    "group": "Security",
-    "items": "mTLS, CrowdStrike, Nessus, Trend Micro, Cisco ASA, PCI, SOC 2, ISO, SOX"
   },
   {
     "group": "Search",
