@@ -6,31 +6,27 @@ export const roles = [
     "url": "https://www.pwc.com",
     "period": "2024 to present",
     "location": "Los Angeles, CA",
-    "blurb": "Founding engineer building AI search and payments infrastructure for Capital One and Discover.",
+    "blurb": "Founding engineer on payments, tokenization, fraud models, AI, and search infrastructure for Capital One and Discover.",
     "bullets": [
       {
-        "lead": "Discover Global Network fraud models",
-        "text": "fraud and risk models for the payments network, and the platform that serves them in production."
-      },
-      {
-        "lead": "Discover.com Search",
-        "text": "hybrid search over vector embeddings and BM25, scored on offline evaluation sets that measure answer quality."
-      },
-      {
-        "lead": "CapitalOne.com Search",
-        "text": "hybrid search with autocomplete and indexing, surfacing results as a customer types."
-      },
-      {
-        "lead": "Capital One Eno",
-        "text": "NLU, entity, and intent models behind the account chatbot, moved from Kubeflow onto Capital One's enterprise AI platform."
+        "lead": "Discover Global Network fraud machine learning models",
+        "text": "machine learning fraud and risk models: prohibited-transaction detection, feature pipelines, real-time inference, and serving."
       },
       {
         "lead": "Capital One Databolt",
         "text": "vaultless, field-level tokenization in Go and TypeScript. AI models, analytics, and payments run on tokens and never see the real card number."
       },
       {
-        "lead": "Zelle",
-        "text": "onboarding, authentication, and access-control APIs to move money between people in seconds, safely."
+        "lead": "Capital One Eno",
+        "text": "NLU, entity, and intent models behind the account chatbot, moved from Kubeflow onto Capital One's enterprise AI platform."
+      },
+      {
+        "lead": "CapitalOne.com Search",
+        "text": "hybrid search with autocomplete and indexing, surfacing results as a customer types."
+      },
+      {
+        "lead": "Discover.com Search",
+        "text": "hybrid search over vector embeddings and BM25, scored on offline evaluation sets that measure answer quality."
       }
     ]
   },

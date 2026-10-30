@@ -10,9 +10,9 @@ export const favicon = (url: string): string =>
 
 // Client work, banking and payments first, then transit infrastructure, then the rest.
 export const portfolio: PortfolioItem[] = [
-  { name: "Capital One & Discover Vector Search API", url: "https://www.capitalone.com", description: "AI search platform" },
   { name: "Capital One Databolt", url: "https://capitalonesoftware.com/databolt", description: "Data security for AI workloads" },
-  { name: "Zelle", url: "https://www.zellepay.com", description: "Peer-to-peer payments" },
+  { name: "CapitalOne.com Search", url: "https://www.capitalone.com", description: "Hybrid search with autocomplete and indexing, surfacing results as a customer types." },
+  { name: "Capital One & Discover Vector Search API", url: "https://www.capitalone.com", description: "AI search platform" },
   { name: "NYC MTA", url: "https://new.mta.info", description: "OMNY contactless fare payments with Apple" },
   { name: "LA Metro", url: "https://www.metro.net", description: "TAP fare backend as Docker and Kubernetes microservices" },
   { name: "DC Metro", url: "https://www.wmata.com", description: "Transit fare systems infrastructure" },
