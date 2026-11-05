@@ -22,3 +22,12 @@ He has worked as an engineering manager and staff engineer at companies includin
 - [GitHub](https://github.com/mike-vincent)
 - [LinkedIn](https://www.linkedin.com/in/michael-thomas-vincent/)
 - [DEV Community](https://dev.to/mike-vincent)
+
+## Agents
+
+- [Resume (JSON)](https://mikevincent.dev/resume.json): work history, skills, education, projects, and profile links in JSON Resume format
+- [OpenAPI description](https://mikevincent.dev/openapi.json): the public read-only files on this site
+- [API catalog](https://mikevincent.dev/.well-known/api-catalog): RFC 9727 linkset
+- [Agent skill: mike-vincent-profile](https://mikevincent.dev/.well-known/agent-skills/mike-vincent-profile/SKILL.md): how to answer questions about Mike's experience, skills, and how to contact him
+- [Agent skills index](https://mikevincent.dev/.well-known/agent-skills/index.json)
+- [AI catalog](https://mikevincent.dev/.well-known/ai-catalog.json)

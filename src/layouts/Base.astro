@@ -1,5 +1,6 @@
 ---
 import '../styles/theme.css';
+import AgentDiscovery from '../components/site/AgentDiscovery.astro';
 
 interface Props { title: string; description?: string; image?: string; pageClass?: string; }
 const { title, description = 'Mike Vincent, Staff Software Engineer', image } = Astro.props;
@@ -58,6 +59,7 @@ const canonical = new URL(path, 'https://mikevincent.dev');
       document.addEventListener('DOMContentLoaded', applyTheme);
     })();
   </script>
+  <AgentDiscovery />
   <slot name="head" />
 </head>
 <body class="min-h-svh bg-background text-foreground">
@@ -99,5 +101,6 @@ const canonical = new URL(path, 'https://mikevincent.dev');
       window.applyTheme();
     });
   </script>
+  <AgentDiscovery form />
 </body>
 </html>

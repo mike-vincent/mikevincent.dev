@@ -1,4 +1,6 @@
 @import "tailwindcss";
+/* The agent markup is not styled; skip it so its hidden attribute does not add a .hidden utility. */
+@source not "../components/site/AgentDiscovery.astro";
 
 @custom-variant dark (&:is(.dark *));
 
