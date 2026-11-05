@@ -41,6 +41,6 @@ export const projects: PortfolioItem[] = [
   { name: "Radio Index", url: "https://radioindex.org", description: "AI-powered search for American radio drama", icon: "/assets/brands/radioindex-icon.svg" },
   { name: "The Archive of American Radio, Inc.", url: "https://archiveofamericanradio.org", description: "Nonprofit preserving radio drama", icon: "/assets/brands/archive-icon.svg" },
   { name: "Io Pictures Corporation", url: "https://iopictures.com", description: "Film licensing, sales, and distribution", icon: "/assets/brands/iopictures-io-icon-v2.png" },
-  { name: "Timer Fantasy", url: "https://timerfantasy.com", description: "macOS timer with cloud sync", icon: "/assets/brands/timerfantasy-icon.png" },
+  { name: "Timer Fantasy", url: "https://timerfantasy.com", description: "macOS timer with cloud sync", icon: "/assets/brands/timerfantasy-icon-108.webp" },
   { name: "Quark's Outlines", url: "https://dev.to/mike-vincent", description: "A beginner's guide to Python", icon: "/assets/brands/quark-icon.svg" },
 ];
