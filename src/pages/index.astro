@@ -7,6 +7,8 @@ import { roles, education, skills } from '../content/resume';
 
 const button = 'inline-flex h-10 items-center rounded-md border bg-background px-6 text-sm font-medium shadow-xs transition-colors hover:bg-accent hover:text-accent-foreground';
 
+const DESCRIPTION = 'Michael Vincent, known as Mike, is a Staff Software Engineer in Los Angeles. He builds cloud platforms on AWS and Azure with Kubernetes and Terraform, and payments infrastructure for Capital One and Discover.';
+
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -14,10 +16,20 @@ const jsonLd = {
       '@type': 'Person',
       '@id': 'https://mikevincent.dev/#person',
       name: 'Mike Vincent',
-      alternateName: ['Michael Vincent', 'Michael T. Vincent'],
+      alternateName: ['Michael Vincent', 'Michael T. Vincent', 'Michael Thomas Vincent'],
       url: 'https://mikevincent.dev/',
       image: 'https://mikevincent.dev/assets/images/headshot.jpg',
+      description: DESCRIPTION,
       jobTitle: 'Staff Software Engineer',
+      worksFor: { '@type': 'Organization', name: 'PwC', url: 'https://www.pwc.com' },
+      alumniOf: [
+        { '@type': 'CollegeOrUniversity', name: 'University of Texas at Tyler', url: 'https://www.uttyler.edu' },
+        { '@type': 'CollegeOrUniversity', name: 'The Pennsylvania State University', url: 'https://www.psu.edu' },
+      ],
+      knowsAbout: [
+        'Cloud infrastructure', 'DevOps', 'Site reliability engineering', 'Platform engineering',
+        'Kubernetes', 'Terraform', 'AWS', 'Azure', 'Docker', 'CI/CD', 'Payments', 'Machine learning',
+      ],
       address: { '@type': 'PostalAddress', addressLocality: 'Los Angeles', addressRegion: 'CA', addressCountry: 'US' },
       sameAs: [
         'https://github.com/mike-vincent',
@@ -39,8 +51,8 @@ const jsonLd = {
 };
 ---
 <Base
-  title="Mike Vincent · Staff Software Engineer, Los Angeles"
-  description="Michael Vincent, known as Mike, is a Staff Software Engineer in Los Angeles. He builds fraud and risk models for the Discover Global Network, search for Discover.com and CapitalOne.com, and fare-payment platforms for five US transit agencies."
+  title="Mike Vincent · Staff Software Engineer, Cloud and DevOps"
+  description={DESCRIPTION}
 >
   <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
   <header class="py-14 sm:py-20">
@@ -55,7 +67,7 @@ const jsonLd = {
           class="order-first size-36 shrink-0 rounded-full object-cover ring-1 ring-border sm:order-none sm:size-42" />
       </div>
       <div class="mt-6 flex flex-wrap gap-1.5">
-        {['Software Engineer', 'Machine Learning Engineer', 'Data Engineer', 'AI Engineer', 'Security Engineer', 'Platform Engineer', 'Infrastructure Engineer'].map((p) => (
+        {['Platform Engineer', 'Infrastructure Engineer', 'DevOps Engineer', 'Cloud Engineer', 'Site Reliability Engineer', 'Software Engineer', 'Machine Learning Engineer', 'Data Engineer', 'AI Engineer', 'Security Engineer'].map((p) => (
           <span class="inline-flex items-center rounded-md bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground">{p}</span>
         ))}
       </div>
