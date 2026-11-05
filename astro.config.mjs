@@ -14,7 +14,8 @@ export default defineConfig({
     '/case-studies/multicloud-k8s-platform': '/',
     '/case-studies/tokenization-platform': '/',
   },
-  build: { assets: 'assets' },
+  // The stylesheet is under 5 KB, so it goes inline and the first paint waits on no extra request.
+  build: { assets: 'assets', inlineStylesheets: 'always' },
   vite: {
     plugins: [tailwindcss()],
     server: { watch: { usePolling: true, interval: 150 } }
