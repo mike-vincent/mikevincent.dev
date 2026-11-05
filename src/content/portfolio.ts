@@ -5,8 +5,10 @@ export interface PortfolioItem {
   icon?: string;
 }
 
+// Company icons are saved in public/favicons, so the page makes no requests to Google.
+// To add one: curl -L -o public/favicons/<host>.png "https://www.google.com/s2/favicons?domain=<host>&sz=64"
 export const favicon = (url: string): string =>
-  `https://www.google.com/s2/favicons?domain=${new URL(url).hostname.replace('www.', '')}&sz=64`;
+  `/favicons/${new URL(url).hostname.replace('www.', '')}.png`;
 
 // Client work, banking and payments first, then transit infrastructure, then the rest.
 export const portfolio: PortfolioItem[] = [
