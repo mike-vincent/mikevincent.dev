@@ -1,5 +1,5 @@
 ---
-// One list row: 44px icon, bold name, optional meta and grey line under it, optional slot below.
+// One list row: 44px icon, regular-weight name, optional meta and grey line under it, optional slot below.
 interface Props { name: string; href?: string; icon?: string; meta?: string; description?: string; }
 const { name, href, icon, meta, description } = Astro.props;
 const Tag = href ? 'a' : 'div';
@@ -9,12 +9,12 @@ const external = href?.startsWith('http');
   href={href}
   target={external ? '_blank' : undefined}
   rel={external ? 'noopener noreferrer' : undefined}
-  class="group flex items-start gap-3.5"
+  class={href ? 'flex items-start gap-3.5 rounded-md outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50' : 'flex items-start gap-3.5'}
 >
   {icon && <img src={icon} alt="" width="44" height="44" loading="lazy" class="size-10 shrink-0 rounded-[10px] bg-white object-contain p-1 ring-1 ring-border sm:size-11" />}
   <span class="flex min-w-0 flex-1 flex-col gap-0.5">
     <span class="flex flex-col">
-      <strong class="text-[15px] font-semibold leading-snug underline-offset-4 group-hover:underline">{name}</strong>
+      <span class="text-[15px] leading-snug text-foreground">{name}</span>
       {meta && <span class="whitespace-nowrap text-sm text-muted-foreground">{meta}</span>}
     </span>
     {description && <span class="text-sm text-muted-foreground">{description}</span>}
