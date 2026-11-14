@@ -3,7 +3,7 @@ import { Resvg } from '@resvg/resvg-js';
 import type { APIRoute } from 'astro';
 
 const companies = [
-  'Capital One', 'Zelle', 'Fannie Mae', 'HUD', 'DC Metro',
+  'Capital One', 'CapitalOne.com Search', 'Fannie Mae', 'HUD', 'DC Metro',
   'NYC MTA', 'BART', 'LA Metro', 'Boston MBTA', 'SF Muni',
   'PATCO', 'Lockheed Martin', 'Canadian Tire',
   'U.S. Courts', 'NY Fashion Week',
