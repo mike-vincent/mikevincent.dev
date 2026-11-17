@@ -50,9 +50,22 @@ async function withMcpEntry(site: AgentSite, res: Response, path: string): Promi
   return new Response(JSON.stringify(doc, null, 2), { headers: { 'Content-Type': 'application/json; charset=utf-8', ...CATALOG_HEADERS } });
 }
 
+// Pages merged into the home page: one 301 hop, so Google consolidates them.
+const MERGED = /^\/(about|resume|works|brands|case-studies(\/.*)?)$/;
+// Routes from earlier versions of the site that are gone for good.
+const RETIRED = /^\/(blog|past-projects|tags|v[1-5]|devto)(\/.*)?$|^\/(projects|home|sitemap-index\.xml|rss\.xml)$/;
+
+export function legacyRoute(path: string): Response | null {
+  if (MERGED.test(path)) return new Response(null, { status: 301, headers: { Location: 'https://mikevincent.dev/', 'Cache-Control': 'public, max-age=86400' } });
+  if (RETIRED.test(path)) return new Response('Gone\n', { status: 410, headers: { 'Content-Type': 'text/plain; charset=utf-8', 'X-Robots-Tag': 'noindex' } });
+  return null;
+}
+
 export async function serveEdge(site: AgentSite, request: Request): Promise<Response> {
   const url = new URL(request.url);
   const path = url.pathname.replace(/\/+$/, '') || '/';
+  const legacy = legacyRoute(path);
+  if (legacy) return legacy;
   if (DYNAMIC.has(path) || path.startsWith('/oauth/')) {
     const hit = await agentRoute(site, request);
     if (hit) return hit;
