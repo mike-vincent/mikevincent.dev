@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "open:styled": "bash ./scripts/open_styled_local.sh"
+    "open:styled": "bash ./scripts/open_styled_local.sh",
+    "deploy": "wrangler deploy --config edge/wrangler.toml"
   },
   "dependencies": {
     "@resvg/resvg-js": "^2.6.2",
