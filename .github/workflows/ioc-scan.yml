@@ -1,0 +1,47 @@
+# Blocks the PolinRider build-config loader found 2026-11-20 (obfuscated code
+# hidden in astro/postcss/next/tailwind/eslint/babel configs, App.js and .woff2 files).
+# Rules live in .github/ioc-scan.sh (same script as the local git hooks).
+name: ioc-scan
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 13 * * 1"
+permissions:
+  contents: read
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Scan for loader indicators
+        shell: bash
+        env:
+          EVENT: ${{ github.event_name }}
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          PUSH_BEFORE: ${{ github.event.before }}
+        run: |
+          set -u
+          S=.github/ioc-scan.sh
+          chmod +x "$S"
+          rc=0
+          case "$EVENT" in
+            pull_request) "$S" --rev HEAD "$PR_BASE" || rc=1 ;;
+            push)
+              if [ -n "$PUSH_BEFORE" ] && git cat-file -e "$PUSH_BEFORE^{commit}" 2>/dev/null; then
+                "$S" --rev HEAD "$PUSH_BEFORE" || rc=1
+              else
+                IOC_SCAN_RANGE=0 "$S" --rev HEAD || rc=1
+              fi ;;
+            *) IOC_SCAN_RANGE=0 "$S" --rev HEAD || rc=1; "$S" --history || rc=1 ;;
+          esac
+          if [ $rc != 0 ]; then
+            echo "::error::Malware indicators found. Do not merge, build, or deploy. Report to the repo owner."
+            exit 1
+          fi
+          echo clean
