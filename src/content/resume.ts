@@ -175,26 +175,26 @@ export const education = [
 export const skills = [
   {
     "group": "AI & Machine Learning Models",
-    "items": "Model development and fine-tuning, encoder-decoder architectures, Transformers, matrix multiplication and attention, Hawk (gated linear recurrence RNN), Atlas (long-context memory architecture), Radio Whisper (Whisper / faster-whisper ASR with VAD), Hugging Face (Transformers, Hub), Word2Vec, Node2Vec, CPU random walks and graph embeddings (NumPy, SciPy), PyTorch, TensorFlow, vLLM, real-time inference and serving, feature pipelines, Kubeflow, Azure ML, AWS SageMaker, PySpark, LLMs, AI agents, RAG, hybrid vector search (BM25 + ANN/KNN embeddings), NLU, entity extraction, intent classification, offline evaluation"
+    "items": "Discover Global Network fraud & gambling detection ML (feature pipelines, real-time inference, serving); Capital One Eno NLU, entity & intent models (Kubeflow to enterprise AI platform); Discover.com & CapitalOne.com hybrid search (vector embeddings, BM25, ANN/KNN, offline evaluation); Radio Index & Radio Whisper (Whisper / faster-whisper ASR with VAD, Hugging Face Transformers & Hub, PyTorch, vLLM, RAG, AI agents); Hawk & Atlas model work (encoder-decoder architectures, gated linear recurrence RNN, long-context memory, Transformers, matrix multiplication, Word2Vec, Node2Vec, CPU random walks in NumPy & SciPy); Cubic Urban Insights & NextBus ML (AWS SageMaker, TensorFlow, PySpark, Azure Cognitive Services)"
   },
   {
     "group": "Finance, Payments & Banking",
-    "items": "Vaultless field-level tokenization (Capital One Databolt), fraud & risk scoring ML models (Discover Global Network), prohibited-transaction detection, contactless EMV & Apple Pay fare payments (NYC MTA OMNY, LA Metro TAP), mortgage underwriting platforms (Fannie Mae Collateral Underwriter), PCI-DSS, SOC 1/2, ISO 27001, SOX"
+    "items": "Capital One Databolt (vaultless field-level tokenization in Go & TypeScript); Discover Global Network (prohibited-transaction & gambling fraud scoring ML); NYC MTA OMNY & LA Metro TAP (contactless EMV & Apple Pay fare payments); WMATA, BART, MBTA, SF Muni, San Diego MTS & PATCO (PCI-DSS & SOC 1/2 transit-payment platforms); Fannie Mae Collateral Underwriter (mortgage appraisal APIs & SPA)"
   },
   {
     "group": "Platform Infrastructure & Cloud",
-    "items": "AWS (ECS, Lambda, RDS, ElastiCache, SageMaker, CloudFormation), Azure (AKS, Azure ML, Cognitive Services), GCP, Cloudflare Workers, Kubernetes, Docker, Terraform, Helm, Istio, KEDA, Smallstep CA, Vault, Ansible, Packer, Dagu, GitHub Actions, Jenkins, Linux, Prometheus, Grafana, OpenTelemetry, PagerDuty"
+    "items": "LA Metro TAP & NYC MTA OMNY (Docker, Kubernetes, KEDA/HPA/VPA autoscaling on AWS & Azure); Cubic multi-agency transit SaaS (Terraform, Helm, GitHub Actions, Jenkins, Ansible, HashiCorp Vault, Prometheus, Grafana, PagerDuty); NextBus & Chicago Metra (AWS ECS, Lambda, CloudFormation, Twilio); Canadian Tire & EPAM enterprise cloud (AWS RDS, ElastiCache, Chef, VMware ESXi); Radio Index (Rust origin, Azure ML, Dagu pipelines, Cloudflare Workers, Linux, OpenTelemetry)"
   },
   {
     "group": "Architecture & Systems",
-    "items": "Software architecture, platform architecture, distributed systems, system design, microservices, event-driven systems (Kafka, Redis), search indexing & ETL (Lucene, Solr), site reliability engineering (SRE), incident response, multi-cloud migrations"
+    "items": "Capital One & Discover enterprise search (Lucene, Solr, hybrid indexing, ETL, offline evaluation); Cubic transit-payment SaaS (distributed microservices, SRE, PagerDuty on-call leading 18 engineers across US, India & Germany); Lockheed Martin Intranet Search (headless Drupal, Node.js, Python microservices); Fannie Mae & EPAM database cutovers (zero-downtime multi-tenant PostgreSQL & Liquibase migrations, Kafka, Redis)"
   },
   {
     "group": "Languages & Data",
-    "items": "Rust, Go, Python, TypeScript, JavaScript, Java, SQL, PostgreSQL, SQLite, Redis, Kafka, Liquibase"
+    "items": "Capital One Databolt (Go, TypeScript); PwC, Cubic & EPAM ML and backend platforms (Python, PyTorch, NumPy, SciPy, SQL, PostgreSQL, Redis, Kafka); Cubic fare platforms (Java, Liquibase, SQL*Plus, JavaScript, Node.js); Radio Index production origin (Rust, SQLite)"
   },
   {
     "group": "Security & Compliance",
-    "items": "Zero-trust mTLS, Istio, Smallstep private CA, HashiCorp Vault, CrowdStrike, Nessus, Trend Micro, Cisco ASA, PCI-DSS, SOC 1/2, ISO, SOX"
+    "items": "Cubic transit-payment fleet (zero-trust mTLS with Istio & Smallstep private CA, HashiCorp Vault, CrowdStrike, Nessus, Trend Micro, Cisco ASAv); Regulated banking & transit audits across PwC & Cubic (PCI-DSS, SOC 1/2, ISO 27001, SOX)"
   }
 ];
