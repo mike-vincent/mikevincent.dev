@@ -140,8 +140,8 @@ export const skills = [
       { "lead": "Discover Global Network", "text": "Fraud & gambling ML, feature pipelines, real-time inference" },
       { "lead": "Capital One Eno", "text": "NLU, entity & intent models, Kubeflow" },
       { "lead": "CapitalOne.com & Discover.com", "text": "Hybrid vector & BM25 search, ANN/KNN, offline eval" },
-      { "lead": "Radio Index & Radio Whisper", "text": "faster-whisper ASR, Hugging Face, PyTorch, vLLM, RAG, A2UI" },
-      { "lead": "Hawk & Atlas", "text": "Encoder-decoder, gated RNN, Transformers, Word2Vec, Node2Vec, NumPy, SciPy" },
+      { "lead": "Radio Index & Radio Whisper", "text": "Custom encoder-decoder speech models, PyTorch, Hugging Face, vLLM, RAG, A2UI" },
+      { "lead": "Hawk & Atlas", "text": "Custom encoder-decoder, gated RNN, Transformers, Word2Vec, Node2Vec, NumPy, SciPy" },
       { "lead": "Cubic Urban Insights & NextBus", "text": "SageMaker, TensorFlow, PySpark, Azure Cognitive Services" }
     ]
   },
