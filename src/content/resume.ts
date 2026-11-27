@@ -175,7 +175,7 @@ export const education = [
 export const skills = [
   {
     "group": "AI & Machine Learning Models",
-    "items": "Model development & fine-tuning, Hugging Face (Transformers, Hub), Radio Whisper (Whisper / faster-whisper ASR with VAD), PyTorch, TensorFlow, vLLM, real-time inference & serving, feature pipelines, Kubeflow, Azure ML, AWS SageMaker, PySpark, LLMs, AI agents, RAG, hybrid vector search (BM25 + ANN/KNN embeddings), NLU, entity extraction, intent classification, offline evaluation"
+    "items": "Model development and fine-tuning, encoder-decoder architectures, Transformers, matrix multiplication and attention, Hawk (gated linear recurrence RNN), Atlas (long-context memory architecture), Radio Whisper (Whisper / faster-whisper ASR with VAD), Hugging Face (Transformers, Hub), Word2Vec, Node2Vec, CPU random walks and graph embeddings (NumPy, SciPy), PyTorch, TensorFlow, vLLM, real-time inference and serving, feature pipelines, Kubeflow, Azure ML, AWS SageMaker, PySpark, LLMs, AI agents, RAG, hybrid vector search (BM25 + ANN/KNN embeddings), NLU, entity extraction, intent classification, offline evaluation"
   },
   {
     "group": "Finance, Payments & Banking",
