@@ -135,7 +135,7 @@ const jsonLd = {
                 {r.bullets.map((b) => (
                   <li class="flex gap-2 text-subhead text-muted-foreground">
                     <span class="mt-2.5 size-1 shrink-0 rounded-full bg-muted-foreground/50"></span>
-                    <span>{b.lead}. {/^[a-z]{2}/.test(b.text) ? b.text[0].toUpperCase() + b.text.slice(1) : b.text}</span>
+                    <span><span class="text-foreground/90">{b.lead}.</span> {/^[a-z]{2}/.test(b.text) ? b.text[0].toUpperCase() + b.text.slice(1) : b.text}</span>
                   </li>
                 ))}
               </ul>
