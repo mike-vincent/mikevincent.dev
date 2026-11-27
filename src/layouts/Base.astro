@@ -31,7 +31,7 @@ const canonical = new URL(path, 'https://mikevincent.dev');
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={ogImage} />
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#171717" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
   <script is:inline>
     (function () {
       const ICONS = { system: 'contrast', light: 'light_mode', dark: 'dark_mode' };
@@ -42,7 +42,7 @@ const canonical = new URL(path, 'https://mikevincent.dev');
         const dark = mode === 'dark' || (mode === 'system' && mq.matches);
         document.documentElement.classList.toggle('dark', dark);
         document.querySelectorAll('meta[name="theme-color"]').forEach((m) => {
-          m.content = dark ? '#171717' : '#ffffff';
+          m.content = dark ? '#000000' : '#ffffff';
         });
         const btn = document.getElementById('theme-toggle');
         if (btn) {
@@ -70,14 +70,14 @@ const canonical = new URL(path, 'https://mikevincent.dev');
           <img src="/assets/images/headshot-108.webp" alt="Mike Vincent" width="36" height="36" class="aspect-square size-full object-cover" />
         </span>
         <span class="flex min-w-0 flex-col">
-          <span class="whitespace-nowrap type-headline text-foreground">Mike Vincent</span>
-          <span class="whitespace-nowrap type-caption-1 text-muted-foreground">Staff Software Engineer</span>
+          <span class="whitespace-nowrap text-body font-semibold text-foreground">Mike Vincent</span>
+          <span class="whitespace-nowrap text-footnote text-muted-foreground">Staff Software Engineer</span>
         </span>
       </a>
       <div class="flex-1"></div>
       <nav class="flex items-center sm:gap-1">
-        <a href="/#resume" class="inline-flex h-11 items-center rounded-md px-2.5 type-subheadline font-medium whitespace-nowrap text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 sm:px-3">Resume</a>
-        <a href="/#portfolio" class="inline-flex h-11 items-center rounded-md px-2.5 sm:px-3 type-subheadline font-medium whitespace-nowrap text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50">Portfolio</a>
+        <a href="/#resume" class="inline-flex h-11 items-center rounded-md px-2.5 text-subhead font-medium whitespace-nowrap text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 sm:px-3">Resume</a>
+        <a href="/#portfolio" class="inline-flex h-11 items-center rounded-md px-2.5 sm:px-3 text-subhead font-medium whitespace-nowrap text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50">Portfolio</a>
         <button id="theme-toggle" type="button" aria-label="System theme" title="System theme"
           class="inline-flex size-11 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground cursor-pointer">
           <span class="material-symbols-outlined theme-icon text-[18px]">contrast</span>
@@ -89,7 +89,7 @@ const canonical = new URL(path, 'https://mikevincent.dev');
   <main class="mx-auto max-w-4xl px-6"><slot /></main>
 
   <footer class="mx-auto max-w-4xl px-6 pb-12">
-    <div class="border-t pt-6 type-caption-1 text-muted-foreground">
+    <div class="border-t pt-6 text-footnote text-muted-foreground">
       Copyright &copy; {new Date().getFullYear()} Mike Vincent. Los Angeles, CA &middot; U.S. Citizen.
     </div>
   </footer>

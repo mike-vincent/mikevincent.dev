@@ -1,11 +1,11 @@
 ---
-// A page section: hairline above, Apple Title 2 heading, then its rows.
-interface Props { id: string; label: string; }
-const { id, label } = Astro.props;
+// A page section: hairline above, Apple Title 1 heading, then its rows.
+interface Props { id: string; label: string; borderless?: boolean; }
+const { id, label, borderless = false } = Astro.props;
 ---
-<section id={id} aria-labelledby={`${id}-heading`} class="border-t py-10">
+<section id={id} aria-labelledby={`${id}-heading`} class={borderless ? 'pt-6 pb-10' : 'border-t py-10'}>
   <div class="mb-5 flex items-center gap-3">
-    <h2 id={`${id}-heading`} class="type-title-2 text-foreground">{label}</h2>
+    <h2 id={`${id}-heading`} class="text-title-1 font-semibold text-foreground">{label}</h2>
     <slot name="actions" />
   </div>
   <slot />

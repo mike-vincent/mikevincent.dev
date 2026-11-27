@@ -174,27 +174,27 @@ export const education = [
 
 export const skills = [
   {
-    "group": "Cloud",
-    "items": "AWS, Azure, GCP, Kubernetes, Docker, Terraform, Ansible, CloudFormation, Packer, Helm, Istio, KEDA, Smallstep, GitHub Actions, Jenkins, TeamCity, Nexus, Vault, ECS, Lambda, RDS, ElastiCache, Linux, Prometheus, Grafana, PagerDuty"
+    "group": "AI & Machine Learning Models",
+    "items": "Model development & fine-tuning, Hugging Face (Transformers, Hub), Radio Whisper (Whisper / faster-whisper ASR with VAD), PyTorch, TensorFlow, vLLM, real-time inference & serving, feature pipelines, Kubeflow, Azure ML, AWS SageMaker, PySpark, LLMs, AI agents, RAG, hybrid vector search (BM25 + ANN/KNN embeddings), NLU, entity extraction, intent classification, offline evaluation"
   },
   {
-    "group": "Core",
-    "items": "Software architecture, platform architecture, distributed systems, system design, site reliability engineering, SRE, incident response, on-call, backend services, APIs"
+    "group": "Finance, Payments & Banking",
+    "items": "Vaultless field-level tokenization (Capital One Databolt), fraud & risk scoring ML models (Discover Global Network), prohibited-transaction detection, contactless EMV & Apple Pay fare payments (NYC MTA OMNY, LA Metro TAP), mortgage underwriting platforms (Fannie Mae Collateral Underwriter), PCI-DSS, SOC 1/2, ISO 27001, SOX"
   },
   {
-    "group": "Security",
-    "items": "mTLS, CrowdStrike, Nessus, Trend Micro, Cisco ASA, PCI, SOC 2, ISO, SOX"
+    "group": "Platform Infrastructure & Cloud",
+    "items": "AWS (ECS, Lambda, RDS, ElastiCache, SageMaker, CloudFormation), Azure (AKS, Azure ML, Cognitive Services), GCP, Cloudflare Workers, Kubernetes, Docker, Terraform, Helm, Istio, KEDA, Smallstep CA, Vault, Ansible, Packer, Dagu, GitHub Actions, Jenkins, Linux, Prometheus, Grafana, OpenTelemetry, PagerDuty"
   },
   {
-    "group": "Languages",
-    "items": "Go, Python, Java, TypeScript, JavaScript, SQL, PostgreSQL, Liquibase, Redis, Kafka"
+    "group": "Architecture & Systems",
+    "items": "Software architecture, platform architecture, distributed systems, system design, microservices, event-driven systems (Kafka, Redis), search indexing & ETL (Lucene, Solr), site reliability engineering (SRE), incident response, multi-cloud migrations"
   },
   {
-    "group": "AI/ML",
-    "items": "LLM, AI agents, RAG, machine learning, MLOps, vector search, hybrid search, BM25, ANN/KNN, entity extraction, intent classification, Kubeflow, TensorFlow, PySpark, SageMaker, Azure Cognitive Services"
+    "group": "Languages & Data",
+    "items": "Rust, Go, Python, TypeScript, JavaScript, Java, SQL, PostgreSQL, SQLite, Redis, Kafka, Liquibase"
   },
   {
-    "group": "Search",
-    "items": "Search indexing, ETL, offline evaluation, experiment design, Lucene, Solr, OpenTelemetry"
+    "group": "Security & Compliance",
+    "items": "Zero-trust mTLS, Istio, Smallstep private CA, HashiCorp Vault, CrowdStrike, Nessus, Trend Micro, Cisco ASA, PCI-DSS, SOC 1/2, ISO, SOX"
   }
 ];
