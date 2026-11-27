@@ -180,7 +180,7 @@ export const skills = [
       { "lead": "Discover Global Network", "text": "Fraud & gambling ML, feature pipelines, real-time inference" },
       { "lead": "Capital One Eno", "text": "NLU, entity & intent models, Kubeflow" },
       { "lead": "CapitalOne.com & Discover.com", "text": "Hybrid vector & BM25 search, ANN/KNN, offline eval" },
-      { "lead": "Radio Index & Radio Whisper", "text": "faster-whisper ASR, Hugging Face, PyTorch, vLLM, RAG" },
+      { "lead": "Radio Index & Radio Whisper", "text": "faster-whisper ASR, Hugging Face, PyTorch, vLLM, RAG, A2UI" },
       { "lead": "Hawk & Atlas", "text": "Encoder-decoder, gated RNN, Transformers, Word2Vec, Node2Vec, NumPy, SciPy" },
       { "lead": "Cubic Urban Insights & NextBus", "text": "SageMaker, TensorFlow, PySpark, Azure Cognitive Services" }
     ]
@@ -210,6 +210,7 @@ export const skills = [
     "group": "Architecture & Systems",
     "items": "Capital One & Discover Search; Cubic transit SaaS SRE; Lockheed Martin Intranet; Fannie Mae & EPAM database migrations",
     "bullets": [
+      { "lead": "Radio Index", "text": "Pure Rust HTTP origin, A2UI agent-driven UI, SQLite, hybrid search" },
       { "lead": "Capital One & Discover Search", "text": "Lucene, Solr, hybrid indexing, ETL, offline eval" },
       { "lead": "Cubic transit SaaS", "text": "Distributed microservices, SRE, PagerDuty (18 engineers)" },
       { "lead": "Lockheed Martin Intranet", "text": "Headless Drupal, Node.js, Python microservices" },
