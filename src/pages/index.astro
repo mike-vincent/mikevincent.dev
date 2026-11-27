@@ -87,10 +87,6 @@ const jsonLd = {
       runs payments and AI model platforms for well-known brands. He has worked as an engineering
       manager and staff engineer at companies including PwC, Capital One, Discover, and Fannie Mae.
     </p>
-    <p class="mt-4 max-w-3xl text-body leading-[1.4706] text-muted-foreground">
-      Read Mike’s articles on Python in the “<a href="https://dev.to/mike-vincent" target="_blank" rel="noopener noreferrer" class="rounded-xs text-tint transition-opacity hover:opacity-80 outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50">Quark’s Outlines</a>” series.
-      Listen to an old radio show at <a href="https://www.radioindex.org" target="_blank" rel="noopener noreferrer" class="rounded-xs text-tint transition-opacity hover:opacity-80 outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50">radioindex.org</a>, which Mike builds and runs for The Archive of American Radio, Inc.
-    </p>
   </Section>
 
   <div id="view-switcher" class="border-t pt-8 pb-0">
@@ -134,7 +130,7 @@ const jsonLd = {
       <ul class="space-y-6">
         {roles.map((r) => (
           <li>
-            <Row name={`${r.title}, ${r.org}`} icon={favicon(r.url)} meta={r.period} description={r.blurb}>
+            <Row name={`${r.title}, ${r.org}`} icon={favicon(r.url)} iconHref={r.url} iconLabel={r.org} meta={r.period} description={r.blurb}>
               <ul class="mt-2 space-y-2">
                 {r.bullets.map((b) => (
                   <li class="flex gap-2 text-subhead text-muted-foreground">

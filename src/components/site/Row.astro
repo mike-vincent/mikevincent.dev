@@ -2,8 +2,8 @@
 // One list row: 44px icon, medium-weight name, optional meta and secondary description under it, optional slot below.
 // When `plainList` is true, follows Apple iOS 27 Plain List Row geometry:
 // 16px icon-to-text gap, 14px top/bottom text stack padding, 1px text-aligned inset separator, and trailing chevron on links.
-interface Props { name: string; href?: string; icon?: string; meta?: string; description?: string; plainList?: boolean; }
-const { name, href, icon, meta, description, plainList = false } = Astro.props;
+interface Props { name: string; href?: string; icon?: string; iconHref?: string; iconLabel?: string; meta?: string; description?: string; plainList?: boolean; }
+const { name, href, icon, iconHref, iconLabel, meta, description, plainList = false } = Astro.props;
 const Tag = href ? 'a' : 'div';
 const external = href?.startsWith('http');
 ---
@@ -36,7 +36,13 @@ const external = href?.startsWith('http');
     rel={external ? 'noopener noreferrer' : undefined}
     class={href ? 'flex items-start gap-4 rounded-md outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50' : 'flex items-start gap-4'}
   >
-    {icon && <img src={icon} alt="" width="44" height="44" loading="lazy" class="size-10 shrink-0 rounded-[10px] bg-white object-contain p-1 ring-1 ring-border sm:size-11" />}
+    {icon && (iconHref && !href ? (
+      <a href={iconHref} target="_blank" rel="noopener noreferrer" aria-label={iconLabel ?? name} class="shrink-0 rounded-[10px] outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50">
+        <img src={icon} alt="" width="44" height="44" loading="lazy" class="size-10 rounded-[10px] bg-white object-contain p-1 ring-1 ring-border transition-opacity hover:opacity-80 sm:size-11" />
+      </a>
+    ) : (
+      <img src={icon} alt="" width="44" height="44" loading="lazy" class="size-10 shrink-0 rounded-[10px] bg-white object-contain p-1 ring-1 ring-border sm:size-11" />
+    ))}
     <span class="flex min-w-0 flex-1 flex-col gap-0.5">
       <span class="flex flex-col">
         <span class="text-body font-medium text-foreground">{name}</span>
