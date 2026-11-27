@@ -63,9 +63,9 @@ const canonical = new URL(path, 'https://mikevincent.dev');
   <slot name="head" />
 </head>
 <body class="min-h-svh bg-background text-foreground">
-  <header class="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
+  <header id="site-header" class="sticky top-0 z-50 w-full border-b border-transparent bg-background/80 backdrop-blur-md transition-colors duration-200 supports-[backdrop-filter]:bg-background/60">
     <div class="mx-auto flex h-16 max-w-4xl items-center gap-0 px-4 sm:gap-3 sm:px-6">
-      <a href="/" class="flex min-h-11 items-center gap-3 rounded-md outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50">
+      <a id="header-inline-title" href="/" class="flex min-h-11 items-center gap-3 rounded-md opacity-0 pointer-events-none transition-opacity duration-200 outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50">
         <span class="relative flex size-9 shrink-0 overflow-hidden rounded-full bg-muted">
           <img src="/assets/images/headshot-108.webp" alt="Mike Vincent" width="36" height="36" class="aspect-square size-full object-cover" />
         </span>
@@ -99,6 +99,35 @@ const canonical = new URL(path, 'https://mikevincent.dev');
       localStorage.setItem('theme', mode === 'system' ? 'light' : mode === 'light' ? 'dark' : 'system');
       window.applyTheme();
     });
+
+    (function () {
+      const header = document.getElementById('site-header');
+      const inlineTitle = document.getElementById('header-inline-title');
+      const heroTitle = document.querySelector('main h1');
+      if (!header || !inlineTitle) return;
+
+      function setInline(visible) {
+        inlineTitle.classList.toggle('opacity-0', !visible);
+        inlineTitle.classList.toggle('pointer-events-none', !visible);
+        inlineTitle.classList.toggle('opacity-100', visible);
+        header.classList.toggle('border-transparent', !visible);
+        header.classList.toggle('border-border', visible);
+      }
+
+      if (!heroTitle || typeof IntersectionObserver === 'undefined') {
+        setInline(true);
+        return;
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          const entry = entries[0];
+          setInline(!entry.isIntersecting && entry.boundingClientRect.top < 64);
+        },
+        { rootMargin: '-64px 0px 0px 0px', threshold: 0 }
+      );
+      observer.observe(heroTitle);
+    })();
   </script>
   <AgentDiscovery form />
 </body>
