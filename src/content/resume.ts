@@ -95,11 +95,11 @@ export const roles = [
         "text": "real-time bus-arrival prediction on AWS ECS and Lambda with TensorFlow, PySpark, CloudFormation, and Node.js."
       },
       {
-        "lead": "First DevOps engineer",
-        "text": "led the transformation for a publicly traded company with Terraform, Kubernetes, and Docker. Embedded fare CI/CD with Jenkins, Conan, and Wind River Linux."
+        "lead": "Cubic Fare Collection Systems",
+        "text": "First DevOps engineer; led the transformation for a publicly traded company with Terraform, Kubernetes, and Docker. Embedded fare CI/CD with Jenkins, Conan, and Wind River Linux."
       },
       {
-        "lead": "Security and compliance",
+        "lead": "Cubic Cloud Platform",
         "text": "PCI, SOC 2, ISO, and SOX audits. AWS and Azure hardened with Trend DSA, Nessus, and Cisco ASAv, monitored with Prometheus and Grafana."
       }
     ]
@@ -121,7 +121,7 @@ export const roles = [
         "text": "enterprise search on headless Drupal. Microservices on Docker and Kubernetes with Node.js and Python."
       },
       {
-        "lead": "Release engineering",
+        "lead": "HUD, Freddie Mac & Federal Courts (CM/ECF, PACER)",
         "text": "Jenkins, TeamCity, and Sonatype Nexus CI/CD on AWS with Chef. PostgreSQL migrations with Liquibase and a zero-downtime multi-tenant switch."
       }
     ]
@@ -143,11 +143,11 @@ export const roles = [
         "text": "Hybris store and the U.S. Conference of Catholic Bishops app on AWS, with RDS and ElastiCache behind Kubernetes and Docker."
       },
       {
-        "lead": "Infrastructure",
+        "lead": "EPAM Enterprise Cloud",
         "text": "Docker and Ansible on VMware ESXi with Ubuntu and CentOS behind Cisco ASA firewalls. Provisioned with Vagrant and Chef."
       },
       {
-        "lead": "Test automation",
+        "lead": "NY Fashion Week & Mobile QA",
         "text": "Node, Karma, Jasmine, PhantomJS, WebDriver, and Protractor. JMeter and BlazeMeter performance tests. SVN-to-Git migration."
       }
     ]
