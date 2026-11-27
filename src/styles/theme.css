@@ -136,6 +136,7 @@
   * { border-color: var(--border); }
   html {
     overflow-x: clip;
+    scrollbar-gutter: stable;
     font-optical-sizing: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
