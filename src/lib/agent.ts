@@ -16,7 +16,7 @@ const PROFILES = [
 ];
 
 const SUMMARY =
-  'Mike Vincent is an American software engineer and founder from Los Angeles, California who builds and runs payments, cloud, and AI model platforms. He has worked as an engineering manager and lead engineer at PwC, Cubic, and EPAM, shipping systems for Capital One, Discover, Fannie Mae, and U.S. transit agencies.';
+  'Mike Vincent is an American software engineer and founder from Los Angeles, California who builds and runs payments, cloud, and AI model platforms. He has worked as an engineering manager and lead engineer at PwC, shipping systems for Capital One, Discover, Fannie Mae, and U.S. transit agencies.';
 
 // Same capitalization the page uses for each bullet.
 const sentence = (t: string) => (/^[a-z]{2}/.test(t) ? t[0].toUpperCase() + t.slice(1) : t);

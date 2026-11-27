@@ -27,6 +27,10 @@ export const roles = [
       {
         "lead": "Discover.com Search",
         "text": "Built hybrid vector-embedding and BM25 search, validated against offline evaluation sets for answer quality."
+      },
+      {
+        "lead": "Hawk & Atlas",
+        "text": "Built encoder-decoder, gated linear recurrence RNN, long-context memory, Transformer, and Word2Vec/Node2Vec models in PyTorch, NumPy, and SciPy."
       }
     ]
   },
