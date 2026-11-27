@@ -43,7 +43,7 @@ export const roles = [
         "text": "contactless iPhone fare payments with Apple. Kubernetes manifests and Docker containers for the payments app."
       },
       {
-        "lead": "LA Metro TAP",
+        "lead": "SFMTA LA Metro",
         "text": "fare-payment backend as Docker and Kubernetes microservices with vertical, horizontal, and KEDA autoscaling on AWS and Azure."
       },
       {
