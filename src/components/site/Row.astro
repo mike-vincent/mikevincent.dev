@@ -1,23 +1,49 @@
 ---
 // One list row: 44px icon, medium-weight name, optional meta and secondary description under it, optional slot below.
-interface Props { name: string; href?: string; icon?: string; meta?: string; description?: string; }
-const { name, href, icon, meta, description } = Astro.props;
+// When `plainList` is true, follows Apple iOS 27 Plain List Row geometry:
+// 16px icon-to-text gap, 14px top/bottom text stack padding, 1px text-aligned inset separator, and trailing chevron on links.
+interface Props { name: string; href?: string; icon?: string; meta?: string; description?: string; plainList?: boolean; }
+const { name, href, icon, meta, description, plainList = false } = Astro.props;
 const Tag = href ? 'a' : 'div';
 const external = href?.startsWith('http');
 ---
-<Tag
-  href={href}
-  target={external ? '_blank' : undefined}
-  rel={external ? 'noopener noreferrer' : undefined}
-  class={href ? 'flex items-start gap-3.5 rounded-md outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50' : 'flex items-start gap-3.5'}
->
-  {icon && <img src={icon} alt="" width="44" height="44" loading="lazy" class="size-10 shrink-0 rounded-[10px] bg-white object-contain p-1 ring-1 ring-border sm:size-11" />}
-  <span class="flex min-w-0 flex-1 flex-col gap-0.5">
-    <span class="flex flex-col">
-      <span class="text-body font-medium text-foreground">{name}</span>
-      {meta && <span class="whitespace-nowrap text-footnote text-muted-foreground">{meta}</span>}
+{plainList ? (
+  <Tag
+    href={href}
+    target={external ? '_blank' : undefined}
+    rel={external ? 'noopener noreferrer' : undefined}
+    class={href ? 'group flex min-h-[68px] items-center gap-4 rounded-md outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50' : 'flex min-h-[68px] items-center gap-4'}
+  >
+    {icon && <img src={icon} alt="" width="44" height="44" loading="lazy" class="size-11 shrink-0 rounded-[10px] bg-white object-contain p-1 ring-1 ring-border" />}
+    <span class="flex min-w-0 flex-1 items-center gap-3 self-stretch border-b border-separator py-3.5 group-last/item:border-b-0">
+      <span class="flex min-w-0 flex-1 flex-col">
+        <span class="text-body font-medium text-foreground">{name}</span>
+        {meta && <span class="whitespace-nowrap text-footnote text-muted-foreground">{meta}</span>}
+        {description && <span class="text-subhead text-muted-foreground">{description}</span>}
+        <slot />
+      </span>
+      {href && (
+        <svg class="size-3.5 shrink-0 text-chevron transition-colors group-hover:text-muted-foreground" viewBox="0 0 8 14" fill="none" aria-hidden="true">
+          <path d="M1 1.5L6.5 7L1 12.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      )}
     </span>
-    {description && <span class="text-subhead text-muted-foreground">{description}</span>}
-    <slot />
-  </span>
-</Tag>
+  </Tag>
+) : (
+  <Tag
+    href={href}
+    target={external ? '_blank' : undefined}
+    rel={external ? 'noopener noreferrer' : undefined}
+    class={href ? 'flex items-start gap-3.5 rounded-md outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50' : 'flex items-start gap-3.5'}
+  >
+    {icon && <img src={icon} alt="" width="44" height="44" loading="lazy" class="size-10 shrink-0 rounded-[10px] bg-white object-contain p-1 ring-1 ring-border sm:size-11" />}
+    <span class="flex min-w-0 flex-1 flex-col gap-0.5">
+      <span class="flex flex-col">
+        <span class="text-body font-medium text-foreground">{name}</span>
+        {meta && <span class="whitespace-nowrap text-footnote text-muted-foreground">{meta}</span>}
+      </span>
+      {description && <span class="text-subhead text-muted-foreground">{description}</span>}
+      <slot />
+    </span>
+  </Tag>
+)}

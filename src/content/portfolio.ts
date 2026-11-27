@@ -12,6 +12,7 @@ export const favicon = (url: string): string =>
 
 // Client work, banking and payments first, then transit infrastructure, then the rest.
 export const portfolio: PortfolioItem[] = [
+  { name: "Discover Global Network Fraud ML Models", url: "https://www.discoverglobalnetwork.com", icon: favicon("https://www.discover.com"), description: "Prohibited-transaction and gambling fraud detection models, feature pipelines, and real-time inference" },
   { name: "Capital One Databolt", url: "https://capitalonesoftware.com/databolt", description: "Data security for AI workloads" },
   { name: "CapitalOne.com Search", url: "https://www.capitalone.com", description: "Hybrid search with autocomplete and indexing, surfacing results as a customer types." },
   { name: "Capital One & Discover Vector Search API", url: "https://www.capitalone.com", description: "AI search platform" },

@@ -85,8 +85,8 @@ const jsonLd = {
       manager and staff engineer at companies including PwC, Capital One, Discover, and Fannie Mae.
     </p>
     <p class="mt-4 max-w-3xl text-body leading-[1.4706] text-muted-foreground">
-      Read Mike’s articles on Python in the “<a href="https://dev.to/mike-vincent" target="_blank" rel="noopener noreferrer" class="rounded-xs hover:text-foreground outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50">Quark’s Outlines</a>” series.
-      Listen to an old radio show at <a href="https://www.radioindex.org" target="_blank" rel="noopener noreferrer" class="rounded-xs hover:text-foreground outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50">radioindex.org</a>, which Mike builds and runs for The Archive of American Radio, Inc.
+      Read Mike’s articles on Python in the “<a href="https://dev.to/mike-vincent" target="_blank" rel="noopener noreferrer" class="rounded-xs text-tint transition-opacity hover:opacity-80 outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50">Quark’s Outlines</a>” series.
+      Listen to an old radio show at <a href="https://www.radioindex.org" target="_blank" rel="noopener noreferrer" class="rounded-xs text-tint transition-opacity hover:opacity-80 outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50">radioindex.org</a>, which Mike builds and runs for The Archive of American Radio, Inc.
     </p>
   </Section>
 
@@ -103,7 +103,7 @@ const jsonLd = {
         aria-selected="true"
         aria-controls="panel-resume"
         data-view="resume"
-        class="h-9 rounded-full px-4 text-subhead font-medium transition-all cursor-pointer outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 bg-background text-foreground shadow-xs"
+        class="h-9 rounded-full px-4 text-subhead font-medium transition-all cursor-pointer outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 bg-background text-tint shadow-xs"
       >
         Resume
       </button>
@@ -124,7 +124,7 @@ const jsonLd = {
   <div id="panel-resume" role="tabpanel" aria-labelledby="tab-resume">
     <Section id="resume" label="Experience" borderless>
       <a slot="actions" href="/resume.pdf" download="mikevincentresume.pdf" title="Download PDF" aria-label="Download resume PDF"
-        class="inline-flex h-11 items-center gap-1.5 rounded-md px-2.5 text-subhead font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50">
+        class="inline-flex h-11 items-center gap-1.5 rounded-md px-2.5 text-subhead font-medium text-tint transition-colors hover:bg-accent outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50">
         <span class="material-symbols-outlined text-[20px]" aria-hidden="true">download</span>
         <span>Download resume</span>
       </a>
@@ -161,14 +161,14 @@ const jsonLd = {
 
   <div id="panel-portfolio" role="tabpanel" aria-labelledby="tab-portfolio" hidden>
     <Section id="portfolio" label="Portfolio" borderless>
-      <ul class="grid gap-x-6 gap-y-5 sm:grid-cols-2">
-        {portfolio.map((p) => <li><Row name={p.name} href={p.url} icon={p.icon ?? favicon(p.url)} description={p.description} /></li>)}
+      <ul class="grid sm:grid-cols-2 sm:gap-x-10">
+        {portfolio.map((p) => <li class="group/item"><Row plainList name={p.name} href={p.url} icon={p.icon ?? favicon(p.url)} description={p.description} /></li>)}
       </ul>
     </Section>
 
     <Section id="projects" label="Projects">
-      <ul class="grid gap-x-6 gap-y-5 sm:grid-cols-2">
-        {projects.map((p) => <li><Row name={p.name} href={p.url} icon={p.icon} description={p.description} /></li>)}
+      <ul class="grid sm:grid-cols-2 sm:gap-x-10">
+        {projects.map((p) => <li class="group/item"><Row plainList name={p.name} href={p.url} icon={p.icon} description={p.description} /></li>)}
       </ul>
     </Section>
   </div>
@@ -180,7 +180,7 @@ const jsonLd = {
         resume: document.getElementById('panel-resume'),
         portfolio: document.getElementById('panel-portfolio'),
       };
-      const ACTIVE = ['bg-background', 'text-foreground', 'shadow-xs'];
+      const ACTIVE = ['bg-background', 'text-tint', 'shadow-xs'];
       const INACTIVE = ['text-muted-foreground', 'hover:text-foreground'];
 
       function setView(view, updateHash) {
