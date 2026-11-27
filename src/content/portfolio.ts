@@ -27,7 +27,6 @@ export const portfolio: PortfolioItem[] = [
 // Independent engineering systems & ventures.
 export const projects: PortfolioItem[] = [
   { name: "Radio Index & Radio Whisper", url: "https://radioindex.org", description: "Pure Rust HTTP origin, A2UI, faster-whisper ASR, and hybrid search for American radio drama", icon: "/assets/brands/radioindex-icon.svg" },
-  { name: "Hawk & Atlas", url: "https://github.com/mike-vincent", description: "Encoder-decoder, gated RNN, long-context memory, Transformers, and Word2Vec/Node2Vec models in PyTorch, NumPy, and SciPy" },
   { name: "The Archive of American Radio, Inc.", url: "https://archiveofamericanradio.org", description: "Nonprofit preserving historical American radio drama", icon: "/assets/brands/archive-icon.svg" },
   { name: "Io Pictures Corporation", url: "https://iopictures.com", description: "Film licensing, sales, and distribution", icon: "/assets/brands/iopictures-io-icon-v2.png" },
   { name: "Timer Fantasy", url: "https://timerfantasy.com", description: "macOS timer with cloud sync", icon: "/assets/brands/timerfantasy-icon-108.webp" },

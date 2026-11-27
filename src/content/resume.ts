@@ -119,7 +119,12 @@ export const education = [
   {
     "school": "The Pennsylvania State University",
     "url": "https://www.psu.edu",
-    "detail": "B.S. & B.A., Linguistics & Journalism, 2011"
+    "detail": "Bachelor of Science, Linguistics, 2011"
+  },
+  {
+    "school": "The Pennsylvania State University",
+    "url": "https://www.psu.edu",
+    "detail": "Bachelor of Arts, Journalism, 2011"
   }
 ];
 
