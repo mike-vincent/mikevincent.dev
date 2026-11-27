@@ -55,14 +55,18 @@ const jsonLd = {
   description={DESCRIPTION}
 >
   <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
-  <header class="pt-14 pb-8 sm:pt-3">
-      <img src="/assets/images/headshot-320.webp" alt="Mike Vincent" width="150" height="150" fetchpriority="high"
-        srcset="/assets/images/headshot-168.webp 168w, /assets/images/headshot-320.webp 320w" sizes="(min-width: 40rem) 10.5rem, 9rem"
-        class="mx-auto size-36 shrink-0 rounded-full object-cover ring-1 ring-border sm:size-42" />
-      <div class="mt-6 min-w-0">
-        <h1 class="text-large-title font-semibold sm:text-display-md text-foreground">Mike Vincent</h1>
-        <p class="mt-2 text-title-3 text-foreground">Staff Software Engineer</p>
-        <p class="mt-4 text-body text-muted-foreground">Los Angeles, California. U.S. Citizen.</p>
+  <header class="pt-14 pb-8 sm:pt-4">
+      <div class="flex items-center gap-4 sm:gap-5">
+        <img src="/assets/images/headshot-320.webp" alt="Mike Vincent" width="112" height="112" fetchpriority="high"
+          srcset="/assets/images/headshot-168.webp 168w, /assets/images/headshot-320.webp 320w" sizes="(min-width: 40rem) 7rem, 5.5rem"
+          class="size-22 shrink-0 rounded-full object-cover ring-1 ring-border sm:size-28" />
+        <div class="min-w-0">
+          <h1 class="text-large-title font-semibold sm:text-display-md text-foreground">Mike Vincent</h1>
+          <p class="mt-1 text-title-3 text-foreground">Staff Software Engineer</p>
+        </div>
+      </div>
+      <div class="mt-5 min-w-0">
+        <p class="text-body text-muted-foreground">Los Angeles, California. U.S. Citizen.</p>
         <p class="mt-1 text-body text-muted-foreground">Banking, Payments, Infrastructure, AI/ML.</p>
       </div>
       <div class="mt-6 flex flex-wrap gap-2">
