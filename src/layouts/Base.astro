@@ -65,21 +65,21 @@ const canonical = new URL(path, 'https://mikevincent.dev');
 <body class="min-h-svh bg-background text-foreground">
   <header class="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
     <div class="mx-auto flex h-16 max-w-4xl items-center gap-0 px-4 sm:gap-3 sm:px-6">
-      <a href="/" class="flex items-center gap-3 rounded-md outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50">
+      <a href="/" class="flex min-h-11 items-center gap-3 rounded-md outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50">
         <span class="relative flex size-9 shrink-0 overflow-hidden rounded-full bg-muted">
           <img src="/assets/images/headshot-108.webp" alt="Mike Vincent" width="36" height="36" class="aspect-square size-full object-cover" />
         </span>
-        <span class="flex min-w-0 flex-col leading-tight">
-          <span class="whitespace-nowrap text-sm tracking-tight">Mike Vincent</span>
-          <span class="whitespace-nowrap text-xs text-muted-foreground">Staff Software Engineer</span>
+        <span class="flex min-w-0 flex-col">
+          <span class="whitespace-nowrap type-headline text-foreground">Mike Vincent</span>
+          <span class="whitespace-nowrap type-caption-1 text-muted-foreground">Staff Software Engineer</span>
         </span>
       </a>
       <div class="flex-1"></div>
       <nav class="flex items-center sm:gap-1">
-        <a href="/#resume" class="inline-flex h-8 items-center rounded-md px-2 text-sm whitespace-nowrap text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 sm:px-3">Resume</a>
-        <a href="/#portfolio" class="inline-flex h-8 items-center rounded-md px-2 sm:px-3 text-sm whitespace-nowrap text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50">Portfolio</a>
+        <a href="/#resume" class="inline-flex h-11 items-center rounded-md px-2.5 type-subheadline font-medium whitespace-nowrap text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 sm:px-3">Resume</a>
+        <a href="/#portfolio" class="inline-flex h-11 items-center rounded-md px-2.5 sm:px-3 type-subheadline font-medium whitespace-nowrap text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50">Portfolio</a>
         <button id="theme-toggle" type="button" aria-label="System theme" title="System theme"
-          class="inline-flex size-8 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground cursor-pointer">
+          class="inline-flex size-11 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground cursor-pointer">
           <span class="material-symbols-outlined theme-icon text-[18px]">contrast</span>
         </button>
       </nav>
@@ -89,7 +89,7 @@ const canonical = new URL(path, 'https://mikevincent.dev');
   <main class="mx-auto max-w-4xl px-6"><slot /></main>
 
   <footer class="mx-auto max-w-4xl px-6 pb-12">
-    <div class="border-t pt-6 text-xs text-muted-foreground">
+    <div class="border-t pt-6 type-caption-1 text-muted-foreground">
       Copyright &copy; {new Date().getFullYear()} Mike Vincent. Los Angeles, CA &middot; U.S. Citizen.
     </div>
   </footer>

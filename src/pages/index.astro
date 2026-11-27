@@ -5,7 +5,7 @@ import Row from '../components/site/Row.astro';
 import { portfolio, projects, favicon } from '../content/portfolio';
 import { roles, education, skills } from '../content/resume';
 
-const button = 'inline-flex h-10 items-center rounded-md border bg-background px-6 text-sm shadow-xs transition-colors hover:bg-accent hover:text-accent-foreground outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50';
+const button = 'inline-flex h-11 items-center rounded-md border bg-background px-5 type-body font-medium shadow-xs transition-colors hover:bg-accent hover:text-accent-foreground outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50';
 
 const DESCRIPTION = 'Michael Vincent, known as Mike, is a Staff Software Engineer in Los Angeles. He builds cloud platforms on AWS and Azure with Kubernetes and Terraform, and payments infrastructure for Capital One and Discover.';
 
@@ -58,10 +58,10 @@ const jsonLd = {
   <header class="py-14 sm:py-20">
       <div class="flex flex-col gap-5 sm:flex-row sm:items-start sm:gap-8">
         <div class="min-w-0">
-          <h1 class="text-4xl tracking-tight sm:text-5xl">Mike Vincent</h1>
-          <p class="mt-1.5 text-lg text-foreground">Staff Software Engineer</p>
-          <p class="mt-4 text-base text-foreground">Los Angeles, California. U.S. Citizen.</p>
-          <p class="mt-1.5 text-base text-muted-foreground">Banking, Payments, Infrastructure, AI/ML.</p>
+          <h1 class="type-large-title sm:type-display-lg text-foreground">Mike Vincent</h1>
+          <p class="mt-2 type-title-3 text-foreground">Staff Software Engineer</p>
+          <p class="mt-4 type-body text-foreground">Los Angeles, California. U.S. Citizen.</p>
+          <p class="mt-1.5 type-body text-muted-foreground">Banking, Payments, Infrastructure, AI/ML.</p>
         </div>
         <img src="/assets/images/headshot-320.webp" alt="Mike Vincent" width="150" height="150" fetchpriority="high"
           srcset="/assets/images/headshot-168.webp 168w, /assets/images/headshot-320.webp 320w" sizes="(min-width: 40rem) 10.5rem, 9rem"
@@ -69,11 +69,11 @@ const jsonLd = {
       </div>
       <div class="mt-6 flex flex-wrap gap-1.5">
         {['Engineering Manager', 'Architect', 'Platform Engineer', 'Infrastructure Engineer', 'DevOps Engineer', 'Cloud Engineer', 'Site Reliability Engineer', 'Software Engineer', 'Machine Learning Engineer', 'Data Engineer', 'AI Engineer', 'Security Engineer'].map((p) => (
-          <span class="inline-flex items-center rounded-md bg-secondary px-2.5 py-1 text-xs text-secondary-foreground">{p}</span>
+          <span class="inline-flex items-center rounded-md bg-secondary px-2.5 py-1 type-footnote text-secondary-foreground">{p}</span>
         ))}
       </div>
       <nav aria-label="Primary" class="mt-6 flex flex-wrap gap-3">
-        <a href="#resume" class="inline-flex h-10 items-center rounded-md bg-primary px-6 text-sm text-primary-foreground shadow-xs transition-colors hover:bg-primary/90 outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50">View Resume</a>
+        <a href="#resume" class="inline-flex h-11 items-center rounded-md bg-primary px-5 type-body font-medium text-primary-foreground shadow-xs transition-colors hover:bg-primary/90 outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50">View Resume</a>
         <a href="#portfolio" class={button}>See Portfolio</a>
         <a href="https://github.com/mike-vincent" target="_blank" rel="noopener noreferrer" class={button}>GitHub</a>
         <a href="https://www.linkedin.com/in/michael-thomas-vincent/" target="_blank" rel="noopener noreferrer" class={button}>LinkedIn</a>
@@ -81,12 +81,12 @@ const jsonLd = {
   </header>
 
   <Section id="about" label="About">
-    <p class="max-w-3xl text-base leading-relaxed text-muted-foreground">
+    <p class="max-w-3xl type-body-editorial text-muted-foreground">
       Mike Vincent is an American software engineer and founder from Los Angeles who builds and
       runs payments and AI model platforms for well-known brands. He has worked as an engineering
       manager and staff engineer at companies including PwC, Capital One, Discover, and Fannie Mae.
     </p>
-    <p class="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground">
+    <p class="mt-4 max-w-3xl type-body-editorial text-muted-foreground">
       Read Mike’s articles on Python in the “<a href="https://dev.to/mike-vincent" target="_blank" rel="noopener noreferrer" class="rounded-xs hover:text-foreground outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50">Quark’s Outlines</a>” series.
       Listen to an old radio show at <a href="https://www.radioindex.org" target="_blank" rel="noopener noreferrer" class="rounded-xs hover:text-foreground outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50">radioindex.org</a>, which Mike builds and runs for The Archive of American Radio, Inc.
     </p>
@@ -94,7 +94,7 @@ const jsonLd = {
 
   <Section id="resume" label="Experience">
     <a slot="actions" href="/resume.pdf" download="mikevincentresume.pdf" title="Download PDF" aria-label="Download resume PDF"
-      class="inline-flex h-8 items-center gap-1.5 rounded-md px-2 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50">
+      class="inline-flex h-11 items-center gap-1.5 rounded-md px-2.5 type-subheadline font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50">
       <span class="material-symbols-outlined text-[20px]" aria-hidden="true">download</span>
       <span>Download resume</span>
     </a>
@@ -104,7 +104,7 @@ const jsonLd = {
           <Row name={`${r.title}, ${r.org}`} icon={favicon(r.url)} meta={r.period} description={r.blurb}>
             <ul class="mt-2 space-y-1.5">
               {r.bullets.map((b) => (
-                <li class="flex gap-2.5 text-sm text-muted-foreground">
+                <li class="flex gap-2.5 type-subheadline text-muted-foreground">
                   <span class="mt-2 size-1 shrink-0 rounded-full bg-muted-foreground/50"></span>
                   <span>{b.lead}. {/^[a-z]{2}/.test(b.text) ? b.text[0].toUpperCase() + b.text.slice(1) : b.text}</span>
                 </li>
