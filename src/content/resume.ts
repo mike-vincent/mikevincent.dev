@@ -6,27 +6,27 @@ export const roles = [
     "url": "https://www.pwc.com",
     "period": "2024 to present",
     "location": "Los Angeles, CA",
-    "blurb": "Founding engineer on payments, tokenization, fraud models, AI, and search infrastructure for Capital One and Discover.",
+    "blurb": "Lead engineer building payments, tokenization, fraud ML, and hybrid search systems for Capital One and Discover.",
     "bullets": [
       {
-        "lead": "Discover Global Network fraud machine learning models",
-        "text": "machine learning fraud and risk models: prohibited-transaction detection, feature pipelines, real-time inference, and serving."
+        "lead": "Discover Global Network Fraud ML",
+        "text": "Built fraud and risk models for prohibited-transaction and gambling detection, including feature pipelines and real-time inference serving."
       },
       {
         "lead": "Capital One Databolt",
-        "text": "vaultless, field-level tokenization in Go and TypeScript. AI models, analytics, and payments run on tokens and never see the real card number."
+        "text": "Engineered vaultless, field-level tokenization in Go and TypeScript so AI models, analytics, and payment flows run on tokens without touching raw card numbers."
       },
       {
         "lead": "Capital One Eno",
-        "text": "NLU, entity, and intent models behind the account chatbot, moved from Kubeflow onto Capital One's enterprise AI platform."
+        "text": "Migrated NLU, entity, and intent models powering the customer chatbot from Kubeflow onto Capital One's enterprise AI platform."
       },
       {
         "lead": "CapitalOne.com Search",
-        "text": "hybrid search with autocomplete and indexing, surfacing results as a customer types."
+        "text": "Built hybrid search, indexing, and low-latency typeahead autocomplete surfacing results as customers type."
       },
       {
         "lead": "Discover.com Search",
-        "text": "hybrid search over vector embeddings and BM25, scored on offline evaluation sets that measure answer quality."
+        "text": "Built hybrid vector-embedding and BM25 search, validated against offline evaluation sets for answer quality."
       }
     ]
   },
@@ -36,27 +36,27 @@ export const roles = [
     "url": "https://www.cubic.com",
     "period": "2021 to 2024",
     "location": "San Diego, CA",
-    "blurb": "Software engineering manager for transit-payment SaaS across five agencies. WMATA, NYC MTA, BART, LA Metro, and MBTA.",
+    "blurb": "Managed transit-payment SaaS infrastructure across major U.S. agencies including NYC MTA, LA Metro, WMATA, BART, SFMTA, and MBTA.",
     "bullets": [
       {
-        "lead": "NYC MTA OMNY",
-        "text": "contactless iPhone fare payments with Apple. Kubernetes manifests and Docker containers for the payments app."
+        "lead": "WMATA, San Diego MTS & PATCO",
+        "text": "Led an 18-engineer team across the U.S., India, and Germany supporting transit SaaS for millions of riders, with PagerDuty on-call and Prometheus/Grafana monitoring."
       },
       {
-        "lead": "SFMTA LA Metro",
-        "text": "fare-payment backend as Docker and Kubernetes microservices with vertical, horizontal, and KEDA autoscaling on AWS and Azure."
+        "lead": "NYC MTA OMNY",
+        "text": "Shipped contactless Apple Pay fare payments, delivering production Docker and Kubernetes payment services."
+      },
+      {
+        "lead": "SFMTA & LA Metro",
+        "text": "Built and operated the fare-payment backend as Docker and Kubernetes microservices with VPA, HPA, and KEDA autoscaling across AWS and Azure."
       },
       {
         "lead": "BART & Boston MBTA",
-        "text": "Platform security with mTLS on Istio and a Smallstep private certificate authority. CrowdStrike, Nessus, and Trend Micro across the fleet."
+        "text": "Secured the fleet with Istio mTLS, a Smallstep private CA, CrowdStrike, Nessus, and Trend Micro."
       },
       {
         "lead": "NextBus Umo IQ",
-        "text": "Terraform, AWS, and GitHub Actions CI/CD, under PCI and SOC 1/2 compliance. Production code in Python, Java, and JavaScript across AWS, Azure, and vSphere."
-      },
-      {
-        "lead": "WMATA, San Diego MTS & PATCO",
-        "text": "Ran a team of 18 across the US, India, and Germany supporting transit SaaS for millions of riders. On-call on PagerDuty, monitoring on Prometheus and Grafana."
+        "text": "Built Terraform, AWS, and GitHub Actions CI/CD under PCI and SOC 1/2 compliance, shipping Python, Java, and JavaScript services across AWS, Azure, and vSphere."
       }
     ]
   },
@@ -66,19 +66,19 @@ export const roles = [
     "url": "https://www.cubic.com",
     "period": "2019 to 2021",
     "location": "San Diego, CA",
-    "blurb": "Lead engineer building rider-facing chatbots, prediction, and the cloud platform behind transit fare services.",
+    "blurb": "Led development of rider-facing chatbots, demand-prediction models, and the cloud platform behind transit fare services.",
     "bullets": [
       {
         "lead": "Chicago Metra",
-        "text": "rider chatbot built with Twilio and Azure Cognitive Services on AWS Lambda. Riders check transit-card balances by phone, text, or email."
+        "text": "Built a rider chatbot with Twilio, Azure Cognitive Services, and AWS Lambda so riders check transit-card balances by phone, text, or email."
       },
       {
         "lead": "Urban Insights",
-        "text": "transit-demand machine learning and search in Jupyter and SageMaker, monitored with Prometheus and Grafana."
+        "text": "Built transit-demand ML and search pipelines in Jupyter and AWS SageMaker, monitored with Prometheus and Grafana."
       },
       {
         "lead": "Cubic Transit Fare Payments Platform",
-        "text": "Automated CI/CD for 20 Java apps with Jenkins, Ansible, Docker, Helm, Vault, Terraform, and Kubernetes on Azure. Database migrations via Liquibase and SQL*Plus."
+        "text": "Automated CI/CD for 20 Java apps with Jenkins, Ansible, Docker, Helm, Vault, Terraform, and Kubernetes on Azure, plus Liquibase and SQL*Plus migrations."
       }
     ]
   },
@@ -92,15 +92,15 @@ export const roles = [
     "bullets": [
       {
         "lead": "NextBus",
-        "text": "real-time bus-arrival prediction on AWS ECS and Lambda with TensorFlow, PySpark, CloudFormation, and Node.js."
+        "text": "Built real-time bus-arrival prediction on AWS ECS and Lambda with TensorFlow, PySpark, CloudFormation, and Node.js."
       },
       {
         "lead": "Cubic Fare Collection Systems",
-        "text": "First DevOps engineer; led the transformation for a publicly traded company with Terraform, Kubernetes, and Docker. Embedded fare CI/CD with Jenkins, Conan, and Wind River Linux."
+        "text": "Migrated legacy fare collection systems to Terraform, Kubernetes, and Docker, and built embedded fare CI/CD with Jenkins, Conan, and Wind River Linux."
       },
       {
         "lead": "Cubic Cloud Platform",
-        "text": "PCI, SOC 2, ISO, and SOX audits. AWS and Azure hardened with Trend DSA, Nessus, and Cisco ASAv, monitored with Prometheus and Grafana."
+        "text": "Supported PCI, SOC 2, ISO 27001, and SOX audits; hardened AWS and Azure with Trend DSA, Nessus, and Cisco ASAv, monitored with Prometheus and Grafana."
       }
     ]
   },
@@ -110,19 +110,19 @@ export const roles = [
     "url": "https://www.epam.com",
     "period": "2016 to 2017",
     "location": "Washington, DC",
-    "blurb": "Senior backend engineer at a digital agency, shipping search, payments, and mobile apps for enterprise clients.",
+    "blurb": "Backend engineer shipping enterprise search, mortgage-appraisal APIs, and AWS CI/CD for federal and defense clients.",
     "bullets": [
       {
         "lead": "Fannie Mae Collateral Underwriter",
-        "text": "Angular single-page app on Tomcat with JSON and REST APIs in Python. Appraisers value a home on a mortgage."
+        "text": "Built Python REST APIs and an Angular SPA on Tomcat used by mortgage appraisers to value residential properties."
       },
       {
         "lead": "Lockheed Martin Intranet Search",
-        "text": "enterprise search on headless Drupal. Microservices on Docker and Kubernetes with Node.js and Python."
+        "text": "Built enterprise search on headless Drupal backed by Node.js and Python microservices on Docker and Kubernetes."
       },
       {
         "lead": "HUD, Freddie Mac & Federal Courts (CM/ECF, PACER)",
-        "text": "Jenkins, TeamCity, and Sonatype Nexus CI/CD on AWS with Chef. PostgreSQL migrations with Liquibase and a zero-downtime multi-tenant switch."
+        "text": "Built Jenkins, TeamCity, and Sonatype Nexus CI/CD on AWS with Chef, and ran Liquibase PostgreSQL migrations for a zero-downtime multi-tenant cutover."
       }
     ]
   },
@@ -136,19 +136,19 @@ export const roles = [
     "bullets": [
       {
         "lead": "Poison Control",
-        "text": "National Capital Poison Center iPhone and Android apps built with Cordova CLI, shipped via App Store, TestFlight, and Google Play."
+        "text": "Built National Capital Poison Center iOS and Android apps with Cordova CLI, shipped via App Store, TestFlight, and Google Play."
       },
       {
-        "lead": "Canadian Tire",
-        "text": "Hybris store and the U.S. Conference of Catholic Bishops app on AWS, with RDS and ElastiCache behind Kubernetes and Docker."
+        "lead": "Canadian Tire & U.S. Conference of Catholic Bishops",
+        "text": "Deployed a Hybris storefront and the USCCB mobile backend on AWS with RDS, ElastiCache, Kubernetes, and Docker."
       },
       {
         "lead": "EPAM Enterprise Cloud",
-        "text": "Docker and Ansible on VMware ESXi with Ubuntu and CentOS behind Cisco ASA firewalls. Provisioned with Vagrant and Chef."
+        "text": "Provisioned Docker and Ansible environments on VMware ESXi (Ubuntu and CentOS) behind Cisco ASA firewalls using Vagrant and Chef."
       },
       {
         "lead": "NY Fashion Week & Mobile QA",
-        "text": "Node, Karma, Jasmine, PhantomJS, WebDriver, and Protractor. JMeter and BlazeMeter performance tests. SVN-to-Git migration."
+        "text": "Built automated browser and load tests (Karma, Jasmine, Protractor, JMeter, BlazeMeter) and led the SVN-to-Git migration."
       }
     ]
   }
@@ -163,12 +163,7 @@ export const education = [
   {
     "school": "The Pennsylvania State University",
     "url": "https://www.psu.edu",
-    "detail": "Bachelor of Science, Linguistics, 2011"
-  },
-  {
-    "school": "The Pennsylvania State University",
-    "url": "https://www.psu.edu",
-    "detail": "Bachelor of Arts, Journalism, 2011"
+    "detail": "B.S. Linguistics & B.A. Journalism, 2011"
   }
 ];
 

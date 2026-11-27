@@ -7,7 +7,7 @@ import { roles, education, skills } from '../content/resume';
 
 const button = 'inline-flex h-11 items-center rounded-full bg-secondary px-5 text-subhead font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50';
 
-const DESCRIPTION = 'Michael Vincent, known as Mike, is a Staff Software Engineer in Los Angeles. He builds cloud platforms on AWS and Azure with Kubernetes and Terraform, and payments infrastructure for Capital One and Discover.';
+const DESCRIPTION = 'Mike Vincent is a Staff Software Engineer and former Engineering Manager in Los Angeles building payments, tokenization, fraud ML, hybrid search, and Kubernetes platforms on AWS and Azure.';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -27,8 +27,9 @@ const jsonLd = {
         { '@type': 'CollegeOrUniversity', name: 'The Pennsylvania State University', url: 'https://www.psu.edu' },
       ],
       knowsAbout: [
-        'Cloud infrastructure', 'DevOps', 'Site reliability engineering', 'Platform engineering',
-        'Kubernetes', 'Terraform', 'AWS', 'Azure', 'Docker', 'CI/CD', 'Payments', 'Machine learning',
+        'Payments infrastructure', 'Tokenization', 'Fraud machine learning', 'Hybrid search',
+        'Transformers', 'AI systems', 'Platform engineering', 'Kubernetes', 'Terraform',
+        'AWS', 'Azure', 'Rust', 'Go', 'Python', 'TypeScript',
       ],
       address: { '@type': 'PostalAddress', addressLocality: 'Los Angeles', addressRegion: 'CA', addressCountry: 'US' },
       sameAs: [
@@ -51,7 +52,7 @@ const jsonLd = {
 };
 ---
 <Base
-  title="Mike Vincent · Staff Software Engineer, Cloud and DevOps"
+  title="Mike Vincent · Staff Software Engineer — Payments, AI/ML & Platform Infrastructure"
   description={DESCRIPTION}
 >
   <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
@@ -77,7 +78,7 @@ const jsonLd = {
 
   <section aria-label="Roles" class="border-t py-6">
     <div class="flex flex-wrap gap-2">
-      {['Engineering Manager', 'Architect', 'Platform Engineer', 'Infrastructure Engineer', 'DevOps Engineer', 'Cloud Engineer', 'Site Reliability Engineer', 'Software Engineer', 'Machine Learning Engineer', 'Data Engineer', 'AI Engineer', 'Security Engineer'].map((p) => (
+      {['Staff Software Engineer', 'ML & AI Engineer', 'Payments & Platform Engineer', 'Full-Stack Systems Engineer', 'Engineering Manager'].map((p) => (
         <span class="inline-flex items-center rounded-md bg-secondary px-2.5 py-1 text-footnote text-secondary-foreground">{p}</span>
       ))}
     </div>
@@ -87,9 +88,12 @@ const jsonLd = {
     <div id="about">
       <h2 id="about-heading" class="text-title-1 font-semibold text-foreground">About</h2>
       <p class="mt-4 max-w-3xl text-body leading-[1.4706] text-muted-foreground">
-        Mike Vincent is an American software engineer and founder from Los Angeles who builds and
-        runs payments and AI model platforms for well-known brands. He has worked as an engineering
-        manager and staff engineer at companies including PwC, Capital One, Discover, and Fannie Mae.
+        I build and run production payments, AI/ML, and cloud platform systems — from vaultless
+        card tokenization and real-time fraud models to hybrid search and PCI-compliant Kubernetes
+        infrastructure. Currently a Lead Software Engineer at PwC delivering core payments and AI
+        systems for Capital One and Discover; previously an Engineering Manager at Cubic leading
+        18 engineers across the U.S., India, and Germany on transit fare platforms for NYC MTA,
+        LA Metro, WMATA, BART, and MBTA.
       </p>
     </div>
     <div
@@ -139,7 +143,7 @@ const jsonLd = {
                     <span class="mt-2.5 size-1 shrink-0 rounded-full bg-muted-foreground/50"></span>
                     <span class="flex flex-col">
                       <span class="font-medium text-foreground/90">{b.lead}</span>
-                      <span>{/^[a-z]{2}/.test(b.text) ? b.text[0].toUpperCase() + b.text.slice(1) : b.text}</span>
+                      <span>{b.text}</span>
                     </span>
                   </li>
                 ))}
