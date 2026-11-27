@@ -125,13 +125,15 @@ const jsonLd = {
   </div>
 
   <div id="panel-resume" role="tabpanel" aria-labelledby="tab-resume">
-    <p id="about" class="mt-4 max-w-3xl text-body leading-[1.4706] text-muted-foreground">
-      Mike Vincent is an American software engineer and founder from Los Angeles who builds and
-      runs payments and AI model platforms for well-known brands. He has worked as an engineering
-      manager and staff engineer at companies including PwC, Capital One, Discover, and Fannie Mae.
-    </p>
+    <Section id="about" label="About" borderless>
+      <p class="max-w-3xl text-body leading-[1.4706] text-muted-foreground">
+        Mike Vincent is an American software engineer and founder from Los Angeles who builds and
+        runs payments and AI model platforms for well-known brands. He has worked as an engineering
+        manager and staff engineer at companies including PwC, Capital One, Discover, and Fannie Mae.
+      </p>
+    </Section>
 
-    <Section id="resume" label="Experience" borderless>
+    <Section id="resume" label="Experience">
       <ul class="space-y-6">
         {roles.map((r) => (
           <li>
