@@ -84,42 +84,42 @@ const jsonLd = {
   </section>
 
   <div id="view-switcher" class="border-t pt-8 pb-0">
-    <div id="about" class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+    <div id="about">
       <h2 id="about-heading" class="text-title-1 font-semibold text-foreground">About</h2>
-      <div
-        role="tablist"
-        aria-label="View resume or portfolio"
-        class="inline-grid h-11 w-full grid-cols-2 items-center rounded-full bg-secondary p-1 sm:max-w-[240px]"
-      >
-        <button
-          id="tab-resume"
-          type="button"
-          role="tab"
-          aria-selected="true"
-          aria-controls="panel-resume"
-          data-view="resume"
-          class="h-9 rounded-full px-4 text-subhead font-medium transition-all cursor-pointer outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 bg-background text-tint shadow-xs"
-        >
-          Resume
-        </button>
-        <button
-          id="tab-portfolio"
-          type="button"
-          role="tab"
-          aria-selected="false"
-          aria-controls="panel-portfolio"
-          data-view="portfolio"
-          class="h-9 rounded-full px-4 text-subhead font-medium transition-all cursor-pointer outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 text-muted-foreground hover:text-foreground"
-        >
-          Portfolio
-        </button>
-      </div>
+      <p class="mt-4 max-w-3xl text-body leading-[1.4706] text-muted-foreground">
+        Mike Vincent is an American software engineer and founder from Los Angeles who builds and
+        runs payments and AI model platforms for well-known brands. He has worked as an engineering
+        manager and staff engineer at companies including PwC, Capital One, Discover, and Fannie Mae.
+      </p>
     </div>
-    <p class="mt-4 max-w-3xl text-body leading-[1.4706] text-muted-foreground">
-      Mike Vincent is an American software engineer and founder from Los Angeles who builds and
-      runs payments and AI model platforms for well-known brands. He has worked as an engineering
-      manager and staff engineer at companies including PwC, Capital One, Discover, and Fannie Mae.
-    </p>
+    <div
+      role="tablist"
+      aria-label="View resume or portfolio"
+      class="mt-6 inline-grid h-11 w-full grid-cols-2 items-center rounded-full bg-secondary p-1 sm:max-w-[240px]"
+    >
+      <button
+        id="tab-resume"
+        type="button"
+        role="tab"
+        aria-selected="true"
+        aria-controls="panel-resume"
+        data-view="resume"
+        class="h-9 rounded-full px-4 text-subhead font-medium transition-all cursor-pointer outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 bg-background text-tint shadow-xs"
+      >
+        Resume
+      </button>
+      <button
+        id="tab-portfolio"
+        type="button"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-portfolio"
+        data-view="portfolio"
+        class="h-9 rounded-full px-4 text-subhead font-medium transition-all cursor-pointer outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 text-muted-foreground hover:text-foreground"
+      >
+        Portfolio
+      </button>
+    </div>
   </div>
 
   <div id="panel-resume" role="tabpanel" aria-labelledby="tab-resume">
