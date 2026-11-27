@@ -177,43 +177,43 @@ export const skills = [
     "group": "AI & Machine Learning Models",
     "items": "Discover Global Network fraud & gambling ML; Capital One Eno NLU/intent; CapitalOne.com & Discover.com hybrid search; Radio Index & Radio Whisper; Hawk & Atlas; Cubic Urban Insights & NextBus ML",
     "bullets": [
-      { "lead": "Discover Global Network", "text": "Fraud and gambling detection ML, feature pipelines, real-time inference" },
-      { "lead": "Capital One Eno", "text": "NLU, entity, and intent models (Kubeflow to enterprise AI platform)" },
-      { "lead": "CapitalOne.com & Discover.com", "text": "Hybrid vector + BM25 search, ANN/KNN, offline evaluation" },
-      { "lead": "Radio Index & Radio Whisper", "text": "faster-whisper ASR with VAD, Hugging Face, PyTorch, vLLM, RAG" },
-      { "lead": "Hawk & Atlas", "text": "Encoder-decoder, gated linear recurrence RNN, long-context memory, Transformers, Word2Vec/Node2Vec (NumPy, SciPy)" },
-      { "lead": "Cubic Urban Insights & NextBus", "text": "Transit ML pipelines (SageMaker, TensorFlow, PySpark, Azure Cognitive Services)" }
+      { "lead": "Discover Global Network", "text": "Fraud & gambling ML, feature pipelines, real-time inference" },
+      { "lead": "Capital One Eno", "text": "NLU, entity & intent models, Kubeflow" },
+      { "lead": "CapitalOne.com & Discover.com", "text": "Hybrid vector & BM25 search, ANN/KNN, offline eval" },
+      { "lead": "Radio Index & Radio Whisper", "text": "faster-whisper ASR, Hugging Face, PyTorch, vLLM, RAG" },
+      { "lead": "Hawk & Atlas", "text": "Encoder-decoder, gated RNN, Transformers, Word2Vec, Node2Vec, NumPy, SciPy" },
+      { "lead": "Cubic Urban Insights & NextBus", "text": "SageMaker, TensorFlow, PySpark, Azure Cognitive Services" }
     ]
   },
   {
     "group": "Finance, Payments & Banking",
     "items": "Capital One Databolt tokenization; Discover Global Network fraud ML; NYC MTA OMNY & LA Metro TAP; WMATA, BART, MBTA, SF Muni, MTS, PATCO; Fannie Mae Collateral Underwriter",
     "bullets": [
-      { "lead": "Capital One Databolt", "text": "Vaultless field-level tokenization (Go, TypeScript)" },
-      { "lead": "Discover Global Network", "text": "Prohibited-transaction and gambling fraud scoring ML" },
-      { "lead": "NYC MTA OMNY & LA Metro TAP", "text": "Contactless EMV and Apple Pay transit fare payments" },
-      { "lead": "WMATA, BART, MBTA, SF Muni, MTS & PATCO", "text": "PCI-DSS and SOC 1/2 transit payment platforms" },
-      { "lead": "Fannie Mae Collateral Underwriter", "text": "Mortgage appraisal REST APIs and Angular SPA" }
+      { "lead": "Capital One Databolt", "text": "Vaultless field-level tokenization, Go, TypeScript" },
+      { "lead": "Discover Global Network", "text": "Prohibited-transaction & gambling fraud scoring ML" },
+      { "lead": "NYC MTA OMNY & LA Metro TAP", "text": "Contactless EMV & Apple Pay fare payments" },
+      { "lead": "WMATA, BART, MBTA, SF Muni & MTS", "text": "PCI-DSS & SOC 1/2 transit payment platforms" },
+      { "lead": "Fannie Mae Collateral Underwriter", "text": "Mortgage appraisal REST APIs, Angular SPA" }
     ]
   },
   {
     "group": "Platform Infrastructure & Cloud",
     "items": "LA Metro TAP & NYC MTA OMNY Kubernetes; Cubic transit SaaS Terraform/CI/CD; NextBus & Chicago Metra AWS; Radio Index Rust/Azure ML/Cloudflare Workers",
     "bullets": [
-      { "lead": "LA Metro TAP & NYC MTA OMNY", "text": "Docker, Kubernetes, KEDA/HPA/VPA autoscaling on AWS & Azure" },
-      { "lead": "Cubic transit SaaS", "text": "Terraform, Helm, GitHub Actions, Jenkins, Ansible, Vault, Prometheus, Grafana" },
+      { "lead": "LA Metro TAP & NYC MTA OMNY", "text": "Docker, Kubernetes, KEDA/HPA/VPA, AWS, Azure" },
+      { "lead": "Cubic transit SaaS", "text": "Terraform, Helm, GitHub Actions, Jenkins, Vault, Prometheus, Grafana" },
       { "lead": "NextBus & Chicago Metra", "text": "AWS ECS, Lambda, CloudFormation, Twilio" },
-      { "lead": "Radio Index", "text": "Rust origin, Azure ML, Dagu pipelines, Cloudflare Workers, OpenTelemetry" }
+      { "lead": "Radio Index", "text": "Rust origin, Azure ML, Dagu, Cloudflare Workers, OpenTelemetry" }
     ]
   },
   {
     "group": "Architecture & Systems",
     "items": "Capital One & Discover Search; Cubic transit SaaS SRE; Lockheed Martin Intranet; Fannie Mae & EPAM database migrations",
     "bullets": [
-      { "lead": "Capital One & Discover Search", "text": "Lucene, Solr, hybrid indexing, ETL, offline evaluation" },
-      { "lead": "Cubic transit SaaS", "text": "Distributed microservices, SRE, PagerDuty on-call (18-engineer org)" },
-      { "lead": "Lockheed Martin Intranet", "text": "Headless Drupal, Node.js, and Python microservices" },
-      { "lead": "Fannie Mae & EPAM", "text": "Zero-downtime PostgreSQL & Liquibase migrations, Kafka, Redis" }
+      { "lead": "Capital One & Discover Search", "text": "Lucene, Solr, hybrid indexing, ETL, offline eval" },
+      { "lead": "Cubic transit SaaS", "text": "Distributed microservices, SRE, PagerDuty (18 engineers)" },
+      { "lead": "Lockheed Martin Intranet", "text": "Headless Drupal, Node.js, Python microservices" },
+      { "lead": "Fannie Mae & EPAM", "text": "Zero-downtime PostgreSQL & Liquibase, Kafka, Redis" }
     ]
   },
   {
@@ -230,7 +230,7 @@ export const skills = [
     "group": "Security & Compliance",
     "items": "Cubic transit fleet zero-trust mTLS; PwC & Cubic PCI-DSS, SOC 1/2, ISO 27001, SOX",
     "bullets": [
-      { "lead": "Cubic transit fleet", "text": "Zero-trust mTLS (Istio, Smallstep CA), Vault, CrowdStrike, Nessus, Trend Micro, Cisco ASAv" },
+      { "lead": "Cubic transit fleet", "text": "Zero-trust mTLS, Istio, Smallstep CA, Vault, CrowdStrike, Nessus" },
       { "lead": "PwC & Cubic audits", "text": "PCI-DSS, SOC 1/2, ISO 27001, SOX" }
     ]
   }
