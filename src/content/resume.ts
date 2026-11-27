@@ -77,7 +77,7 @@ export const roles = [
         "text": "transit-demand machine learning and search in Jupyter and SageMaker, monitored with Prometheus and Grafana."
       },
       {
-        "lead": "Cubic Transit Fare Platform",
+        "lead": "Cubic Transit Fare Payments Platform",
         "text": "Automated CI/CD for 20 Java apps with Jenkins, Ansible, Docker, Helm, Vault, Terraform, and Kubernetes on Azure. Database migrations via Liquibase and SQL*Plus."
       }
     ]
