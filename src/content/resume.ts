@@ -29,7 +29,7 @@ export const roles = [
         "text": "Shipped hybrid vector and BM25 retrieval backed by offline evaluation harnesses for answer quality."
       },
       {
-        "lead": "Hawk & Atlas",
+        "lead": "Discover Global Payments Network Fraud Models",
         "text": "Authored encoder-decoder, gated linear recurrence, long-context memory, Transformer, and Word2Vec/Node2Vec models in PyTorch, NumPy, and SciPy."
       }
     ]
@@ -135,13 +135,13 @@ export const education = [
 export const skills = [
   {
     "group": "AI & Machine Learning Models",
-    "items": "Discover Global Network fraud & gambling ML; Capital One Eno NLU/intent; CapitalOne.com & Discover.com hybrid search; Radio Index & Radio Whisper; Hawk & Atlas; Cubic Urban Insights & NextBus ML",
+    "items": "Discover Global Payments Network Fraud Models; Capital One Eno NLU/intent; CapitalOne.com & Discover.com hybrid search; Radio Index & Radio Whisper; Cubic Urban Insights & NextBus ML",
     "bullets": [
       { "lead": "Discover Global Network", "text": "Fraud & gambling ML, feature pipelines, real-time inference" },
       { "lead": "Capital One Eno", "text": "NLU, entity & intent models, Kubeflow" },
       { "lead": "CapitalOne.com & Discover.com", "text": "Hybrid vector & BM25 search, ANN/KNN, offline eval" },
       { "lead": "Radio Index & Radio Whisper", "text": "Custom encoder-decoder speech models, PyTorch, Hugging Face, vLLM, RAG, A2UI" },
-      { "lead": "Hawk & Atlas", "text": "Custom encoder-decoder, gated RNN, Transformers, Word2Vec, Node2Vec, PyTorch" },
+      { "lead": "Discover Global Payments Network Fraud Models", "text": "Custom encoder-decoder, gated RNN, Transformers, Word2Vec, Node2Vec, PyTorch" },
       { "lead": "Cubic Urban Insights & NextBus", "text": "SageMaker, TensorFlow, PySpark, Azure Cognitive Services" }
     ]
   },
