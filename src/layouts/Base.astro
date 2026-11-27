@@ -63,8 +63,8 @@ const canonical = new URL(path, 'https://mikevincent.dev');
   <slot name="head" />
 </head>
 <body class="min-h-svh bg-background text-foreground">
-  <header id="site-header" class="fixed inset-x-0 top-0 z-50 w-full border-b border-transparent bg-transparent transition-colors duration-200">
-    <div class="mx-auto flex h-14 max-w-4xl items-center gap-0 px-4 sm:gap-3 sm:px-6">
+  <header id="site-header" class="sticky top-0 z-50 w-full border-b border-transparent bg-transparent transition-colors duration-200">
+    <div class="mx-auto flex h-[60px] max-w-4xl items-center gap-0 px-4 sm:gap-3 sm:px-6">
       <a id="header-inline-title" href="/" class="flex min-h-11 items-center gap-3 rounded-md -translate-y-2 opacity-0 pointer-events-none transition-all duration-200 outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50">
         <span class="relative flex size-9 shrink-0 overflow-hidden rounded-full bg-muted ring-1 ring-border">
           <img src="/assets/images/headshot-108.webp" alt="Mike Vincent" width="36" height="36" class="aspect-square size-full object-cover" />
@@ -127,9 +127,9 @@ const canonical = new URL(path, 'https://mikevincent.dev');
       const observer = new IntersectionObserver(
         (entries) => {
           const entry = entries[0];
-          setVisible(!entry.isIntersecting && entry.boundingClientRect.top < 56);
+          setVisible(!entry.isIntersecting && entry.boundingClientRect.top < 60);
         },
-        { rootMargin: '-56px 0px 0px 0px', threshold: 0 }
+        { rootMargin: '-60px 0px 0px 0px', threshold: 0 }
       );
       observer.observe(heroTitle);
     })();
