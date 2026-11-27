@@ -65,7 +65,7 @@ const jsonLd = {
           <h1 class="text-large-title font-semibold sm:text-display-md text-foreground">Mike Vincent</h1>
           <div class="mt-3">
             <p class="text-title-3 text-foreground">Staff Software Engineer</p>
-            <p class="mt-0.5 text-body text-muted-foreground">Payments &amp; tokenization, fraud ML &amp; hybrid search, Kubernetes &amp; cloud platforms.</p>
+            <p class="mt-0.5 max-w-[20ch] text-body text-muted-foreground">Payments &amp; tokenization, fraud ML &amp; hybrid search, Kubernetes &amp; cloud platforms.</p>
           </div>
           <nav aria-label="Primary" class="mt-4 flex flex-wrap gap-3">
             <a href="https://github.com/mike-vincent" target="_blank" rel="noopener noreferrer" class={button}>GitHub</a>
@@ -77,7 +77,37 @@ const jsonLd = {
 
   <div id="view-switcher" class="border-t pt-8 pb-0">
     <div id="about">
-      <h2 id="about-heading" class="text-title-1 font-semibold text-foreground">About</h2>
+      <div class="flex flex-wrap items-center justify-between gap-4">
+        <h2 id="about-heading" class="text-title-1 font-semibold text-foreground">About</h2>
+        <div
+          role="tablist"
+          aria-label="View resume or portfolio"
+          class="inline-grid h-11 w-[220px] shrink-0 grid-cols-2 items-center rounded-full bg-secondary p-1 sm:w-[240px]"
+        >
+          <button
+            id="tab-resume"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="panel-resume"
+            data-view="resume"
+            class="h-9 rounded-full px-4 text-subhead font-medium transition-all cursor-pointer outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 bg-background text-tint shadow-xs"
+          >
+            Resume
+          </button>
+          <button
+            id="tab-portfolio"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-portfolio"
+            data-view="portfolio"
+            class="h-9 rounded-full px-4 text-subhead font-medium transition-all cursor-pointer outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 text-muted-foreground hover:text-foreground"
+          >
+            Portfolio
+          </button>
+        </div>
+      </div>
       <p class="mt-4 max-w-3xl text-body leading-[1.4706] text-muted-foreground">
         Mike Vincent is an American software engineer and founder from Los Angeles, California who
         builds and runs payments, cloud, and AI model platforms. He has worked as an engineering
@@ -85,34 +115,6 @@ const jsonLd = {
         and U.S. transit agencies.
       </p>
       <p class="mt-3 text-subhead text-muted-foreground">Los Angeles, California. U.S. Citizen.</p>
-    </div>
-    <div
-      role="tablist"
-      aria-label="View resume or portfolio"
-      class="mt-6 inline-grid h-11 w-full grid-cols-2 items-center rounded-full bg-secondary p-1 sm:max-w-[240px]"
-    >
-      <button
-        id="tab-resume"
-        type="button"
-        role="tab"
-        aria-selected="true"
-        aria-controls="panel-resume"
-        data-view="resume"
-        class="h-9 rounded-full px-4 text-subhead font-medium transition-all cursor-pointer outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 bg-background text-tint shadow-xs"
-      >
-        Resume
-      </button>
-      <button
-        id="tab-portfolio"
-        type="button"
-        role="tab"
-        aria-selected="false"
-        aria-controls="panel-portfolio"
-        data-view="portfolio"
-        class="h-9 rounded-full px-4 text-subhead font-medium transition-all cursor-pointer outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 text-muted-foreground hover:text-foreground"
-      >
-        Portfolio
-      </button>
     </div>
   </div>
 
