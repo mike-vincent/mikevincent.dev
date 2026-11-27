@@ -56,7 +56,7 @@ const jsonLd = {
 >
   <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
   <header class="pt-6 pb-8">
-      <div class="flex items-start gap-4 sm:gap-5">
+      <div class="flex flex-col gap-5 sm:flex-row sm:items-start sm:gap-5">
         <img src="/assets/images/headshot-320.webp" alt="Mike Vincent" width="128" height="128" fetchpriority="high"
           srcset="/assets/images/headshot-168.webp 168w, /assets/images/headshot-320.webp 320w" sizes="(min-width: 40rem) 8rem, 6rem"
           class="size-24 shrink-0 rounded-full object-cover ring-1 ring-border sm:size-32" />

@@ -64,18 +64,17 @@ const canonical = new URL(path, 'https://mikevincent.dev');
 </head>
 <body class="min-h-svh bg-background text-foreground">
   <header id="site-header" class="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
-    <div class="mx-auto flex h-[60px] max-w-4xl items-center gap-0 px-4 sm:gap-3 sm:px-6">
-      <a id="header-inline-title" href="/" class="flex min-h-11 items-center gap-3 rounded-md -translate-y-2 opacity-0 pointer-events-none transition-all duration-200 outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50">
+    <div class="mx-auto flex h-[60px] max-w-4xl items-center gap-2 px-4 sm:gap-3 sm:px-6">
+      <a id="header-inline-title" href="/" class="flex min-h-11 min-w-0 flex-1 items-center gap-3 overflow-hidden rounded-md -translate-y-2 opacity-0 pointer-events-none transition-all duration-200 outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50">
         <span class="relative flex size-9 shrink-0 overflow-hidden rounded-full bg-muted ring-1 ring-border">
           <img src="/assets/images/headshot-108.webp" alt="Mike Vincent" width="36" height="36" class="aspect-square size-full object-cover" />
         </span>
         <span class="flex min-w-0 flex-col">
-          <span class="whitespace-nowrap text-body font-semibold text-foreground">Mike Vincent</span>
-          <span class="whitespace-nowrap text-footnote text-muted-foreground">Staff Software Engineer</span>
+          <span class="truncate text-body font-semibold text-foreground">Mike Vincent</span>
+          <span class="truncate text-footnote text-muted-foreground">Staff Software Engineer</span>
         </span>
       </a>
-      <div class="flex-1"></div>
-      <nav class="flex items-center sm:gap-1">
+      <nav class="flex shrink-0 items-center gap-1">
         <button id="theme-toggle" type="button" aria-label="System theme" title="System theme"
           class="inline-flex size-11 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground cursor-pointer">
           <span class="material-symbols-outlined theme-icon text-[18px]">contrast</span>
