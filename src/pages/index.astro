@@ -84,7 +84,7 @@ const jsonLd = {
   </section>
 
   <div id="view-switcher" class="border-t pt-8 pb-0">
-    <div class="flex flex-wrap items-center justify-between gap-4">
+    <div class="flex flex-col-reverse gap-4 sm:flex-row sm:items-center sm:justify-between">
       <div class="flex min-h-11 items-center gap-3">
         <h2 id="view-heading" class="text-title-1 font-semibold text-foreground">Resume</h2>
         <a id="download-resume-link" href="/resume.pdf" download="mikevincentresume.pdf" title="Download PDF" aria-label="Download resume PDF"
@@ -96,7 +96,7 @@ const jsonLd = {
       <div
         role="tablist"
         aria-label="View resume or portfolio"
-        class="inline-grid h-11 w-full max-w-[240px] grid-cols-2 items-center rounded-full bg-secondary p-1"
+        class="inline-grid h-11 w-full grid-cols-2 items-center rounded-full bg-secondary p-1 sm:max-w-[240px]"
       >
         <button
           id="tab-resume"
