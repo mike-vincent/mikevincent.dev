@@ -55,19 +55,19 @@ const jsonLd = {
   description={DESCRIPTION}
 >
   <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
-  <header class="py-14 sm:py-20">
-      <div class="flex flex-col gap-5 sm:flex-row sm:items-start sm:gap-8">
+  <header class="py-8 sm:pt-12 sm:pb-8">
+      <div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between sm:gap-8">
         <div class="min-w-0">
           <h1 class="text-large-title font-semibold sm:text-display-md text-foreground">Mike Vincent</h1>
           <p class="mt-2 text-title-3 text-foreground">Staff Software Engineer</p>
           <p class="mt-4 text-body text-muted-foreground">Los Angeles, California. U.S. Citizen.</p>
-          <p class="mt-1.5 text-body text-muted-foreground">Banking, Payments, Infrastructure, AI/ML.</p>
+          <p class="mt-1 text-body text-muted-foreground">Banking, Payments, Infrastructure, AI/ML.</p>
         </div>
         <img src="/assets/images/headshot-320.webp" alt="Mike Vincent" width="150" height="150" fetchpriority="high"
           srcset="/assets/images/headshot-168.webp 168w, /assets/images/headshot-320.webp 320w" sizes="(min-width: 40rem) 10.5rem, 9rem"
           class="order-first size-36 shrink-0 rounded-full object-cover ring-1 ring-border sm:order-none sm:size-42" />
       </div>
-      <div class="mt-6 flex flex-wrap gap-1.5">
+      <div class="mt-6 flex flex-wrap gap-2">
         {['Engineering Manager', 'Architect', 'Platform Engineer', 'Infrastructure Engineer', 'DevOps Engineer', 'Cloud Engineer', 'Site Reliability Engineer', 'Software Engineer', 'Machine Learning Engineer', 'Data Engineer', 'AI Engineer', 'Security Engineer'].map((p) => (
           <span class="inline-flex items-center rounded-md bg-secondary px-2.5 py-1 text-footnote text-secondary-foreground">{p}</span>
         ))}
@@ -90,7 +90,7 @@ const jsonLd = {
     </p>
   </Section>
 
-  <div id="view-switcher" class="border-t pt-8 pb-2">
+  <div id="view-switcher" class="border-t pt-8 pb-0">
     <div
       role="tablist"
       aria-label="View resume or portfolio"
@@ -128,13 +128,13 @@ const jsonLd = {
         <span class="material-symbols-outlined text-[20px]" aria-hidden="true">download</span>
         <span>Download resume</span>
       </a>
-      <ul class="space-y-8">
+      <ul class="space-y-6">
         {roles.map((r) => (
           <li>
             <Row name={`${r.title}, ${r.org}`} icon={favicon(r.url)} meta={r.period} description={r.blurb}>
-              <ul class="mt-2 space-y-1.5">
+              <ul class="mt-2 space-y-2">
                 {r.bullets.map((b) => (
-                  <li class="flex gap-2.5 text-subhead text-muted-foreground">
+                  <li class="flex gap-2 text-subhead text-muted-foreground">
                     <span class="mt-2.5 size-1 shrink-0 rounded-full bg-muted-foreground/50"></span>
                     <span>{b.lead}. {/^[a-z]{2}/.test(b.text) ? b.text[0].toUpperCase() + b.text.slice(1) : b.text}</span>
                   </li>
@@ -147,13 +147,13 @@ const jsonLd = {
     </Section>
 
     <Section id="skills" label="Skills">
-      <ul class="grid gap-x-6 gap-y-5 sm:grid-cols-2">
+      <ul class="grid gap-x-8 gap-y-6 sm:grid-cols-2">
         {skills.map((s) => <li><Row name={s.group} description={s.items} /></li>)}
       </ul>
     </Section>
 
     <Section id="education" label="Education">
-      <ul class="grid gap-x-6 gap-y-5 sm:grid-cols-2">
+      <ul class="grid gap-x-8 gap-y-6 sm:grid-cols-2">
         {education.map((e) => <li><Row name={e.school} href={e.url} icon={favicon(e.url)} description={e.detail} /></li>)}
       </ul>
     </Section>
@@ -161,13 +161,13 @@ const jsonLd = {
 
   <div id="panel-portfolio" role="tabpanel" aria-labelledby="tab-portfolio" hidden>
     <Section id="portfolio" label="Portfolio" borderless>
-      <ul class="grid sm:grid-cols-2 sm:gap-x-10">
+      <ul class="-my-3.5 grid sm:grid-cols-2 sm:gap-x-8">
         {portfolio.map((p) => <li class="group/item"><Row plainList name={p.name} href={p.url} icon={p.icon ?? favicon(p.url)} description={p.description} /></li>)}
       </ul>
     </Section>
 
     <Section id="projects" label="Projects">
-      <ul class="grid sm:grid-cols-2 sm:gap-x-10">
+      <ul class="-my-3.5 grid sm:grid-cols-2 sm:gap-x-8">
         {projects.map((p) => <li class="group/item"><Row plainList name={p.name} href={p.url} icon={p.icon} description={p.description} /></li>)}
       </ul>
     </Section>

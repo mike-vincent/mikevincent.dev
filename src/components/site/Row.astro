@@ -34,7 +34,7 @@ const external = href?.startsWith('http');
     href={href}
     target={external ? '_blank' : undefined}
     rel={external ? 'noopener noreferrer' : undefined}
-    class={href ? 'flex items-start gap-3.5 rounded-md outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50' : 'flex items-start gap-3.5'}
+    class={href ? 'flex items-start gap-4 rounded-md outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50' : 'flex items-start gap-4'}
   >
     {icon && <img src={icon} alt="" width="44" height="44" loading="lazy" class="size-10 shrink-0 rounded-[10px] bg-white object-contain p-1 ring-1 ring-border sm:size-11" />}
     <span class="flex min-w-0 flex-1 flex-col gap-0.5">

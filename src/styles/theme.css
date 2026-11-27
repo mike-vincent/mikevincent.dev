@@ -150,7 +150,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  [id] { scroll-margin-top: 5.5rem; }
+  [id] { scroll-margin-top: 4rem; }
   body {
     overflow-x: clip;
     background-color: var(--background);
