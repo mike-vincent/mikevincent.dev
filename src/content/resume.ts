@@ -51,7 +51,7 @@ export const roles = [
         "text": "mTLS with Istio and a Smallstep private certificate authority. CrowdStrike, Nessus, and Trend Micro across the fleet."
       },
       {
-        "lead": "Release engineering",
+        "lead": "NextBus Umo IQ",
         "text": "Terraform, AWS, and GitHub Actions CI/CD, under PCI and SOC 1/2 compliance. Production code in Python, Java, and JavaScript across AWS, Azure, and vSphere."
       },
       {
