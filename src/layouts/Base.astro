@@ -63,7 +63,7 @@ const canonical = new URL(path, 'https://mikevincent.dev');
   <slot name="head" />
 </head>
 <body class="min-h-svh bg-background text-foreground">
-  <header id="site-header" class="sticky top-0 z-50 w-full border-b border-transparent bg-transparent transition-colors duration-200">
+  <header id="site-header" class="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
     <div class="mx-auto flex h-[60px] max-w-4xl items-center gap-0 px-4 sm:gap-3 sm:px-6">
       <a id="header-inline-title" href="/" class="flex min-h-11 items-center gap-3 rounded-md -translate-y-2 opacity-0 pointer-events-none transition-all duration-200 outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50">
         <span class="relative flex size-9 shrink-0 overflow-hidden rounded-full bg-muted ring-1 ring-border">
@@ -112,11 +112,6 @@ const canonical = new URL(path, 'https://mikevincent.dev');
         inlineTitle.classList.toggle('opacity-0', !visible);
         inlineTitle.classList.toggle('opacity-100', visible);
         inlineTitle.classList.toggle('pointer-events-none', !visible);
-        header.classList.toggle('border-transparent', !visible);
-        header.classList.toggle('bg-transparent', !visible);
-        header.classList.toggle('border-border', visible);
-        header.classList.toggle('bg-background/80', visible);
-        header.classList.toggle('backdrop-blur-md', visible);
       }
 
       if (!heroTitle || typeof IntersectionObserver === 'undefined') {
