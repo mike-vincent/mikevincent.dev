@@ -36,7 +36,7 @@ export const roles = [
     "url": "https://www.cubic.com",
     "period": "2021 to 2024",
     "location": "San Diego, CA",
-    "blurb": "Managed transit-payment SaaS infrastructure across major U.S. agencies including NYC MTA, LA Metro, WMATA, BART, SFMTA, and MBTA.",
+    "blurb": "Managed transit-payment SaaS infrastructure across U.S. agencies including NYC MTA, LA Metro, WMATA, BART, SFMTA, and MBTA.",
     "bullets": [
       {
         "lead": "WMATA, San Diego MTS & PATCO",
