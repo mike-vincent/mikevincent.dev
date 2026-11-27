@@ -84,15 +84,8 @@ const jsonLd = {
   </section>
 
   <div id="view-switcher" class="border-t pt-8 pb-0">
-    <div class="flex flex-col-reverse gap-4 sm:flex-row sm:items-center sm:justify-between">
-      <div class="flex min-h-11 items-center gap-3">
-        <h2 id="view-heading" class="text-title-1 font-semibold text-foreground">Resume</h2>
-        <a id="download-resume-link" href="/resume.pdf" download="mikevincentresume.pdf" title="Download PDF" aria-label="Download resume PDF"
-          class="inline-flex h-11 items-center gap-1.5 rounded-md px-2.5 text-subhead font-medium text-tint transition-colors hover:bg-accent outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50">
-          <span class="material-symbols-outlined text-[20px]" aria-hidden="true">download</span>
-          <span>Download resume</span>
-        </a>
-      </div>
+    <div id="about" class="flex flex-col-reverse gap-4 sm:flex-row sm:items-center sm:justify-between">
+      <h2 id="about-heading" class="text-title-1 font-semibold text-foreground">About</h2>
       <div
         role="tablist"
         aria-label="View resume or portfolio"
@@ -122,18 +115,20 @@ const jsonLd = {
         </button>
       </div>
     </div>
+    <p class="mt-4 max-w-3xl text-body leading-[1.4706] text-muted-foreground">
+      Mike Vincent is an American software engineer and founder from Los Angeles who builds and
+      runs payments and AI model platforms for well-known brands. He has worked as an engineering
+      manager and staff engineer at companies including PwC, Capital One, Discover, and Fannie Mae.
+    </p>
   </div>
 
   <div id="panel-resume" role="tabpanel" aria-labelledby="tab-resume">
-    <Section id="about" label="About" borderless>
-      <p class="max-w-3xl text-body leading-[1.4706] text-muted-foreground">
-        Mike Vincent is an American software engineer and founder from Los Angeles who builds and
-        runs payments and AI model platforms for well-known brands. He has worked as an engineering
-        manager and staff engineer at companies including PwC, Capital One, Discover, and Fannie Mae.
-      </p>
-    </Section>
-
     <Section id="resume" label="Experience" borderless>
+      <a slot="actions" href="/resume.pdf" download="mikevincentresume.pdf" title="Download PDF" aria-label="Download resume PDF"
+        class="inline-flex h-11 items-center gap-1.5 rounded-md px-2.5 text-subhead font-medium text-tint transition-colors hover:bg-accent outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50">
+        <span class="material-symbols-outlined text-[20px]" aria-hidden="true">download</span>
+        <span>Download resume</span>
+      </a>
       <ul class="space-y-6">
         {roles.map((r) => (
           <li>
@@ -178,11 +173,11 @@ const jsonLd = {
   </div>
 
   <div id="panel-portfolio" role="tabpanel" aria-labelledby="tab-portfolio" hidden>
-    <section id="portfolio" aria-label="Portfolio" class="pt-6 pb-8">
+    <Section id="portfolio" label="Portfolio" borderless>
       <ul class="-my-3.5 grid sm:grid-cols-2 sm:gap-x-8">
         {portfolio.map((p) => <li class="group/item"><Row plainList name={p.name} href={p.url} icon={p.icon ?? favicon(p.url)} description={p.description} /></li>)}
       </ul>
-    </section>
+    </Section>
 
     <Section id="projects" label="Projects">
       <ul class="-my-3.5 grid sm:grid-cols-2 sm:gap-x-8">
@@ -194,8 +189,6 @@ const jsonLd = {
   <script is:inline>
     (function () {
       const tabs = Array.from(document.querySelectorAll('[role="tab"][data-view]'));
-      const heading = document.getElementById('view-heading');
-      const downloadLink = document.getElementById('download-resume-link');
       const panels = {
         resume: document.getElementById('panel-resume'),
         portfolio: document.getElementById('panel-portfolio'),
@@ -211,8 +204,6 @@ const jsonLd = {
           ACTIVE.forEach((c) => tab.classList.toggle(c, selected));
           INACTIVE.forEach((c) => tab.classList.toggle(c, !selected));
         });
-        if (heading) heading.textContent = target === 'portfolio' ? 'Portfolio' : 'Resume';
-        if (downloadLink) downloadLink.hidden = target !== 'resume';
         if (panels.resume) panels.resume.hidden = target !== 'resume';
         if (panels.portfolio) panels.portfolio.hidden = target !== 'portfolio';
         if (updateHash && location.hash !== '#' + target) {
