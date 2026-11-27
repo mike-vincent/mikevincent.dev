@@ -5,9 +5,9 @@ import Row from '../components/site/Row.astro';
 import { portfolio, projects, favicon } from '../content/portfolio';
 import { roles, education, skills } from '../content/resume';
 
-const button = 'inline-flex h-10 items-center rounded-md border bg-background px-6 text-sm shadow-xs transition-colors hover:bg-accent hover:text-accent-foreground outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50';
+const button = 'btn-secondary inline-flex h-11 items-center rounded-full px-5 text-subhead font-medium';
 
-const DESCRIPTION = 'Michael Vincent, known as Mike, is a Staff Software Engineer in Los Angeles. He builds cloud platforms on AWS and Azure with Kubernetes and Terraform, and payments infrastructure for Capital One and Discover.';
+const DESCRIPTION = 'Mike Vincent is a Staff Software Engineer and former Engineering Manager in Los Angeles, California building payments, tokenization, fraud ML, hybrid search, and Kubernetes platforms on AWS and Azure.';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -27,8 +27,9 @@ const jsonLd = {
         { '@type': 'CollegeOrUniversity', name: 'The Pennsylvania State University', url: 'https://www.psu.edu' },
       ],
       knowsAbout: [
-        'Cloud infrastructure', 'DevOps', 'Site reliability engineering', 'Platform engineering',
-        'Kubernetes', 'Terraform', 'AWS', 'Azure', 'Docker', 'CI/CD', 'Payments', 'Machine learning',
+        'Payments infrastructure', 'Tokenization', 'Fraud machine learning', 'Hybrid search',
+        'Transformers', 'AI systems', 'Platform engineering', 'Kubernetes', 'Terraform',
+        'AWS', 'Azure', 'Rust', 'Go', 'Python', 'TypeScript',
       ],
       address: { '@type': 'PostalAddress', addressLocality: 'Los Angeles', addressRegion: 'CA', addressCountry: 'US' },
       sameAs: [
@@ -51,92 +52,193 @@ const jsonLd = {
 };
 ---
 <Base
-  title="Mike Vincent · Staff Software Engineer, Cloud and DevOps"
+  title="Mike Vincent · Staff Software Engineer — Payments, AI/ML & Platform Infrastructure"
   description={DESCRIPTION}
 >
-  <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
-  <header class="py-14 sm:py-20">
-      <div class="flex flex-col gap-5 sm:flex-row sm:items-start sm:gap-8">
-        <div class="min-w-0">
-          <h1 class="text-4xl tracking-tight sm:text-5xl">Mike Vincent</h1>
-          <p class="mt-1.5 text-lg text-foreground">Staff Software Engineer</p>
-          <p class="mt-4 text-base text-foreground">Los Angeles, California. U.S. Citizen.</p>
-          <p class="mt-1.5 text-base text-muted-foreground">Banking, Payments, Infrastructure, AI/ML.</p>
-        </div>
-        <img src="/assets/images/headshot-320.webp" alt="Mike Vincent" width="150" height="150" fetchpriority="high"
-          srcset="/assets/images/headshot-168.webp 168w, /assets/images/headshot-320.webp 320w" sizes="(min-width: 40rem) 10.5rem, 9rem"
-          class="order-first size-36 shrink-0 rounded-full object-cover ring-1 ring-border sm:order-none sm:size-42" />
+  <Fragment slot="head">
+    <link rel="preload" as="image" href="/assets/images/headshot-320.webp" imagesrcset="/assets/images/headshot-168.webp 168w, /assets/images/headshot-320.webp 320w" imagesizes="(min-width: 40rem) 9.375rem, 7.5rem" fetchpriority="high" />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
+  <header class="pt-10 pb-10 text-center sm:pt-14 sm:pb-12">
+      <div class="flex flex-col items-center">
+        <img src="/assets/images/headshot-320.webp" alt="Mike Vincent" width="150" height="150" fetchpriority="high" decoding="sync"
+          srcset="/assets/images/headshot-168.webp 168w, /assets/images/headshot-320.webp 320w" sizes="(min-width: 40rem) 9.375rem, 7.5rem"
+          class="size-[120px] shrink-0 rounded-full object-cover ring-1 ring-border sm:size-[150px]" />
+        <h1 class="mt-7 font-display text-large-title font-semibold text-foreground sm:text-[2.5rem] sm:leading-[1.1] sm:tracking-[0em] md:text-display-md">Mike Vincent</h1>
+        <p class="mt-0.5 font-display text-[1.3125rem] font-semibold leading-[1.19048] tracking-[0.011em] text-muted-foreground sm:text-[1.5rem] sm:leading-[1.16667] sm:tracking-[0.009em]">Staff Software Engineer</p>
+        <p class="mt-5 max-w-[40ch] font-display text-[1.1875rem] leading-[1.42115] tracking-[0.012em] text-muted-foreground sm:text-[1.3125rem] sm:leading-[1.38105] sm:tracking-[0.011em]">Payments &amp; tokenization, fraud ML &amp; hybrid search, Kubernetes &amp; cloud platforms.</p>
+        <nav aria-label="Primary" class="mt-7 flex flex-wrap items-center justify-center gap-3">
+          <a href="https://github.com/mike-vincent" target="_blank" rel="noopener noreferrer" class={button}>GitHub</a>
+          <a href="https://www.linkedin.com/in/michael-thomas-vincent/" target="_blank" rel="noopener noreferrer" class={button}>LinkedIn</a>
+        </nav>
       </div>
-      <div class="mt-6 flex flex-wrap gap-1.5">
-        {['Engineering Manager', 'Architect', 'Platform Engineer', 'Infrastructure Engineer', 'DevOps Engineer', 'Cloud Engineer', 'Site Reliability Engineer', 'Software Engineer', 'Machine Learning Engineer', 'Data Engineer', 'AI Engineer', 'Security Engineer'].map((p) => (
-          <span class="inline-flex items-center rounded-md bg-secondary px-2.5 py-1 text-xs text-secondary-foreground">{p}</span>
-        ))}
-      </div>
-      <nav aria-label="Primary" class="mt-6 flex flex-wrap gap-3">
-        <a href="#resume" class="inline-flex h-10 items-center rounded-md bg-primary px-6 text-sm text-primary-foreground shadow-xs transition-colors hover:bg-primary/90 outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50">View Resume</a>
-        <a href="#portfolio" class={button}>See Portfolio</a>
-        <a href="https://github.com/mike-vincent" target="_blank" rel="noopener noreferrer" class={button}>GitHub</a>
-        <a href="https://www.linkedin.com/in/michael-thomas-vincent/" target="_blank" rel="noopener noreferrer" class={button}>LinkedIn</a>
-      </nav>
   </header>
 
-  <Section id="about" label="About">
-    <p class="max-w-3xl text-base leading-relaxed text-muted-foreground">
-      Mike Vincent is an American software engineer and founder from Los Angeles who builds and
-      runs payments and AI model platforms for well-known brands. He has worked as an engineering
-      manager and staff engineer at companies including PwC, Capital One, Discover, and Fannie Mae.
-    </p>
-    <p class="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground">
-      Read Mike’s articles on Python in the “<a href="https://dev.to/mike-vincent" target="_blank" rel="noopener noreferrer" class="rounded-xs hover:text-foreground outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50">Quark’s Outlines</a>” series.
-      Listen to an old radio show at <a href="https://www.radioindex.org" target="_blank" rel="noopener noreferrer" class="rounded-xs hover:text-foreground outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50">radioindex.org</a>, which Mike builds and runs for The Archive of American Radio, Inc.
-    </p>
-  </Section>
+  <div id="view-switcher" class="pt-8 pb-0 sm:pt-10">
+    <div id="about">
+      <div class="flex flex-wrap items-center justify-between gap-4">
+        <h2 id="about-heading" class="font-display text-[1.75rem] leading-[1.14286] tracking-[0.007em] font-semibold text-foreground sm:text-[2rem] sm:leading-[1.125] sm:tracking-[0.004em] md:text-title-1">About</h2>
+        <div
+          role="tablist"
+          aria-label="View resume or portfolio"
+          class="inline-grid h-11 w-[220px] shrink-0 grid-cols-2 items-center rounded-full bg-secondary p-1 sm:w-[240px]"
+        >
+          <button
+            id="tab-resume"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="panel-resume"
+            tabindex="0"
+            data-view="resume"
+            class="tab-pill h-9 rounded-full px-4 text-subhead font-medium cursor-pointer bg-background text-tint shadow-xs"
+          >
+            Resume
+          </button>
+          <button
+            id="tab-portfolio"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-portfolio"
+            tabindex="-1"
+            data-view="portfolio"
+            class="tab-pill h-9 rounded-full px-4 text-subhead font-medium cursor-pointer text-muted-foreground hover:text-foreground"
+          >
+            Portfolio
+          </button>
+        </div>
+      </div>
+      <p class="mt-4 max-w-3xl text-body leading-[1.4706] text-muted-foreground">
+        Mike Vincent is an American software engineer and founder from Los Angeles, California who
+        builds and runs payments, cloud, and AI model platforms. He has worked as an engineering
+        manager and lead engineer at PwC, shipping systems for Capital One, Discover, Fannie Mae,
+        and U.S. transit agencies.
+      </p>
+      <p class="mt-3 text-subhead text-muted-foreground">Los Angeles, California. U.S. Citizen.</p>
+    </div>
+  </div>
 
-  <Section id="resume" label="Experience">
-    <a slot="actions" href="/resume.pdf" download="mikevincentresume.pdf" title="Download PDF" aria-label="Download resume PDF"
-      class="inline-flex h-8 items-center gap-1.5 rounded-md px-2 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50">
-      <span class="material-symbols-outlined text-[20px]" aria-hidden="true">download</span>
-      <span>Download resume</span>
-    </a>
-    <ul class="space-y-8">
-      {roles.map((r) => (
-        <li>
-          <Row name={`${r.title}, ${r.org}`} icon={favicon(r.url)} meta={r.period} description={r.blurb}>
-            <ul class="mt-2 space-y-1.5">
-              {r.bullets.map((b) => (
-                <li class="flex gap-2.5 text-sm text-muted-foreground">
-                  <span class="mt-2 size-1 shrink-0 rounded-full bg-muted-foreground/50"></span>
-                  <span>{b.lead}. {/^[a-z]{2}/.test(b.text) ? b.text[0].toUpperCase() + b.text.slice(1) : b.text}</span>
-                </li>
+  <div id="panel-resume" role="tabpanel" aria-labelledby="tab-resume">
+    <Section id="resume" label="Experience" borderless>
+      <a slot="actions" href="/resume.pdf" download="mikevincentresume.pdf" title="Download PDF" aria-label="Download resume PDF"
+        class="btn-ghost inline-flex h-11 -my-2 items-center gap-1.5 rounded-md px-2.5 text-subhead font-medium text-tint">
+        <span class="material-symbols-outlined text-[20px]" aria-hidden="true">download</span>
+        <span>Download resume</span>
+      </a>
+      <ul class="space-y-6">
+        {roles.map((r) => (
+          <li>
+            <Row name={`${r.title}, ${r.org}`} icon={favicon(r.url)} iconHref={r.url} iconLabel={r.org} meta={r.period} description={r.blurb}>
+              <ul class="mt-3 space-y-3">
+                {r.bullets.map((b) => (
+                  <li class="flex gap-2.5 text-subhead text-muted-foreground">
+                    <span class="mt-2.5 size-1 shrink-0 rounded-full bg-muted-foreground/50"></span>
+                    <span class="flex flex-col">
+                      <span class="font-medium text-foreground/90">{b.lead}</span>
+                      <span>{b.text}</span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </Row>
+          </li>
+        ))}
+      </ul>
+    </Section>
+
+    <Section id="skills" label="Skills">
+      <ul class="grid gap-x-8 gap-y-8 sm:grid-cols-2">
+        {skills.map((s) => (
+          <li>
+            <h4 class="text-title-3 font-semibold text-foreground">{s.group}</h4>
+            <dl class="mt-3 space-y-3">
+              {s.bullets.map((b) => (
+                <div>
+                  <dt class="text-body font-medium text-foreground">{b.lead}</dt>
+                  <dd class="text-subhead text-muted-foreground">{b.text}</dd>
+                </div>
               ))}
-            </ul>
-          </Row>
-        </li>
-      ))}
-    </ul>
-  </Section>
+            </dl>
+          </li>
+        ))}
+      </ul>
+    </Section>
 
-  <Section id="portfolio" label="Portfolio">
-    <ul class="grid gap-x-6 gap-y-5 sm:grid-cols-2">
-      {portfolio.map((p) => <li><Row name={p.name} href={p.url} icon={p.icon ?? favicon(p.url)} description={p.description} /></li>)}
-    </ul>
-  </Section>
+    <Section id="education" label="Education">
+      <ul class="grid gap-x-8 gap-y-6 sm:grid-cols-2">
+        {education.map((e) => <li><Row name={e.school} href={e.url} icon={favicon(e.url)} description={e.detail} /></li>)}
+      </ul>
+    </Section>
+  </div>
 
-  <Section id="projects" label="Projects">
-    <ul class="grid gap-x-6 gap-y-5 sm:grid-cols-2">
-      {projects.map((p) => <li><Row name={p.name} href={p.url} icon={p.icon} description={p.description} /></li>)}
-    </ul>
-  </Section>
+  <div id="panel-portfolio" role="tabpanel" aria-labelledby="tab-portfolio" hidden>
+    <Section id="projects" label="Projects" borderless>
+      <ul class="plain-list-grid -my-3.5 grid sm:grid-cols-2 sm:gap-x-8">
+        {projects.map((p) => <li class="group/item"><Row plainList name={p.name} href={p.url} icon={p.icon} description={p.description} /></li>)}
+      </ul>
+    </Section>
 
-  <Section id="skills" label="Skills">
-    <ul class="grid gap-x-6 gap-y-5 sm:grid-cols-2">
-      {skills.map((s) => <li><Row name={s.group} description={s.items} /></li>)}
-    </ul>
-  </Section>
+    <Section id="portfolio" label="Products">
+      <ul class="plain-list-grid -my-3.5 grid sm:grid-cols-2 sm:gap-x-8">
+        {portfolio.map((p) => <li class="group/item"><Row plainList name={p.name} href={p.url} icon={p.icon ?? favicon(p.url)} description={p.description} /></li>)}
+      </ul>
+    </Section>
+  </div>
 
-  <Section id="education" label="Education">
-    <ul class="grid gap-x-6 gap-y-5 sm:grid-cols-2">
-      {education.map((e) => <li><Row name={e.school} href={e.url} icon={favicon(e.url)} description={e.detail} /></li>)}
-    </ul>
-  </Section>
+  <script is:inline>
+    (function () {
+      const tabs = Array.from(document.querySelectorAll('[role="tab"][data-view]'));
+      const panels = {
+        resume: document.getElementById('panel-resume'),
+        portfolio: document.getElementById('panel-portfolio'),
+      };
+      const ACTIVE = ['bg-background', 'text-tint', 'shadow-xs'];
+      const INACTIVE = ['text-muted-foreground', 'hover:text-foreground'];
+
+      function setView(view, updateHash) {
+        const target = view === 'portfolio' ? 'portfolio' : 'resume';
+        tabs.forEach((tab) => {
+          const selected = tab.dataset.view === target;
+          tab.setAttribute('aria-selected', String(selected));
+          tab.setAttribute('tabindex', selected ? '0' : '-1');
+          ACTIVE.forEach((c) => tab.classList.toggle(c, selected));
+          INACTIVE.forEach((c) => tab.classList.toggle(c, !selected));
+        });
+        if (panels.resume) panels.resume.hidden = target !== 'resume';
+        if (panels.portfolio) panels.portfolio.hidden = target !== 'portfolio';
+        if (updateHash && location.hash !== '#' + target) {
+          history.replaceState(null, '', '#' + target);
+        }
+      }
+
+      function syncFromHash(scroll) {
+        const hash = location.hash.replace('#', '');
+        if (hash === 'portfolio' || hash === 'projects') setView('portfolio', false);
+        else if (hash === 'resume' || hash === 'about' || hash === 'skills' || hash === 'education') setView('resume', false);
+        if (scroll && hash) {
+          const el = document.getElementById(hash === 'resume' || hash === 'portfolio' ? 'view-switcher' : hash);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+
+      tabs.forEach((tab, idx) => {
+        tab.addEventListener('click', () => setView(tab.dataset.view, true));
+        tab.addEventListener('keydown', (e) => {
+          let next = null;
+          if (e.key === 'ArrowRight') next = (idx + 1) % tabs.length;
+          else if (e.key === 'ArrowLeft') next = (idx - 1 + tabs.length) % tabs.length;
+          else if (e.key === 'Home') next = 0;
+          else if (e.key === 'End') next = tabs.length - 1;
+          if (next !== null) {
+            e.preventDefault();
+            setView(tabs[next].dataset.view, true);
+            tabs[next].focus();
+          }
+        });
+      });
+      window.addEventListener('hashchange', () => syncFromHash(true));
+      syncFromHash(false);
+    })();
+  </script>
 </Base>

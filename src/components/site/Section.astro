@@ -1,11 +1,11 @@
 ---
-// A page section: hairline above, small-caps grey label, then its rows.
-interface Props { id: string; label: string; }
-const { id, label } = Astro.props;
+// A subsection inside Resume or Portfolio: hairline above, Apple Title 2 (22px) h3 heading, then its rows.
+interface Props { id: string; label: string; borderless?: boolean; }
+const { id, label, borderless = false } = Astro.props;
 ---
-<section id={id} aria-labelledby={`${id}-heading`} class="border-t py-10">
-  <div class="mb-5 flex items-center gap-2">
-    <h2 id={`${id}-heading`} class="text-sm uppercase tracking-widest text-muted-foreground">{label}</h2>
+<section id={id} aria-labelledby={`${id}-heading`} class={borderless ? 'pt-8 pb-10' : 'py-10'}>
+  <div class="mb-5 flex items-center gap-3">
+    <h3 id={`${id}-heading`} class="font-display text-[1.5rem] sm:text-title-2 font-semibold text-foreground">{label}</h3>
     <slot name="actions" />
   </div>
   <slot />
