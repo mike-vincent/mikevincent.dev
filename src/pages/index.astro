@@ -83,14 +83,6 @@ const jsonLd = {
     </div>
   </section>
 
-  <Section id="about" label="About">
-    <p class="max-w-3xl text-body leading-[1.4706] text-muted-foreground">
-      Mike Vincent is an American software engineer and founder from Los Angeles who builds and
-      runs payments and AI model platforms for well-known brands. He has worked as an engineering
-      manager and staff engineer at companies including PwC, Capital One, Discover, and Fannie Mae.
-    </p>
-  </Section>
-
   <div id="view-switcher" class="border-t pt-8 pb-0">
     <div class="flex flex-wrap items-center justify-between gap-4">
       <div class="flex min-h-11 items-center gap-3">
@@ -133,6 +125,12 @@ const jsonLd = {
   </div>
 
   <div id="panel-resume" role="tabpanel" aria-labelledby="tab-resume">
+    <p id="about" class="mt-4 max-w-3xl text-body leading-[1.4706] text-muted-foreground">
+      Mike Vincent is an American software engineer and founder from Los Angeles who builds and
+      runs payments and AI model platforms for well-known brands. He has worked as an engineering
+      manager and staff engineer at companies including PwC, Capital One, Discover, and Fannie Mae.
+    </p>
+
     <Section id="resume" label="Experience" borderless>
       <ul class="space-y-6">
         {roles.map((r) => (
@@ -156,7 +154,7 @@ const jsonLd = {
       <ul class="grid gap-x-8 gap-y-8 sm:grid-cols-2">
         {skills.map((s) => (
           <li>
-            <h3 class="text-title-3 font-semibold text-foreground">{s.group}</h3>
+            <h4 class="text-title-3 font-semibold text-foreground">{s.group}</h4>
             <dl class="mt-3 space-y-3">
               {s.bullets.map((b) => (
                 <div>
@@ -223,7 +221,7 @@ const jsonLd = {
       function syncFromHash(scroll) {
         const hash = location.hash.replace('#', '');
         if (hash === 'portfolio' || hash === 'projects') setView('portfolio', false);
-        else if (hash === 'resume' || hash === 'skills' || hash === 'education') setView('resume', false);
+        else if (hash === 'resume' || hash === 'about' || hash === 'skills' || hash === 'education') setView('resume', false);
         if (scroll && hash) {
           const el = document.getElementById(hash === 'resume' || hash === 'portfolio' ? 'view-switcher' : hash);
           if (el) el.scrollIntoView({ behavior: 'smooth' });
