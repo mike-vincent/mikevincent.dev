@@ -145,11 +145,18 @@ const jsonLd = {
     </Section>
 
     <Section id="skills" label="Skills">
-      <ul class="grid gap-x-8 gap-y-6 sm:grid-cols-2">
+      <ul class="grid gap-x-8 gap-y-8 sm:grid-cols-2">
         {skills.map((s) => (
           <li>
             <h4 class="text-title-3 font-semibold text-foreground">{s.group}</h4>
-            <p class="mt-1.5 text-subhead text-muted-foreground">{s.items}</p>
+            <dl class="mt-3 space-y-3">
+              {s.bullets.map((b) => (
+                <div>
+                  <dt class="text-body font-medium text-foreground">{b.lead}</dt>
+                  <dd class="text-subhead text-muted-foreground">{b.text}</dd>
+                </div>
+              ))}
+            </dl>
           </li>
         ))}
       </ul>
