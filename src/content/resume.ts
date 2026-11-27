@@ -6,31 +6,31 @@ export const roles = [
     "url": "https://www.pwc.com",
     "period": "2024 to present",
     "location": "Los Angeles, CA",
-    "blurb": "Architecting tokenization, fraud ML, and hybrid search platforms for Capital One and Discover.",
+    "blurb": "Building tokenization, fraud ML, and hybrid search platforms for Capital One and Discover.",
     "bullets": [
       {
         "lead": "Discover Global Network Fraud ML",
-        "text": "Engineered fraud and risk models for prohibited-transaction and gambling detection, owning feature pipelines and real-time inference."
+        "text": "Built fraud and risk models for prohibited-transaction and gambling detection, owning feature pipelines and real-time inference."
       },
       {
         "lead": "Capital One Databolt",
-        "text": "Architected vaultless, field-level tokenization in Go and TypeScript, keeping raw PANs out of AI models, analytics, and payment flows."
+        "text": "Built vaultless, field-level tokenization in Go and TypeScript, keeping raw card numbers out of AI models, analytics, and payment flows."
       },
       {
         "lead": "Capital One Eno",
-        "text": "Re-platformed production NLU, entity, and intent models for Eno from Kubeflow onto Capital One's enterprise AI platform."
+        "text": "Moved production NLU, entity, and intent models for Eno from Kubeflow onto Capital One's enterprise AI platform."
       },
       {
         "lead": "CapitalOne.com Search",
-        "text": "Architected hybrid search, indexing pipelines, and low-latency typeahead autocomplete."
+        "text": "Built hybrid search, indexing pipelines, and low-latency typeahead autocomplete."
       },
       {
         "lead": "Discover.com Search",
-        "text": "Shipped hybrid vector and BM25 retrieval backed by offline evaluation harnesses for answer quality."
+        "text": "Shipped hybrid vector and BM25 search backed by offline evaluation sets for answer quality."
       },
       {
         "lead": "Discover Global Payments Network Fraud Models",
-        "text": "Authored encoder-decoder, gated linear recurrence, long-context memory, Transformer, and Word2Vec/Node2Vec models in PyTorch, NumPy, and SciPy."
+        "text": "Wrote encoder-decoder, gated linear recurrence, long-context memory, Transformer, and Word2Vec/Node2Vec models in PyTorch, NumPy, and SciPy."
       }
     ]
   },
@@ -70,23 +70,23 @@ export const roles = [
     "url": "https://www.cubic.com",
     "period": "2017 to 2021",
     "location": "San Diego, CA & Washington, DC",
-    "blurb": "Founding DevOps engineer and lead IC architecting demand-prediction ML, rider chatbots, and Cubic's cloud fare platform.",
+    "blurb": "Founding DevOps engineer and lead IC building demand-prediction ML, rider chatbots, and Cubic's cloud fare platform.",
     "bullets": [
       {
         "lead": "NextBus",
-        "text": "Engineered real-time bus-arrival ML inference on AWS ECS and Lambda with TensorFlow, PySpark, and Node.js."
+        "text": "Built real-time bus-arrival ML inference on AWS ECS and Lambda with TensorFlow, PySpark, and Node.js."
       },
       {
         "lead": "Urban Insights",
-        "text": "Shipped transit-demand ML and search pipelines on AWS SageMaker with Prometheus and Grafana observability."
+        "text": "Shipped transit-demand ML and search pipelines on AWS SageMaker with Prometheus and Grafana monitoring."
       },
       {
         "lead": "Chicago Metra",
-        "text": "Shipped an omnichannel rider chatbot on AWS Lambda, Twilio, and Azure Cognitive Services for transit-card balance queries."
+        "text": "Shipped a rider chatbot on AWS Lambda, Twilio, and Azure Cognitive Services for phone, text, and email transit-card balance checks."
       },
       {
         "lead": "Cubic Transit Fare Payments Platform",
-        "text": "Re-architected 20 legacy Java fare-collection services onto Kubernetes, Terraform, and Azure CI/CD under PCI, SOC 2, ISO 27001, and SOX."
+        "text": "Moved 20 legacy Java fare-collection services onto Kubernetes, Terraform, and Azure CI/CD under PCI, SOC 2, ISO 27001, and SOX."
       }
     ]
   },
