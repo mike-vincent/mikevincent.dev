@@ -6,31 +6,31 @@ export const roles = [
     "url": "https://www.pwc.com",
     "period": "2024 to present",
     "location": "Los Angeles, CA",
-    "blurb": "Building tokenization, fraud ML, and hybrid search platforms for Capital One and Discover.",
+    "blurb": "Card tokenization, fraud models, and hybrid search for Capital One and Discover.",
     "bullets": [
       {
         "lead": "Discover Global Network Fraud ML",
-        "text": "Built fraud and risk models for prohibited-transaction and gambling detection, owning feature pipelines and real-time inference."
+        "text": "Real-time fraud and gambling detection. Live feature pipelines and risk models score payments as they happen."
       },
       {
         "lead": "Capital One Databolt",
-        "text": "Built vaultless, field-level tokenization in Go and TypeScript, keeping raw card numbers out of AI models, analytics, and payment flows."
+        "text": "Vaultless, field-level tokenization in Go and TypeScript. AI, analytics, and payments use tokens and never see real card numbers."
       },
       {
         "lead": "Capital One Eno",
-        "text": "Moved production NLU, entity, and intent models for Eno from Kubeflow onto Capital One's enterprise AI platform."
+        "text": "Live NLU, entity, and intent models moved off Kubeflow and onto Capital One's enterprise AI platform."
       },
       {
         "lead": "CapitalOne.com Search",
-        "text": "Built hybrid search, indexing pipelines, and low-latency typeahead autocomplete."
+        "text": "Hybrid search and indexing pipelines. Fast autocomplete as you type."
       },
       {
         "lead": "Discover.com Search",
-        "text": "Shipped hybrid vector and BM25 search backed by offline evaluation sets for answer quality."
+        "text": "Hybrid vector and BM25 search. Offline test sets measure answer quality."
       },
       {
         "lead": "Discover Global Payments Network Fraud Models",
-        "text": "Wrote encoder-decoder, gated linear recurrence, long-context memory, Transformer, and Word2Vec/Node2Vec models in PyTorch, NumPy, and SciPy."
+        "text": "Encoder-decoder, gated linear recurrence, long-context memory, Transformer, and Word2Vec/Node2Vec models in PyTorch, NumPy, and SciPy."
       }
     ]
   },
@@ -40,27 +40,27 @@ export const roles = [
     "url": "https://www.cubic.com",
     "period": "2021 to 2024",
     "location": "San Diego, CA",
-    "blurb": "Owned transit-payment SaaS infrastructure across NYC MTA, LA Metro, WMATA, BART, SFMTA, and MBTA.",
+    "blurb": "Cloud transit payment systems for NYC MTA, LA Metro, WMATA, BART, SFMTA, and MBTA.",
     "bullets": [
       {
         "lead": "WMATA, San Diego MTS & PATCO",
-        "text": "Led an 18-engineer org across the U.S., India, and Germany owning transit SaaS reliability for millions of riders with PagerDuty and Prometheus/Grafana."
+        "text": "An 18-engineer team across the U.S., India, and Germany. PagerDuty, Prometheus, and Grafana keep transit payments up for millions of riders."
       },
       {
         "lead": "NYC MTA OMNY",
-        "text": "Shipped contactless EMV and Apple Pay fare services on production Docker and Kubernetes."
+        "text": "Tap-to-pay EMV and Apple Pay fare services on Docker and Kubernetes."
       },
       {
         "lead": "SFMTA & LA Metro",
-        "text": "Operated multi-cloud fare-payment microservices on Kubernetes across AWS and Azure with VPA, HPA, and KEDA autoscaling."
+        "text": "Multi-cloud fare services on Kubernetes across AWS and Azure. VPA, HPA, and KEDA handle autoscaling."
       },
       {
         "lead": "BART & Boston MBTA",
-        "text": "Hardened zero-trust service mesh with Istio mTLS, Smallstep private CA, CrowdStrike, and Nessus."
+        "text": "Zero-trust service mesh with Istio mTLS, Smallstep private CA, CrowdStrike, and Nessus."
       },
       {
         "lead": "NextBus Umo IQ",
-        "text": "Automated PCI and SOC 1/2 Terraform and GitHub Actions CI/CD delivering Python, Java, and Node.js services across AWS, Azure, and vSphere."
+        "text": "PCI and SOC 1/2 Terraform and GitHub Actions pipelines deploying Python, Java, and Node.js across AWS, Azure, and vSphere."
       }
     ]
   },
@@ -70,23 +70,23 @@ export const roles = [
     "url": "https://www.cubic.com",
     "period": "2017 to 2021",
     "location": "San Diego, CA & Washington, DC",
-    "blurb": "Founding DevOps engineer and lead IC building demand-prediction ML, rider chatbots, and Cubic's cloud fare platform.",
+    "blurb": "Founding DevOps engineer for demand ML, rider chatbots, and Cubic's cloud fare platform.",
     "bullets": [
       {
         "lead": "NextBus",
-        "text": "Built real-time bus-arrival ML inference on AWS ECS and Lambda with TensorFlow, PySpark, and Node.js."
+        "text": "Real-time bus arrival ML on AWS ECS and Lambda. TensorFlow, PySpark, and Node.js predict arrivals."
       },
       {
         "lead": "Urban Insights",
-        "text": "Shipped transit-demand ML and search pipelines on AWS SageMaker with Prometheus and Grafana monitoring."
+        "text": "Transit demand ML and search pipelines on AWS SageMaker, monitored with Prometheus and Grafana."
       },
       {
         "lead": "Chicago Metra",
-        "text": "Shipped a rider chatbot on AWS Lambda, Twilio, and Azure Cognitive Services for phone, text, and email transit-card balance checks."
+        "text": "Rider chatbot on AWS Lambda, Twilio, and Azure Cognitive Services. Riders check card balances by phone, text, or email."
       },
       {
         "lead": "Cubic Transit Fare Payments Platform",
-        "text": "Moved 20 legacy Java fare-collection services onto Kubernetes, Terraform, and Azure CI/CD under PCI, SOC 2, ISO 27001, and SOX."
+        "text": "20 legacy Java fare services, now on Kubernetes, Terraform, and Azure CI/CD under PCI, SOC 2, ISO 27001, and SOX."
       }
     ]
   },
@@ -96,19 +96,19 @@ export const roles = [
     "url": "https://www.epam.com",
     "period": "2015 to 2017",
     "location": "Washington, DC",
-    "blurb": "Senior backend engineer delivering enterprise search, mortgage-appraisal APIs, mobile apps, and AWS infrastructure.",
+    "blurb": "Enterprise search, mortgage appraisal APIs, mobile apps, and AWS systems.",
     "bullets": [
       {
         "lead": "Fannie Mae Collateral Underwriter",
-        "text": "Engineered Python REST APIs and an Angular SPA powering residential mortgage appraisal workflows."
+        "text": "Python REST APIs and an Angular app for home mortgage appraisals."
       },
       {
         "lead": "Lockheed Martin Intranet Search",
-        "text": "Shipped enterprise search backed by Node.js and Python microservices on Docker and Kubernetes."
+        "text": "Internal search on Node.js and Python services, running on Docker and Kubernetes."
       },
       {
         "lead": "Poison Control (poison.org) & Canadian Tire",
-        "text": "Shipped Poison Control apps and Canadian Tire e-commerce on AWS with CI/CD and zero-downtime Liquibase PostgreSQL cutovers."
+        "text": "Poison Control apps and Canadian Tire online shopping on AWS. CI/CD and Liquibase update PostgreSQL with zero downtime."
       }
     ]
   }
