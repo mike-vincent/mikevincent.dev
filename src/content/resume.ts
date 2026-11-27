@@ -96,7 +96,7 @@ export const roles = [
     "url": "https://www.epam.com",
     "period": "2015 to 2017",
     "location": "Washington, DC",
-    "blurb": "Senior backend engineer delivering enterprise search, mortgage-appraisal APIs, and AWS infrastructure for federal and defense clients.",
+    "blurb": "Senior backend engineer delivering enterprise search, mortgage-appraisal APIs, mobile apps, and AWS infrastructure.",
     "bullets": [
       {
         "lead": "Fannie Mae Collateral Underwriter",
@@ -107,8 +107,8 @@ export const roles = [
         "text": "Shipped enterprise search backed by Node.js and Python microservices on Docker and Kubernetes."
       },
       {
-        "lead": "HUD, Freddie Mac & Federal Courts (CM/ECF, PACER)",
-        "text": "Automated AWS CI/CD (Jenkins, Nexus, Chef) and executed zero-downtime multi-tenant PostgreSQL cutovers with Liquibase."
+        "lead": "Poison Control (poison.org) & Canadian Tire",
+        "text": "Shipped Poison Control apps and Canadian Tire e-commerce on AWS with CI/CD and zero-downtime Liquibase PostgreSQL cutovers."
       }
     ]
   }
