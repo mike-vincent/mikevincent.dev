@@ -47,16 +47,16 @@ export const roles = [
         "text": "fare-payment backend as Docker and Kubernetes microservices with vertical, horizontal, and KEDA autoscaling on AWS and Azure."
       },
       {
-        "lead": "Platform security",
-        "text": "mTLS with Istio and a Smallstep private certificate authority. CrowdStrike, Nessus, and Trend Micro across the fleet."
+        "lead": "BART & Boston MBTA",
+        "text": "Platform security with mTLS on Istio and a Smallstep private certificate authority. CrowdStrike, Nessus, and Trend Micro across the fleet."
       },
       {
         "lead": "NextBus Umo IQ",
         "text": "Terraform, AWS, and GitHub Actions CI/CD, under PCI and SOC 1/2 compliance. Production code in Python, Java, and JavaScript across AWS, Azure, and vSphere."
       },
       {
-        "lead": "Ran a team of 18",
-        "text": "across the US, India, and Germany supporting transit SaaS for millions of riders. On-call on PagerDuty, monitoring on Prometheus and Grafana."
+        "lead": "WMATA, San Diego MTS & PATCO",
+        "text": "Ran a team of 18 across the US, India, and Germany supporting transit SaaS for millions of riders. On-call on PagerDuty, monitoring on Prometheus and Grafana."
       }
     ]
   },
