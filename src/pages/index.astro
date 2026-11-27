@@ -5,7 +5,7 @@ import Row from '../components/site/Row.astro';
 import { portfolio, projects, favicon } from '../content/portfolio';
 import { roles, education, skills } from '../content/resume';
 
-const button = 'inline-flex h-11 items-center rounded-full bg-secondary px-5 text-subhead font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50';
+const button = 'btn-secondary inline-flex h-11 items-center rounded-full px-5 text-subhead font-medium';
 
 const DESCRIPTION = 'Mike Vincent is a Staff Software Engineer and former Engineering Manager in Los Angeles, California building payments, tokenization, fraud ML, hybrid search, and Kubernetes platforms on AWS and Azure.';
 
@@ -55,10 +55,13 @@ const jsonLd = {
   title="Mike Vincent · Staff Software Engineer — Payments, AI/ML & Platform Infrastructure"
   description={DESCRIPTION}
 >
-  <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+  <Fragment slot="head">
+    <link rel="preload" as="image" href="/assets/images/headshot-320.webp" imagesrcset="/assets/images/headshot-168.webp 168w, /assets/images/headshot-320.webp 320w" imagesizes="(min-width: 40rem) 9.375rem, 7.5rem" fetchpriority="high" />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
   <header class="pt-10 pb-10 text-center sm:pt-14 sm:pb-12">
       <div class="flex flex-col items-center">
-        <img src="/assets/images/headshot-320.webp" alt="Mike Vincent" width="150" height="150" fetchpriority="high"
+        <img src="/assets/images/headshot-320.webp" alt="Mike Vincent" width="150" height="150" fetchpriority="high" decoding="sync"
           srcset="/assets/images/headshot-168.webp 168w, /assets/images/headshot-320.webp 320w" sizes="(min-width: 40rem) 9.375rem, 7.5rem"
           class="size-[120px] shrink-0 rounded-full object-cover ring-1 ring-border sm:size-[150px]" />
         <h1 class="mt-7 font-display text-large-title font-semibold text-foreground sm:text-[2.5rem] sm:leading-[1.1] sm:tracking-[0em] md:text-display-md">Mike Vincent</h1>
@@ -86,8 +89,9 @@ const jsonLd = {
             role="tab"
             aria-selected="true"
             aria-controls="panel-resume"
+            tabindex="0"
             data-view="resume"
-            class="h-9 rounded-full px-4 text-subhead font-medium transition-all cursor-pointer outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 bg-background text-tint shadow-xs"
+            class="tab-pill h-9 rounded-full px-4 text-subhead font-medium cursor-pointer bg-background text-tint shadow-xs"
           >
             Resume
           </button>
@@ -97,8 +101,9 @@ const jsonLd = {
             role="tab"
             aria-selected="false"
             aria-controls="panel-portfolio"
+            tabindex="-1"
             data-view="portfolio"
-            class="h-9 rounded-full px-4 text-subhead font-medium transition-all cursor-pointer outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 text-muted-foreground hover:text-foreground"
+            class="tab-pill h-9 rounded-full px-4 text-subhead font-medium cursor-pointer text-muted-foreground hover:text-foreground"
           >
             Portfolio
           </button>
@@ -117,7 +122,7 @@ const jsonLd = {
   <div id="panel-resume" role="tabpanel" aria-labelledby="tab-resume">
     <Section id="resume" label="Experience" borderless>
       <a slot="actions" href="/resume.pdf" download="mikevincentresume.pdf" title="Download PDF" aria-label="Download resume PDF"
-        class="inline-flex h-11 -my-2 items-center gap-1.5 rounded-md px-2.5 text-subhead font-medium text-tint transition-colors hover:bg-accent outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50">
+        class="btn-ghost inline-flex h-11 -my-2 items-center gap-1.5 rounded-md px-2.5 text-subhead font-medium text-tint">
         <span class="material-symbols-outlined text-[20px]" aria-hidden="true">download</span>
         <span>Download resume</span>
       </a>
@@ -196,6 +201,7 @@ const jsonLd = {
         tabs.forEach((tab) => {
           const selected = tab.dataset.view === target;
           tab.setAttribute('aria-selected', String(selected));
+          tab.setAttribute('tabindex', selected ? '0' : '-1');
           ACTIVE.forEach((c) => tab.classList.toggle(c, selected));
           INACTIVE.forEach((c) => tab.classList.toggle(c, !selected));
         });
@@ -216,8 +222,20 @@ const jsonLd = {
         }
       }
 
-      tabs.forEach((tab) => {
+      tabs.forEach((tab, idx) => {
         tab.addEventListener('click', () => setView(tab.dataset.view, true));
+        tab.addEventListener('keydown', (e) => {
+          let next = null;
+          if (e.key === 'ArrowRight') next = (idx + 1) % tabs.length;
+          else if (e.key === 'ArrowLeft') next = (idx - 1 + tabs.length) % tabs.length;
+          else if (e.key === 'Home') next = 0;
+          else if (e.key === 'End') next = tabs.length - 1;
+          if (next !== null) {
+            e.preventDefault();
+            setView(tabs[next].dataset.view, true);
+            tabs[next].focus();
+          }
+        });
       });
       window.addEventListener('hashchange', () => syncFromHash(true));
       syncFromHash(false);

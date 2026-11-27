@@ -11,7 +11,7 @@
   font-family: 'Material Symbols Outlined';
   font-style: normal;
   font-weight: 100 700;
-  font-display: block;
+  font-display: swap;
   src: url(/fonts/material-symbols-outlined.woff2) format('woff2');
 }
 
@@ -31,6 +31,42 @@
     -webkit-font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
   }
+
+  /* Complete Apple HIG + WAI-ARIA button states: default, hover, active, focus-visible, disabled */
+  .btn-primary {
+    background-color: var(--tint-bg);
+    color: #ffffff;
+    transition: background-color 150ms ease, transform 120ms ease, box-shadow 150ms ease;
+  }
+  .btn-primary:hover { background-color: var(--tint-bg-hover); }
+  .btn-primary:active { background-color: var(--tint-bg-active); transform: scale(0.98); }
+  .btn-primary:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--tint); }
+  .btn-primary:disabled, .btn-primary[aria-disabled="true"] { pointer-events: none; opacity: 0.45; }
+
+  .btn-secondary {
+    background-color: var(--secondary);
+    color: var(--foreground);
+    transition: background-color 150ms ease, transform 120ms ease, box-shadow 150ms ease;
+  }
+  .btn-secondary:hover { background-color: var(--accent); }
+  .btn-secondary:active { background-color: var(--accent-active); transform: scale(0.98); }
+  .btn-secondary:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--tint); }
+  .btn-secondary:disabled, .btn-secondary[aria-disabled="true"] { pointer-events: none; opacity: 0.45; }
+
+  .btn-ghost {
+    transition: background-color 150ms ease, color 150ms ease, transform 120ms ease, box-shadow 150ms ease;
+  }
+  .btn-ghost:hover { background-color: var(--accent); }
+  .btn-ghost:active { background-color: var(--accent-active); transform: scale(0.97); }
+  .btn-ghost:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--tint); }
+  .btn-ghost:disabled, .btn-ghost[aria-disabled="true"] { pointer-events: none; opacity: 0.45; }
+
+  .tab-pill {
+    transition: background-color 150ms ease, color 150ms ease, transform 120ms ease, box-shadow 150ms ease;
+  }
+  .tab-pill:active { transform: scale(0.98); }
+  .tab-pill:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--secondary), 0 0 0 4px var(--tint); }
+  .tab-pill:disabled, .tab-pill[aria-disabled="true"] { pointer-events: none; opacity: 0.45; }
 }
 
 :root {
@@ -46,16 +82,20 @@
   --secondary: #f2f2f7;
   --secondary-foreground: #000000;
   --muted: #f2f2f7;
-  --muted-foreground: #6e6e73;
-  --accent: #f2f2f7;
+  --muted-foreground: #59595e;
+  --accent: #e5e5ea;
+  --accent-active: #d1d1d6;
   --accent-foreground: #000000;
-  --tint: #007aff;
+  --tint: #0066cc;
+  --tint-bg: #0066cc;
+  --tint-bg-hover: #0055b3;
+  --tint-bg-active: #004494;
   --destructive: oklch(0.577 0.245 27.325);
   --border: rgba(60, 60, 67, 0.16);
   --separator: rgba(0, 0, 0, 0.12);
-  --chevron: rgba(60, 60, 67, 0.3);
+  --chevron: rgba(60, 60, 67, 0.42);
   --input: rgba(60, 60, 67, 0.16);
-  --ring: oklch(0.708 0 0);
+  --ring: #0066cc;
 }
 
 .dark {
@@ -70,16 +110,20 @@
   --secondary: #1c1c1e;
   --secondary-foreground: #f5f5f7;
   --muted: #1c1c1e;
-  --muted-foreground: rgba(235, 235, 245, 0.7);
+  --muted-foreground: #b8b8bd;
   --accent: #2c2c2e;
+  --accent-active: #3a3a3c;
   --accent-foreground: #f5f5f7;
-  --tint: #0a84ff;
+  --tint: #2997ff;
+  --tint-bg: #0071e3;
+  --tint-bg-hover: #0077ed;
+  --tint-bg-active: #005bb5;
   --destructive: oklch(0.704 0.191 22.216);
   --border: rgba(235, 235, 245, 0.14);
   --separator: rgba(255, 255, 255, 0.12);
-  --chevron: rgba(235, 235, 245, 0.3);
+  --chevron: rgba(235, 235, 245, 0.45);
   --input: rgba(235, 235, 245, 0.18);
-  --ring: oklch(0.556 0 0);
+  --ring: #2997ff;
 }
 
 @theme inline {
@@ -178,5 +222,27 @@
   .plain-list-grid > li:nth-last-child(2):nth-child(odd) > a > span:last-child,
   .plain-list-grid > li:nth-last-child(2):nth-child(odd) > div > span:last-child {
     border-bottom-width: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .btn-primary:active, .btn-secondary:active, .btn-ghost:active, .tab-pill:active {
+    transform: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .btn-primary, .btn-secondary, .btn-ghost, .tab-pill {
+    border: 1px solid ButtonText;
+  }
+  .btn-primary:focus-visible, .btn-secondary:focus-visible, .btn-ghost:focus-visible, .tab-pill:focus-visible {
+    outline: 2px solid Highlight;
+    outline-offset: 2px;
   }
 }

@@ -12,18 +12,18 @@ const external = href?.startsWith('http');
     href={href}
     target={external ? '_blank' : undefined}
     rel={external ? 'noopener noreferrer' : undefined}
-    class={href ? 'group flex min-h-[68px] items-center gap-4 rounded-md outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50' : 'flex min-h-[68px] items-center gap-4'}
+    class={href ? 'group flex min-h-[68px] items-center gap-4 rounded-md outline-none transition-opacity active:opacity-75 focus-visible:ring-2 focus-visible:ring-tint focus-visible:ring-offset-2 focus-visible:ring-offset-background' : 'flex min-h-[68px] items-center gap-4'}
   >
-    {icon && <img src={icon} alt="" width="44" height="44" loading="lazy" class="size-11 shrink-0 rounded-[10px] bg-white object-contain p-1 ring-1 ring-border" />}
+    {icon && <img src={icon} alt="" width="44" height="44" loading="lazy" decoding="async" class="size-11 shrink-0 rounded-[10px] bg-white object-contain p-1 ring-1 ring-border" />}
     <span class="flex min-w-0 flex-1 items-center gap-3 self-stretch border-b border-separator py-3.5 group-last/item:border-b-0">
       <span class="flex min-w-0 flex-1 flex-col">
-        <span class="text-body font-medium text-foreground">{name}</span>
+        <span class="text-body font-medium text-foreground group-hover:text-tint transition-colors">{name}</span>
         {meta && <span class="whitespace-nowrap text-footnote text-muted-foreground">{meta}</span>}
         {description && <span class="text-subhead text-muted-foreground">{description}</span>}
         <slot />
       </span>
       {href && (
-        <svg class="size-3.5 shrink-0 text-chevron transition-colors group-hover:text-muted-foreground" viewBox="0 0 8 14" fill="none" aria-hidden="true">
+        <svg class="size-3.5 shrink-0 text-chevron transition-colors group-hover:text-tint" viewBox="0 0 8 14" fill="none" aria-hidden="true">
           <path d="M1 1.5L6.5 7L1 12.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
       )}
@@ -34,18 +34,18 @@ const external = href?.startsWith('http');
     href={href}
     target={external ? '_blank' : undefined}
     rel={external ? 'noopener noreferrer' : undefined}
-    class={href ? 'flex items-start gap-4 rounded-md outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50' : 'flex items-start gap-4'}
+    class={href ? 'group flex items-start gap-4 rounded-md outline-none transition-opacity active:opacity-75 focus-visible:ring-2 focus-visible:ring-tint focus-visible:ring-offset-2 focus-visible:ring-offset-background' : 'flex items-start gap-4'}
   >
     {icon && (iconHref && !href ? (
-      <a href={iconHref} target="_blank" rel="noopener noreferrer" aria-label={iconLabel ?? name} class="shrink-0 rounded-[10px] outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50">
-        <img src={icon} alt="" width="44" height="44" loading="lazy" class="size-10 rounded-[10px] bg-white object-contain p-1 ring-1 ring-border transition-opacity hover:opacity-80 sm:size-11" />
+      <a href={iconHref} target="_blank" rel="noopener noreferrer" aria-label={iconLabel ?? name} class="shrink-0 rounded-[10px] outline-none transition-transform active:scale-95 focus-visible:ring-2 focus-visible:ring-tint focus-visible:ring-offset-2 focus-visible:ring-offset-background">
+        <img src={icon} alt="" width="44" height="44" loading="lazy" decoding="async" class="size-10 rounded-[10px] bg-white object-contain p-1 ring-1 ring-border transition-opacity hover:opacity-80 sm:size-11" />
       </a>
     ) : (
-      <img src={icon} alt="" width="44" height="44" loading="lazy" class="size-10 shrink-0 rounded-[10px] bg-white object-contain p-1 ring-1 ring-border sm:size-11" />
+      <img src={icon} alt="" width="44" height="44" loading="lazy" decoding="async" class="size-10 shrink-0 rounded-[10px] bg-white object-contain p-1 ring-1 ring-border sm:size-11" />
     ))}
     <span class="flex min-w-0 flex-1 flex-col gap-0.5">
       <span class="flex flex-col">
-        <span class="text-body font-medium text-foreground">{name}</span>
+        <span class={href ? 'text-body font-medium text-foreground group-hover:text-tint transition-colors' : 'text-body font-medium text-foreground'}>{name}</span>
         {meta && <span class="whitespace-nowrap text-footnote text-muted-foreground">{meta}</span>}
       </span>
       {description && <span class="text-subhead text-muted-foreground">{description}</span>}
