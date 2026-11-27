@@ -3,10 +3,9 @@ import { Resvg } from '@resvg/resvg-js';
 import type { APIRoute } from 'astro';
 
 const companies = [
-  'Capital One', 'CapitalOne.com Search', 'Fannie Mae', 'HUD', 'DC Metro',
-  'NYC MTA', 'BART', 'LA Metro', 'Boston MBTA', 'SF Muni',
-  'PATCO', 'Lockheed Martin', 'Canadian Tire',
-  'U.S. Courts', 'NY Fashion Week',
+  'Capital One', 'Discover', 'CapitalOne.com Search', 'Fannie Mae', 'HUD',
+  'DC Metro', 'NYC MTA', 'BART', 'LA Metro', 'Boston MBTA',
+  'SF Muni', 'Lockheed Martin', 'Radio Index',
 ];
 
 function square() {
@@ -77,7 +76,7 @@ export const GET: APIRoute = async () => {
               children: 'MICHAEL VINCENT',
             },
           },
-          // Row 2: Software Engineer
+          // Row 2: Staff Software Engineer
           {
             type: 'div',
             props: {
@@ -87,15 +86,15 @@ export const GET: APIRoute = async () => {
                 alignItems: 'center',
                 padding: '0 44px',
                 fontSize: 50,
-                fontWeight: 600,
+                fontWeight: 700,
                 color: 'rgba(255,255,255,0.95)',
                 borderBottom: '1px solid rgba(255,255,255,0.9)',
                 flexShrink: 0,
               },
-              children: 'Software Engineer',
+              children: 'Staff Software Engineer',
             },
           },
-          // Row 3: Payments ■ Banking ■ Infra
+          // Row 3: Payments ■ AI/ML ■ Cloud
           {
             type: 'div',
             props: {
@@ -112,13 +111,13 @@ export const GET: APIRoute = async () => {
                 flexShrink: 0,
               },
               children: [
-                { type: 'span' as const, props: { style: { whiteSpace: 'nowrap' as const }, children: 'U.S. Citizen' } },
-                { type: 'div' as const, props: { style: { width: 10, height: 10, backgroundColor: 'rgba(255,255,255,0.95)', flexShrink: 0, borderRadius: 1 } } },
                 { type: 'span' as const, props: { style: { whiteSpace: 'nowrap' as const }, children: 'Payments' } },
                 { type: 'div' as const, props: { style: { width: 10, height: 10, backgroundColor: 'rgba(255,255,255,0.95)', flexShrink: 0, borderRadius: 1 } } },
-                { type: 'span' as const, props: { style: { whiteSpace: 'nowrap' as const }, children: 'Banking' } },
+                { type: 'span' as const, props: { style: { whiteSpace: 'nowrap' as const }, children: 'AI/ML' } },
                 { type: 'div' as const, props: { style: { width: 10, height: 10, backgroundColor: 'rgba(255,255,255,0.95)', flexShrink: 0, borderRadius: 1 } } },
-                { type: 'span' as const, props: { style: { whiteSpace: 'nowrap' as const }, children: 'Infra' } },
+                { type: 'span' as const, props: { style: { whiteSpace: 'nowrap' as const }, children: 'Cloud' } },
+                { type: 'div' as const, props: { style: { width: 10, height: 10, backgroundColor: 'rgba(255,255,255,0.95)', flexShrink: 0, borderRadius: 1 } } },
+                { type: 'span' as const, props: { style: { whiteSpace: 'nowrap' as const }, children: 'U.S. Citizen' } },
               ],
             },
           },

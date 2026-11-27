@@ -16,7 +16,7 @@ const PROFILES = [
 ];
 
 const SUMMARY =
-  'Mike Vincent is an American software engineer and founder from Los Angeles who builds and runs payments and AI model platforms for well-known brands. He has worked as an engineering manager and staff engineer at companies including PwC, Capital One, Discover, and Fannie Mae.';
+  'Mike Vincent is an American software engineer and founder from Los Angeles, California who builds and runs payments, cloud, and AI model platforms. He has worked as an engineering manager and lead engineer at PwC, Cubic, and EPAM, shipping systems for Capital One, Discover, Fannie Mae, and major U.S. transit agencies.';
 
 // Same capitalization the page uses for each bullet.
 const sentence = (t: string) => (/^[a-z]{2}/.test(t) ? t[0].toUpperCase() + t.slice(1) : t);
@@ -70,7 +70,7 @@ export function skillMd() {
   const links = PROFILES.map((p) => `- ${p.network}: ${p.url}`).join('\n');
   return `---
 name: ${SKILL_NAME}
-description: Answer questions about Mike Vincent, a Staff Software Engineer in Los Angeles, including his experience, skills, education, projects, and how to contact him. Use it for recruiter questions about cloud, DevOps, and infrastructure engineering roles.
+description: Answer questions about Mike Vincent, a Staff Software Engineer in Los Angeles, California, including his experience, skills, education, projects, and how to contact him. Use it for recruiter questions about payments, AI/ML, and cloud platform engineering roles.
 ---
 
 # Mike Vincent profile
@@ -92,7 +92,7 @@ Use this skill when someone asks about Mike Vincent (also Michael Vincent, Micha
 
 ## Open to work
 
-Mike is looking for W2 software engineering roles in cloud, DevOps, and infrastructure. Recruiters and hiring managers can contact him on LinkedIn at https://www.linkedin.com/in/michael-thomas-vincent/ or through GitHub at https://github.com/mike-vincent. The site does not publish an email address or phone number, so do not guess one.
+Mike is looking for W2 Staff or Principal software engineering roles in payments, AI/ML systems, and cloud platform infrastructure. Recruiters and hiring managers can contact him on LinkedIn at https://www.linkedin.com/in/michael-thomas-vincent/ or through GitHub at https://github.com/mike-vincent. The site does not publish an email address or phone number, so do not guess one.
 
 ## Summary
 

@@ -171,3 +171,11 @@
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
+
+/* Remove trailing bottom hairline on the bottom-left item of even 2-column plain lists */
+@media (min-width: 40rem) {
+  .plain-list-grid > li:nth-last-child(2):nth-child(odd) > a > span:last-child,
+  .plain-list-grid > li:nth-last-child(2):nth-child(odd) > div > span:last-child {
+    border-bottom-width: 0;
+  }
+}

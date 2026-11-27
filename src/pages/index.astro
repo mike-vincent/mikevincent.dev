@@ -65,10 +65,11 @@ const jsonLd = {
           <h1 class="text-large-title font-semibold sm:text-display-md text-foreground">Mike Vincent</h1>
           <div class="mt-3">
             <p class="text-title-3 text-foreground">Staff Software Engineer</p>
-            <p class="mt-0.5 text-body text-muted-foreground">Banking, Payments, Infrastructure, AI/ML.</p>
+            <p class="mt-0.5 text-body text-muted-foreground">Payments &amp; tokenization, fraud ML &amp; hybrid search, Kubernetes &amp; cloud platforms.</p>
           </div>
           <p class="mt-3 text-subhead text-muted-foreground">Los Angeles, California. U.S. Citizen.</p>
           <nav aria-label="Primary" class="mt-4 flex flex-wrap gap-3">
+            <a href="/resume.pdf" download="mikevincentresume.pdf" class={button}>Resume PDF</a>
             <a href="https://github.com/mike-vincent" target="_blank" rel="noopener noreferrer" class={button}>GitHub</a>
             <a href="https://www.linkedin.com/in/michael-thomas-vincent/" target="_blank" rel="noopener noreferrer" class={button}>LinkedIn</a>
           </nav>
@@ -76,24 +77,14 @@ const jsonLd = {
       </div>
   </header>
 
-  <section aria-label="Roles" class="border-t py-6">
-    <div class="flex flex-wrap gap-2">
-      {['Staff Software Engineer', 'ML & AI Engineer', 'Payments & Platform Engineer', 'Full-Stack Systems Engineer', 'Engineering Manager'].map((p) => (
-        <span class="inline-flex items-center rounded-md bg-secondary px-2.5 py-1 text-footnote text-secondary-foreground">{p}</span>
-      ))}
-    </div>
-  </section>
-
   <div id="view-switcher" class="border-t pt-8 pb-0">
     <div id="about">
       <h2 id="about-heading" class="text-title-1 font-semibold text-foreground">About</h2>
       <p class="mt-4 max-w-3xl text-body leading-[1.4706] text-muted-foreground">
-        I’m a Staff Software Engineer from Los Angeles, California building and running production
-        payments, AI/ML, and cloud platform systems — from vaultless card tokenization and real-time
-        fraud models to hybrid search and PCI-compliant Kubernetes infrastructure. Currently a Lead
-        Software Engineer at PwC delivering core payments and AI systems for Capital One and
-        Discover; previously an Engineering Manager at Cubic leading 18 engineers across the U.S.,
-        India, and Germany on transit fare platforms for NYC MTA, LA Metro, WMATA, BART, and MBTA.
+        Mike Vincent is an American software engineer and founder from Los Angeles, California who
+        builds and runs payments, cloud, and AI model platforms. He has worked as an engineering
+        manager and lead engineer at PwC, Cubic, and EPAM, shipping systems for Capital One,
+        Discover, Fannie Mae, and major U.S. transit agencies.
       </p>
     </div>
     <div
@@ -155,18 +146,11 @@ const jsonLd = {
     </Section>
 
     <Section id="skills" label="Skills">
-      <ul class="grid gap-x-8 gap-y-8 sm:grid-cols-2">
+      <ul class="grid gap-x-8 gap-y-6 sm:grid-cols-2">
         {skills.map((s) => (
           <li>
             <h4 class="text-title-3 font-semibold text-foreground">{s.group}</h4>
-            <dl class="mt-3 space-y-3">
-              {s.bullets.map((b) => (
-                <div>
-                  <dt class="text-body font-medium text-foreground">{b.lead}</dt>
-                  <dd class="text-subhead text-muted-foreground">{b.text}</dd>
-                </div>
-              ))}
-            </dl>
+            <p class="mt-1.5 text-subhead text-muted-foreground">{s.items}</p>
           </li>
         ))}
       </ul>
@@ -180,15 +164,15 @@ const jsonLd = {
   </div>
 
   <div id="panel-portfolio" role="tabpanel" aria-labelledby="tab-portfolio" hidden>
-    <Section id="portfolio" label="Portfolio" borderless>
-      <ul class="-my-3.5 grid sm:grid-cols-2 sm:gap-x-8">
-        {portfolio.map((p) => <li class="group/item"><Row plainList name={p.name} href={p.url} icon={p.icon ?? favicon(p.url)} description={p.description} /></li>)}
+    <Section id="projects" label="Projects" borderless>
+      <ul class="plain-list-grid -my-3.5 grid sm:grid-cols-2 sm:gap-x-8">
+        {projects.map((p) => <li class="group/item"><Row plainList name={p.name} href={p.url} icon={p.icon} description={p.description} /></li>)}
       </ul>
     </Section>
 
-    <Section id="projects" label="Projects">
-      <ul class="-my-3.5 grid sm:grid-cols-2 sm:gap-x-8">
-        {projects.map((p) => <li class="group/item"><Row plainList name={p.name} href={p.url} icon={p.icon} description={p.description} /></li>)}
+    <Section id="portfolio" label="Client Systems">
+      <ul class="plain-list-grid -my-3.5 grid sm:grid-cols-2 sm:gap-x-8">
+        {portfolio.map((p) => <li class="group/item"><Row plainList name={p.name} href={p.url} icon={p.icon ?? favicon(p.url)} description={p.description} /></li>)}
       </ul>
     </Section>
   </div>
